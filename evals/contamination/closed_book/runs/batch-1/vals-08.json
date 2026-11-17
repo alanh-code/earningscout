@@ -1,0 +1,59 @@
+{
+  "question_id": "vals-08",
+  "question_type": "Simple retrieval - Quantitative",
+  "question": "What was the total consideration cost TKO paid to acquired Endeavor assets measured at transaction close?",
+  "model": "claude-sonnet-5-5",
+  "tokens": {
+    "input": 39,
+    "output": 520
+  },
+  "cost_usd": 0.005278,
+  "request": {
+    "model": "claude-sonnet-5-5",
+    "max_tokens": 4096,
+    "thinking": {
+      "type": "between_tools"
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": "What was the total consideration cost TKO paid to acquired Endeavor assets measured at transaction close?"
+      }
+    ]
+  },
+  "response": {
+    "id": "msg_011CgwkBs5cAqUSDLuQ17rVr",
+    "container": null,
+    "content": [
+      {
+        "citations": null,
+        "text": "When TKO Group Holdings was formed in September 2023, it combined UFC and WWE under one roof, and the structure involved Endeavor's UFC business and WWE merging into a new publicly traded entity. On the accounting side, WWE was treated as the acquired business (with UFC/Endeavor as the accounting acquirer), so the \"consideration\" in the purchase accounting was tied to WWE.\n\nI'm not certain of the exact total consideration figure as measured at transaction close, and I don't want to give you a specific number that could be inaccurate. In TKO's filings, the purchase consideration for WWE was based on the fair value of the equity issued to WWE shareholders (including TKO Class A shares and the related stake), reflecting the stock price at closing rather than a simple headline deal value. The widely reported headline figure was an enterprise value of roughly $21 billion for the combined company, with WWE valued around $9.3 billion, but that's a different measure than the accounting consideration.\n\nFor the precise figure, I'd recommend checking TKO's Form 8-K and Form 10-Q/10-K filings for the period around September 2023, specifically the business combination note and purchase price allocation tables, as well as TKO's investor relations materials.\n\nIf you can share which specific \"Endeavor assets\" you mean (e.g., UFC, WWE, or something like the later acquisition of PBR, On Location, or IMG), I can try to be more precise about what I do and don't know. Subsequent TKO transactions, such as the 2025 acquisitions of On Location and IMG, had their own separate consideration amounts.",
+        "type": "text"
+      }
+    ],
+    "diagnostics": null,
+    "model": "claude-sonnet-5-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 39,
+      "output_tokens": 520,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  }
+}

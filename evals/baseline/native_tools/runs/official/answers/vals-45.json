@@ -1,0 +1,42 @@
+{
+  "id": "vals-45",
+  "type": "Adjustments",
+  "question": "In 2024, what was Airbnb's (NASDAQ: ABNB) adjustment for Stock-based Compensation Expense?",
+  "answer": "In 2024, Airbnb adjusted its EBITDA by $1,407,000,000 to exclude stock-based compensation expense",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "In 2024, Airbnb adjusted its EBITDA by $1,407,000,000 to exclude stock-based compensation expense"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "In 2024, Airbnb adjusted its EBITDA by $1,407,000,000 to exclude stock-based compensation expense"
+    }
+  ],
+  "model_answer": "Airbnb's Adjusted EBITDA reconciliation for full-year 2024 added back **$1,407 million** of stock-based compensation expense. That is about 26% more than the $1,120 million added back for 2023. The figures come from Airbnb's FY2024 10-K and Q4 2024 shareholder letter.\n\nAdjusted EBITDA for 2024 was $4,041 million, up from $3,653 million in 2023. Airbnb excludes stock-based compensation from the measure because it is a non-cash expense.\n\nThe quarterly add-backs were:\n\n| Quarter | Add-back |\n|---|---|\n| Q1 | $295M |\n| Q2 | $382M |\n| Q3 | $362M |\n| Q4 | $368M |",
+  "stop_reason": "end_turn",
+  "tokens": {
+    "input_tokens": 46340,
+    "output_tokens": 998,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "web_search_requests": 2
+  },
+  "cost_usd": 0.12266,
+  "latency_s": 14.946639458008576,
+  "tool_calls": {
+    "total": 6,
+    "code_execution": 4,
+    "web_search": 2
+  },
+  "n_tool_calls": 6,
+  "n_turns": 1,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "States the $1,407M stock-based compensation add-back for 2024; the extra 2023, Adjusted EBITDA and quarterly figures fall outside the official answer and are not graded.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

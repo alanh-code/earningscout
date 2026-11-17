@@ -1,0 +1,59 @@
+{
+  "question_id": "vals-19",
+  "question_type": "Numerical Reasoning",
+  "question": "As of April 07, 2025, what is the total value of MSCI's operating leases (in $'s, thousands) that are maturing in the next three years? What percentage?",
+  "model": "claude-sonnet-5-5",
+  "tokens": {
+    "input": 57,
+    "output": 421
+  },
+  "cost_usd": 0.004324000000000001,
+  "request": {
+    "model": "claude-sonnet-5-5",
+    "max_tokens": 4096,
+    "thinking": {
+      "type": "between_tools"
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": "As of April 07, 2025, what is the total value of MSCI's operating leases (in $'s, thousands) that are maturing in the next three years? What percentage?"
+      }
+    ]
+  },
+  "response": {
+    "id": "msg_011Ch7tWbffiye5UCGC6SHBb",
+    "container": null,
+    "content": [
+      {
+        "citations": null,
+        "text": "I can't give you a figure for that. I don't have MSCI's lease maturity schedule, and I can't verify filings or data as of a specific date like April 7, 2025.\n\n**Where to find it**\n\nMSCI Inc. (NYSE: MSCI) discloses this in its SEC filings, specifically the **Leases note** in the financial statements (typically titled \"Leases\"). That note contains a maturity table showing undiscounted operating lease payments by year (e.g., 2025, 2026, 2027, 2028, 2029, Thereafter), less imputed interest, which equals the total operating lease liability.\n\n- The most relevant filing as of April 2025 would be the **FY2024 Form 10-K** (filed around February 2025).\n- You can find it at SEC EDGAR (sec.gov) or MSCI's Investor Relations site.\n\n**How to calculate it yourself**\n\n1. Pull the lease maturity table from the 10-K.\n2. Add the payments for the next three years. Since the 10-K covers FY2024, those would be 2025, 2026, and 2027.\n3. Divide that sum by the total undiscounted lease payments (before imputed interest) to get the percentage maturing within three years.\n\nIf you paste the lease maturity table here, I'll calculate the total and percentage for you.",
+        "type": "text"
+      }
+    ],
+    "diagnostics": null,
+    "model": "claude-sonnet-5-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 57,
+      "output_tokens": 421,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  }
+}

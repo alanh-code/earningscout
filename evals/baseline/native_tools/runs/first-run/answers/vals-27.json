@@ -1,0 +1,58 @@
+{
+  "id": "vals-27",
+  "type": "Simple retrieval - Qualitative",
+  "question": "As of FY 2024, what are the terms of the Junior Subordinated Debentures in the Allstate Corporation's (NYSE: ALL) capital structure?",
+  "answer": "As of December 31, 2024, the Company had outstanding $500 million of Series A 6.500% Fixed-to-Floating Rate Junior Subordinated Debentures (“Junior Subordinated Debentures”). The scheduled maturity date for the Debentures is May 15, 2057 with a final maturity date of May 15, 2067. The Junior Subordinated Debentures may be redeemed (i) in whole or in part, at any time on or after May 15, 2037 at the principal amount plus accrued and unpaid interest to the date of redemption, or (ii) in certain circumstances, in whole or in part, prior to May 15, 2037 at the principal amount plus accrued and unpaid interest to the date of redemption or, if greater, a make-whole price. Additional information can be provided upon request.",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "$500 million of Series A 6.500% Fixed-to-Floating Rate Junior Subordinated Debentures"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Scheduled maturity date: May 15, 2057"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Final maturity date: May 15, 2067"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Redeemable on or after May 15, 2037 at principal amount plus accrued and unpaid interest"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Redeemable prior to May 15, 2037 at principal amount plus accrued and unpaid interest or make-whole price"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "As of December 31, 2024, the Company had outstanding $500 million of Series A 6.500% Fixed-to-Floating Rate Junior Subordinated Debentures (“Junior Subordinated Debentures”). The scheduled maturity date for the Debentures is May 15, 2057 with a final maturity date of May 15, 2067. The Junior Subordinated Debentures may be redeemed (i) in whole or in part, at any time on or after May 15, 2037 at the principal amount plus accrued and unpaid interest to the date of redemption, or (ii) in certain circumstances, in whole or in part, prior to May 15, 2037 at the principal amount plus accrued and unpaid interest to the date of redemption or, if greater, a make-whole price. Additional information can be provided upon request."
+    }
+  ],
+  "model_answer": "As of December 31, 2024, Allstate had one series of junior subordinated debentures outstanding. It is the Series A 6.500% Fixed-to-Floating Rate Junior Subordinated Debentures due 2067.\n\n- **Amount:** $500 million of Series A 6.500% Fixed-to-Floating Rate Junior Subordinated Debentures were outstanding.\n- **Maturity:** The final maturity date is May 15, 2067. The original 2007 prospectus supplement says that if this isn't a business day, maturity is the following business day.\n- **Fixed-rate period:** Interest is payable semi-annually at the stated fixed annual rate to May 15, 2037. The rate is 6.50%, paid on May 15 and November 15.\n- **Floating-rate period:** After May 15, 2037, interest is payable quarterly at an annual rate equal to the three-month LIBOR plus 2.120%. LIBOR has been replaced with the CME Term SOFR Reference Rate for a three-month tenor, plus a spread adjustment of 0.26161%.\n- **Deferral option:** Allstate may elect, at one or more times, to defer interest payments for consecutive interest periods that don't exceed 10 years. Under the original terms, deferred interest accumulates additional interest at the rate then applicable to the debentures.\n- **Restrictions during deferral:** If Allstate defers interest on the subordinated or junior subordinated debentures, it can't declare or pay dividends or distributions on common or preferred stock. It also can't redeem or buy back that stock, subject to limited exceptions.\n- **Ranking:** The debentures are unsecured and subordinated.\n- **Replacement capital covenant (RCC):** Allstate entered into an RCC when it issued the debentures. The RCC now benefits holders of the $800 million Floating Rate Subordinated Debentures due in 2053, which are the \"covered debt.\"\n\nThe 2019 prospectus also listed a Series B 6.125% junior subordinated debenture. The FY2024 10-K lists only the Series A.\n\nSource: Allstate's FY2024 Form 10-K (debt footnote) and the 2007 prospectus supplement.",
+  "stop_reason": "end_turn",
+  "tokens": {
+    "input_tokens": 46107,
+    "output_tokens": 1564,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "web_search_requests": 2
+  },
+  "cost_usd": 0.127854,
+  "latency_s": 18.565127583045978,
+  "tool_calls": {
+    "total": 6,
+    "code_execution": 4,
+    "web_search": 2
+  },
+  "n_tool_calls": 6,
+  "n_turns": 1,
+  "error": null,
+  "overall": "wrong",
+  "judge_reason": "Amount, series and final maturity are correct, but the answer omits the 2057 scheduled maturity and all redemption terms.",
+  "judge_run_overalls": [
+    "wrong",
+    "wrong",
+    "wrong"
+  ]
+}

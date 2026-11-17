@@ -1,0 +1,59 @@
+{
+  "question_id": "vals-44",
+  "question_type": "Simple retrieval - Quantitative",
+  "question": "In 2024, what was the Average Nights per Booking for Airbnb (NASDAQ: ABNB) in the Asia Pacific region?",
+  "model": "claude-sonnet-5-5",
+  "tokens": {
+    "input": 53,
+    "output": 408
+  },
+  "cost_usd": 0.0041860000000000005,
+  "request": {
+    "model": "claude-sonnet-5-5",
+    "max_tokens": 4096,
+    "thinking": {
+      "type": "between_tools"
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": "In 2024, what was the Average Nights per Booking for Airbnb (NASDAQ: ABNB) in the Asia Pacific region?"
+      }
+    ]
+  },
+  "response": {
+    "id": "msg_011Ch7tXfWNJtsjiiTYuimnJ",
+    "container": null,
+    "content": [
+      {
+        "citations": null,
+        "text": "I don't have a reliable figure for Airbnb's 2024 average nights per booking specifically in the Asia Pacific region, and I'd rather not guess at a number.\n\nHere's what I can say with more confidence. Airbnb discloses average length of stay and nights booked in its quarterly and annual filings, but regional breakdowns of metrics like this are not always reported in the same way across periods. Globally, Airbnb has indicated that average length of stay has been running somewhat above pre-pandemic levels, but I can't give you a precise regional number for APAC.\n\nTo get the actual figure, you can check Airbnb's Form 10-K for fiscal year 2024, filed in early 2025, along with the Q4 2024 shareholder letter and earnings release on investors.airbnb.com. Airbnb also publishes supplemental data in some earnings materials that break out Nights and Experiences Booked, Gross Booking Value, and Average Daily Rate by region, and sometimes length-of-stay commentary as well. If the metric isn't broken out by region in those documents, then a regional figure may simply not be publicly disclosed.\n\nIf you can share the relevant excerpt or table from the filing, I'm happy to help you interpret it or compare it with other regions or years.",
+        "type": "text"
+      }
+    ],
+    "diagnostics": null,
+    "model": "claude-sonnet-5-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 53,
+      "output_tokens": 408,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  }
+}

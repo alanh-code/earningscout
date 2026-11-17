@@ -1,0 +1,43 @@
+{
+  "id": "vals-08",
+  "type": "Simple retrieval - Quantitative",
+  "question": "What was the total consideration cost TKO paid to acquired Endeavor assets measured at transaction close?",
+  "answer": "$3.25 Billion",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "$3.25 Billion"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "$3.25 Billion"
+    }
+  ],
+  "model_answer": "TKO paid about **$3.3 billion** in total for the Endeavor assets at close. That is roughly $3.25 billion of base consideration plus a $50 million purchase price adjustment.\n\nThe deal closed on February 28, 2025. TKO's filings describe it as total consideration of approximately $3.25 billion plus a $50 million purchase price adjustment, based on the 25-day VWAP of TKO's Class A common stock ending on October 23, 2024. The acquired businesses were Professional Bull Riders (PBR), On Location and IMG. At close, Endeavor subsidiaries received approximately 26.54 million common units of TKO OpCo and subscribed for an equal number of shares of TKO's Class B common stock.\n\nThe $3.25 billion figure was fixed using the VWAP ending October 23, 2024, so it is a pricing-date figure, not a fair value at close. The filings I found don't report a separate fair value of the equity at close. TKO also treated the deal as a common-control transaction. The acquired net assets were therefore recorded at their historical carrying amounts instead of a new purchase price allocation.",
+  "stop_reason": "end_turn",
+  "tokens": {
+    "input_tokens": 51992,
+    "output_tokens": 1421,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "web_search_requests": 3
+  },
+  "cost_usd": 0.148194,
+  "latency_s": 28.31808524997905,
+  "tool_calls": {
+    "total": 8,
+    "code_execution": 4,
+    "web_search": 3,
+    "web_fetch": 1
+  },
+  "n_tool_calls": 8,
+  "n_turns": 1,
+  "error": null,
+  "overall": "wrong",
+  "judge_reason": "The model commits to a $3.30B total ($3.25B base + $50M adjustment) rather than the official $3.25B total; it is an explicit different value, not a rounding.",
+  "judge_run_overalls": [
+    "wrong",
+    "wrong",
+    "wrong"
+  ]
+}

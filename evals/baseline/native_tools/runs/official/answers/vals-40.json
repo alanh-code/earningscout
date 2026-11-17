@@ -1,0 +1,66 @@
+{
+  "id": "vals-40",
+  "type": "Adjustments",
+  "question": "What adjustments does Airbnb (NASDAQ: ABNB) make to its Net Income to Derive Adjusted EBITDA?",
+  "answer": "Provision for (benefit from) income taxes;\nOther income (expense), net;\nInterest income;\nDepreciation and amortization;\nStock-based compensation expense;\nAcquisition-related impacts consisting of gains (losses) recognized on changes in the fair value of contingent consideration arrangements, and\nLodging taxes, withholding taxes, and transactional taxes where there is significant uncertainty as to how the taxes apply to our platform.",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Provision for (benefit from) income taxes"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Other income (expense), net"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Interest income"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Depreciation and amortization"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Stock-based compensation expense"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Acquisition-related impacts consisting of gains (losses) recognized on changes in the fair value of contingent consideration arrangements"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Lodging taxes, withholding taxes, and transactional taxes with significant uncertainty on application to platform"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "Provision for (benefit from) income taxes;\nOther income (expense), net;\nInterest income;\nDepreciation and amortization;\nStock-based compensation expense;\nAcquisition-related impacts consisting of gains (losses) recognized on changes in the fair value of contingent consideration arrangements, and\nLodging taxes, withholding taxes, and transactional taxes where there is significant uncertainty as to how the taxes apply to our platform."
+    }
+  ],
+  "model_answer": "Airbnb's most recent 10-K, for fiscal 2024, defines Adjusted EBITDA as net income adjusted for the following items. The items are the provision for (benefit from) income taxes, other income (expense), net, interest income, depreciation and amortization, stock-based compensation expense, and acquisition-related impacts.\n\n1. **Income taxes:** the provision for (or benefit from) income taxes.\n2. **Other income (expense), net:** this includes items such as foreign-currency gains and losses.\n3. **Interest income.** Older filings also adjusted for interest expense.\n4. **Depreciation and amortization.**\n5. **Stock-based compensation expense.**\n6. **Acquisition-related impacts:** gains (losses) recognized on changes in the fair value of contingent consideration arrangements.\n7. **Lodging taxes and similar items:** lodging taxes for which Airbnb may have joint and several liability with hosts for collecting and remitting those taxes. The 10-K text I retrieved is cut off after this item. It also appears to cover withholding taxes on payments made to hosts, but I couldn't see the full wording.\n\n**Earlier years:** Filings from 2021 to 2023 had a few extra items.\n- Stock-based compensation was combined with stock-settlement obligations related to the IPO.\n- Restructuring charges were also adjusted for. Airbnb reported $89 million of restructuring charges in 2022 and none in 2023 or 2024, which is why they no longer appear.\n\nFor exact dollar amounts, see the \"Adjusted EBITDA reconciliation\" table in Airbnb's latest 10-K, 10-Q or earnings release.",
+  "stop_reason": "end_turn",
+  "tokens": {
+    "input_tokens": 34374,
+    "output_tokens": 1134,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "web_search_requests": 2
+  },
+  "cost_usd": 0.10008800000000001,
+  "latency_s": 18.88876841700403,
+  "tool_calls": {
+    "total": 5,
+    "code_execution": 3,
+    "web_search": 2
+  },
+  "n_tool_calls": 5,
+  "n_turns": 1,
+  "error": null,
+  "overall": "wrong",
+  "judge_reason": "The first six adjustments are correct, but the tax item omits transactional taxes and the significant-uncertainty qualifier and only hedges on withholding taxes.",
+  "judge_run_overalls": [
+    "wrong",
+    "wrong",
+    "wrong"
+  ]
+}

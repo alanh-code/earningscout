@@ -1,0 +1,636 @@
+{
+ "vals-01": {
+  "_cost": 0.011718,
+  "1": {
+   "check_id": 1,
+   "quantities": [],
+   "non_numeric_claim": false
+  },
+  "2": {
+   "check_id": 2,
+   "quantities": [],
+   "non_numeric_claim": true
+  },
+  "3": {
+   "check_id": 3,
+   "quantities": [],
+   "non_numeric_claim": true
+  },
+  "4": {
+   "check_id": 4,
+   "quantities": [],
+   "non_numeric_claim": true
+  },
+  "5": {
+   "check_id": 5,
+   "quantities": [
+    {
+     "label": "jobs to safeguard",
+     "gold": "over 100,000 jobs",
+     "answers": []
+    }
+   ],
+   "non_numeric_claim": false
+  },
+  "6": {
+   "check_id": 6,
+   "quantities": [
+    {
+     "label": "total pledged investment",
+     "gold": "$14B",
+     "answers": []
+    },
+    {
+     "label": "investment by 2028",
+     "gold": "$11B",
+     "answers": []
+    }
+   ],
+   "non_numeric_claim": false
+  },
+  "7": {
+   "check_id": 7,
+   "quantities": [
+    {
+     "label": "new mill allocation",
+     "gold": "Up to $4B",
+     "answers": []
+    }
+   ],
+   "non_numeric_claim": false
+  },
+  "8": {
+   "check_id": 8,
+   "quantities": [],
+   "non_numeric_claim": true
+  },
+  "9": {
+   "check_id": 9,
+   "quantities": [
+    {
+     "label": "jobs to safeguard",
+     "gold": "over 100,000 jobs",
+     "answers": []
+    },
+    {
+     "label": "total pledged investment",
+     "gold": "$14B",
+     "answers": []
+    },
+    {
+     "label": "investment by 2028",
+     "gold": "$11B",
+     "answers": []
+    },
+    {
+     "label": "new mill allocation",
+     "gold": "Up to $4B",
+     "answers": []
+    }
+   ],
+   "non_numeric_claim": true
+  }
+ },
+ "vals-03": {
+  "_cost": 0.006856,
+  "1": {
+   "check_id": 1,
+   "quantities": [
+    {
+     "label": "Beat vs low end of Q4 FY25 pre-tax margin guidance",
+     "gold": "80bps",
+     "answers": [
+      "+30 bps vs. the low end"
+     ]
+    }
+   ],
+   "non_numeric_claim": true
+  },
+  "2": {
+   "check_id": 2,
+   "quantities": [
+    {
+     "label": "Beat vs high end of Q4 FY25 pre-tax margin guidance",
+     "gold": "70bps",
+     "answers": [
+      "+20 bps vs. the high end"
+     ]
+    }
+   ],
+   "non_numeric_claim": true
+  },
+  "3": {
+   "check_id": 3,
+   "quantities": [
+    {
+     "label": "Beat vs low end",
+     "gold": "80bps",
+     "answers": [
+      "+30 bps vs. the low end"
+     ]
+    },
+    {
+     "label": "Beat vs high end",
+     "gold": "70bps",
+     "answers": [
+      "+20 bps vs. the high end"
+     ]
+    }
+   ],
+   "non_numeric_claim": true
+  }
+ },
+ "vals-11": {
+  "_cost": 0.008468,
+  "1": {
+   "check_id": 1,
+   "quantities": [
+    {
+     "label": "Class A shares outstanding",
+     "gold": "432,876,657 shares",
+     "answers": [
+      "~ 600 million shares"
+     ]
+    }
+   ],
+   "non_numeric_claim": false
+  },
+  "2": {
+   "check_id": 2,
+   "quantities": [
+    {
+     "label": "Class B shares outstanding",
+     "gold": "188,462,942 shares",
+     "answers": [
+      "~ 0 shares"
+     ]
+    }
+   ],
+   "non_numeric_claim": false
+  },
+  "3": {
+   "check_id": 3,
+   "quantities": [
+    {
+     "label": "Class C shares outstanding",
+     "gold": "0",
+     "answers": []
+    }
+   ],
+   "non_numeric_claim": false
+  },
+  "4": {
+   "check_id": 4,
+   "quantities": [
+    {
+     "label": "Class H shares outstanding",
+     "gold": "9,200,000 shares",
+     "answers": []
+    }
+   ],
+   "non_numeric_claim": false
+  },
+  "5": {
+   "check_id": 5,
+   "quantities": [
+    {
+     "label": "Class A shares outstanding",
+     "gold": "432,876,657 shares",
+     "answers": [
+      "~ 600 million shares"
+     ]
+    },
+    {
+     "label": "Class B shares outstanding",
+     "gold": "188,462,942 shares",
+     "answers": [
+      "~ 0 shares"
+     ]
+    },
+    {
+     "label": "Class C shares outstanding",
+     "gold": "0",
+     "answers": []
+    },
+    {
+     "label": "Class H shares outstanding",
+     "gold": "9,200,000 shares",
+     "answers": []
+    }
+   ],
+   "non_numeric_claim": false
+  }
+ },
+ "vals-16": {
+  "_cost": 0.017254,
+  "1": {
+   "check_id": 1,
+   "quantities": [
+    {
+     "label": "Offering shares",
+     "gold": "51,750,000 shares",
+     "answers": []
+    },
+    {
+     "label": "Aggregate liquidation preference",
+     "gold": "$2,587,500,000",
+     "answers": []
+    },
+    {
+     "label": "Over-allotment shares",
+     "gold": "6,750,000 shares",
+     "answers": []
+    },
+    {
+     "label": "Over-allotment aggregate liquidation preference",
+     "gold": "$337,500,000",
+     "answers": []
+    }
+   ],
+   "non_numeric_claim": false
+  },
+  "2": {
+   "check_id": 2,
+   "quantities": [],
+   "non_numeric_claim": false
+  },
+  "3": {
+   "check_id": 3,
+   "quantities": [
+    {
+     "label": "Price per share",
+     "gold": "$50.00 per share",
+     "answers": []
+    }
+   ],
+   "non_numeric_claim": false
+  },
+  "4": {
+   "check_id": 4,
+   "quantities": [
+    {
+     "label": "Liquidation preference per share",
+     "gold": "$50.00 per share",
+     "answers": []
+    }
+   ],
+   "non_numeric_claim": true
+  },
+  "5": {
+   "check_id": 5,
+   "quantities": [
+    {
+     "label": "Dividend rate",
+     "gold": "6.25% per annum",
+     "answers": []
+    },
+    {
+     "label": "Liquidation preference base",
+     "gold": "$50.00",
+     "answers": []
+    }
+   ],
+   "non_numeric_claim": true
+  },
+  "6": {
+   "check_id": 6,
+   "quantities": [],
+   "non_numeric_claim": true
+  },
+  "7": {
+   "check_id": 7,
+   "quantities": [
+    {
+     "label": "Mandatory conversion rate range",
+     "gold": "0.3312-0.4140 shares",
+     "answers": []
+    },
+    {
+     "label": "VWAP averaging period",
+     "gold": "20 consecutive trading day",
+     "answers": []
+    }
+   ],
+   "non_numeric_claim": true
+  },
+  "8": {
+   "check_id": 8,
+   "quantities": [],
+   "non_numeric_claim": true
+  },
+  "9": {
+   "check_id": 9,
+   "quantities": [],
+   "non_numeric_claim": true
+  },
+  "10": {
+   "check_id": 10,
+   "quantities": [],
+   "non_numeric_claim": true
+  },
+  "11": {
+   "check_id": 11,
+   "quantities": [],
+   "non_numeric_claim": true
+  },
+  "12": {
+   "check_id": 12,
+   "quantities": [
+    {
+     "label": "Offering shares",
+     "gold": "51,750,000 shares",
+     "answers": []
+    },
+    {
+     "label": "Aggregate liquidation preference",
+     "gold": "$2,587,500,000",
+     "answers": []
+    },
+    {
+     "label": "Over-allotment shares",
+     "gold": "6,750,000 shares",
+     "answers": []
+    },
+    {
+     "label": "Over-allotment aggregate liquidation preference",
+     "gold": "$337,500,000",
+     "answers": []
+    },
+    {
+     "label": "Price per share",
+     "gold": "$50.00 per share",
+     "answers": []
+    },
+    {
+     "label": "Dividend rate",
+     "gold": "6.25% per annum",
+     "answers": []
+    },
+    {
+     "label": "Mandatory conversion rate range",
+     "gold": "0.3312-0.4140 shares",
+     "answers": []
+    },
+    {
+     "label": "VWAP averaging period",
+     "gold": "20 consecutive trading day",
+     "answers": []
+    }
+   ],
+   "non_numeric_claim": true
+  }
+ },
+ "vals-17": {
+  "_cost": 0.007814,
+  "1": {
+   "check_id": 1,
+   "quantities": [
+    {
+     "label": "2022 take rate",
+     "gold": "13.3%",
+     "answers": [
+      "~13.3%"
+     ]
+    }
+   ],
+   "non_numeric_claim": false
+  },
+  "2": {
+   "check_id": 2,
+   "quantities": [
+    {
+     "label": "2023 take rate",
+     "gold": "13.5%",
+     "answers": [
+      "~13.6%"
+     ]
+    }
+   ],
+   "non_numeric_claim": false
+  },
+  "3": {
+   "check_id": 3,
+   "quantities": [
+    {
+     "label": "2024 take rate",
+     "gold": "13.6%",
+     "answers": [
+      "~13.4%"
+     ]
+    }
+   ],
+   "non_numeric_claim": false
+  },
+  "4": {
+   "check_id": 4,
+   "quantities": [],
+   "non_numeric_claim": true
+  },
+  "5": {
+   "check_id": 5,
+   "quantities": [
+    {
+     "label": "2022 take rate",
+     "gold": "13.3%",
+     "answers": [
+      "~13.3%"
+     ]
+    },
+    {
+     "label": "2023 take rate",
+     "gold": "13.5%",
+     "answers": [
+      "~13.6%"
+     ]
+    },
+    {
+     "label": "2024 take rate",
+     "gold": "13.6%",
+     "answers": [
+      "~13.4%"
+     ]
+    }
+   ],
+   "non_numeric_claim": true
+  }
+ },
+ "vals-18": {
+  "_cost": 0.007242,
+  "1": {
+   "check_id": 1,
+   "quantities": [],
+   "non_numeric_claim": true
+  },
+  "2": {
+   "check_id": 2,
+   "quantities": [],
+   "non_numeric_claim": true
+  },
+  "3": {
+   "check_id": 3,
+   "quantities": [],
+   "non_numeric_claim": true
+  },
+  "4": {
+   "check_id": 4,
+   "quantities": [],
+   "non_numeric_claim": true
+  },
+  "5": {
+   "check_id": 5,
+   "quantities": [],
+   "non_numeric_claim": true
+  },
+  "6": {
+   "check_id": 6,
+   "quantities": [],
+   "non_numeric_claim": true
+  }
+ },
+ "vals-19": {
+  "_cost": 0.007096,
+  "1": {
+   "check_id": 1,
+   "quantities": [
+    {
+     "label": "Operating lease payments maturing in next three years",
+     "gold": "$85,002 thousands",
+     "answers": [],
+     "gold_scale": null,
+     "answer_scale": null
+    },
+    {
+     "label": "Percentage of leases maturing in next three years",
+     "gold": "51.3%",
+     "answers": [],
+     "gold_scale": null,
+     "answer_scale": null
+    }
+   ],
+   "non_numeric_claim": false
+  },
+  "2": {
+   "check_id": 2,
+   "quantities": [
+    {
+     "label": "Operating lease payments maturing in next three years",
+     "gold": "$85,002 thousands",
+     "answers": [],
+     "gold_scale": null,
+     "answer_scale": null
+    },
+    {
+     "label": "Percentage of leases maturing in next three years",
+     "gold": "51.3%",
+     "answers": [],
+     "gold_scale": null,
+     "answer_scale": null
+    }
+   ],
+   "non_numeric_claim": false
+  }
+ },
+ "vals-31": {
+  "_cost": 0.005868,
+  "1": {
+   "check_id": 1,
+   "quantities": [
+    {
+     "label": "BROS gross profit 2026",
+     "gold": "$467 million",
+     "answers": [
+      "~$455 million"
+     ]
+    }
+   ],
+   "non_numeric_claim": false
+  },
+  "2": {
+   "check_id": 2,
+   "quantities": [
+    {
+     "label": "BROS gross profit 2026",
+     "gold": "$467 million",
+     "answers": [
+      "~$455 million"
+     ]
+    }
+   ],
+   "non_numeric_claim": false
+  }
+ },
+ "vals-33": {
+  "_cost": 0.00773,
+  "1": {
+   "check_id": 1,
+   "quantities": [
+    {
+     "label": "Dollar impact to net income",
+     "gold": "$1.261 Billion",
+     "answers": [
+      "about –$1.3B to –$1.6B"
+     ]
+    }
+   ],
+   "non_numeric_claim": true
+  },
+  "2": {
+   "check_id": 2,
+   "quantities": [
+    {
+     "label": "Percent decrease in net income",
+     "gold": "10.7%",
+     "answers": [
+      "roughly **11–14% larger loss**"
+     ]
+    }
+   ],
+   "non_numeric_claim": true
+  },
+  "3": {
+   "check_id": 3,
+   "quantities": [
+    {
+     "label": "Dollar impact to net income",
+     "gold": "$1.261 Billion",
+     "answers": [
+      "about –$1.3B to –$1.6B"
+     ]
+    },
+    {
+     "label": "Percent decrease in net income",
+     "gold": "10.7%",
+     "answers": [
+      "roughly **11–14% larger loss**"
+     ]
+    }
+   ],
+   "non_numeric_claim": true
+  }
+ },
+ "vals-44": {
+  "_cost": 0.005794,
+  "1": {
+   "check_id": 1,
+   "quantities": [
+    {
+     "label": "Asia Pacific average nights per booking 2024",
+     "gold": "3.3 Nights per Booking",
+     "answers": []
+    }
+   ],
+   "non_numeric_claim": false
+  },
+  "2": {
+   "check_id": 2,
+   "quantities": [
+    {
+     "label": "Asia Pacific average nights per booking 2024",
+     "gold": "3.3 Nights per Booking",
+     "answers": []
+    }
+   ],
+   "non_numeric_claim": false
+  }
+ }
+}

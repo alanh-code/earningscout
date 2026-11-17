@@ -1,0 +1,54 @@
+{
+  "id": "vals-36",
+  "type": "Simple retrieval - Quantitative",
+  "question": "What price was RDFN acquired at? (include price per share, equity value and enterprise value)",
+  "answer": "0.7926 shares of Rocket Companies class A stock per share of Redfin, which represents an equity value of $1.75 billion, and a total enterprise value of $2.4 billion at $12.50 per share",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "0.7926 shares of Rocket Companies class A stock per share of Redfin"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "equity value of $1.75 billion"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "enterprise value of $2.4 billion"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "$12.50 per share"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "0.7926 shares of Rocket Companies class A stock per share of Redfin, which represents an equity value of $1.75 billion, and a total enterprise value of $2.4 billion at $12.50 per share"
+    }
+  ],
+  "model_answer": "Need enterprise value.Rocket Companies acquired Redfin (RDFN) in an all-stock deal announced March 10, 2025. The terms were:\n\n- **Price per share:** $12.50 per Redfin share.\n- **Equity value:** $1.75 billion.\n- **Enterprise value:** about $2.4 billion. Redfin's FAQ says the equity value equates to an enterprise value of $2.4 billion, which includes the assumption of Redfin's debt under its outstanding convertible notes.\n\nBecause the consideration was Rocket stock, the $12.50 figure was based on Rocket's share price when the deal was announced. The value Redfin holders actually received would have moved with Rocket's stock until closing.",
+  "stop_reason": "end_turn",
+  "tokens": {
+    "input_tokens": 33128,
+    "output_tokens": 699,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "web_search_requests": 1
+  },
+  "cost_usd": 0.08324599999999999,
+  "latency_s": 11.110710958018899,
+  "tool_calls": {
+    "total": 4,
+    "code_execution": 3,
+    "web_search": 1
+  },
+  "n_tool_calls": 4,
+  "n_turns": 1,
+  "error": null,
+  "overall": "wrong",
+  "judge_reason": "Per-share price, equity value and enterprise value are correct, but the 0.7926 exchange ratio is missing.",
+  "judge_run_overalls": [
+    "wrong",
+    "wrong",
+    "wrong"
+  ]
+}

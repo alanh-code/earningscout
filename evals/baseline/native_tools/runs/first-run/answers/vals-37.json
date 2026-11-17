@@ -1,0 +1,42 @@
+{
+  "id": "vals-37",
+  "type": "Simple retrieval - Quantitative",
+  "question": "As of Dec 31, 2024, what was Warner Discovery's (NASDQ: WBD) Total Restructuring Costs incurred as a result of its 2022 Merger?",
+  "answer": "$4.7 Billion",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Warner Discovery's Total Restructuring Costs as of Dec 31, 2024, were $4.7 Billion"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "$4.7 Billion"
+    }
+  ],
+  "model_answer": "According to WBD's FY2024 Form 10-K, the company had incurred about **$4.7 billion** in total Merger-related pre-tax restructuring charges as of December 31, 2024.\n\nAt the time of the 2022 Merger, WBD expected to incur approximately $4.1–$5.3 billion in pre-tax restructuring charges, and it had incurred $4.7 billion as of December 31, 2024. The filing also says the Merger-related restructuring program was substantially completed at the end of 2024.\n\nThe $4.7 billion is a rounded figure from the filing's MD&A, and I didn't find an exact-dollar cumulative table. It also differs from the annual \"restructuring and other charges\" line, which was $3,757M in 2022, $585M in 2023 and $447M in 2024. That line includes the new 2023 and 2024 restructuring initiatives that are separate from the Merger program.",
+  "stop_reason": "end_turn",
+  "tokens": {
+    "input_tokens": 45825,
+    "output_tokens": 983,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "web_search_requests": 1
+  },
+  "cost_usd": 0.11147999999999998,
+  "latency_s": 17.82400654203957,
+  "tool_calls": {
+    "total": 5,
+    "code_execution": 4,
+    "web_search": 1
+  },
+  "n_tool_calls": 5,
+  "n_turns": 1,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The model states the official $4.7 billion cumulative Merger restructuring cost as of Dec 31, 2024, and its extra context does not conflict with it.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

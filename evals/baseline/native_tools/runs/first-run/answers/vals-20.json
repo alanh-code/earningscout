@@ -1,0 +1,50 @@
+{
+  "id": "vals-20",
+  "type": "Numerical Reasoning",
+  "question": "What was ORCL's effective tax rate for the fiscal year ended 5/31/2024 and how did it change vs. the prior year? Each section represents a KPI. Format the change as: \"Delta: XXXbps\"",
+  "answer": "Effective Tax Rate\n2023: 6.8%\n2024: 10.9%\nDelta: increased 410bps",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Effective Tax Rate 2023: 6.8%"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Effective Tax Rate 2024: 10.9%"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Delta: increased 410bps"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "Effective Tax Rate\n2023: 6.8%\n2024: 10.9%\nDelta: increased 410bps"
+    }
+  ],
+  "model_answer": "**Effective tax rate, FY ended 5/31/2024**\n\n- Oracle's effective tax rate was 10.9%. The provision for income taxes was $1,274 million.\n\n**Change vs. prior year (FY2023)**\n\n- The FY2023 effective tax rate was 6.8%, with a provision of $623 million.\n- Delta: 410bps (10.9% − 6.8%), an increase.\n\nThe 10-K says the provision rose mainly because there were no unrecognized tax benefits from settlements with tax authorities this year. It also cites an unfavorable jurisdictional mix of earnings and higher pre-tax income.",
+  "stop_reason": "end_turn",
+  "tokens": {
+    "input_tokens": 23815,
+    "output_tokens": 747,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "web_search_requests": 1
+  },
+  "cost_usd": 0.06509999999999999,
+  "latency_s": 11.267803583003115,
+  "tool_calls": {
+    "total": 3,
+    "code_execution": 2,
+    "web_search": 1
+  },
+  "n_tool_calls": 3,
+  "n_turns": 1,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "Both rates and the 410bps increase match the official answer; the extra provision details are outside the rubric.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

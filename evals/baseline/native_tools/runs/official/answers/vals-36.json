@@ -1,0 +1,54 @@
+{
+  "id": "vals-36",
+  "type": "Simple retrieval - Quantitative",
+  "question": "What price was RDFN acquired at? (include price per share, equity value and enterprise value)",
+  "answer": "0.7926 shares of Rocket Companies class A stock per share of Redfin, which represents an equity value of $1.75 billion, and a total enterprise value of $2.4 billion at $12.50 per share",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "0.7926 shares of Rocket Companies class A stock per share of Redfin"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "equity value of $1.75 billion"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "enterprise value of $2.4 billion"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "$12.50 per share"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "0.7926 shares of Rocket Companies class A stock per share of Redfin, which represents an equity value of $1.75 billion, and a total enterprise value of $2.4 billion at $12.50 per share"
+    }
+  ],
+  "model_answer": "Rocket Companies (NYSE: RKT) agreed to acquire Redfin (RDFN) in an all-stock deal announced March 10, 2025. The terms were:\n\n- **Price per share:** $12.50 per Redfin share. Each Redfin share is exchanged for a fixed ratio of 0.7926 shares of Rocket Class A common stock. That price was a 63% premium to Redfin's 30-day VWAP ending March 7, 2025.\n- **Equity value:** about $1.75 billion.\n- **Enterprise value:** about $2.4 billion. Redfin's own FAQ says this includes the assumption of Redfin's debt under its outstanding convertible notes.\n\nBecause the consideration is paid in Rocket stock, the $12.50 figure was based on Rocket's share price when the deal was announced. The value at closing would have moved with that price.",
+  "stop_reason": "end_turn",
+  "tokens": {
+    "input_tokens": 44553,
+    "output_tokens": 825,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "web_search_requests": 1
+  },
+  "cost_usd": 0.107356,
+  "latency_s": 13.7089546250063,
+  "tool_calls": {
+    "total": 5,
+    "code_execution": 4,
+    "web_search": 1
+  },
+  "n_tool_calls": 5,
+  "n_turns": 1,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "All four deal terms (0.7926 exchange ratio, $1.75B equity, $2.4B EV, $12.50/share) are stated correctly with no contradictions.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "question_id": "vals-33",
+  "question_type": "Adjustments",
+  "question": "What would be the impact to net income in dollars and percent if all debt for Boeing in 2024 were refinanced at 3% higher interest rates than current?",
+  "model": "claude-sonnet-5-5",
+  "tokens": {
+    "input": 54,
+    "output": 760
+  },
+  "cost_usd": 0.0077080000000000004,
+  "request": {
+    "model": "claude-sonnet-5-5",
+    "max_tokens": 4096,
+    "thinking": {
+      "type": "between_tools"
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": "What would be the impact to net income in dollars and percent if all debt for Boeing in 2024 were refinanced at 3% higher interest rates than current?"
+      }
+    ]
+  },
+  "response": {
+    "id": "msg_011CgwkDSAyETefJWzJcbX8j",
+    "container": null,
+    "content": [
+      {
+        "citations": null,
+        "text": "I can't pull current, verified figures, so treat this as a framework with approximate numbers. Check them against Boeing's 10-K for FY2024.\n\n**Approximate inputs (verify before relying on them)**\n- Total debt: roughly $53–54 billion at year-end 2024. Boeing carried about $54B at the end of 2023 and issued additional debt and equity in late 2024.\n- Net income (FY2024): a net loss of roughly $11.8 billion, driven by the machinists' strike, 777X charges, and the 737 MAX production issues.\n- Effective tax rate: Boeing has had very low or negative effective rates recently, so I'll show a standard 21% case and a no-tax-benefit case.\n\n**Calculation**\n\n*Pre-tax impact:*\n$53.5B × 3% = ~$1.6 billion additional annual interest expense\n\n*After-tax impact (21% tax shield):*\n$1.6B × (1 − 0.21) = ~$1.27 billion reduction in net income\n\n**Impact on net income**\n\n| Scenario | Change in net income | Resulting net loss | % change |\n|---|---|---|---|\n| With 21% tax shield | –$1.27B | ~–$13.1B | Loss widens ~11% |\n| No tax benefit (more realistic given Boeing's losses/valuation allowance) | –$1.6B | ~–$13.4B | Loss widens ~14% |\n\n**Caveats**\n1. **Percent change is awkward on a loss.** Because net income was negative, a \"percent decline\" is mathematically misleading. It's better described as the loss widening by roughly 11–14%. Against a profitable year, the same $1.3–1.6B hit would be a much larger percentage decline.\n2. **\"All debt refinanced at once\" is unrealistic.** Debt matures over many years, so the full impact would phase in gradually. Boeing's maturities are staggered, and some debt is fixed-rate.\n3. **Interest capitalization and other items** (such as pension-related interest) could shift the numbers slightly.\n4. **Taxes:** With a loss position, Boeing may not be able to recognize the tax shield, so the no-tax-benefit case may be closer to reality.\n\nIf you can share the exact debt and net income figures from the 10-K, I can recalculate precisely.",
+        "type": "text"
+      }
+    ],
+    "diagnostics": null,
+    "model": "claude-sonnet-5-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 54,
+      "output_tokens": 760,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  }
+}

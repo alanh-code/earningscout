@@ -1,0 +1,66 @@
+{
+  "id": "vals-40",
+  "type": "Adjustments",
+  "question": "What adjustments does Airbnb (NASDAQ: ABNB) make to its Net Income to Derive Adjusted EBITDA?",
+  "answer": "Provision for (benefit from) income taxes;\nOther income (expense), net;\nInterest income;\nDepreciation and amortization;\nStock-based compensation expense;\nAcquisition-related impacts consisting of gains (losses) recognized on changes in the fair value of contingent consideration arrangements, and\nLodging taxes, withholding taxes, and transactional taxes where there is significant uncertainty as to how the taxes apply to our platform.",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Provision for (benefit from) income taxes"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Other income (expense), net"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Interest income"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Depreciation and amortization"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Stock-based compensation expense"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Acquisition-related impacts consisting of gains (losses) recognized on changes in the fair value of contingent consideration arrangements"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Lodging taxes, withholding taxes, and transactional taxes with significant uncertainty on application to platform"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "Provision for (benefit from) income taxes;\nOther income (expense), net;\nInterest income;\nDepreciation and amortization;\nStock-based compensation expense;\nAcquisition-related impacts consisting of gains (losses) recognized on changes in the fair value of contingent consideration arrangements, and\nLodging taxes, withholding taxes, and transactional taxes where there is significant uncertainty as to how the taxes apply to our platform."
+    }
+  ],
+  "model_answer": "Airbnb starts with GAAP net income and adds back or removes the items below. The list comes from its 10-K filings and is similar across years.\n\n**Adjustments (FY2024 10-K):**\n1. Provision for (benefit from) income taxes.\n2. Other income (expense), net, and interest income. Earlier filings also list interest expense here.\n3. Depreciation and amortization.\n4. Stock-based compensation expense.\n5. Acquisition-related impacts, meaning gains or losses on changes in the fair value of contingent consideration arrangements.\n6. Lodging taxes where Airbnb may be jointly and severally liable with hosts for collecting and remitting them. This also covers withholding taxes on payments to hosts and related settlements, and transactional taxes where it is very uncertain how they apply to the platform.\n\n**Items in earlier filings:**\n- Stock-settlement obligations related to the IPO. These are employer taxes tied to the 2020 IPO.\n- Restructuring charges. These appeared in the FY2022 filings and include impairment of operating lease right-of-use assets and leasehold improvements.\n\nThe exact wording of the lodging-tax item changed over time. I could not see the full FY2024 reconciliation, so I can't say whether restructuring or other items still appear there.\n\n**Example reconciliation (from the filing):**\n\n| ($ millions) | Earlier year | Later year |\n|---|---|---|\n| Net income | 1,893 | 4,792 |\n| Provision for (benefit from) income taxes | 96 | (2,690) |\n| Other (income) expense, net | (25) | 54 |\n| Interest income | (186) | (721) |\n| **Adjusted EBITDA** | **2,903** | **3,653** |\n\nThe excerpt I found doesn't label which column is which year, and it omits the other add-backs, such as depreciation and stock-based compensation. Because of that, the rows don't sum to the totals. Check the filing for the full table and the exact years.\n\nAirbnb excludes stock-based compensation because it is a large, recurring expense. Management still treats it as an important part of its compensation strategy. Airbnb also says the measure has limitations and should be read alongside GAAP measures such as net income.",
+  "stop_reason": "end_turn",
+  "tokens": {
+    "input_tokens": 75479,
+    "output_tokens": 1963,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "web_search_requests": 2
+  },
+  "cost_usd": 0.190588,
+  "latency_s": 29.56521716696443,
+  "tool_calls": {
+    "total": 9,
+    "code_execution": 7,
+    "web_search": 2
+  },
+  "n_tool_calls": 9,
+  "n_turns": 1,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "All seven official adjustments are listed with equivalent descriptions. The extra earlier-filing items and the dubious, unlabeled reconciliation table fall outside the official text and do not contradict it.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

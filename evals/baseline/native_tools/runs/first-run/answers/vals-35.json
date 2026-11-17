@@ -1,0 +1,38 @@
+{
+  "id": "vals-35",
+  "type": "Adjustments",
+  "question": "For the fiscal year ended 12/31/2023, what was Uber's (NYSE: UBER) largest adjustment to EBITDA. Provide the line item and amount in billions of dollars.",
+  "answer": "Stock-Based Compensation Expense: $1.935B",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Stock-Based Compensation Expense: $1.935B"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "Stock-Based Compensation Expense: $1.935B"
+    }
+  ],
+  "model_answer": "Uber's largest adjustment to EBITDA for fiscal 2023 was **stock-based compensation expense, at about $1.88 billion ($1,879 million)**. I'm giving this from memory of Uber's FY2023 Adjusted EBITDA reconciliation and did not check it against the filing. I also didn't verify every other line item. The next-largest items I recall are the other income adjustment (about $1.4 billion) and interest expense (about $0.8 billion).",
+  "stop_reason": "end_turn",
+  "tokens": {
+    "input_tokens": 7228,
+    "output_tokens": 1023,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "web_search_requests": 0
+  },
+  "cost_usd": 0.024686,
+  "latency_s": 9.242505249974784,
+  "tool_calls": {},
+  "n_tool_calls": 0,
+  "n_turns": 1,
+  "error": null,
+  "overall": "wrong",
+  "judge_reason": "The line item (stock-based compensation) is correct, but the stated $1.879B is not a rounding of the official $1.935B, so it fails and contradicts the official answer.",
+  "judge_run_overalls": [
+    "wrong",
+    "wrong",
+    "wrong"
+  ]
+}

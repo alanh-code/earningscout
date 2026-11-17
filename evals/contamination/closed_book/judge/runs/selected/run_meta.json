@@ -1,0 +1,14 @@
+{
+  "model": "claude-opus-5-5",
+  "prompt": "evals/contamination/closed_book/judge/judge_prompt_strict.md",
+  "guide": "evals/contamination/closed_book/grading_guide_strict.md",
+  "tokens_in": 242529,
+  "tokens_out": 23634,
+  "cached_input": 0,
+  "cache_write": 0,
+  "retries": 0,
+  "failures": [],
+  "flags": [],
+  "ties": [],
+  "cost_usd": 1.442796
+}

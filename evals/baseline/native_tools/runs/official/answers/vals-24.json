@@ -1,0 +1,42 @@
+{
+  "id": "vals-24",
+  "type": "Numerical Reasoning",
+  "question": "As of March 10, 2025, what is the face value of Salesforce's debt excluding their sustainability notes?",
+  "answer": "Salesforce's debt excluding sustainability notes is $7.5 billion as of March 10, 2025",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Salesforce's debt excluding sustainability notes is $7.5 billion as of March 10, 2025"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "Salesforce's debt excluding sustainability notes is $7.5 billion as of March 10, 2025"
+    }
+  ],
+  "model_answer": "As of March 10, 2025, the face value of Salesforce's debt excluding the sustainability notes was about **$7.5 billion**. I'm using the debt table in its fiscal 2025 10-K, which is dated January 31, 2025. I didn't look for changes to the debt between that date and March 10.\n\n- Total outstanding principal on the senior notes was $8,500 million. That is split across the 2028, 2031, 2041, 2051 and 2061 senior notes plus the sustainability notes.\n- The 2028 Senior Sustainability Notes, issued in July 2021 at 1.50%, had $1,000 million outstanding.\n- Excluding them: $8,500M − $1,000M = **$7,500M**. That is the 2028 notes ($1,500M), 2031 notes ($1,500M), 2041 notes ($1,250M), 2051 notes ($2,000M) and 2061 notes ($1,250M).\n\nThe $7.5 billion is face (principal) value. The carrying value on the balance sheet is slightly lower because of discounts and issuance costs.",
+  "stop_reason": "end_turn",
+  "tokens": {
+    "input_tokens": 44039,
+    "output_tokens": 1184,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "web_search_requests": 1
+  },
+  "cost_usd": 0.109918,
+  "latency_s": 40.204357374983374,
+  "tool_calls": {
+    "total": 5,
+    "code_execution": 4,
+    "web_search": 1
+  },
+  "n_tool_calls": 5,
+  "n_turns": 1,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "Model gives $7.5 billion face value excluding sustainability notes, matching the official answer.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

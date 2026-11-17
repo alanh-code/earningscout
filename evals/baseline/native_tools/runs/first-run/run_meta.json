@@ -1,0 +1,28 @@
+{
+  "name": "first-run",
+  "model": "claude-sonnet-5-5",
+  "judge_model": "claude-opus-5-5",
+  "judge_prompt": "evals/contamination/closed_book/judge/judge_prompt_strict.md",
+  "judge_guide": "evals/contamination/closed_book/grading_guide_strict.md",
+  "tools_enabled": {
+    "web_search": "web_search_20260318",
+    "web_fetch": "web_fetch_20260318",
+    "code_execution": "code_execution_20260521",
+    "thinking": "adaptive (Sonnet 5.5 default, effort high)"
+  },
+  "tools_unavailable": [
+    "computer_toolset_20260801 and browser_toolset_20260801 (client tools; need a local executor)",
+    "memory, bash, and text_editor (client tools)",
+    "advisor_20260301 (beta; not a general research tool for this run)",
+    "tool_search (for deferred tool loading; not needed here)"
+  ],
+  "pilot_ids": [],
+  "spend_cap_usd": 60.0,
+  "workers": 8,
+  "protocol_as_of": "Thursday, May 1, 2025",
+  "agent_cost_usd": 8.972844,
+  "judge_cost_usd": 7.437999999999999,
+  "total_cost_usd": 16.410843999999997,
+  "n": 50,
+  "judge_workers": 8
+}

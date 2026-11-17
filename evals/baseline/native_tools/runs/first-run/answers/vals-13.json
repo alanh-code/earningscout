@@ -1,0 +1,43 @@
+{
+  "id": "vals-13",
+  "type": "Numerical Reasoning",
+  "question": "What is the total amount of director compensation (in dollars) that was paid to the directors of 3D Systems in 2023?",
+  "answer": "The total amount of directors compensations paid by 3D Systems in 2023 was $2,263,113.",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "The total amount of directors compensations paid by 3D Systems in 2023 was $2,263,113."
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "The total amount of directors compensations paid by 3D Systems in 2023 was $2,263,113."
+    }
+  ],
+  "model_answer": "Table rows are missing; fetch the document.The 3D Systems non-employee directors were paid a total of **$2,263,113** for 2023.\n\nThis comes from the Director Compensation table in the company's FY2023 Form 10-K. The table lists nine non-employee directors, and I added up the \"Total\" column:\n\n| Director | Cash fees | Stock awards | Total |\n|---|---|---|---|\n| Malissia Clinton | $90,000 | $150,000 | $240,000 |\n| William E. Curran | $105,000 | $150,000 | $255,000 |\n| Claudia N. Drayton | $68,113 | $150,000 | $218,113 |\n| Thomas W. Erickson | $78,764 | $150,000 | $228,764 |\n| Jim D. Kever | $70,000 | $150,000 | $220,000 |\n| Charles G. McClure, Jr. | $250,000 | $150,000 | $400,000 |\n| Kevin S. Moore | $95,000 | $150,000 | $245,000 |\n| Vasant Padmanabhan | $66,236 | $150,000 | $216,236 |\n| John J. Tracy | $90,000 | $150,000 | $240,000 |\n| **Total** | **$913,113** | **$1,350,000** | **$2,263,113** |\n\n- **Exclusions:** Dr. Graves is a company employee and received no extra pay for serving as a director, so he isn't in the total.\n- **Other compensation:** The table shows none for any director.\n\nSource: 3D Systems Form 10-K for FY2023 (https://www.sec.gov/Archives/edgar/data/910638/000091063824000030/ddd-20231231.htm)",
+  "stop_reason": "end_turn",
+  "tokens": {
+    "input_tokens": 61848,
+    "output_tokens": 1244,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "web_search_requests": 1
+  },
+  "cost_usd": 0.14613600000000002,
+  "latency_s": 22.22764274996007,
+  "tool_calls": {
+    "total": 8,
+    "code_execution": 6,
+    "web_search": 1,
+    "web_fetch": 1
+  },
+  "n_tool_calls": 8,
+  "n_turns": 1,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The model states the exact official total of $2,263,113; the stray tool-artifact text at the start does not affect the grade.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "question_id": "vals-14",
+  "question_type": "Trends",
+  "question": "Approximate Zillow's Free Cash Flow as CFO - Capex. What was the trend of FCF margin from FY2022 to FY2024?",
+  "model": "claude-sonnet-5-5",
+  "tokens": {
+    "input": 55,
+    "output": 722
+  },
+  "cost_usd": 0.00733,
+  "request": {
+    "model": "claude-sonnet-5-5",
+    "max_tokens": 4096,
+    "thinking": {
+      "type": "between_tools"
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": "Approximate Zillow's Free Cash Flow as CFO - Capex. What was the trend of FCF margin from FY2022 to FY2024?"
+      }
+    ]
+  },
+  "response": {
+    "id": "msg_011CgwqDGeoqDepsHTggFW6y",
+    "container": null,
+    "content": [
+      {
+        "citations": null,
+        "text": "I'm working from memory here and can't pull live filings, so treat these as approximate and verify against Zillow's 10-K cash flow statements.\n\n**Approximate figures (CFO − Capex, which for Zillow includes purchases of property and equipment plus capitalized internal-use software/website development costs):**\n\n| FY | Revenue | CFO | Capex (approx.) | FCF | FCF margin |\n|---|---|---|---|---|---|\n| 2022 | ~$1.96B (continuing ops) | ~$0.1–0.2B* | ~$0.1B+ | roughly ~$0 to slightly negative | ~0% |\n| 2023 | ~$1.94B | ~$0.2B | ~$0.1B | ~$0.1B | ~5% |\n| 2024 | ~$2.24B | ~$0.4B | ~$0.1B | ~$0.3B | ~13–14% |\n\n*FY2022 is the messiest year. Zillow was still winding down Zillow Offers, so reported operating cash flow was heavily distorted by the inventory liquidation (large positive cash inflows from selling homes) and by discontinued operations, depending on whether you use continuing or total figures.\n\n**Trend:** FCF margin improved meaningfully and consistently, from roughly break-even in FY2022 to the mid-single digits in FY2023, and then to low-teens in FY2024. Drivers were:\n\n- **Revenue recovery** from the housing-market trough, plus growth in Rentals and Mortgages\n- **Cost discipline** after the 2021–22 Zillow Offers exit and restructuring\n- **Stable capex** (about $100–150M/year), so operating leverage flowed through to FCF\n- Note that stock-based compensation (~$400M+/year) is a non-cash add-back to CFO, so FCF margin overstates economic profitability relative to GAAP net income, which is only slightly positive/negative over this period\n\nIf you need precise numbers, I'd recommend pulling CFO and \"purchases of property and equipment\" + \"internal-use software and website development costs\" directly from the FY2022–FY2024 10-Ks. If you share those figures, I can compute exact margins.",
+        "type": "text"
+      }
+    ],
+    "diagnostics": null,
+    "model": "claude-sonnet-5-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 55,
+      "output_tokens": 722,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  }
+}

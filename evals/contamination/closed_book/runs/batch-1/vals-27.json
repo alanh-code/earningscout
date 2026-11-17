@@ -1,0 +1,59 @@
+{
+  "question_id": "vals-27",
+  "question_type": "Simple retrieval - Qualitative",
+  "question": "As of FY 2024, what are the terms of the Junior Subordinated Debentures in the Allstate Corporation's (NYSE: ALL) capital structure?",
+  "model": "claude-sonnet-5-5",
+  "tokens": {
+    "input": 59,
+    "output": 635
+  },
+  "cost_usd": 0.006468000000000001,
+  "request": {
+    "model": "claude-sonnet-5-5",
+    "max_tokens": 4096,
+    "thinking": {
+      "type": "between_tools"
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": "As of FY 2024, what are the terms of the Junior Subordinated Debentures in the Allstate Corporation's (NYSE: ALL) capital structure?"
+      }
+    ]
+  },
+  "response": {
+    "id": "msg_011CgwkCdVptgMzJL9EPsSUQ",
+    "container": null,
+    "content": [
+      {
+        "citations": null,
+        "text": "I don't have reliable, verified figures for Allstate's FY2024 junior subordinated debentures, so I'd rather not give you specific terms I might get wrong. Here is what I can say with reasonable confidence, along with how to confirm the details.\n\n**General background (verify before relying on it):**\n- Allstate has historically issued junior subordinated debentures, which sit below senior debt and above preferred and common equity in the capital structure.\n- These instruments often carry a fixed rate for an initial period and then reset to a floating rate (commonly tied to a benchmark such as SOFR or its predecessor LIBOR) plus a spread.\n- Many have long maturities (often 2053 for the 2013 issue and 2067 for the older issue) and may be callable by the company after specified dates.\n- They typically allow the issuer to defer interest payments for a limited period, with restrictions on dividends and other payments during deferral.\n\n**What I can't confirm from memory:**\n- The exact outstanding principal amounts at 12/31/2024\n- Current coupon rates and reset dates\n- Whether any series were redeemed, repurchased, or refinanced in 2023–2024\n- The precise call dates and deferral provisions\n\n**Where to find the authoritative terms:**\n1. **Allstate's FY2024 Form 10-K** (filed with the SEC around February 2025). Look at the Notes to Consolidated Financial Statements, specifically the \"Debt\" note, and Item 7 (MD&A) under Capital Resources and Liquidity.\n2. **The original indentures and prospectus supplements** for each series, available on SEC EDGAR, for covenant and deferral language.\n3. **Allstate's Investor Relations website**, which has debt summaries and rating agency information.\n\nIf you can paste in the relevant section of the 10-K, I'm happy to help you interpret the terms, compare the series, or analyze how they fit into Allstate's leverage and capital structure.",
+        "type": "text"
+      }
+    ],
+    "diagnostics": null,
+    "model": "claude-sonnet-5-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 59,
+      "output_tokens": 635,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  }
+}

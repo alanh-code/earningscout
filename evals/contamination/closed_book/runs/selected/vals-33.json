@@ -1,0 +1,59 @@
+{
+  "question_id": "vals-33",
+  "question_type": "Adjustments",
+  "question": "What would be the impact to net income in dollars and percent if all debt for Boeing in 2024 were refinanced at 3% higher interest rates than current?",
+  "model": "claude-sonnet-5-5",
+  "tokens": {
+    "input": 54,
+    "output": 710
+  },
+  "cost_usd": 0.007208,
+  "request": {
+    "model": "claude-sonnet-5-5",
+    "max_tokens": 4096,
+    "thinking": {
+      "type": "between_tools"
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": "What would be the impact to net income in dollars and percent if all debt for Boeing in 2024 were refinanced at 3% higher interest rates than current?"
+      }
+    ]
+  },
+  "response": {
+    "id": "msg_011Ch7tXDdsgFQBBsGBdZZEY",
+    "container": null,
+    "content": [
+      {
+        "citations": null,
+        "text": "I can't pull exact current figures, and Boeing's 2024 financials are complex, so treat this as an estimate to verify against the 10-K.\n\n**Approximate inputs (Boeing FY2024)**\n\n- **Total debt:** roughly $53–54 billion (down from ~$58B at the end of 2023, partly due to repayments funded by the equity raise in late 2024)\n- **Net income (loss):** about **–$11.8 billion** (net loss attributable to Boeing; the operating loss was about –$10.7B)\n- **Interest expense:** about $2.4–2.6 billion\n\n**Dollar impact**\n\n- Added interest: $53.5B × 3% ≈ **$1.6 billion** pre-tax\n- Tax effect: Boeing has been in a loss position with valuation allowances on deferred tax assets, so the tax shield is limited. Under a full 21% shield, the after-tax hit would be ~$1.27B; with little or no shield, it's closer to the full $1.6B.\n- **Estimated net income impact: about –$1.3B to –$1.6B**\n\n**Percentage impact**\n\n- Boeing's net income is *negative*, so percent change is awkward. The loss would widen from roughly –$11.8B to about –$13.1B to –$13.4B, or roughly **11–14% larger loss**.\n- Interest expense itself would rise about 60–65% (from ~$2.5B to ~$4.1B).\n\n**Caveats**\n\n1. **Not all debt reprices at once.** Most of Boeing's debt is fixed-rate with staggered maturities, so a \"refinance everything\" scenario is hypothetical. Some debt is also at Boeing Capital or in lower-rate legacy bonds.\n2. **Capitalized interest and interest income** would partly offset (Boeing earns interest on its cash balance and capitalizes some interest).\n3. **Credit ratings:** Boeing is near the BBB-/Baa3 threshold, so a 3-point rate rise could reflect a downgrade scenario that has other knock-on effects.\n\nIf you share the exact debt and net income figures from the 10-K, I can run the precise calculation.",
+        "type": "text"
+      }
+    ],
+    "diagnostics": null,
+    "model": "claude-sonnet-5-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 54,
+      "output_tokens": 710,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  }
+}

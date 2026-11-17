@@ -1,0 +1,42 @@
+{
+  "id": "vals-09",
+  "type": "Beat or Miss",
+  "question": "How many basis points did MU beat or miss its Q3 2024 GAAP gross margin guidance?",
+  "answer": "140bps BEAT",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "140 basis points beat on Q3 2024 GAAP gross margin guidance"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "140bps BEAT"
+    }
+  ],
+  "model_answer": "Guidance was 25.5%, so my memory was off. I'll check the actual result.Micron (MU) beat its fiscal Q3 2024 GAAP gross margin guidance by about **140 basis points**.\n\n- **Guidance:** In its fiscal Q2 2024 release, Micron guided Q3 GAAP gross margin to 25.5% ± 1.5%.\n- **Actual:** Q3 GAAP gross margin came in at 26.9%, according to the fiscal Q3 2024 earnings release.\n- **Difference:** 26.9% − 25.5% = 1.4 percentage points, or 140 bps.\n\nThe actual figure was inside the guided range, which ran from 24.0% to 27.0%. It was in the upper part of that range.\n\nI read \"Q3 2024\" as Micron's fiscal Q3 2024, which ended in May 2024.",
+  "stop_reason": "end_turn",
+  "tokens": {
+    "input_tokens": 51730,
+    "output_tokens": 1164,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "web_search_requests": 1
+  },
+  "cost_usd": 0.1251,
+  "latency_s": 21.447934166993946,
+  "tool_calls": {
+    "total": 6,
+    "code_execution": 5,
+    "web_search": 1
+  },
+  "n_tool_calls": 6,
+  "n_turns": 1,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The model correctly gives a 140 bps beat against the 25.5% midpoint guidance; the note about the range is extra and not contradictory.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

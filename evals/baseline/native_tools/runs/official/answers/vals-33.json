@@ -1,0 +1,46 @@
+{
+  "id": "vals-33",
+  "type": "Adjustments",
+  "question": "What would be the impact to net income in dollars and percent if all debt for Boeing in 2024 were refinanced at 3% higher interest rates than current?",
+  "answer": "$1.261 Billion Negative Impact to Net Income, or a 10.7% decrease",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "$1.261 Billion Negative Impact to Net Income"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "10.7% decrease in Net Income"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "$1.261 Billion Negative Impact to Net Income, or a 10.7% decrease"
+    }
+  ],
+  "model_answer": "**Estimate: net loss would grow by about $1.6 billion, or about 13.7%, from $11.83 billion to about $13.45 billion.**\n\n**Inputs (Boeing FY2024 10-K)**\n- Total debt at year-end 2024 was $53,864 million, which is about $53.9 billion.\n- Interest and debt expense for 2024 was $2,725 million, and the net loss was $11,829 million.\n\n**Calculation**\n- Added interest cost: $53,864M × 3% = about $1,616M.\n- New interest expense: $2,725M + $1,616M = about $4,341M, up about 59%.\n- This assumes all of the debt is refinanced for a full year at a rate 3 percentage points higher.\n\n**Impact on net income**\n\n| | Net loss | Change |\n|---|---|---|\n| Reported 2024 | $(11,829)M | — |\n| Pro forma, no tax benefit | about $(13,445)M | about $1,616M worse, or 13.7% |\n| Pro forma, 21% tax shield | about $(13,106)M | about $1,277M worse, or 10.8% |\n\nI used the no-tax-benefit case as the main answer because Boeing is already loss-making, so extra interest may not produce a usable tax deduction. The 21% case is shown for comparison. It uses the U.S. federal statutory rate, which is my assumption and not a Boeing figure.\n\n**Caveats**\n- The calculation applies the 3% to the year-end balance. Boeing's average 2024 balance was lower, so a full-year effect on the average balance would be somewhat smaller.\n- Boeing's existing debt is mostly fixed-rate, so a real refinancing would only reprice debt as it matures.",
+  "stop_reason": "end_turn",
+  "tokens": {
+    "input_tokens": 46728,
+    "output_tokens": 1700,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "web_search_requests": 2
+  },
+  "cost_usd": 0.130456,
+  "latency_s": 30.60905475000618,
+  "tool_calls": {
+    "total": 6,
+    "code_execution": 4,
+    "web_search": 2
+  },
+  "n_tool_calls": 6,
+  "n_turns": 1,
+  "error": null,
+  "overall": "wrong",
+  "judge_reason": "The main estimate ($1.6B, 13.7%) conflicts with the official $1.261B and 10.7%, and the tax-adjusted alternative ($1,277M, 10.8%) is close but not a rounding of the official figures.",
+  "judge_run_overalls": [
+    "wrong",
+    "wrong",
+    "wrong"
+  ]
+}

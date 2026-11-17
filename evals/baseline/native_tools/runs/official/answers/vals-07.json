@@ -1,0 +1,42 @@
+{
+  "id": "vals-07",
+  "type": "Simple retrieval - Qualitative",
+  "question": "Who is the CFO of Airbnb (NASDAQ: ABNB) as of April 07, 2025?",
+  "answer": "Elinor Mertz",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Elinor Mertz is the current CFO of Airbnb"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "Elinor Mertz"
+    }
+  ],
+  "model_answer": "As of April 7, 2025, Airbnb's CFO is **Elinor (Ellie) Mertz**. Airbnb's 2025 proxy statement lists her as Chief Financial Officer. It says she has held the role since March 2024. Before that, she was Airbnb's Vice President of Finance, starting in January 2019.",
+  "stop_reason": "end_turn",
+  "tokens": {
+    "input_tokens": 23310,
+    "output_tokens": 337,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "web_search_requests": 1
+  },
+  "cost_usd": 0.05999,
+  "latency_s": 25.49009662499884,
+  "tool_calls": {
+    "total": 3,
+    "code_execution": 2,
+    "web_search": 1
+  },
+  "n_tool_calls": 3,
+  "n_turns": 1,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "Correctly names Elinor Mertz as Airbnb's CFO; the extra tenure details are outside the official answer and do not affect the grade.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

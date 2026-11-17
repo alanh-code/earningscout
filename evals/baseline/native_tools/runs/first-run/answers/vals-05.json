@@ -1,0 +1,70 @@
+{
+  "id": "vals-05",
+  "type": "Simple retrieval - Qualitative",
+  "question": "In 2024, who was Nominated to Serve on BBSI's (NASDAQ: BBSI) Board of Directors?",
+  "answer": "Thomas Carley\nJoseph Clabby\nThomas Cusick\nGary Kramer\nAnthony Meeker\nCarla Moradi\nAlexandra Morehouse\nVincent Price",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Thomas Carley"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Joseph Clabby"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Thomas Cusick"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Gary Kramer"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Anthony Meeker"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Carla Moradi"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Alexandra Morehouse"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Vincent Price"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "Thomas Carley\nJoseph Clabby\nThomas Cusick\nGary Kramer\nAnthony Meeker\nCarla Moradi\nAlexandra Morehouse\nVincent Price"
+    }
+  ],
+  "model_answer": "BBSI didn't nominate any new people to its board in 2024. Mark S. Finn is the closest match, but he was appointed in April 2025.\n\n- **2024 annual meeting slate:** The board nominated eight sitting directors for the June 3, 2024 meeting. The nominees were Thomas J. Carley, Joseph S. Clabby, Thomas B. Cusick, Gary E. Kramer, Anthony Meeker, Carla A. Moradi, Alexandra Morehouse and Vincent P. Price. All eight were elected to one-year terms running to the 2025 annual meeting.\n- **Mark S. Finn:** The nominating process that led to his selection took place in 2024. BBSI's 2025 proxy says the Nominating Committee held three meetings in 2024, and the Board vetted its top candidates, including Mark S. Finn, \"who was ultimately selected to serve on the Board.\" The company then announced that it appointed Finn to its board effective April 7, 2025.\n- **Joseph Clabby:** He was already a director when BBSI created a vice chairman role in December 2024 and appointed him to it. This was a new role for an existing board member, not a new nomination.\n\nIf you meant a different 2024 event, tell me and I'll look again.",
+  "stop_reason": "end_turn",
+  "tokens": {
+    "input_tokens": 55375,
+    "output_tokens": 1387,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "web_search_requests": 5
+  },
+  "cost_usd": 0.17462,
+  "latency_s": 22.29994674999034,
+  "tool_calls": {
+    "total": 9,
+    "code_execution": 4,
+    "web_search": 5
+  },
+  "n_tool_calls": 9,
+  "n_turns": 1,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "All eight official 2024 nominees are named. The opening framing about no new nominees and the extra Mark Finn detail fall outside the official text and do not contradict it.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

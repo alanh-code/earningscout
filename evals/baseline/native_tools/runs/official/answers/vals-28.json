@@ -1,0 +1,42 @@
+{
+  "id": "vals-28",
+  "type": "Simple retrieval - Quantitative",
+  "question": "What are Netflix's (NASDAQ: NFLX) Total Projected Material Cash Requirements for 2025?",
+  "answer": "$14,426,266,000",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "$14,426,266,000"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "$14,426,266,000"
+    }
+  ],
+  "model_answer": "Netflix's projected material cash requirements for 2025 total about **$14.43 billion** ($14,426,266 thousand). This is the \"Next 12 Months\" column in the contractual obligations table of its FY2024 10-K, which covers the period from December 31, 2024.\n\n| Obligation | Next 12 months (2025) | Total | Beyond 12 months |\n|---|---|---|---|\n| Content obligations | $11,424,696K | $23,248,931K | $11,824,235K |\n| Debt (principal and interest) | $2,486,945K | $19,841,462K | $17,354,517K |\n| Operating lease obligations | $514,625K | $2,761,120K | $2,246,495K |\n| **Total** | **$14,426,266K** | **$45,851,513K** | **$31,425,247K** |\n\nNetflix says its material cash requirements from known contractual and other obligations primarily relate to its content, debt and lease obligations. The total across all periods is about $45.85 billion.\n\nThe FY2025 10-K, filed in 2026, has a similar table, but its \"Next 12 Months\" figure covers 2026 and totals about $13.78 billion.\n\nSource: [Netflix FY2024 Form 10-K](https://www.sec.gov/Archives/edgar/data/1065280/000106528025000044/nflx-20241231.htm)",
+  "stop_reason": "end_turn",
+  "tokens": {
+    "input_tokens": 33384,
+    "output_tokens": 1033,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "web_search_requests": 1
+  },
+  "cost_usd": 0.087098,
+  "latency_s": 12.941358082985971,
+  "tool_calls": {
+    "total": 4,
+    "code_execution": 3,
+    "web_search": 1
+  },
+  "n_tool_calls": 4,
+  "n_turns": 1,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The model states $14,426,266 thousand (about $14.43B), which matches the official $14,426,266,000 at an equivalent scale.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

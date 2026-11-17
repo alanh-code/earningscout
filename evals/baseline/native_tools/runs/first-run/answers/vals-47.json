@@ -1,0 +1,43 @@
+{
+  "id": "vals-47",
+  "type": "Beat or Miss",
+  "question": "Did FOUR beat or miss its end to end payment volume guidance at midpoint for Q3 2024 provided in Q1 2024? Express as % BEAT or MISS",
+  "answer": "7.4% MISS",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "7.4% MISS"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "7.4% MISS"
+    }
+  ],
+  "model_answer": "**MISS of about 7.4%.**\n\n- **Guidance:** In its Q1 2024 shareholder letter, Shift4 guided Q3 2024 end-to-end payment volume to $46.0B–$48.0B (from the quarterly guidance table in the Q1 2024 deck). The midpoint is $47.0B.\n- **Actual:** Q3 2024 end-to-end volume was $43.5 billion, up 56% year over year.\n- **Calculation:** ($43.5B − $47.0B) / $47.0B ≈ −7.4%. Actual volume was also below the low end of the range ($46.0B), by about 5.4%.\n\nThe shortfall shows up in the full-year numbers too. On the Q3 call, the company lowered full-year volume guidance to $164 billion–$166 billion (prior $167 billion–$172 billion).",
+  "stop_reason": "end_turn",
+  "tokens": {
+    "input_tokens": 216549,
+    "output_tokens": 3073,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "web_search_requests": 5
+  },
+  "cost_usd": 0.513828,
+  "latency_s": 49.63562387501588,
+  "tool_calls": {
+    "total": 20,
+    "code_execution": 10,
+    "web_search": 5,
+    "web_fetch": 5
+  },
+  "n_tool_calls": 20,
+  "n_turns": 1,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The answer gives a 7.4% MISS, matching the official figure and direction; its supporting guidance and actual figures fall outside the official text and were not graded.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

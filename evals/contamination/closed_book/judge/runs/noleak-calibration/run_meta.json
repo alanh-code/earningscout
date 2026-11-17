@@ -1,0 +1,15 @@
+{
+  "model": "claude-opus-5-5",
+  "prompt": "evals/contamination/closed_book/judge/judge_prompt_noleak.md",
+  "tokens_in": 342102,
+  "tokens_out": 47592,
+  "retries": 0,
+  "failures": [],
+  "flags": [
+    "vals-22 run 1: rubric_fraction stated 0.6667 vs 0.6667 from checks",
+    "vals-22 run 2: rubric_fraction stated 0.6667 vs 0.6667 from checks",
+    "vals-22 run 3: rubric_fraction stated 0.6667 vs 0.6667 from checks"
+  ],
+  "ties": [],
+  "cost_usd": 2.3202480000000003
+}

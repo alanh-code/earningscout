@@ -1,0 +1,59 @@
+{
+  "id": "vals-42",
+  "type": "Market Analysis",
+  "question": "Compare the FY24 dividend payout ratio of Coca-Cola (KO) to that of its competitors and rank in order from highest to lowest.",
+  "answer": "KDP: 0.83\nKO: 0.79\nPEP: 0.75\nKHC: 0.70\nSJM: 0.59",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "KDP: 0.83"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "KO: 0.79"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "PEP: 0.75"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "KHC: 0.70"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "SJM: 0.59"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "KDP: 0.83\nKO: 0.79\nPEP: 0.75\nKHC: 0.70\nSJM: 0.59"
+    }
+  ],
+  "model_answer": "Using GAAP EPS, which is the standard definition, Keurig Dr Pepper has the highest FY24 payout ratio. Coca-Cola ranks second. Using adjusted EPS, Coca-Cola ranks first.\n\n**FY24 dividend payout ratio (dividends declared per share ÷ EPS)**\n\n| Rank (GAAP) | Company | DPS | GAAP diluted EPS | **GAAP payout** | Adjusted EPS | Adjusted payout |\n|---|---|---|---|---|---|---|\n| 1 | Keurig Dr Pepper (KDP) | $0.89 | $1.05 | **~85%** | $1.92 | ~46% |\n| 2 | **Coca-Cola (KO)** | $1.94 | $2.46 | **~79%** | $2.88 | ~67% |\n| 3 | PepsiCo (PEP) | $5.33 | $6.95 | **~77%** | $8.16 (core) | ~65% |\n| 4 | Coca-Cola Europacific Partners (CCEP) | €1.97 | €3.08 | **~64%** | €3.95 (comparable) | ~50% |\n| 5 | Monster Beverage (MNST) | none | n/a | **0%** | n/a | 0% |\n\n**Ranking on adjusted EPS (highest to lowest):**\n1. KO at ~67%\n2. PEP at ~65%\n3. CCEP at ~50%. This matches the company's stated target of about 50%.\n4. KDP at ~46%\n5. MNST at 0%\n\n**Takeaways**\n- KO's payout ratio is high compared with its peers on either basis. It is the highest on an adjusted basis and second-highest on a GAAP basis.\n- KDP's ranking changes the most between the two bases. Its GAAP EPS was held down by non-cash and one-time items, so its GAAP ratio is inflated.\n- KO's 2024 dividends were $8.36B against $10.63B of net income attributable to shareowners, or about 79%.\n- Monster pays no dividend. CCEP is a euro reporter, so its ratio is on a euro basis.\n\n**Caveats**\n- Peer set: I used the main listed beverage peers. You may want to add others, such as Coca-Cola FEMSA or Celsius, depending on how you define \"competitors\".\n- PepsiCo dividend: $5.33 is the sum of the four quarterly dividends declared in 2024. That is $1.265 plus three payments of $1.355.\n- Adjusted EPS: this is each company's own non-GAAP figure, so the definitions differ slightly.\n\n**Sources**\n- Coca-Cola 2024 annual report and Q4 release\n- PepsiCo Q4 2024 earnings release\n- Keurig Dr Pepper 2024 10-K and Q4 results\n- CCEP FY24 6-K\n- Monster 2024 10-K\n\nI calculated the ratios myself from the figures in these documents.",
+  "stop_reason": "end_turn",
+  "tokens": {
+    "input_tokens": 367690,
+    "output_tokens": 6428,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "web_search_requests": 14
+  },
+  "cost_usd": 0.93966,
+  "latency_s": 106.12362425000174,
+  "tool_calls": {
+    "total": 35,
+    "code_execution": 17,
+    "web_search": 14,
+    "web_fetch": 4
+  },
+  "n_tool_calls": 35,
+  "n_turns": 1,
+  "error": null,
+  "overall": "wrong",
+  "judge_reason": "Only the KO ratio matches; the KDP and PEP ratios are off, KHC and SJM are omitted, and a different peer set is used.",
+  "judge_run_overalls": [
+    "wrong",
+    "wrong",
+    "wrong"
+  ]
+}

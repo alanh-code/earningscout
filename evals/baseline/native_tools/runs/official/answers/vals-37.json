@@ -1,0 +1,43 @@
+{
+  "id": "vals-37",
+  "type": "Simple retrieval - Quantitative",
+  "question": "As of Dec 31, 2024, what was Warner Discovery's (NASDQ: WBD) Total Restructuring Costs incurred as a result of its 2022 Merger?",
+  "answer": "$4.7 Billion",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Warner Discovery's Total Restructuring Costs as of Dec 31, 2024, were $4.7 Billion"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "$4.7 Billion"
+    }
+  ],
+  "model_answer": "Content is short; fetch the 10-K.As of December 31, 2024, WBD had incurred about **$4.7 billion** in pre-tax restructuring charges tied to its April 2022 Merger with WarnerMedia. This comes from WBD's FY2024 Form 10-K. The filing says the company originally expected to incur roughly $4.1–$5.3 billion in these charges. It also says the Merger-related restructuring program was substantially completed at the end of 2024.\n\nThe $4.7 billion is a rounded cumulative figure. It covers the Merger program only. The annual \"restructuring and other charges\" in the 10-K ($3,757M in 2022, $585M in 2023 and $447M in 2024) also include unrelated initiatives, so they don't add up to $4.7 billion.",
+  "stop_reason": "end_turn",
+  "tokens": {
+    "input_tokens": 97284,
+    "output_tokens": 1484,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "web_search_requests": 1
+  },
+  "cost_usd": 0.219408,
+  "latency_s": 29.661711500026286,
+  "tool_calls": {
+    "total": 10,
+    "code_execution": 8,
+    "web_search": 1,
+    "web_fetch": 1
+  },
+  "n_tool_calls": 10,
+  "n_turns": 1,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The model states $4.7 billion in cumulative Merger restructuring costs as of Dec 31, 2024, which matches the official answer.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

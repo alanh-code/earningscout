@@ -1,0 +1,50 @@
+{
+  "id": "vals-34",
+  "type": "Simple retrieval - Quantitative",
+  "question": "In fiscal 2024, what percentage of Cloudflare's (NYSE: NET) revenue was derived from channel partners?",
+  "answer": "20% of revenue was derived from channel partners",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "20% of revenue was derived from channel partners"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Cloudflare fiscal 2024 channel partner revenue percentage"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "20% revenue from channel partners in fiscal 2024"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "20% of revenue was derived from channel partners"
+    }
+  ],
+  "model_answer": "In fiscal 2024, about **20%** of Cloudflare's revenue came from channel partners. That is $337.4 million of total revenue of $1,669.6 million, according to the FY2024 Form 10-K. Direct customers made up the other 80%.\n\nChannel partners' share has risen in recent years. It was 16% in 2023 and 13% in 2022.",
+  "stop_reason": "end_turn",
+  "tokens": {
+    "input_tokens": 51218,
+    "output_tokens": 764,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "web_search_requests": 1
+  },
+  "cost_usd": 0.12007599999999999,
+  "latency_s": 14.0404282080126,
+  "tool_calls": {
+    "total": 6,
+    "code_execution": 5,
+    "web_search": 1
+  },
+  "n_tool_calls": 6,
+  "n_turns": 1,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "Correctly states 20% of FY2024 revenue came from channel partners; the extra dollar figures and prior-year shares sit outside the official text and do not conflict with it.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "question_id": "vals-09",
+  "question_type": "Beat or Miss",
+  "question": "How many basis points did MU beat or miss its Q3 2024 GAAP gross margin guidance?",
+  "model": "claude-sonnet-5-5",
+  "tokens": {
+    "input": 39,
+    "output": 331
+  },
+  "cost_usd": 0.0033880000000000004,
+  "request": {
+    "model": "claude-sonnet-5-5",
+    "max_tokens": 4096,
+    "thinking": {
+      "type": "between_tools"
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": "How many basis points did MU beat or miss its Q3 2024 GAAP gross margin guidance?"
+      }
+    ]
+  },
+  "response": {
+    "id": "msg_011CgwqCKHHA32nKDrhggWRL",
+    "container": null,
+    "content": [
+      {
+        "citations": null,
+        "text": "I can't state this with full confidence, and I'd rather give you the right answer than guess.\n\nFor Micron's fiscal Q3 2024 (quarter ended May 30, 2024), my recollection is:\n\n- **Guidance:** GAAP gross margin of roughly 20.0% (±1.0%), given with the fiscal Q2 report in March 2024\n- **Actual:** GAAP gross margin of roughly 26.5%\n\nIf those figures are right, that works out to a beat of about 650 basis points versus the midpoint.\n\nBecause I'm working from memory, please check the exact figures against Micron's Q2 FY24 earnings release (for the guidance) and its Q3 FY24 release from late June 2024 (for the actual). Be aware that Micron's fiscal quarters don't line up with calendar quarters, so \"Q3 2024\" could also be read differently depending on the source. If you meant a different period or the non-GAAP margin, tell me and I can try again, though I'd suggest confirming against the filings either way.",
+        "type": "text"
+      }
+    ],
+    "diagnostics": null,
+    "model": "claude-sonnet-5-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 39,
+      "output_tokens": 331,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  }
+}

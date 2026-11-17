@@ -1,0 +1,59 @@
+{
+  "question_id": "vals-30",
+  "question_type": "Financial Modeling  Projections",
+  "question": "What is the maximum dilutive impact in number of shares of Snapchat's outstanding convertible notes as of 12/31/2024?",
+  "model": "claude-sonnet-5-5",
+  "tokens": {
+    "input": 49,
+    "output": 544
+  },
+  "cost_usd": 0.005538,
+  "request": {
+    "model": "claude-sonnet-5-5",
+    "max_tokens": 4096,
+    "thinking": {
+      "type": "between_tools"
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": "What is the maximum dilutive impact in number of shares of Snapchat's outstanding convertible notes as of 12/31/2024?"
+      }
+    ]
+  },
+  "response": {
+    "id": "msg_011CgwkD3rHqSsuxT5hbM4hS",
+    "container": null,
+    "content": [
+      {
+        "citations": null,
+        "text": "I can't give you a figure I'd trust for Snap Inc.'s convertible notes as of 12/31/2024. This is a precise number from a specific SEC filing (the FY2024 10-K), and I don't want to cite one from memory and risk giving you something inaccurate.\n\nHere's what I can tell you about the general structure. Snap has issued several series of convertible senior notes in recent years, including 0.75% notes due 2026, 0.00% notes due 2027, 0.125% notes due 2025, and 0.50% notes due 2028, along with 2030 notes. Companies like Snap typically disclose in the debt footnote of the 10-K the principal outstanding for each series, the initial conversion rate (shares per $1,000 principal), and the resulting number of shares issuable upon conversion. Some of these notes were also partially repurchased or exchanged over time, so principal outstanding changed between issuance and year-end 2024.\n\nTo find the exact figure, check the following. Snap's FY2024 Form 10-K is the primary source. Look at the \"Convertible Senior Notes\" section of the debt note, and at the diluted EPS note, where potentially dilutive securities are quantified. Snap's investor relations site (investor.snap.com) and SEC EDGAR are the places to find the filing.\n\nBe aware that \"maximum dilutive impact\" can be defined differently depending on whether you count shares from conversion at the stated rate only, or also include make-whole adjustments, which can increase the share count upon certain events. The 10-K usually clarifies which basis is used.\n\nIf you can paste the relevant section of the filing, I'm happy to help you total the numbers or interpret them.",
+        "type": "text"
+      }
+    ],
+    "diagnostics": null,
+    "model": "claude-sonnet-5-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 49,
+      "output_tokens": 544,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  }
+}

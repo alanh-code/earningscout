@@ -1,0 +1,74 @@
+{
+  "id": "vals-02",
+  "type": "Trends",
+  "question": "How has Netflix's (NASDAQ: NFLX) Average Revenue Per Paying User Changed from 2019 to 2024?",
+  "answer": "2019: 10.82\n2020: 10.91\n2021: 11.67\n2022: 11.76\n2023: 11.64\n2024: 11.70\n\nFrom 2019-2022, average revenue per paying membership increased approximately 2.8% annually. From 2022 to 2024, the average revenue per paying membership has been roughly flat, likely due to the introduction of lower priced ad plans",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "2019: 10.82"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "2020: 10.91"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "2021: 11.67"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "2022: 11.76"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "2023: 11.64"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "2024: 11.70"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "From 2019-2022, average revenue per paying membership increased approximately 2.8% annually"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "From 2022 to 2024, the average revenue per paying membership has been roughly flat"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Flat revenue from 2022 to 2024 likely due to introduction of lower priced ad plans"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "2019: 10.82\n2020: 10.91\n2021: 11.67\n2022: 11.76\n2023: 11.64\n2024: 11.70\n\nFrom 2019-2022, average revenue per paying membership increased approximately 2.8% annually. From 2022 to 2024, the average revenue per paying membership has been roughly flat, likely due to the introduction of lower priced ad plans"
+    }
+  ],
+  "model_answer": "Netflix's average monthly revenue per paying membership (ARM) rose about 8% from 2019 to 2024, from $10.82 to $11.70. Most of that gain came in 2021, and ARM has been nearly flat since.\n\n| Year | ARM (monthly, global) | Change vs. prior year |\n|---|---|---|\n| 2019 | $10.82 | n/a |\n| 2020 | $10.91 | +1% |\n| 2021 | $11.67 | +7% |\n| 2022 | $11.76 | +1% |\n| 2023 | $11.64 | –1% |\n| 2024 | $11.70 | +1% |\n\nThe 2020–2024 figures come from Netflix's 10-K filings. The 2019 figure comes from a secondary source (Backlinko), which cites company data. I didn't confirm it against the original 2019 filing.\n\n- **Overall change:** ARM went up about $0.88 per month, or about 8% in total. That works out to roughly 1.6% a year.\n- **2021 jump:** Price increases drove most of the gain, and ARM rose about 7% that year.\n- **2022–2024 plateau:** ARM stayed between about $11.64 and $11.76. Netflix's filings attribute 2022's increase to price changes, partly offset by a stronger U.S. dollar. The stronger dollar reduces the dollar value of revenue earned in other currencies.\n- **Membership growth:** Growth in subscribers drove revenue in these years more than ARM did. Average paying memberships grew from about 211 million in 2021 to about 278 million in 2024.\n- **Regional differences:** Netflix reports ARM separately by region, and the regions differ a lot. In 2024, EMEA was about $10.96. In 2023, APAC was $7.64, down from $8.50 in 2022 and $9.56 in 2021. A global figure of about $11.70 therefore hides large regional gaps.\n- **Reporting change:** Netflix stopped reporting quarterly membership numbers starting in 2025. It also no longer reports ARM, so 2024 is the last year with comparable data.\n\nSome sites cite much larger ARM growth. One secondary source claims a roughly 36% increase since 2019, which doesn't match the reported figures.",
+  "stop_reason": "end_turn",
+  "tokens": {
+    "input_tokens": 36241,
+    "output_tokens": 1681,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "web_search_requests": 3
+  },
+  "cost_usd": 0.11929200000000001,
+  "latency_s": 19.23813000001246,
+  "tool_calls": {
+    "total": 6,
+    "code_execution": 3,
+    "web_search": 3
+  },
+  "n_tool_calls": 6,
+  "n_turns": 1,
+  "error": null,
+  "overall": "wrong",
+  "judge_reason": "All six yearly ARM figures and the flat 2022-2024 trend are correct, but the answer omits the ~2.8% annual 2019-2022 growth and the ad-plan explanation.",
+  "judge_run_overalls": [
+    "wrong",
+    "wrong",
+    "wrong"
+  ]
+}

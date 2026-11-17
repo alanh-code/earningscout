@@ -1,0 +1,63 @@
+{
+  "id": "vals-39",
+  "type": "Simple retrieval - Qualitative",
+  "question": "What financial metrics does Delta Airlines (NYSE: DAL) guide on in its quarterly earnings reports?",
+  "answer": "Delta Airlines provides quarterly guidance and full FY guidance. \n\nFor the Quarter, Delta provides guidance for Total Revenue YoY Growth, Operating Margin, and Earnings Per Share\n\nFor the Full FY, Delta provides guidance for Earnings per Share YoY Growth, Free Cash Flow, and Gross Leverage",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Quarterly guidance includes Total Revenue YoY Growth"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Quarterly guidance includes Operating Margin"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Quarterly guidance includes Earnings Per Share"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Full FY guidance includes Earnings per Share YoY Growth"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Full FY guidance includes Free Cash Flow"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Full FY guidance includes Gross Leverage"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "Delta Airlines provides quarterly guidance and full FY guidance. \n\nFor the Quarter, Delta provides guidance for Total Revenue YoY Growth, Operating Margin, and Earnings Per Share\n\nFor the Full FY, Delta provides guidance for Earnings per Share YoY Growth, Free Cash Flow, and Gross Leverage"
+    }
+  ],
+  "model_answer": "Delta's guidance has changed over time, and its recent releases give a short list of headline metrics. Its most recent report that I checked is the September quarter 2025 release, dated October 9, 2025. I didn't check for later releases.\n\n**The guidance table in that release**\n\nQuarterly guidance (December quarter 2025):\n- **Total revenue growth, year over year.** The release gave a range of up 2% to 4% for 4Q25.\n- **Operating margin.** Operating margin of 10.5 to 12 percent.\n- **Adjusted EPS.** Adjusted EPS of $1.60 to $1.90.\n\nFull-year guidance (2025), updated each quarter:\n- **Adjusted EPS.** The full-year outlook was approximately $6, in the upper half of July guidance.\n- **Free cash flow.** Full year free cash flow outlook of $3.5 to $4 billion.\n- **Gross leverage.** The table showed less than 2.5x, measured as adjusted debt to EBITDAR.\n\n**Qualitative commentary**\n\nManagement also comments on other items, usually without a formal number:\n- **Unit revenue.** The December quarter outlook referred to sequential unit revenue improvement, driven by Domestic strength and Transatlantic improvement.\n- **Non-fuel unit costs (CASM-Ex).** The release said full-year growth was running below 2 percent, in line with the low-single-digit guidance given at the start of the year.\n- **Capacity.** The CFO's comments referred to reducing capacity after the summer to align with demand.\n\n**Earlier formats**\n\nPast releases gave more line items. For example, the September quarter 2019 commentary guided to EPS of $2.20 to $2.30 and a pre-tax margin of about 15.5%. That release also included total revenue up about 6.5%, unit revenue (TRASM) up about 2.5%, and CASM-Ex up about 2.5%. Its guidance table also covered system capacity and other items. Delta has since moved to a leaner table built around revenue, operating margin and EPS.\n\nDelta typically also gives fuel price, capacity growth, and non-operating expense or tax rate assumptions on its earnings calls and in its investor presentations. I didn't confirm those for the latest quarter. For the exact current figures, check the guidance table in the latest earnings release on Delta's investor relations site or in its SEC 8-K filing.",
+  "stop_reason": "end_turn",
+  "tokens": {
+    "input_tokens": 80585,
+    "output_tokens": 2028,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "web_search_requests": 2
+  },
+  "cost_usd": 0.20145,
+  "latency_s": 26.300839375006035,
+  "tool_calls": {
+    "total": 10,
+    "code_execution": 7,
+    "web_search": 2,
+    "web_fetch": 1
+  },
+  "n_tool_calls": 10,
+  "n_turns": 1,
+  "error": null,
+  "overall": "wrong",
+  "judge_reason": "Correctly lists the quarterly revenue growth, operating margin and EPS guidance and the full-year FCF and gross leverage guidance, but describes full-year EPS as a level rather than YoY growth.",
+  "judge_run_overalls": [
+    "wrong",
+    "wrong",
+    "wrong"
+  ]
+}

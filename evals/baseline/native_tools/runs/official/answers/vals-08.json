@@ -1,0 +1,43 @@
+{
+  "id": "vals-08",
+  "type": "Simple retrieval - Quantitative",
+  "question": "What was the total consideration cost TKO paid to acquired Endeavor assets measured at transaction close?",
+  "answer": "$3.25 Billion",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "$3.25 Billion"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "$3.25 Billion"
+    }
+  ],
+  "model_answer": "TKO paid about **$3.3 billion** in total for the Endeavor assets, measured at close.\n\n- **Headline price:** TKO's 10-Q says it acquired the businesses (IMG, On Location and PBR) for total consideration of approximately $3.25 billion. It adds a $50 million purchase price adjustment, which brings the total to about $3.30 billion. The base price used the volume-weighted average price of TKO Class A stock for the 25 trading days ending October 23, 2024.\n- **How it was paid:** The consideration was all equity. At the February 28, 2025 close, TKO issued about 26.54 million TKO OpCo common units, plus the same number of Class B shares, to Endeavor. The announced figure was about 26.1 million units, so the units issued at close were higher.\n- **Accounting treatment:** The deal was a merger between entities under common control, because Endeavor controlled both TKO and the acquired businesses. TKO therefore combined the acquired businesses' net assets at their historical carrying amounts. It did not record a separate fair-value purchase price at close, so the $3.25 billion plus $50 million is the contractual consideration.\n\nSources: TKO's Q1 2025 10-Q (sec.gov, filing 0000950170-25-067220) and its Q2 2025 10-Q.",
+  "stop_reason": "end_turn",
+  "tokens": {
+    "input_tokens": 63368,
+    "output_tokens": 1505,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "web_search_requests": 4
+  },
+  "cost_usd": 0.181786,
+  "latency_s": 31.739876915991772,
+  "tool_calls": {
+    "total": 10,
+    "code_execution": 5,
+    "web_search": 4,
+    "web_fetch": 1
+  },
+  "n_tool_calls": 10,
+  "n_turns": 1,
+  "error": null,
+  "overall": "wrong",
+  "judge_reason": "The model gives $3.30B ($3.25B + $50M) as the total, a nearby but different figure; the 'about $3.3B' here is not a rounding of $3.25B.",
+  "judge_run_overalls": [
+    "wrong",
+    "wrong",
+    "wrong"
+  ]
+}

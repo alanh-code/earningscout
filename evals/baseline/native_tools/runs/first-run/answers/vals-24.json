@@ -1,0 +1,43 @@
+{
+  "id": "vals-24",
+  "type": "Numerical Reasoning",
+  "question": "As of March 10, 2025, what is the face value of Salesforce's debt excluding their sustainability notes?",
+  "answer": "Salesforce's debt excluding sustainability notes is $7.5 billion as of March 10, 2025",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Salesforce's debt excluding sustainability notes is $7.5 billion as of March 10, 2025"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "Salesforce's debt excluding sustainability notes is $7.5 billion as of March 10, 2025"
+    }
+  ],
+  "model_answer": "Salesforce's debt excluding the sustainability notes had a face value of **$7.5 billion** as of March 10, 2025.\n\nI took this from the debt table in Salesforce's 10-K for the fiscal year ended January 31, 2025. That is the latest filing before your date. It lists the principal outstanding as follows, in millions:\n\n| Instrument | Principal |\n|---|---|\n| 2028 Senior Notes (3.70%) | $1,500 |\n| 2031 Senior Notes (1.95%) | $1,500 |\n| 2041 Senior Notes (2.70%) | $1,250 |\n| 2051 Senior Notes (2.90%) | $2,000 |\n| 2061 Senior Notes (3.05%) | $1,250 |\n| **Total excluding sustainability notes** | **$7,500** |\n\nThe 2028 Senior Sustainability Notes (1.50%) add another $1,000 million. That brings total principal to $8.5 billion. The credit facility had no borrowings.\n\nThe 10-K reports principal as of January 31, 2025, not March 10. I'm assuming the balance didn't change in between, and I didn't find any new debt issued in that window.\n\nSource: Salesforce Form 10-K, FY2025 (https://www.sec.gov/Archives/edgar/data/1108524/000110852425000006/crm-20250131.htm)",
+  "stop_reason": "end_turn",
+  "tokens": {
+    "input_tokens": 53739,
+    "output_tokens": 1496,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "web_search_requests": 2
+  },
+  "cost_usd": 0.142438,
+  "latency_s": 22.733807040960528,
+  "tool_calls": {
+    "total": 8,
+    "code_execution": 5,
+    "web_search": 2,
+    "web_fetch": 1
+  },
+  "n_tool_calls": 8,
+  "n_turns": 1,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The model states the official $7.5 billion face value excluding sustainability notes; the extra breakdown does not contradict the official answer.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

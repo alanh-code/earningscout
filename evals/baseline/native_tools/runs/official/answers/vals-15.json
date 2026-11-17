@@ -1,0 +1,58 @@
+{
+  "id": "vals-15",
+  "type": "Numerical Reasoning",
+  "question": "Calculate the inventory turnover for US Steel in FY2024.",
+  "answer": "2024 Inventory turnover is equal to COGS over average inventory. $14,060M / (($2,168 + $2,128) / 2) = 6.55. Average inventory should be used for the year - 2.168B is end of period inventory, should be averaged with 2.128B from the prior year to get 2.148B average inventory and 6.55 inventory turnover.",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "COGS: $14,060M"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "2024 ending inventory: $2,168M"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "2023 ending inventory: $2,128M"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Average inventory: ($2,168 + $2,128) / 2 = $2,148M"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Inventory Turnover = 6.55"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "2024 Inventory turnover is equal to COGS over average inventory. $14,060M / (($2,168 + $2,128) / 2) = 6.55. Average inventory should be used for the year - 2.168B is end of period inventory, should be averaged with 2.128B from the prior year to get 2.148B average inventory and 6.55 inventory turnover."
+    }
+  ],
+  "model_answer": "**U.S. Steel's FY2024 inventory turnover was about 6.5x.**\n\n**Formula:** Inventory turnover = Cost of sales ÷ Average inventory\n\n**Inputs** (from U.S. Steel's FY2024 results and 10-K):\n- FY2024 cost of sales was $14,060 million. It excludes depreciation, depletion and amortization, which U.S. Steel reports on a separate line.\n- Inventories were $2,168 million at 12/31/2024 and $2,128 million at 12/31/2023.\n- Average inventory is (2,168 + 2,128) ÷ 2 = $2,148 million.\n\n**Calculation:**\n14,060 ÷ 2,148 ≈ **6.55x**\n\nUsing year-end inventory instead of the average gives 14,060 ÷ 2,168 ≈ 6.49x.\n\n**Days inventory outstanding:** 365 ÷ 6.55 ≈ **56 days**. That means U.S. Steel turned over its inventory roughly every 56 days in 2024.",
+  "stop_reason": "end_turn",
+  "tokens": {
+    "input_tokens": 35317,
+    "output_tokens": 864,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "web_search_requests": 1
+  },
+  "cost_usd": 0.08927399999999999,
+  "latency_s": 14.629247292003129,
+  "tool_calls": {
+    "total": 4,
+    "code_execution": 3,
+    "web_search": 1
+  },
+  "n_tool_calls": 4,
+  "n_turns": 1,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "All inputs and the 6.55x turnover match the official answer using average inventory; the year-end alternative is noted but not committed to.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

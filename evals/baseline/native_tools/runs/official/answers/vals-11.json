@@ -1,0 +1,55 @@
+{
+  "id": "vals-11",
+  "type": "Simple retrieval - Quantitative",
+  "question": "How many common stock shares are outstanding for ABNB? Format \"Class X: X shares\" add line break.",
+  "answer": "Common shares outstanding\nClass A: 432,876,657 shares \nClass B: 188,462,942 shares\nClass C: 0\nClass H: 9,200,000 shares",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Class A: 432,876,657 shares"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Class B: 188,462,942 shares"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Class C: 0"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Class H: 9,200,000 shares"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "Common shares outstanding\nClass A: 432,876,657 shares \nClass B: 188,462,942 shares\nClass C: 0\nClass H: 9,200,000 shares"
+    }
+  ],
+  "model_answer": "Class A: 423,573,275 shares\n\nClass B: 175,940,683 shares\n\nClass C: 0 shares\n\nClass H: 9,200,000 shares\n\nThese figures are as of January 31, 2026. They come from the cover page of Airbnb's 10-K for fiscal year 2025, which is the most recent filing I found. Airbnb has also reported 9,200,000 shares of Class H common stock outstanding, and the Class H shares are included above.",
+  "stop_reason": "end_turn",
+  "tokens": {
+    "input_tokens": 45466,
+    "output_tokens": 1011,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "web_search_requests": 4
+  },
+  "cost_usd": 0.141042,
+  "latency_s": 25.568986082973424,
+  "tool_calls": {
+    "total": 10,
+    "code_execution": 4,
+    "web_search": 4,
+    "web_fetch": 2
+  },
+  "n_tool_calls": 10,
+  "n_turns": 1,
+  "error": null,
+  "overall": "wrong",
+  "judge_reason": "Class C and Class H match, but the Class A and Class B counts come from a later filing and do not match the official figures.",
+  "judge_run_overalls": [
+    "wrong",
+    "wrong",
+    "wrong"
+  ]
+}

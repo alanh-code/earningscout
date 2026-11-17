@@ -1,0 +1,59 @@
+{
+  "question_id": "vals-06",
+  "question_type": "Complex Retrieval",
+  "question": "Of AMZN, META, or GOOG, who plans to spend the most in capex in 2025?",
+  "model": "claude-sonnet-5-5",
+  "tokens": {
+    "input": 37,
+    "output": 295
+  },
+  "cost_usd": 0.003024,
+  "request": {
+    "model": "claude-sonnet-5-5",
+    "max_tokens": 4096,
+    "thinking": {
+      "type": "between_tools"
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": "Of AMZN, META, or GOOG, who plans to spend the most in capex in 2025?"
+      }
+    ]
+  },
+  "response": {
+    "id": "msg_011CgwqC6KB4PECk9N7su2G4",
+    "container": null,
+    "content": [
+      {
+        "citations": null,
+        "text": "Amazon planned the largest capital expenditure of the three for 2025, based on the guidance given as of my knowledge.\n\n- **Amazon (AMZN):** About $100 billion or more, which was stated as its expected 2025 capex, with the bulk going to AI and AWS infrastructure.\n- **Alphabet (GOOG):** Roughly $75 billion initially, later raised to around $85 billion and then higher, as AI-related spending grew.\n- **Meta (META):** Guidance of about $60–65 billion at first, later revised upward to the range of $64–72 billion, driven by AI and data center buildout.\n\nThese figures were revised upward several times during the year as the AI spending race intensified, so the exact numbers may have shifted. Amazon stayed at the top across the updates I'm aware of, but I'd recommend checking the latest earnings reports or investor presentations from each company for current guidance.",
+        "type": "text"
+      }
+    ],
+    "diagnostics": null,
+    "model": "claude-sonnet-5-5",
+    "role": "assistant",
+    "stop_details": null,
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "type": "message",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 37,
+      "output_tokens": 295,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    }
+  }
+}

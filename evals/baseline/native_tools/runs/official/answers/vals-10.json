@@ -1,0 +1,46 @@
+{
+  "id": "vals-10",
+  "type": "Numerical Reasoning",
+  "question": "Calculate the 2 year revenue CAGR for Palantir Technologies from 2022 to 2024.",
+  "answer": "2024: 2,865,507\n2022: 1,905,871\n\nCAGR: 22.6%",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "2024 revenue: 2,865,507"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "2022 revenue: 1,905,871"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "2 year revenue CAGR: 22.6%"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "2024: 2,865,507\n2022: 1,905,871\n\nCAGR: 22.6%"
+    }
+  ],
+  "model_answer": "**Palantir's 2-year revenue CAGR from 2022 to 2024 is about 22.6%.**\n\nThese revenue figures are from memory of Palantir's annual reports, not a live search, so check them against the 10-K filings.\n\n- 2022 revenue: about $1,906 million\n- 2024 revenue: about $2,865 million\n\nCAGR = (Ending revenue ÷ Beginning revenue)^(1/n) − 1\n\n= (2,865.5 ÷ 1,906.2)^(1/2) − 1\n= (1.5033)^0.5 − 1\n≈ 1.2261 − 1\n≈ **22.6%**\n\nRevenue grew about 50% in total over the two years. The annual growth was roughly 17% in 2023 and 29% in 2024.",
+  "stop_reason": "end_turn",
+  "tokens": {
+    "input_tokens": 7200,
+    "output_tokens": 523,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "web_search_requests": 0
+  },
+  "cost_usd": 0.01963,
+  "latency_s": 4.148001625027973,
+  "tool_calls": {},
+  "n_tool_calls": 0,
+  "n_turns": 1,
+  "error": null,
+  "overall": "wrong",
+  "judge_reason": "The CAGR of 22.6% and 2024 revenue are correct, but the working states 2022 revenue as $1,906.2M, which is not a rounding of the official 1,905,871 thousand. That fails the 2022 check and triggers contradiction.",
+  "judge_run_overalls": [
+    "wrong",
+    "wrong",
+    "wrong"
+  ]
+}
