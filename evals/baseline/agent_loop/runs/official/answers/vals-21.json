@@ -1,0 +1,56 @@
+{
+  "id": "vals-21",
+  "type": "Simple retrieval - Qualitative",
+  "question": "What is Shift4's vendor concentration risk as of Dec 31, 2024?",
+  "answer": "The Company’s merchant processing activity in North America is facilitated by one vendor. The Company believes that this vendor maintains appropriate backup systems and alternative arrangements to avoid a significant disruption of the processing in the event of an unforeseen event.",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Shift4's merchant processing activity in North America is facilitated by one vendor."
+    },
+    {
+      "operator": "correctness",
+      "criteria": "The Company believes that this vendor maintains appropriate backup systems and alternative arrangements to avoid a significant disruption of the processing in the event of an unforeseen event."
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "The Company’s merchant processing activity in North America is facilitated by one vendor. The Company believes that this vendor maintains appropriate backup systems and alternative arrangements to avoid a significant disruption of the processing in the event of an unforeseen event."
+    }
+  ],
+  "model_answer": "## Shift4 (FOUR) — vendor concentration as of Dec 31, 2024 (FY2024 10‑K, filed Feb 19, 2025)\n\nShift4's disclosure is **qualitative, not quantified** — it names no vendor and gives no percentage of revenue or cost tied to it. The core disclosure appears in the \"Concentration Risk\" accounting policy note (Note 1):\n\n> \"The Company's merchant processing activity in North America is facilitated by **one vendor**. The Company believes that this vendor maintains appropriate backup systems and alternative arrangements to avoid a significant disruption of the processing in the event of an unforeseen event.\"\n\n### What the concentration actually consists of\n| Dependency | Disclosure |\n|---|---|\n| **Single third‑party processor** | Risk factor: \"Because we rely on third‑party vendors to provide products and services…\" — the company says it is \"dependent on our relationship with a **single third‑party processor**\" for merchant authorization, processing, risk and chargeback monitoring/accounting, and clearing and settlement. It warns there is \"no assurance that our backup systems and alternative arrangements would successfully avoid a significant disruption,\" and that replacing the processor if the agreement is terminated or not renewed \"may be difficult,\" which \"may adversely affect our operations and profitability.\" |\n| **Single sponsor bank (structural)** | Because Shift4 is not a member bank in North America, it processes under a sponsorship agreement with one member bank (Citizens Bank, N.A.; the agreement was amended Sept. 2024 alongside a new $100M settlement line, $73.2M drawn at year‑end). \"If the Company breaches the sponsorship agreement, the bank sponsor may terminate… and the Company would have 180 days to identify an alternative bank sponsor.\" This is effectively a sole‑source dependency on the card‑network sponsorship/treasury relationship. |\n| **Component/supplier concentration** | Risk factor: \"Certain key components are procured from a limited number of suppliers,\" exposing Shift4 to \"shortage, price increases, tariffs, changes, delay, or discontinuation of key components\" (POS/SkyTab hardware and terminals). |\n| **Software/devices** | Reliance on third parties for specific software and devices; \"we do not have long-term or exclusive contracts with them.\" |\n\n### What is *not* concentrated (partially offsetting)\n- Merchant base: \"no single merchant accounting for more than 3% of our revenue.\"\n- Distribution: \"no single VAR accounting for more than 3% of our volume for the year ended December 31, 2024.\"\n\n### How to read it\nThe vendor risk is real but bounded in disclosure terms: one processor runs North American merchant processing, one sponsor bank provides network membership/settlement in North America, and hardware inputs come from a limited supplier set — but Shift4 asserts backup systems/alternative arrangements exist, and the settlement line was put in place to remove cash‑collateral requirements under the Citizens sponsorship agreement. There is no disclosed \"X% of revenue/cost from vendor Y,\" so any quantification beyond this would be an estimate, not a filing fact.\n\n(Note: in the FY2025 10‑K the processor dependency language was broadened to \"in the U.S., EU, and Canada… a single third‑party processor,\" reflecting the Global Blue combination — i.e., the concentration persisted and extended geographically after year‑end 2024.)",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 680765,
+    "output_tokens": 7473,
+    "cache_hit_tokens": 619776,
+    "cache_miss_tokens": 60989,
+    "reasoning_tokens": 4787
+  },
+  "model_cost_usd": 0.015491478000000001,
+  "tool_cost_usd": {
+    "exa": 0.054,
+    "e2b": 0.002505
+  },
+  "cost_usd": 0.07199624949711458,
+  "latency_s": 90.36259462498128,
+  "tool_calls": {
+    "total": 27,
+    "web_search": 10,
+    "web_fetch": 16,
+    "code_execution": 1
+  },
+  "n_tool_calls": 27,
+  "n_refused": 0,
+  "n_turns": 18,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The model states both required facts; additional disclosures do not contradict the official answer.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

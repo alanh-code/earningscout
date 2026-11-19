@@ -1,0 +1,67 @@
+{
+  "id": "vals-14",
+  "type": "Trends",
+  "question": "Approximate Zillow's Free Cash Flow as CFO - Capex. What was the trend of FCF margin from FY2022 to FY2024?",
+  "answer": "2024: 12.7%\n2023: 11.3%\n2022: 24.8%\n\nFCF margin has declined substantially since 2022 and seems to have settled into a new normal of low teens percent.",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "2024 FCF margin: 12.7%"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "2023 FCF margin: 11.3%"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "2022 FCF margin: 24.8%"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "FCF margin has declined substantially since 2022"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "FCF margin settled into low teens percent in 2023 and 2024"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "2024: 12.7%\n2023: 11.3%\n2022: 24.8%\n\nFCF margin has declined substantially since 2022 and seems to have settled into a new normal of low teens percent."
+    }
+  ],
+  "model_answer": "Using **FCF = cash flow from operations − capital expenditures** and dividing by total revenue:\n\n| Fiscal year | CFO | Capex | FCF | Revenue | **FCF margin** |\n|---|---:|---:|---:|---:|---:|\n| 2022 | $4.504B | $0.115B | **$4.389B** | $1.958B | **~224%** |\n| 2023 | $0.354B | $0.135B | **$0.219B** | $1.945B | **~11.3%** |\n| 2024 | $0.428B | $0.143B | **$0.285B** | $2.236B | **~12.7%** |\n\n**Trend:** FCF margin fell dramatically from **~224% in FY2022 to ~11.3% in FY2023**, then improved modestly to **~12.7% in FY2024**.\n\nThe key caveat is that FY2022 is not a clean comparison: Zillow’s 2022 operating cash flow was inflated by roughly **$3.9B of inventory reduction** as it wound down its iBuying/Zillow Offers inventory. So the 2022 FCF margin was a liquidation-driven anomaly. Excluding that distortion, Zillow’s normalized FCF margin was roughly **low-double-digits**, and it expanded slightly in 2024 as revenue grew ~15% and CFO grew ~21%, while capex rose only ~6%.\n\nSources: Zillow FY2024 results and 2024 Form 10-K; cash-flow figures also summarized by [StockAnalysis](https://stockanalysis.com/stocks/z/financials/cash-flow-statement/).",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 20915,
+    "output_tokens": 1210,
+    "cache_hit_tokens": 11008,
+    "cache_miss_tokens": 9907,
+    "reasoning_tokens": 627
+  },
+  "model_cost_usd": 0.002245074,
+  "tool_cost_usd": {
+    "exa": 0.008,
+    "e2b": 0.000118
+  },
+  "cost_usd": 0.010362616906488816,
+  "latency_s": 8.405480624991469,
+  "tool_calls": {
+    "total": 3,
+    "web_search": 2,
+    "code_execution": 1
+  },
+  "n_tool_calls": 3,
+  "n_refused": 0,
+  "n_turns": 3,
+  "error": null,
+  "overall": "wrong",
+  "judge_reason": "2022 FCF margin is ~224% instead of 24.8%, triggering contradiction, despite meeting 2023/2024 and trend checks.",
+  "judge_run_overalls": [
+    "wrong",
+    "wrong",
+    "wrong"
+  ]
+}

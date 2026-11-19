@@ -1,0 +1,75 @@
+{
+  "id": "vals-48",
+  "type": "Beat or Miss",
+  "question": "How did Lemonade Insurance FY2024 results compare to the prior quarter's full year guidance?",
+  "answer": "In Force Premium (IFP): $944 Million, high end of guidance range\nGross Earned Premium (GEP): $827 Million, above high end of guidance range\nRevenue: $526.5 Million, above high end of range\nAdjusted EBITDA Loss: $(149.7) Million, above high end of range\nStock-based Compensation: $64.5 Million, above the expected $64 Million\nCapital Expenditures: $9.4 Million, below the expected $10 million\nWeighted Common Shares: 71 Million, right on target",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "In Force Premium (IFP): $944 Million, high end of guidance range"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Gross Earned Premium (GEP): $827 Million, above high end of guidance range"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Revenue: $526.5 Million, above high end of range"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Adjusted EBITDA Loss: $(149.7) Million, above high end of range"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Stock-based Compensation: $64.5 Million, above the expected $64 Million"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Capital Expenditures: $9.4 Million, below the expected $10 million"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Weighted Common Shares: 71 Million, right on target"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "In Force Premium (IFP): $944 Million, high end of guidance range\nGross Earned Premium (GEP): $827 Million, above high end of guidance range\nRevenue: $526.5 Million, above high end of range\nAdjusted EBITDA Loss: $(149.7) Million, above high end of range\nStock-based Compensation: $64.5 Million, above the expected $64 Million\nCapital Expenditures: $9.4 Million, below the expected $10 million\nWeighted Common Shares: 71 Million, right on target"
+    }
+  ],
+  "model_answer": "## Short answer\n\nLemonade beat — or landed at the very top of — the full-year 2024 guidance it issued with Q3 2024 results (Oct 30, 2024) on essentially every line. **In-force premium** came in at the high end of the range, **revenue and gross earned premium** came in modestly *above* the top of the ranges, and the **Adjusted EBITDA loss** was smaller than the guidance's best case. Management framed it as delivering its original February 2024 guidance \"with notable precision.\"\n\n## The comparison\n\n| FY2024 metric | Q3'24 guidance (issued Oct 30, 2024) | FY2024 actual (reported Feb 26, 2025) | Result |\n|---|---|---|---|\n| In-force premium (IFP) | $940–$944M | **$943.7M** (+26% YoY) | ✅ High end of range |\n| Gross earned premium | $823–$826M | **$827.3M** (+23%) | ✅ ~$1.3M above high end |\n| Revenue | $522–$524M | **$526.5M** (+22.5%) | ✅ ~$2.5M above high end |\n| Adjusted EBITDA loss | ($155)–($151)M | **($149.7)M** | ✅ ~$1.3M better than best case |\n| Stock-based comp | ~$64M | **$64.5M** | ≈ In line |\n| Capital expenditures | ~$10M | **~$8M** (derived from cash flow stmt.) | ≈ At/below plan |\n| Weighted avg. shares | ~71M | **71.0M** | ≈ In line |\n\nNot guided, but reported: **net loss** narrowed ~15% to ($202.2)M (vs. ($236.9)M in 2023), **gross profit** nearly doubled to $166.9M (+98%), TTM **gross loss ratio** hit 73% — inside the long-term target range and 12 points better YoY — and the company generated its **first full year of positive Adjusted Free Cash Flow: +$48M**.\n\n## Why the year beat: the Q4 overperformance\n\nQ4 itself beat on every guided line, which is what pushed the full year past the top end:\n\n| Q4 2024 | Guidance | Actual |\n|---|---|---|\n| IFP | $940–$944M | $943.7M |\n| Gross earned premium | $222–$225M | $226.4M |\n| Revenue | $144–$146M | $148.8M |\n| Adjusted EBITDA loss | ($29)–($25)M | ($23.8)M |\n\nQ4 gross loss ratio of 63% was a company record, gross profit rose 90% to $63.9M, and Adj. FCF was +$26.5M. Notably, Q4 was also the first quarter ever with **positive Adj. EBITDA excluding growth spend**.\n\n## Context worth flagging\n\n- **Guidance had already been raised mid-year.** The Q3 update raised FY2024 GEP and revenue guidance while reaffirming IFP and Adj. EBITDA. Against the *original* February 2024 guide (IFP $938–$942M; Adj. EBITDA loss ($160)–($155)M), the beat looks larger: IFP of $944M and a ($150)M EBITDA loss.\n- **The beat was achieved despite headwinds** — elevated inflation and one of the most active catastrophe seasons in recent memory — and despite ~$25M of homeowners' IFP deliberately non-renewed in H2 2024 to reduce CAT volatility.\n- **The cost line did the heavy lifting.** Growth spend more than doubled ($55M → $122M), yet total expenses *excluding* growth spend grew only 2% ($332M) against 26% IFP growth — that operating leverage is what drove the EBITDA beat and the swing to positive cash flow.\n\n⚠️ One caveat: some secondary coverage of this quarter (e.g., certain syndicated articles) misreported the FY2024 capex and SBC figures — capex ~$60M and SBC ~$10M — which appear to be transposed. The shareholder letter and 10-K show SBC of $64.5M and capex in the single-digit millions.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 68304,
+    "output_tokens": 3376,
+    "cache_hit_tokens": 44672,
+    "cache_miss_tokens": 23632,
+    "reasoning_tokens": 2023
+  },
+  "model_cost_usd": 0.0057044159999999995,
+  "tool_cost_usd": {
+    "exa": 0.018,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.023704416000000002,
+  "latency_s": 27.75330441596452,
+  "tool_calls": {
+    "total": 6,
+    "web_search": 4,
+    "web_fetch": 2
+  },
+  "n_tool_calls": 6,
+  "n_refused": 0,
+  "n_turns": 5,
+  "error": null,
+  "overall": "wrong",
+  "judge_reason": "Most FY2024 figures match, but capex actual and SBC comparison are not met, and capex triggers contradiction.",
+  "judge_run_overalls": [
+    "wrong",
+    "wrong",
+    "wrong"
+  ]
+}

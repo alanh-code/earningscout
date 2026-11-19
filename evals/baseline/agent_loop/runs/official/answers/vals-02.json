@@ -1,0 +1,84 @@
+{
+  "id": "vals-02",
+  "type": "Trends",
+  "question": "How has Netflix's (NASDAQ: NFLX) Average Revenue Per Paying User Changed from 2019 to 2024?",
+  "answer": "2019: 10.82\n2020: 10.91\n2021: 11.67\n2022: 11.76\n2023: 11.64\n2024: 11.70\n\nFrom 2019-2022, average revenue per paying membership increased approximately 2.8% annually. From 2022 to 2024, the average revenue per paying membership has been roughly flat, likely due to the introduction of lower priced ad plans",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "2019: 10.82"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "2020: 10.91"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "2021: 11.67"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "2022: 11.76"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "2023: 11.64"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "2024: 11.70"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "From 2019-2022, average revenue per paying membership increased approximately 2.8% annually"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "From 2022 to 2024, the average revenue per paying membership has been roughly flat"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Flat revenue from 2022 to 2024 likely due to introduction of lower priced ad plans"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "2019: 10.82\n2020: 10.91\n2021: 11.67\n2022: 11.76\n2023: 11.64\n2024: 11.70\n\nFrom 2019-2022, average revenue per paying membership increased approximately 2.8% annually. From 2022 to 2024, the average revenue per paying membership has been roughly flat, likely due to the introduction of lower priced ad plans"
+    }
+  ],
+  "model_answer": "## Bottom line\n\nNetflix's global average monthly revenue per paying membership (ARM) rose from **$10.82 in 2019 to $11.70 in 2024** — an increase of **$0.88, or ~8% over five years (~1.6% CAGR)**. For comparison, streaming revenue nearly doubled (+96%, ~14.5%/yr) over the same span, driven overwhelmingly by member growth (+82% in average paying memberships), not by monetizing each member much more.\n\n## The annual path (global, reported)\n\n| Year | Avg. monthly revenue per paying membership | Avg. paying memberships | YoY ARM |\n|---|---|---|---|\n| 2019 | $10.82 | 152.98M | +5% |\n| 2020 | $10.91 | 189.08M | +1% |\n| 2021 | $11.67 | 210.78M | +7% |\n| 2022 | $11.76 | 222.92M | +1% |\n| 2023 | $11.64 | 240.89M | −1% |\n| 2024 | $11.70 | 277.73M | +1% (4% constant currency) |\n\n*Source: Netflix 10-K MD&A and regional streaming exhibits (FY2019–FY2024).*\n\nNote the shape: essentially all of the five-year gain came in **2019–2022** (price increases in the US/UK/Europe, plus the 2022 launch of the ad tier and paid sharing). Since 2022 ARM has been roughly flat in reported dollars, because (a) cheaper ad-supported plans and lower-priced markets grew fastest, (b) the dollar strengthened sharply against EMEA/LATAM/APAC currencies in 2022–2024, and (c) Netflix cut prices in India.\n\n## It's a very different story by region\n\n| Region | 2019 ARM | 2024 ARM | 5-yr change |\n|---|---|---|---|\n| US & Canada | $12.57 | **$17.20** | **+37%** |\n| EMEA | $10.33 | $10.96 | +6% |\n| Latin America | $8.21 | $8.24 | ~flat (+21% in constant currency in 2024 alone) |\n| Asia-Pacific | $9.24 | $7.29 | **−21%** |\n| **Global** | **$10.82** | **$11.70** | **+8%** |\n\nThe US/Canada business — now ~45% of streaming revenue — is where pricing power actually showed up (six price increases in the period). Globally, ARM is being diluted by rapid subscriber growth in low-ARPU markets (India, Indonesia, Brazil) and by currency: APAC's reported ARM fell 5% in 2024 but only 3% in constant currency; LATAM fell 5% reported but *rose 21%* constant currency.\n\n## Three caveats worth keeping in mind\n\n1. **FX vs. real pricing.** In reported USD, ARM looks nearly stagnant since 2022; on a constant-currency basis, growth has been ~3–5%/yr each year. The 2022 10-K noted revenue would have been ~$1.77B higher at constant FX.\n2. **Definitional creep.** ARM now includes advertising revenue (small but growing) and benefits from \"extra member\" sub-accounts, which generate revenue but are *not* counted in paid memberships — mechanically lifting revenue per counted member in 2023–24. It also excludes DVD by definition in all years.\n3. **The metric is being retired.** Netflix stopped reporting quarterly memberships in 2024 and ceased disclosing memberships/ARM entirely in 2025, arguing engagement and revenue are better indicators — so FY2024 is the last clean ARM datapoint; from here, revenue growth has to be tracked through revenue and engagement disclosures.\n\n**One-sentence answer:** Netflix's ARPU is up only ~8% in five years ($10.82 → $11.70/month), because price increases in the US/Canada (+37%) were largely offset by mix shift into low-ARPU Asia-Pacific and Latin America and by a strong dollar — member growth, not ARPU, has been the growth engine.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 39337,
+    "output_tokens": 4002,
+    "cache_hit_tokens": 23808,
+    "cache_miss_tokens": 15529,
+    "reasoning_tokens": 2418
+  },
+  "model_cost_usd": 0.004801974,
+  "tool_cost_usd": {
+    "exa": 0.017,
+    "e2b": 0.000362
+  },
+  "cost_usd": 0.022163874622981805,
+  "latency_s": 25.125037208083086,
+  "tool_calls": {
+    "total": 6,
+    "web_search": 4,
+    "web_fetch": 1,
+    "code_execution": 1
+  },
+  "n_tool_calls": 6,
+  "n_refused": 0,
+  "n_turns": 4,
+  "error": null,
+  "overall": "wrong",
+  "judge_reason": "All ARPU figures and flat/ad-tier reasoning met, but the answer does not state the 2019-2022 ~2.8% annual increase.",
+  "judge_run_overalls": [
+    "wrong",
+    "wrong",
+    "wrong"
+  ]
+}

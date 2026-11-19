@@ -1,0 +1,52 @@
+{
+  "id": "vals-47",
+  "type": "Beat or Miss",
+  "question": "Did FOUR beat or miss its end to end payment volume guidance at midpoint for Q3 2024 provided in Q1 2024? Express as % BEAT or MISS",
+  "answer": "7.4% MISS",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "7.4% MISS"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "7.4% MISS"
+    }
+  ],
+  "model_answer": "**7.4% MISS**\n\nShift4’s Q1 2024 guidance implied Q3 2024 end-to-end payment volume of **$46.0B–$48.0B**, midpoint **$47.0B**. Actual Q3 2024 volume was **$43.5B**.\n\n**($43.5B − $47.0B) / $47.0B = −7.45% → 7.4% MISS**",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 29524,
+    "output_tokens": 863,
+    "cache_hit_tokens": 19072,
+    "cache_miss_tokens": 10452,
+    "reasoning_tokens": 472
+  },
+  "model_cost_usd": 0.002142816,
+  "tool_cost_usd": {
+    "exa": 0.013,
+    "e2b": 6e-05
+  },
+  "cost_usd": 0.015202727193824608,
+  "latency_s": 8.735715958056971,
+  "tool_calls": {
+    "total": 5,
+    "web_search": 3,
+    "web_fetch": 1,
+    "code_execution": 1
+  },
+  "n_tool_calls": 5,
+  "n_refused": 0,
+  "n_turns": 4,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The model correctly states 7.4% MISS.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

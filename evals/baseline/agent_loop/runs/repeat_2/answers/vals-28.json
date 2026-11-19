@@ -1,0 +1,51 @@
+{
+  "id": "vals-28",
+  "type": "Simple retrieval - Quantitative",
+  "question": "What are Netflix's (NASDAQ: NFLX) Total Projected Material Cash Requirements for 2025?",
+  "answer": "$14,426,266,000",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "$14,426,266,000"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "$14,426,266,000"
+    }
+  ],
+  "model_answer": "## Netflix (NFLX) — Projected Material Cash Requirements (FY2024 10-K, filed Jan. 27, 2025)\n\nFrom the \"Material Cash Requirements\" section of Item 7 (MD&A), which reports expected payment timing **as of December 31, 2024**:\n\n| Contractual obligations (in thousands) | Total | Next 12 Months (2025) | Beyond 12 Months |\n|---|---|---|---|\n| Content obligations | $23,248,931 | $11,424,696 | $11,824,235 |\n| Debt (principal + interest) | 19,841,462 | 2,486,945 | 17,354,517 |\n| Operating lease obligations | 2,761,120 | 514,625 | 2,246,495 |\n| **Total** | **$45,851,513** | **$14,426,266** | **$31,425,247** |\n\n**Answer:**\n- **Total projected material cash requirements (all periods): ≈ $45.85 billion** ($45,851,513 thousand)\n- **Of which the amount projected to come due in 2025 (the next 12 months): ≈ $14.43 billion** ($14,426,266 thousand) — ~$11.4B content, ~$2.5B debt, ~$0.5B leases\n\nAdditional context from the same disclosure:\n- The $23.2B of content obligations comprise $4.4B of current content liabilities, $1.8B of non-current content liabilities, and $17.0B of unrecognized obligations not yet on the balance sheet.\n- The table **excludes** obligations for unknown future titles, which management estimates at roughly **$1B–$4B over the next three years** (mostly beyond 12 months).\n- Netflix also flagged potential tax deposits of ~**$800 million** in the next twelve months related to certain direct and indirect taxes — in excess of typical annual obligations.\n\n*Note: the company's more recent 10-K for fiscal year 2025 (period ended Dec. 31, 2025) shows an updated total of $45,029,132 thousand, with $13,776,526 thousand due in the next twelve months — reflecting the debt/transaction financing related to the Warner Bros. Discovery deal.*",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 50020,
+    "output_tokens": 2643,
+    "cache_hit_tokens": 26752,
+    "cache_miss_tokens": 23268,
+    "reasoning_tokens": 1839
+  },
+  "model_cost_usd": 0.005156256,
+  "tool_cost_usd": {
+    "exa": 0.018,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.023156256,
+  "latency_s": 21.137606957927346,
+  "tool_calls": {
+    "total": 6,
+    "web_search": 4,
+    "web_fetch": 2
+  },
+  "n_tool_calls": 6,
+  "n_refused": 0,
+  "n_turns": 4,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The stated 2025/next-12-months amount of $14,426,266 thousand equals the official $14,426,266,000.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

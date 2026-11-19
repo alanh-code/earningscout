@@ -1,6 +1,6 @@
-# Closed-book grading guide
+# Strict grading guide
 
-For human and LLM judges scoring Claude Sonnet 5.5 closed-book answers to the 50 public Vals Finance Agent questions (no tools). Checks come from the `Rubric` column in `data/vals/public.csv`. This is not an official Vals grading key.
+For human and LLM judges scoring model answers to the 50 public Vals Finance Agent questions, whether produced closed-book or with tools. Checks come from the `Rubric` column in `data/vals/public.csv`. This is not an official Vals grading key.
 
 This variant uses a strict numeric precision rule. Qualitative claims are still graded on meaning, not wording.
 
@@ -14,7 +14,7 @@ This variant uses a strict numeric precision rule. Qualitative claims are still 
 
 Paraphrase is fine. Wording, order, and formatting do not matter if the meaning matches. A bundled check (several facts in one `criteria` string) is met if every fact in that string is met, including by a substantively equivalent description. Silence on a fact is `not met`, not a contradiction.
 
-## Closed-book principle
+## Grading principle
 
 For names and qualitative claims, grade whether the model knows the fact: slightly different wording or a substantively equivalent description is `met`. Exact official phrasing is not required.
 
@@ -23,6 +23,8 @@ For numbers, the test is whether the answer would mislead. A precise number must
 ## Correctness checks
 
 **Names and qualitative claims.** The identity or claim must be the same. Middle initials and punctuation may be dropped if the referent is unambiguous (`David Burritt` meets `David B. Burritt`). Slightly different wording or a substantively equivalent description is `met`. A restated claim that changes the official meaning is not (`virtually flat` meets `Take rate was virtually flat from 2023 to 2024`; `declined slightly` does not meet `declined substantially`). Exact official wording is not required.
+
+A qualitative claim is `met` when the answer is close in meaning and not misleading, even without the rubric's exact wording (`secure a sustainable future` meets `critical to long-term survival`).
 
 **Lists.** Each listed item is usually its own check (directors, EBITDA adjustments, guidance metrics). Extra correct items do not help or hurt.
 
@@ -82,6 +84,8 @@ Extra correct detail is ignored. Extra wrong claims:
 - If they conflict with the official answer / contradiction text, trigger contradiction and overall is `wrong`.
 - If they are outside that text, they do not change checks, fraction, or overall; mention them in the reason.
 
+Mentions of sources, searches, filings, or tools do not affect the grade. Grade against the official answer even if the model uses a later reporting date or subsequent revisions; a later-period or revised figure that does not match the official one is `not met` and may trigger contradiction.
+
 ## Outputs per answer
 
 | Field | Value |
@@ -97,7 +101,7 @@ Do not use a “partly correct” overall label. Partial credit is the rubric fr
 ## Judge prompt
 
 ```
-You are grading a closed-book answer against a fixed rubric. Follow the grading guide below exactly. Do not reward style, length, or confidence. Do not use any knowledge except the question, official answer, rubric, and guide.
+You are grading an answer against a fixed rubric. Follow the grading guide below exactly. Do not reward style, length, or confidence. Do not use any knowledge except the question, official answer, rubric, and guide.
 
 <grading_guide>
 {{paste this guide in full}}

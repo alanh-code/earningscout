@@ -1,0 +1,4316 @@
+{
+ "vals-01": {
+  "_cost": 0.000796908,
+  "_answer_sha": "f618e8784a909226",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": false,
+   "quantities": []
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "3": {
+   "check_id": 3,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "4": {
+   "check_id": 4,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "5": {
+   "check_id": 5,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "jobs safeguarded (commitment)",
+     "gold": "over 100,000 jobs",
+     "gold_scale": null,
+     "answers": [],
+     "answer_scale": null
+    }
+   ]
+  },
+  "6": {
+   "check_id": 6,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "total capital pledged",
+     "gold": "$14B",
+     "gold_scale": null,
+     "answers": [
+      "~$14B of U.S. growth capital"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "investment committed by 2028",
+     "gold": "$11B by 2028",
+     "gold_scale": null,
+     "answers": [
+      "$11B committed by end-2028",
+      "$11B of investment by 2028"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "7": {
+   "check_id": 7,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "allocation for U.S.-based advanced mill",
+     "gold": "Up to $4B",
+     "gold_scale": null,
+     "answers": [],
+     "answer_scale": null
+    }
+   ]
+  },
+  "8": {
+   "check_id": 8,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "9": {
+   "check_id": 9,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "jobs safeguarded (commitment)",
+     "gold": "over 100,000 jobs",
+     "gold_scale": null,
+     "answers": [],
+     "answer_scale": null
+    },
+    {
+     "label": "total capital pledged",
+     "gold": "$14B",
+     "gold_scale": null,
+     "answers": [
+      "~$14B of U.S. growth capital"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "investment committed by 2028",
+     "gold": "$11B by 2028",
+     "gold_scale": null,
+     "answers": [
+      "$11B committed by end-2028",
+      "$11B of investment by 2028"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "allocation for U.S.-based advanced mill",
+     "gold": "Up to $4B",
+     "gold_scale": null,
+     "answers": [],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-02": {
+  "_cost": 0.0006978059999999999,
+  "_answer_sha": "8ad2be57b5a90f03",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "2019 average revenue per paying user (monthly, USD)",
+     "gold": "10.82",
+     "gold_scale": null,
+     "answers": [
+      "$10.82/month in 2019"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "2020 average revenue per paying user (monthly, USD)",
+     "gold": "10.91",
+     "gold_scale": null,
+     "answers": [],
+     "answer_scale": null
+    }
+   ]
+  },
+  "3": {
+   "check_id": 3,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "2021 average revenue per paying user (monthly, USD)",
+     "gold": "11.67",
+     "gold_scale": null,
+     "answers": [],
+     "answer_scale": null
+    }
+   ]
+  },
+  "4": {
+   "check_id": 4,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "2022 average revenue per paying user (monthly, USD)",
+     "gold": "11.76",
+     "gold_scale": null,
+     "answers": [],
+     "answer_scale": null
+    }
+   ]
+  },
+  "5": {
+   "check_id": 5,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "2023 average revenue per paying user (monthly, USD)",
+     "gold": "11.64",
+     "gold_scale": null,
+     "answers": [],
+     "answer_scale": null
+    }
+   ]
+  },
+  "6": {
+   "check_id": 6,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "2024 average revenue per paying user (monthly, USD)",
+     "gold": "11.70",
+     "gold_scale": null,
+     "answers": [
+      "~$11.70/month in 2024"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "7": {
+   "check_id": 7,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "annual ARM growth 2019-2022",
+     "gold": "approximately 2.8% annually",
+     "gold_scale": null,
+     "answers": [],
+     "answer_scale": null
+    }
+   ]
+  },
+  "8": {
+   "check_id": 8,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "9": {
+   "check_id": 9,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "10": {
+   "check_id": 10,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "2019 average revenue per paying user (monthly, USD)",
+     "gold": "10.82",
+     "gold_scale": null,
+     "answers": [
+      "$10.82/month in 2019"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "2020 average revenue per paying user (monthly, USD)",
+     "gold": "10.91",
+     "gold_scale": null,
+     "answers": [],
+     "answer_scale": null
+    },
+    {
+     "label": "2021 average revenue per paying user (monthly, USD)",
+     "gold": "11.67",
+     "gold_scale": null,
+     "answers": [],
+     "answer_scale": null
+    },
+    {
+     "label": "2022 average revenue per paying user (monthly, USD)",
+     "gold": "11.76",
+     "gold_scale": null,
+     "answers": [],
+     "answer_scale": null
+    },
+    {
+     "label": "2023 average revenue per paying user (monthly, USD)",
+     "gold": "11.64",
+     "gold_scale": null,
+     "answers": [],
+     "answer_scale": null
+    },
+    {
+     "label": "2024 average revenue per paying user (monthly, USD)",
+     "gold": "11.70",
+     "gold_scale": null,
+     "answers": [
+      "~$11.70/month in 2024"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "annual ARM growth 2019-2022",
+     "gold": "approximately 2.8% annually",
+     "gold_scale": null,
+     "answers": [],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-03": {
+  "_cost": 0.000230238,
+  "_answer_sha": "3d429e719ab73f4d",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "Q4 FY2025 pre-tax margin beat vs low end of guidance (bps)",
+     "gold": "80bps",
+     "gold_scale": null,
+     "answers": [],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "Q4 FY2025 pre-tax margin beat vs high end of guidance (bps)",
+     "gold": "70bps",
+     "gold_scale": null,
+     "answers": [
+      "+70 bps",
+      "70 bps beat"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "3": {
+   "check_id": 3,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "Q4 FY2025 pre-tax margin beat vs low end of guidance (bps)",
+     "gold": "80bps",
+     "gold_scale": null,
+     "answers": [],
+     "answer_scale": null
+    },
+    {
+     "label": "Q4 FY2025 pre-tax margin beat vs high end of guidance (bps)",
+     "gold": "70bps",
+     "gold_scale": null,
+     "answers": [
+      "+70 bps",
+      "70 bps beat"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-04": {
+  "_cost": 0.0008469899999999999,
+  "_answer_sha": "e683c6f8922520de",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Q1 2025 revenue guidance low ($ billion)",
+     "gold": "$6.8 billion",
+     "gold_scale": null,
+     "answers": [
+      "$6.8 billion"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Q1 2025 revenue guidance high ($ billion)",
+     "gold": "$7.4 billion",
+     "gold_scale": null,
+     "answers": [
+      "$7.4 billion"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Q1 2025 guidance range as % of midpoint",
+     "gold": "8.5%",
+     "gold_scale": null,
+     "answers": [
+      "8.5%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Q4 2024 revenue guidance low ($ billion)",
+     "gold": "$7.2 billion",
+     "gold_scale": null,
+     "answers": [
+      "$7.2 billion"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Q4 2024 revenue guidance high ($ billion)",
+     "gold": "$7.8 billion",
+     "gold_scale": null,
+     "answers": [
+      "$7.8 billion"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Q4 2024 guidance range as % of midpoint",
+     "gold": "8.0%",
+     "gold_scale": null,
+     "answers": [
+      "8.0%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "3": {
+   "check_id": 3,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Q3 2024 revenue guidance low ($ billion)",
+     "gold": "$6.4 billion",
+     "gold_scale": null,
+     "answers": [
+      "$6.4 billion"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Q3 2024 revenue guidance high ($ billion)",
+     "gold": "$7.0 billion",
+     "gold_scale": null,
+     "answers": [
+      "$7.0 billion"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Q3 2024 guidance range as % of midpoint",
+     "gold": "9.0%",
+     "gold_scale": null,
+     "answers": [
+      "9.0%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "4": {
+   "check_id": 4,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Q2 2024 revenue guidance low ($ billion)",
+     "gold": "$5.4 billion",
+     "gold_scale": null,
+     "answers": [
+      "$5.4 billion"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Q2 2024 revenue guidance high ($ billion)",
+     "gold": "$6.0 billion",
+     "gold_scale": null,
+     "answers": [
+      "$6.0 billion"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Q2 2024 guidance range as % of midpoint",
+     "gold": "10.5%",
+     "gold_scale": null,
+     "answers": [
+      "10.5%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "5": {
+   "check_id": 5,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "Q1 2025 revenue guidance low ($ billion)",
+     "gold": "$6.8 billion",
+     "gold_scale": null,
+     "answers": [
+      "$6.8 billion"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Q1 2025 revenue guidance high ($ billion)",
+     "gold": "$7.4 billion",
+     "gold_scale": null,
+     "answers": [
+      "$7.4 billion"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Q1 2025 guidance range as % of midpoint",
+     "gold": "8.5%",
+     "gold_scale": null,
+     "answers": [
+      "8.5%"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Q4 2024 revenue guidance low ($ billion)",
+     "gold": "$7.2 billion",
+     "gold_scale": null,
+     "answers": [
+      "$7.2 billion"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Q4 2024 revenue guidance high ($ billion)",
+     "gold": "$7.8 billion",
+     "gold_scale": null,
+     "answers": [
+      "$7.8 billion"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Q4 2024 guidance range as % of midpoint",
+     "gold": "8.0%",
+     "gold_scale": null,
+     "answers": [
+      "8.0%"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Q3 2024 revenue guidance low ($ billion)",
+     "gold": "$6.4 billion",
+     "gold_scale": null,
+     "answers": [
+      "$6.4 billion"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Q3 2024 revenue guidance high ($ billion)",
+     "gold": "$7.0 billion",
+     "gold_scale": null,
+     "answers": [
+      "$7.0 billion"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Q3 2024 guidance range as % of midpoint",
+     "gold": "9.0%",
+     "gold_scale": null,
+     "answers": [
+      "9.0%"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Q2 2024 revenue guidance low ($ billion)",
+     "gold": "$5.4 billion",
+     "gold_scale": null,
+     "answers": [
+      "$5.4 billion"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Q2 2024 revenue guidance high ($ billion)",
+     "gold": "$6.0 billion",
+     "gold_scale": null,
+     "answers": [
+      "$6.0 billion"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Q2 2024 guidance range as % of midpoint",
+     "gold": "10.5%",
+     "gold_scale": null,
+     "answers": [
+      "10.5%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-05": {
+  "_cost": 0.00021307200000000002,
+  "_answer_sha": "07f99b7a4e43ee63",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": false,
+   "quantities": []
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": false,
+   "quantities": []
+  },
+  "3": {
+   "check_id": 3,
+   "non_numeric_claim": false,
+   "quantities": []
+  },
+  "4": {
+   "check_id": 4,
+   "non_numeric_claim": false,
+   "quantities": []
+  },
+  "5": {
+   "check_id": 5,
+   "non_numeric_claim": false,
+   "quantities": []
+  },
+  "6": {
+   "check_id": 6,
+   "non_numeric_claim": false,
+   "quantities": []
+  },
+  "7": {
+   "check_id": 7,
+   "non_numeric_claim": false,
+   "quantities": []
+  },
+  "8": {
+   "check_id": 8,
+   "non_numeric_claim": false,
+   "quantities": []
+  },
+  "9": {
+   "check_id": 9,
+   "non_numeric_claim": false,
+   "quantities": []
+  }
+ },
+ "vals-06": {
+  "_cost": 0.000362322,
+  "_answer_sha": "dd6c2cb62bb720bc",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "AMZN FY 2025 capital expenditure guidance",
+     "gold": "$105.2 billion",
+     "gold_scale": null,
+     "answers": [
+      "~$125B guided"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "GOOG FY 2025 capital expenditure guidance",
+     "gold": "$75.0 billion",
+     "gold_scale": null,
+     "answers": [
+      "$91–93B guidance"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "3": {
+   "check_id": 3,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "META FY 2025 capital expenditure guidance",
+     "gold": "$62.5 billion",
+     "gold_scale": null,
+     "answers": [
+      "$70–72B guidance"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "4": {
+   "check_id": 4,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "5": {
+   "check_id": 5,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "AMZN FY 2025 capital expenditure guidance",
+     "gold": "$105.2 billion",
+     "gold_scale": null,
+     "answers": [
+      "~$125B guided"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "GOOG FY 2025 capital expenditure guidance",
+     "gold": "$75.0 billion",
+     "gold_scale": null,
+     "answers": [
+      "$91–93B guidance"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "META FY 2025 capital expenditure guidance",
+     "gold": "$62.5 billion",
+     "gold_scale": null,
+     "answers": [
+      "$70–72B guidance"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-07": {
+  "_cost": 7.9188e-05,
+  "_answer_sha": "913968af8e1ed044",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": true,
+   "quantities": []
+  }
+ },
+ "vals-08": {
+  "_cost": 0.000190188,
+  "_answer_sha": "052af9c45f011f59",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "total consideration paid to acquired Endeavor assets at transaction close",
+     "gold": "$3.25 Billion",
+     "gold_scale": null,
+     "answers": [
+      "approximately $3.30 billion",
+      "roughly $3.3 billion"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "total consideration paid to acquired Endeavor assets at transaction close",
+     "gold": "$3.25 Billion",
+     "gold_scale": null,
+     "answers": [
+      "approximately $3.30 billion",
+      "roughly $3.3 billion"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-09": {
+  "_cost": 0.00016543799999999998,
+  "_answer_sha": "f13614c29d1f20e9",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "Q3 2024 GAAP gross margin guidance beat (basis points)",
+     "gold": "140 basis points",
+     "gold_scale": null,
+     "answers": [
+      "140 basis points beat",
+      "about 140 basis points"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "Q3 2024 GAAP gross margin guidance beat (bps)",
+     "gold": "140bps",
+     "gold_scale": null,
+     "answers": [
+      "140 basis points beat",
+      "about 140 basis points"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-10": {
+  "_cost": 0.000289788,
+  "_answer_sha": "ec934658f257243b",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "2024 revenue",
+     "gold": "2,865,507",
+     "gold_scale": null,
+     "answers": [
+      "$2.8655 billion"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "2022 revenue",
+     "gold": "1,905,871",
+     "gold_scale": null,
+     "answers": [
+      "$1.9059 billion"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "3": {
+   "check_id": 3,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "2 year revenue CAGR (2022 to 2024)",
+     "gold": "22.6%",
+     "gold_scale": null,
+     "answers": [
+      "approximately 22.6%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "4": {
+   "check_id": 4,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "2024 revenue",
+     "gold": "2,865,507",
+     "gold_scale": null,
+     "answers": [
+      "$2.8655 billion"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "2022 revenue",
+     "gold": "1,905,871",
+     "gold_scale": null,
+     "answers": [
+      "$1.9059 billion"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "2 year revenue CAGR (2022 to 2024)",
+     "gold": "22.6%",
+     "gold_scale": null,
+     "answers": [
+      "approximately 22.6%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-12": {
+  "_cost": 0.000933324,
+  "_answer_sha": "49744ae4e82bb78e",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Q1 2025 guidance revenue range (USD)",
+     "gold": "$25.0B to $25.8B",
+     "gold_scale": null,
+     "answers": [
+      "US$25.0B – US$25.8B"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Q1 2025 guidance revenue (NT$ at 3288)",
+     "gold": "835,152",
+     "gold_scale": "million",
+     "answers": [
+      "NT$820.0B – NT$846.2B"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "3": {
+   "check_id": 3,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Feb to Mar 2022 revenue growth rate",
+     "gold": "17.0%",
+     "gold_scale": null,
+     "answers": [
+      "+17.04%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "4": {
+   "check_id": 4,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Feb to Mar 2023 revenue growth rate",
+     "gold": "-10.9%",
+     "gold_scale": null,
+     "answers": [
+      "−10.89%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "5": {
+   "check_id": 5,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Feb to Mar 2024 revenue growth rate",
+     "gold": "7.5%",
+     "gold_scale": null,
+     "answers": [
+      "+7.47%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "6": {
+   "check_id": 6,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Average Feb to Mar growth rate (3-yr)",
+     "gold": "4.5%",
+     "gold_scale": null,
+     "answers": [
+      "+4.54%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "7": {
+   "check_id": 7,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "February 2025 revenue (NT$)",
+     "gold": "260,009",
+     "gold_scale": "million",
+     "answers": [
+      "260.01B"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "8": {
+   "check_id": 8,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "March 2025 revenue estimate (NT$)",
+     "gold": "271,810",
+     "gold_scale": "million",
+     "answers": [
+      "NT$271.8B"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "9": {
+   "check_id": 9,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Q1 2025 revenue estimate (NT$)",
+     "gold": "825,107",
+     "gold_scale": "million",
+     "answers": [
+      "NT$825.1B"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "10": {
+   "check_id": 10,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "Q1 2025 variance vs guidance",
+     "gold": "-1.2%",
+     "gold_scale": null,
+     "answers": [
+      "−1.0%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "11": {
+   "check_id": 11,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "Q1 2025 guidance revenue range (USD)",
+     "gold": "$25.0B to $25.8B",
+     "gold_scale": null,
+     "answers": [
+      "US$25.0B – US$25.8B"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Q1 2025 guidance revenue (NT$ at 3288)",
+     "gold": "835,152",
+     "gold_scale": "million",
+     "answers": [
+      "NT$820.0B – NT$846.2B"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Feb to Mar 2022 revenue growth rate",
+     "gold": "17.0%",
+     "gold_scale": null,
+     "answers": [
+      "+17.04%"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Feb to Mar 2023 revenue growth rate",
+     "gold": "-10.9%",
+     "gold_scale": null,
+     "answers": [
+      "−10.89%"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Feb to Mar 2024 revenue growth rate",
+     "gold": "7.5%",
+     "gold_scale": null,
+     "answers": [
+      "+7.47%"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Average Feb to Mar growth rate (3-yr)",
+     "gold": "4.5%",
+     "gold_scale": null,
+     "answers": [
+      "+4.54%"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "February 2025 revenue (NT$)",
+     "gold": "260,009",
+     "gold_scale": "million",
+     "answers": [
+      "260.01B"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "March 2025 revenue estimate (NT$)",
+     "gold": "271,810",
+     "gold_scale": "million",
+     "answers": [
+      "NT$271.8B"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Q1 2025 revenue estimate (NT$)",
+     "gold": "825,107",
+     "gold_scale": "million",
+     "answers": [
+      "NT$825.1B"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Q1 2025 variance vs guidance",
+     "gold": "-1.2%",
+     "gold_scale": null,
+     "answers": [
+      "−1.0%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-13": {
+  "_cost": 0.000203838,
+  "_answer_sha": "f6857d67999028ad",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "total director compensation paid by 3D Systems in 2023",
+     "gold": "$2,263,113",
+     "gold_scale": null,
+     "answers": [
+      "$2,263,113"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "total director compensation paid by 3D Systems in 2023",
+     "gold": "$2,263,113",
+     "gold_scale": null,
+     "answers": [
+      "$2,263,113"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-14": {
+  "_cost": 0.000340872,
+  "_answer_sha": "ab926ee994b5628e",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "FY2024 FCF margin",
+     "gold": "12.7%",
+     "gold_scale": null,
+     "answers": [
+      "~12.7%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "FY2023 FCF margin",
+     "gold": "11.3%",
+     "gold_scale": null,
+     "answers": [
+      "~11.3%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "3": {
+   "check_id": 3,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "FY2022 FCF margin",
+     "gold": "24.8%",
+     "gold_scale": null,
+     "answers": [
+      "~224%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "4": {
+   "check_id": 4,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "5": {
+   "check_id": 5,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "6": {
+   "check_id": 6,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "FY2024 FCF margin",
+     "gold": "12.7%",
+     "gold_scale": null,
+     "answers": [
+      "~12.7%"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "FY2023 FCF margin",
+     "gold": "11.3%",
+     "gold_scale": null,
+     "answers": [
+      "~11.3%"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "FY2022 FCF margin",
+     "gold": "24.8%",
+     "gold_scale": null,
+     "answers": [
+      "~224%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-15": {
+  "_cost": 0.000331956,
+  "_answer_sha": "d8972aa058dff93f",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "FY2024 COGS",
+     "gold": "$14,060M",
+     "gold_scale": null,
+     "answers": [
+      "$14,060 million"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "2024 ending inventory",
+     "gold": "$2,168M",
+     "gold_scale": null,
+     "answers": [
+      "$2,168 million"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "3": {
+   "check_id": 3,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "2023 ending inventory",
+     "gold": "$2,128M",
+     "gold_scale": null,
+     "answers": [
+      "$2,128 million"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "4": {
+   "check_id": 4,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "average inventory FY2024",
+     "gold": "($2,168 + $2,128) / 2 = $2,148M",
+     "gold_scale": null,
+     "answers": [
+      "($2,128 + $2,168) ÷ 2 = **$2,148 million**"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "5": {
+   "check_id": 5,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "FY2024 inventory turnover",
+     "gold": "6.55",
+     "gold_scale": null,
+     "answers": [
+      "≈ 6.55x",
+      "about **6.5 times**"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "6": {
+   "check_id": 6,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "FY2024 inventory turnover",
+     "gold": "6.55",
+     "gold_scale": null,
+     "answers": [
+      "≈ 6.55x",
+      "about **6.5 times**"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-16": {
+  "_cost": 0.0010633440000000001,
+  "_answer_sha": "4872a5568e4cad7c",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Series D offering size (shares)",
+     "gold": "51,750,000 shares",
+     "gold_scale": null,
+     "answers": [
+      "51,750,000 shares"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Series D aggregate liquidation preference",
+     "gold": "$2,587,500,000",
+     "gold_scale": null,
+     "answers": [
+      "$2,587,500,000"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Over-allotment option size (shares)",
+     "gold": "6,750,000 shares",
+     "gold_scale": null,
+     "answers": [
+      "6,750,000 shares"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Over-allotment option aggregate liquidation preference",
+     "gold": "$337,500,000",
+     "gold_scale": null,
+     "answers": [
+      "$337.5M"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": false,
+   "quantities": []
+  },
+  "3": {
+   "check_id": 3,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Price per share",
+     "gold": "$50.00 per share",
+     "gold_scale": null,
+     "answers": [
+      "$50.00 per share"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "4": {
+   "check_id": 4,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Liquidation preference per share",
+     "gold": "$50.00 per share",
+     "gold_scale": null,
+     "answers": [
+      "$50.00 per share"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "5": {
+   "check_id": 5,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Dividend rate per annum",
+     "gold": "6.25% per annum",
+     "gold_scale": null,
+     "answers": [
+      "6.25% per annum"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Liquidation preference basis for dividend",
+     "gold": "$50.00",
+     "gold_scale": null,
+     "answers": [
+      "$50"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "6": {
+   "check_id": 6,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "7": {
+   "check_id": 7,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Mandatory conversion rate range (shares of common per share)",
+     "gold": "0.3312-0.4140 shares",
+     "gold_scale": null,
+     "answers": [
+      "0.3312–0.4140 shares"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "VWAP averaging period (consecutive trading days)",
+     "gold": "20 consecutive trading day period",
+     "gold_scale": null,
+     "answers": [
+      "20-trading-day"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Start of VWAP period (trading day prior to Mar. 1, 2028)",
+     "gold": "21st trading day",
+     "gold_scale": null,
+     "answers": [
+      "21st scheduled trading day"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "8": {
+   "check_id": 8,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "9": {
+   "check_id": 9,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "10": {
+   "check_id": 10,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "11": {
+   "check_id": 11,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "12": {
+   "check_id": 12,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Series D offering size (shares)",
+     "gold": "51,750,000 shares",
+     "gold_scale": null,
+     "answers": [
+      "51,750,000 shares"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Series D aggregate liquidation preference",
+     "gold": "$2,587,500,000",
+     "gold_scale": null,
+     "answers": [
+      "$2,587,500,000"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Over-allotment option size (shares)",
+     "gold": "6,750,000 shares",
+     "gold_scale": null,
+     "answers": [
+      "6,750,000 shares"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Over-allotment option aggregate liquidation preference",
+     "gold": "$337,500,000",
+     "gold_scale": null,
+     "answers": [
+      "$337.5M"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Price per share",
+     "gold": "$50.00 per share",
+     "gold_scale": null,
+     "answers": [
+      "$50.00 per share"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Liquidation preference per share",
+     "gold": "$50.00 per share",
+     "gold_scale": null,
+     "answers": [
+      "$50.00 per share"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Dividend rate per annum",
+     "gold": "6.25% per annum",
+     "gold_scale": null,
+     "answers": [
+      "6.25% per annum"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Liquidation preference basis for dividend",
+     "gold": "$50.00",
+     "gold_scale": null,
+     "answers": [
+      "$50"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Mandatory conversion rate range (shares of common per share)",
+     "gold": "0.3312-0.4140 shares",
+     "gold_scale": null,
+     "answers": [
+      "0.3312–0.4140 shares"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "VWAP averaging period (consecutive trading days)",
+     "gold": "20 consecutive trading day period",
+     "gold_scale": null,
+     "answers": [
+      "20-trading-day"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Start of VWAP period (trading day prior to Mar. 1, 2028)",
+     "gold": "21st trading day",
+     "gold_scale": null,
+     "answers": [
+      "21st scheduled trading day"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-17": {
+  "_cost": 0.000339822,
+  "_answer_sha": "6a8541283a046162",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "FY2022 annual take rate",
+     "gold": "13.3%",
+     "gold_scale": null,
+     "answers": [
+      "13.3%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "FY2023 annual take rate",
+     "gold": "13.5%",
+     "gold_scale": null,
+     "answers": [
+      "13.5%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "3": {
+   "check_id": 3,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "FY2024 annual take rate",
+     "gold": "13.6%",
+     "gold_scale": null,
+     "answers": [
+      "13.6%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "4": {
+   "check_id": 4,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "take rate increase 2022 to 2024 (bps)",
+     "gold": "incrementally increased",
+     "gold_scale": null,
+     "answers": [
+      "~30 bps"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "5": {
+   "check_id": 5,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "FY2022 annual take rate",
+     "gold": "13.3%",
+     "gold_scale": null,
+     "answers": [
+      "13.3%"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "FY2023 annual take rate",
+     "gold": "13.5%",
+     "gold_scale": null,
+     "answers": [
+      "13.5%"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "FY2024 annual take rate",
+     "gold": "13.6%",
+     "gold_scale": null,
+     "answers": [
+      "13.6%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-18": {
+  "_cost": 0.00034920599999999996,
+  "_answer_sha": "110e288b60bad85e",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "3": {
+   "check_id": 3,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "4": {
+   "check_id": 4,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "5": {
+   "check_id": 5,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "6": {
+   "check_id": 6,
+   "non_numeric_claim": true,
+   "quantities": []
+  }
+ },
+ "vals-19": {
+  "_cost": 0.000216138,
+  "_answer_sha": "daaa950769597833",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Total operating leases maturing in next three years ($ thousands)",
+     "gold": "$85,002 thousands",
+     "gold_scale": null,
+     "answers": [
+      "$85,002 thousand"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Percentage of leases maturing in next three years",
+     "gold": "51.3%",
+     "gold_scale": null,
+     "answers": [
+      "51.3%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Total operating leases maturing in next three years ($ thousands)",
+     "gold": "$85,002 thousands",
+     "gold_scale": null,
+     "answers": [
+      "$85,002 thousand"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Percentage of leases maturing in next three years",
+     "gold": "51.3%",
+     "gold_scale": null,
+     "answers": [
+      "51.3%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-20": {
+  "_cost": 0.000258522,
+  "_answer_sha": "0bfce26a6d254038",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Effective tax rate FY2023",
+     "gold": "6.8%",
+     "gold_scale": null,
+     "answers": [
+      "6.8%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Effective tax rate FY2024",
+     "gold": "10.9%",
+     "gold_scale": null,
+     "answers": [
+      "10.9%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "3": {
+   "check_id": 3,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "Delta in effective tax rate (bps)",
+     "gold": "increased 410bps",
+     "gold_scale": null,
+     "answers": [
+      "410bps"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "4": {
+   "check_id": 4,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "Effective tax rate FY2023",
+     "gold": "6.8%",
+     "gold_scale": null,
+     "answers": [
+      "6.8%"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Effective tax rate FY2024",
+     "gold": "10.9%",
+     "gold_scale": null,
+     "answers": [
+      "10.9%"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Delta in effective tax rate (bps)",
+     "gold": "increased 410bps",
+     "gold_scale": null,
+     "answers": [
+      "410bps"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-21": {
+  "_cost": 0.0003059219999999999,
+  "_answer_sha": "1d47e7ba78d852fa",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "Number of vendors facilitating merchant processing activity in North America (Dec 31, 2024)",
+     "gold": "one vendor",
+     "gold_scale": null,
+     "answers": [
+      "one vendor",
+      "four_MerchantProcessingNumberOfVendors = 1"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "3": {
+   "check_id": 3,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "Number of vendors facilitating merchant processing activity in North America (Dec 31, 2024)",
+     "gold": "one vendor",
+     "gold_scale": null,
+     "answers": [
+      "one vendor",
+      "four_MerchantProcessingNumberOfVendors = 1"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-22": {
+  "_cost": 0.000284622,
+  "_answer_sha": "701ab26c5b4ed96f",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "FY 2022 GBV per nights and experiences booked ($)",
+     "gold": "$160.44",
+     "gold_scale": null,
+     "answers": [
+      "$160.53"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "FY 2023 GBV per nights and experiences booked ($)",
+     "gold": "$163.51",
+     "gold_scale": null,
+     "answers": [
+      "$163.54"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "3": {
+   "check_id": 3,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "FY 2024 GBV per nights and experiences booked ($)",
+     "gold": "$166.23",
+     "gold_scale": null,
+     "answers": [
+      "$166.43"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "4": {
+   "check_id": 4,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "FY 2022 GBV per nights and experiences booked ($)",
+     "gold": "$160.44",
+     "gold_scale": null,
+     "answers": [
+      "$160.53"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "FY 2023 GBV per nights and experiences booked ($)",
+     "gold": "$163.51",
+     "gold_scale": null,
+     "answers": [
+      "$163.54"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "FY 2024 GBV per nights and experiences booked ($)",
+     "gold": "$166.23",
+     "gold_scale": null,
+     "answers": [
+      "$166.43"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-23": {
+  "_cost": 0.000173538,
+  "_answer_sha": "012499449839d74b",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Expected production start year",
+     "gold": "2025",
+     "gold_scale": null,
+     "answers": [
+      "2025"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Expected production start year",
+     "gold": "2025",
+     "gold_scale": null,
+     "answers": [
+      "2025"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-24": {
+  "_cost": 0.00021463800000000001,
+  "_answer_sha": "8c63dfe54c21b4d7",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Salesforce debt excluding sustainability notes, face value, as of March 10, 2025",
+     "gold": "$7.5 billion",
+     "gold_scale": null,
+     "answers": [
+      "$7.5 billion"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Salesforce debt excluding sustainability notes, face value, as of March 10, 2025",
+     "gold": "$7.5 billion",
+     "gold_scale": null,
+     "answers": [
+      "$7.5 billion"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-25": {
+  "_cost": 0.00040502400000000003,
+  "_answer_sha": "c4d153f013f572eb",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "3": {
+   "check_id": 3,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "4": {
+   "check_id": 4,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "5": {
+   "check_id": 5,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "6": {
+   "check_id": 6,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "7": {
+   "check_id": 7,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "8": {
+   "check_id": 8,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "9": {
+   "check_id": 9,
+   "non_numeric_claim": true,
+   "quantities": []
+  }
+ },
+ "vals-26": {
+  "_cost": 0.00027997199999999997,
+  "_answer_sha": "2b2ad56190580aa6",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Percent of full-time employees outside the U.S. as of June 30, 2024",
+     "gold": "45%",
+     "gold_scale": null,
+     "answers": [
+      "approximately 44.7%"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "International (outside U.S.) full-time employees as of June 30, 2024",
+     "gold": "102,000",
+     "gold_scale": null,
+     "answers": [
+      "~102,000"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Total full-time employees as of June 30, 2024",
+     "gold": "228,000",
+     "gold_scale": null,
+     "answers": [
+      "~228,000"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Percent of full-time employees outside the U.S. as of June 30, 2024",
+     "gold": "45%",
+     "gold_scale": null,
+     "answers": [
+      "approximately 44.7%"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "International (outside U.S.) full-time employees as of June 30, 2024",
+     "gold": "102,000",
+     "gold_scale": null,
+     "answers": [
+      "~102,000"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Total full-time employees as of June 30, 2024",
+     "gold": "228,000",
+     "gold_scale": null,
+     "answers": [
+      "~228,000"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-27": {
+  "_cost": 0.00074154,
+  "_answer_sha": "39b38580d70ee3ea",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Principal outstanding of Series A Junior Subordinated Debentures as of FY 2024",
+     "gold": "$500 million",
+     "gold_scale": null,
+     "answers": [
+      "$500 million"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Coupon rate of Series A Junior Subordinated Debentures",
+     "gold": "6.500%",
+     "gold_scale": null,
+     "answers": [
+      "6.500%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Scheduled maturity date",
+     "gold": "May 15, 2057",
+     "gold_scale": null,
+     "answers": [
+      "May 15, 2057"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "3": {
+   "check_id": 3,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Final maturity date",
+     "gold": "May 15, 2067",
+     "gold_scale": null,
+     "answers": [
+      "May 15, 2067"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "4": {
+   "check_id": 4,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Redemption date on or after which debentures are redeemable at principal plus accrued interest",
+     "gold": "May 15, 2037",
+     "gold_scale": null,
+     "answers": [
+      "May 15, 2037"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "5": {
+   "check_id": 5,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Redemption date prior to which debentures are redeemable at principal plus accrued interest or make-whole price",
+     "gold": "May 15, 2037",
+     "gold_scale": null,
+     "answers": [
+      "May 15, 2037"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "6": {
+   "check_id": 6,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Principal outstanding of Series A Junior Subordinated Debentures as of December 31, 2024",
+     "gold": "$500 million",
+     "gold_scale": null,
+     "answers": [
+      "$500 million"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Coupon rate of Series A Junior Subordinated Debentures",
+     "gold": "6.500%",
+     "gold_scale": null,
+     "answers": [
+      "6.500%"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Scheduled maturity date",
+     "gold": "May 15, 2057",
+     "gold_scale": null,
+     "answers": [
+      "May 15, 2057"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Final maturity date",
+     "gold": "May 15, 2067",
+     "gold_scale": null,
+     "answers": [
+      "May 15, 2067"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Redemption date on or after which debentures are redeemable at principal plus accrued interest",
+     "gold": "May 15, 2037",
+     "gold_scale": null,
+     "answers": [
+      "May 15, 2037"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Redemption date prior to which debentures are redeemable at principal plus accrued interest or make-whole price",
+     "gold": "May 15, 2037",
+     "gold_scale": null,
+     "answers": [
+      "May 15, 2037"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-28": {
+  "_cost": 0.00024373800000000002,
+  "_answer_sha": "b5e79373acb636ad",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Total projected material cash requirements for 2025",
+     "gold": "$14,426,266,000",
+     "gold_scale": null,
+     "answers": [
+      "$14,426,266"
+     ],
+     "answer_scale": "thousand"
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Total projected material cash requirements for 2025",
+     "gold": "$14,426,266,000",
+     "gold_scale": null,
+     "answers": [
+      "$14,426,266"
+     ],
+     "answer_scale": "thousand"
+    }
+   ]
+  }
+ },
+ "vals-29": {
+  "_cost": 0.001286658,
+  "_answer_sha": "ebf4e913c87dbb07",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Average aircraft, FY 2024",
+     "gold": "209.9",
+     "gold_scale": null,
+     "answers": [
+      "209.9"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Aircraft at end of period, FY 2024",
+     "gold": "213",
+     "gold_scale": null,
+     "answers": [
+      "213"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "3": {
+   "check_id": 3,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Average daily aircraft utilization (hours), FY 2024",
+     "gold": "9.9",
+     "gold_scale": null,
+     "answers": [
+      "9.9"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "4": {
+   "check_id": 4,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Departures, FY 2024",
+     "gold": "288,180",
+     "gold_scale": null,
+     "answers": [
+      "288,180"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "5": {
+   "check_id": 5,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Passenger flight segments (PFSs), FY 2024",
+     "gold": "44,180,000",
+     "gold_scale": null,
+     "answers": [
+      "44,180"
+     ],
+     "answer_scale": "thousands"
+    }
+   ]
+  },
+  "6": {
+   "check_id": 6,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Revenue passenger miles (RPMs), FY 2024",
+     "gold": "43,671,009,000",
+     "gold_scale": null,
+     "answers": [
+      "43,671,009"
+     ],
+     "answer_scale": "thousands"
+    }
+   ]
+  },
+  "7": {
+   "check_id": 7,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Available seat miles (ASMs), FY 2024",
+     "gold": "53,017,948,000",
+     "gold_scale": null,
+     "answers": [
+      "53,017,948"
+     ],
+     "answer_scale": "thousands"
+    }
+   ]
+  },
+  "8": {
+   "check_id": 8,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Load factor, FY 2024",
+     "gold": "0.824",
+     "gold_scale": null,
+     "answers": [
+      "82.4%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "9": {
+   "check_id": 9,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Total revenue per passenger flight segment, FY 2024",
+     "gold": "$111.21",
+     "gold_scale": null,
+     "answers": [
+      "$111.21"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "10": {
+   "check_id": 10,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Average yield, FY 2024",
+     "gold": "$0.1125",
+     "gold_scale": null,
+     "answers": [
+      "11.25¢"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "11": {
+   "check_id": 11,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "TRASM, FY 2024",
+     "gold": "$0.0927",
+     "gold_scale": null,
+     "answers": [
+      "9.27¢"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "12": {
+   "check_id": 12,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "CASM, FY 2024",
+     "gold": "$0.1135",
+     "gold_scale": null,
+     "answers": [
+      "11.35¢"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "13": {
+   "check_id": 13,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Adjusted CASM, FY 2024",
+     "gold": "$0.1076",
+     "gold_scale": null,
+     "answers": [
+      "10.76¢"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "14": {
+   "check_id": 14,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Adjusted CASM ex-fuel, FY 2024",
+     "gold": "$0.0797",
+     "gold_scale": null,
+     "answers": [
+      "7.97¢"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "15": {
+   "check_id": 15,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Fuel gallons consumed, FY 2024",
+     "gold": "551,819,000",
+     "gold_scale": null,
+     "answers": [
+      "551,819"
+     ],
+     "answer_scale": "thousands"
+    }
+   ]
+  },
+  "16": {
+   "check_id": 16,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Average fuel cost per gallon, FY 2024",
+     "gold": "$2.68",
+     "gold_scale": null,
+     "answers": [
+      "$2.68"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "17": {
+   "check_id": 17,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Average aircraft, FY 2024",
+     "gold": "209.9",
+     "gold_scale": null,
+     "answers": [
+      "209.9"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Aircraft at end of period, FY 2024",
+     "gold": "213",
+     "gold_scale": null,
+     "answers": [
+      "213"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Average daily aircraft utilization (hours), FY 2024",
+     "gold": "9.9",
+     "gold_scale": null,
+     "answers": [
+      "9.9"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Departures, FY 2024",
+     "gold": "288,180",
+     "gold_scale": null,
+     "answers": [
+      "288,180"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Passenger flight segments (PFSs), FY 2024",
+     "gold": "44,180,000",
+     "gold_scale": null,
+     "answers": [
+      "44,180"
+     ],
+     "answer_scale": "thousands"
+    },
+    {
+     "label": "Revenue passenger miles (RPMs), FY 2024",
+     "gold": "43,671,009,000",
+     "gold_scale": null,
+     "answers": [
+      "43,671,009"
+     ],
+     "answer_scale": "thousands"
+    },
+    {
+     "label": "Available seat miles (ASMs), FY 2024",
+     "gold": "53,017,948,000",
+     "gold_scale": null,
+     "answers": [
+      "53,017,948"
+     ],
+     "answer_scale": "thousands"
+    },
+    {
+     "label": "Load factor, FY 2024",
+     "gold": "0.824",
+     "gold_scale": null,
+     "answers": [
+      "82.4%"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Total revenue per passenger flight segment, FY 2024",
+     "gold": "$111.21",
+     "gold_scale": null,
+     "answers": [
+      "$111.21"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Average yield, FY 2024",
+     "gold": "$0.1125",
+     "gold_scale": null,
+     "answers": [
+      "11.25¢"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "TRASM, FY 2024",
+     "gold": "$0.0927",
+     "gold_scale": null,
+     "answers": [
+      "9.27¢"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "CASM, FY 2024",
+     "gold": "$0.1135",
+     "gold_scale": null,
+     "answers": [
+      "11.35¢"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Adjusted CASM, FY 2024",
+     "gold": "$0.1076",
+     "gold_scale": null,
+     "answers": [
+      "10.76¢"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Adjusted CASM ex-fuel, FY 2024",
+     "gold": "$0.0797",
+     "gold_scale": null,
+     "answers": [
+      "7.97¢"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Fuel gallons consumed, FY 2024",
+     "gold": "551,819,000",
+     "gold_scale": null,
+     "answers": [
+      "551,819"
+     ],
+     "answer_scale": "thousands"
+    },
+    {
+     "label": "Average fuel cost per gallon, FY 2024",
+     "gold": "$2.68",
+     "gold_scale": null,
+     "answers": [
+      "$2.68"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-30": {
+  "_cost": 0.00021913800000000002,
+  "_answer_sha": "c997ed818ab91de2",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "maximum dilutive shares from convertible notes as of 12/31/2024",
+     "gold": "85,945,127 shares",
+     "gold_scale": null,
+     "answers": [
+      "~85.9 million shares",
+      "85,945 thousand"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "maximum dilutive shares from convertible notes as of 12/31/2024",
+     "gold": "85,945,127 shares",
+     "gold_scale": null,
+     "answers": [
+      "~85.9 million shares",
+      "85,945 thousand"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-31": {
+  "_cost": 0.00015838799999999997,
+  "_answer_sha": "33a1cb15eb64288b",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "BROS gross profit in 2026",
+     "gold": "$467 million",
+     "gold_scale": null,
+     "answers": [
+      "$466.6M",
+      "≈ $467 million"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "BROS gross profit in 2026",
+     "gold": "$467 million",
+     "gold_scale": null,
+     "answers": [
+      "$466.6M",
+      "≈ $467 million"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-32": {
+  "_cost": 0.000284688,
+  "_answer_sha": "680cff2f4557a250",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Purchase loan originations, nine months ended September 30, 2024",
+     "gold": "$12,057,993",
+     "gold_scale": "thousands",
+     "answers": [
+      "$12,057,993",
+      "$12.06 billion"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Refinance loan originations, nine months ended September 30, 2024",
+     "gold": "$5,250,321",
+     "gold_scale": "thousands",
+     "answers": [
+      "$5,250,321",
+      "$5.25 billion"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "3": {
+   "check_id": 3,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Purchase loan originations, nine months ended September 30, 2024",
+     "gold": "$12,057,993",
+     "gold_scale": "thousands",
+     "answers": [
+      "$12,057,993",
+      "$12.06 billion"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Refinance loan originations, nine months ended September 30, 2024",
+     "gold": "$5,250,321",
+     "gold_scale": "thousands",
+     "answers": [
+      "$5,250,321",
+      "$5.25 billion"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-33": {
+  "_cost": 0.00028408799999999994,
+  "_answer_sha": "bc4279992623abfa",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "Negative impact to net income, 2024",
+     "gold": "$1.261 Billion",
+     "gold_scale": null,
+     "answers": [
+      "~$1.277B",
+      "approximately **$1.28 billion after tax**"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Percent decrease in net income, 2024",
+     "gold": "10.7%",
+     "gold_scale": null,
+     "answers": [
+      "~10.8%",
+      "about **10.8%**"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "3": {
+   "check_id": 3,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "Negative impact to net income, 2024",
+     "gold": "$1.261 Billion",
+     "gold_scale": null,
+     "answers": [
+      "~$1.277B",
+      "approximately **$1.28 billion after tax**"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Percent decrease in net income, 2024",
+     "gold": "10.7%",
+     "gold_scale": null,
+     "answers": [
+      "~10.8%",
+      "about **10.8%**"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-34": {
+  "_cost": 0.00023593800000000002,
+  "_answer_sha": "9fe0d8642e99ee40",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "FY2024 percentage of revenue from channel partners",
+     "gold": "20%",
+     "gold_scale": null,
+     "answers": [
+      "**20%**"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "FY2024 channel partner revenue percentage",
+     "gold": "20%",
+     "gold_scale": null,
+     "answers": [
+      "**20%**"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "3": {
+   "check_id": 3,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "FY2024 revenue from channel partners",
+     "gold": "20%",
+     "gold_scale": null,
+     "answers": [
+      "**20%**"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "4": {
+   "check_id": 4,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "FY2024 percentage of revenue from channel partners",
+     "gold": "20%",
+     "gold_scale": null,
+     "answers": [
+      "**20%**"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-35": {
+  "_cost": 0.000139122,
+  "_answer_sha": "53400529247e1efb",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "FY2023 stock-based compensation expense adjustment to EBITDA",
+     "gold": "$1.935B",
+     "gold_scale": null,
+     "answers": [
+      "$1.935 billion",
+      "$1,935 million"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "FY2023 stock-based compensation expense adjustment to EBITDA",
+     "gold": "$1.935B",
+     "gold_scale": null,
+     "answers": [
+      "$1.935 billion",
+      "$1,935 million"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-36": {
+  "_cost": 0.000389622,
+  "_answer_sha": "367c9bc01ca778b6",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "RKT Class A shares per RDFN share (exchange ratio)",
+     "gold": "0.7926 shares",
+     "gold_scale": null,
+     "answers": [
+      "0.7926 RKT Class A shares per RDFN share"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "equity value",
+     "gold": "$1.75 billion",
+     "gold_scale": null,
+     "answers": [
+      "$1.75 billion"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "3": {
+   "check_id": 3,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "total enterprise value",
+     "gold": "$2.4 billion",
+     "gold_scale": null,
+     "answers": [
+      "$2.4 billion"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "4": {
+   "check_id": 4,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "price per share",
+     "gold": "$12.50 per share",
+     "gold_scale": null,
+     "answers": [
+      "$12.50"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "5": {
+   "check_id": 5,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "RKT Class A shares per RDFN share (exchange ratio)",
+     "gold": "0.7926 shares",
+     "gold_scale": null,
+     "answers": [
+      "0.7926 RKT Class A shares per RDFN share"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "equity value",
+     "gold": "$1.75 billion",
+     "gold_scale": null,
+     "answers": [
+      "$1.75 billion"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "total enterprise value",
+     "gold": "$2.4 billion",
+     "gold_scale": null,
+     "answers": [
+      "$2.4 billion"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "price per share",
+     "gold": "$12.50 per share",
+     "gold_scale": null,
+     "answers": [
+      "$12.50"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-37": {
+  "_cost": 0.00020038799999999997,
+  "_answer_sha": "ce9bb457d6606357",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Total restructuring costs as of Dec 31, 2024",
+     "gold": "$4.7 Billion",
+     "gold_scale": null,
+     "answers": [
+      "$4.7 billion"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Total restructuring costs as of Dec 31, 2024",
+     "gold": "$4.7 Billion",
+     "gold_scale": null,
+     "answers": [
+      "$4.7 billion"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-38": {
+  "_cost": 0.000169038,
+  "_answer_sha": "9ba78e2307960251",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "Q4'24 Adjusted EBITDA margin beat vs Q3'24 guidance midpoint (bps)",
+     "gold": "26.1bps",
+     "gold_scale": null,
+     "answers": [
+      "~29 bps",
+      "29 bps precise"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "Q4'24 Adjusted EBITDA margin beat vs Q3'24 guidance midpoint (bps)",
+     "gold": "26.1bps",
+     "gold_scale": null,
+     "answers": [
+      "~29 bps",
+      "29 bps precise"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-39": {
+  "_cost": 0.000301272,
+  "_answer_sha": "45563db7421ed592",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": false,
+   "quantities": []
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": false,
+   "quantities": []
+  },
+  "3": {
+   "check_id": 3,
+   "non_numeric_claim": false,
+   "quantities": []
+  },
+  "4": {
+   "check_id": 4,
+   "non_numeric_claim": false,
+   "quantities": []
+  },
+  "5": {
+   "check_id": 5,
+   "non_numeric_claim": false,
+   "quantities": []
+  },
+  "6": {
+   "check_id": 6,
+   "non_numeric_claim": false,
+   "quantities": []
+  },
+  "7": {
+   "check_id": 7,
+   "non_numeric_claim": true,
+   "quantities": []
+  }
+ },
+ "vals-40": {
+  "_cost": 0.00032385599999999997,
+  "_answer_sha": "141fa92f33638e95",
+  "1": {
+   "check_id": 1,
+   "quantities": [],
+   "non_numeric_claim": false
+  },
+  "2": {
+   "check_id": 2,
+   "quantities": [],
+   "non_numeric_claim": false
+  },
+  "3": {
+   "check_id": 3,
+   "quantities": [],
+   "non_numeric_claim": false
+  },
+  "4": {
+   "check_id": 4,
+   "quantities": [],
+   "non_numeric_claim": false
+  },
+  "5": {
+   "check_id": 5,
+   "quantities": [],
+   "non_numeric_claim": false
+  },
+  "6": {
+   "check_id": 6,
+   "quantities": [],
+   "non_numeric_claim": false
+  },
+  "7": {
+   "check_id": 7,
+   "quantities": [],
+   "non_numeric_claim": false
+  },
+  "8": {
+   "check_id": 8,
+   "quantities": [],
+   "non_numeric_claim": false
+  }
+ },
+ "vals-41": {
+  "_cost": 0.000187938,
+  "_answer_sha": "016ea3be82ba3101",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "FND same-store sales growth in Q4 2024",
+     "gold": "-0.8%",
+     "gold_scale": null,
+     "answers": [
+      "–0.8%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "FND same-store sales growth in Q4 2024",
+     "gold": "-0.8%",
+     "gold_scale": null,
+     "answers": [
+      "–0.8%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-42": {
+  "_cost": 0.00045412199999999995,
+  "_answer_sha": "efd32251327d691e",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "KDP FY24 dividend payout ratio",
+     "gold": "0.83",
+     "gold_scale": null,
+     "answers": [
+      "84.8%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "KO FY24 dividend payout ratio",
+     "gold": "0.79",
+     "gold_scale": null,
+     "answers": [
+      "78.9%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "3": {
+   "check_id": 3,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "PEP FY24 dividend payout ratio",
+     "gold": "0.75",
+     "gold_scale": null,
+     "answers": [
+      "76.7%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "4": {
+   "check_id": 4,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "KHC FY24 dividend payout ratio",
+     "gold": "0.70",
+     "gold_scale": null,
+     "answers": [],
+     "answer_scale": null
+    }
+   ]
+  },
+  "5": {
+   "check_id": 5,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "SJM FY24 dividend payout ratio",
+     "gold": "0.59",
+     "gold_scale": null,
+     "answers": [],
+     "answer_scale": null
+    }
+   ]
+  },
+  "6": {
+   "check_id": 6,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "KDP FY24 dividend payout ratio",
+     "gold": "0.83",
+     "gold_scale": null,
+     "answers": [
+      "84.8%"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "KO FY24 dividend payout ratio",
+     "gold": "0.79",
+     "gold_scale": null,
+     "answers": [
+      "78.9%"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "PEP FY24 dividend payout ratio",
+     "gold": "0.75",
+     "gold_scale": null,
+     "answers": [
+      "76.7%"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "KHC FY24 dividend payout ratio",
+     "gold": "0.70",
+     "gold_scale": null,
+     "answers": [],
+     "answer_scale": null
+    },
+    {
+     "label": "SJM FY24 dividend payout ratio",
+     "gold": "0.59",
+     "gold_scale": null,
+     "answers": [],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-43": {
+  "_cost": 0.000686856,
+  "_answer_sha": "7747ac4111d84e7a",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Take rate 2023",
+     "gold": "27.04%",
+     "gold_scale": null,
+     "answers": [
+      "27.04%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Take rate 2024",
+     "gold": "27.02%",
+     "gold_scale": null,
+     "answers": [
+      "27.02%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "3": {
+   "check_id": 3,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "4": {
+   "check_id": 4,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Overall revenue growth 2024",
+     "gold": "18%",
+     "gold_scale": null,
+     "answers": [
+      "+18%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "5": {
+   "check_id": 5,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Gross bookings growth YoY 2024",
+     "gold": "18%",
+     "gold_scale": null,
+     "answers": [
+      "+18%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "6": {
+   "check_id": 6,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Mobility segment growth 2024",
+     "gold": "25%",
+     "gold_scale": null,
+     "answers": [
+      "+20.5%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "7": {
+   "check_id": 7,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Delivery segment growth 2024",
+     "gold": "17%",
+     "gold_scale": null,
+     "answers": [
+      "+17.1%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "8": {
+   "check_id": 8,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "Freight segment growth 2024",
+     "gold": "2%",
+     "gold_scale": null,
+     "answers": [
+      "‑2.0%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "9": {
+   "check_id": 9,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "10": {
+   "check_id": 10,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "Take rate 2023",
+     "gold": "27.04%",
+     "gold_scale": null,
+     "answers": [
+      "27.04%"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Take rate 2024",
+     "gold": "27.02%",
+     "gold_scale": null,
+     "answers": [
+      "27.02%"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Overall revenue growth 2024",
+     "gold": "18%",
+     "gold_scale": null,
+     "answers": [
+      "+18%"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Gross bookings growth YoY 2024",
+     "gold": "18%",
+     "gold_scale": null,
+     "answers": [
+      "+18%"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Mobility segment growth 2024",
+     "gold": "25%",
+     "gold_scale": null,
+     "answers": [
+      "+20.5%"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Delivery segment growth 2024",
+     "gold": "17%",
+     "gold_scale": null,
+     "answers": [
+      "+17.1%"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Freight segment growth 2024",
+     "gold": "2%",
+     "gold_scale": null,
+     "answers": [
+      "‑2.0%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-44": {
+  "_cost": 0.00014503799999999998,
+  "_answer_sha": "2d610ce4c00b364e",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "2024 Asia Pacific average nights per booking",
+     "gold": "3.3 Nights per Booking",
+     "gold_scale": null,
+     "answers": [
+      "3.3 nights"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "2024 Asia Pacific average nights per booking",
+     "gold": "3.3 Nights per Booking",
+     "gold_scale": null,
+     "answers": [
+      "3.3 nights"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-45": {
+  "_cost": 0.000202188,
+  "_answer_sha": "1f8542f37bd5c150",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "2024 stock-based compensation expense adjustment to EBITDA",
+     "gold": "$1,407,000,000",
+     "gold_scale": null,
+     "answers": [
+      "$1,407 million"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "2024 stock-based compensation expense adjustment to EBITDA",
+     "gold": "$1,407,000,000",
+     "gold_scale": null,
+     "answers": [
+      "$1,407 million"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-46": {
+  "_cost": 0.00065394,
+  "_answer_sha": "5757925294bd89c5",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "Follow Up Boss acquisition price",
+     "gold": "$399 million",
+     "gold_scale": null,
+     "answers": [
+      "~$399M cash net"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Follow Up Boss contingent consideration (up to)",
+     "gold": "up to $100 million",
+     "gold_scale": null,
+     "answers": [
+      "up to $100M earnout"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "Spruce acquisition price",
+     "gold": "$19 million",
+     "gold_scale": null,
+     "answers": [
+      "~$19M cash, net"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "3": {
+   "check_id": 3,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "Aryeo acquisition price",
+     "gold": "$35 million",
+     "gold_scale": null,
+     "answers": [
+      "~$35M net (cash + stock)"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "4": {
+   "check_id": 4,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "5": {
+   "check_id": 5,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "6": {
+   "check_id": 6,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "7": {
+   "check_id": 7,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "Follow Up Boss acquisition price",
+     "gold": "$399 million",
+     "gold_scale": null,
+     "answers": [
+      "~$399M cash net"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Follow Up Boss contingent consideration (up to)",
+     "gold": "up to $100 million",
+     "gold_scale": null,
+     "answers": [
+      "up to $100M earnout"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Spruce acquisition price",
+     "gold": "$19 million",
+     "gold_scale": null,
+     "answers": [
+      "~$19M cash, net"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Aryeo acquisition price",
+     "gold": "$35 million",
+     "gold_scale": null,
+     "answers": [
+      "~$35M net (cash + stock)"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-47": {
+  "_cost": 0.00018403799999999998,
+  "_answer_sha": "476b0bddf4e40ae4",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "Q3 2024 end-to-end payment volume vs guidance midpoint (% miss)",
+     "gold": "7.4% MISS",
+     "gold_scale": null,
+     "answers": [
+      "MISS of ~7.4%",
+      "−7.4%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "Q3 2024 end-to-end payment volume vs guidance midpoint (% miss)",
+     "gold": "7.4% MISS",
+     "gold_scale": null,
+     "answers": [
+      "MISS of ~7.4%",
+      "−7.4%"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-48": {
+  "_cost": 0.0007313399999999999,
+  "_answer_sha": "ca58e43ea5585a49",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "FY2024 In Force Premium (IFP)",
+     "gold": "$944 Million",
+     "gold_scale": null,
+     "answers": [
+      "$943.7M"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "FY2024 Gross Earned Premium (GEP)",
+     "gold": "$827 Million",
+     "gold_scale": null,
+     "answers": [
+      "$827.3M"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "3": {
+   "check_id": 3,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "FY2024 Revenue",
+     "gold": "$526.5 Million",
+     "gold_scale": null,
+     "answers": [
+      "$526.5M"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "4": {
+   "check_id": 4,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "FY2024 Adjusted EBITDA Loss",
+     "gold": "$(149.7) Million",
+     "gold_scale": null,
+     "answers": [
+      "($149.7)M"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "5": {
+   "check_id": 5,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "FY2024 Stock-based Compensation",
+     "gold": "$64.5 Million",
+     "gold_scale": null,
+     "answers": [
+      "$64.5M"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Expected FY2024 Stock-based Compensation",
+     "gold": "$64 Million",
+     "gold_scale": null,
+     "answers": [
+      "~$64M"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "6": {
+   "check_id": 6,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "FY2024 Capital Expenditures",
+     "gold": "$9.4 Million",
+     "gold_scale": null,
+     "answers": [
+      "$9.4M"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Expected FY2024 Capital Expenditures",
+     "gold": "$10 million",
+     "gold_scale": null,
+     "answers": [
+      "~$10M"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "7": {
+   "check_id": 7,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "FY2024 Weighted Common Shares",
+     "gold": "71 Million",
+     "gold_scale": null,
+     "answers": [
+      "~71M"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "8": {
+   "check_id": 8,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "FY2024 In Force Premium (IFP)",
+     "gold": "$944 Million",
+     "gold_scale": null,
+     "answers": [
+      "$943.7M"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "FY2024 Gross Earned Premium (GEP)",
+     "gold": "$827 Million",
+     "gold_scale": null,
+     "answers": [
+      "$827.3M"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "FY2024 Revenue",
+     "gold": "$526.5 Million",
+     "gold_scale": null,
+     "answers": [
+      "$526.5M"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "FY2024 Adjusted EBITDA Loss",
+     "gold": "$(149.7) Million",
+     "gold_scale": null,
+     "answers": [
+      "($149.7)M"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "FY2024 Stock-based Compensation",
+     "gold": "$64.5 Million",
+     "gold_scale": null,
+     "answers": [
+      "$64.5M"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Expected FY2024 Stock-based Compensation",
+     "gold": "$64 Million",
+     "gold_scale": null,
+     "answers": [
+      "~$64M"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "FY2024 Capital Expenditures",
+     "gold": "$9.4 Million",
+     "gold_scale": null,
+     "answers": [
+      "$9.4M"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "Expected FY2024 Capital Expenditures",
+     "gold": "$10 million",
+     "gold_scale": null,
+     "answers": [
+      "~$10M"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "FY2024 Weighted Common Shares",
+     "gold": "71 Million",
+     "gold_scale": null,
+     "answers": [
+      "~71M"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ },
+ "vals-49": {
+  "_cost": 0.000711558,
+  "_answer_sha": "8ceae42e6a90ce85",
+  "1": {
+   "check_id": 1,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "2": {
+   "check_id": 2,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "FY2023 Adjusted Diluted EPS (reported)",
+     "gold": "$4.30",
+     "gold_scale": null,
+     "answers": [
+      "$4.30"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "3": {
+   "check_id": 3,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "FY2023 guidance range (low)",
+     "gold": "$3.94",
+     "gold_scale": null,
+     "answers": [
+      "$3.94"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "FY2023 guidance range (high)",
+     "gold": "$4.06",
+     "gold_scale": null,
+     "answers": [
+      "4.06"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "4": {
+   "check_id": 4,
+   "non_numeric_claim": true,
+   "quantities": []
+  },
+  "5": {
+   "check_id": 5,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "FY2024 Adjusted Diluted EPS (reported)",
+     "gold": "$4.52",
+     "gold_scale": null,
+     "answers": [
+      "$4.52"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "6": {
+   "check_id": 6,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "FY2024 guidance range (low)",
+     "gold": "$4.47",
+     "gold_scale": null,
+     "answers": [
+      "$4.47"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "FY2024 guidance range (high)",
+     "gold": "$4.56",
+     "gold_scale": null,
+     "answers": [
+      "4.56"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "7": {
+   "check_id": 7,
+   "non_numeric_claim": false,
+   "quantities": [
+    {
+     "label": "FY2025 guidance range (low)",
+     "gold": "$4.47",
+     "gold_scale": null,
+     "answers": [
+      "$4.47"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "FY2025 guidance range (high)",
+     "gold": "$4.57",
+     "gold_scale": null,
+     "answers": [
+      "$4.57"
+     ],
+     "answer_scale": null
+    }
+   ]
+  },
+  "8": {
+   "check_id": 8,
+   "non_numeric_claim": true,
+   "quantities": [
+    {
+     "label": "FY2023 Adjusted Diluted EPS (reported)",
+     "gold": "$4.30",
+     "gold_scale": null,
+     "answers": [
+      "$4.30"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "FY2023 guidance range (low)",
+     "gold": "$3.94",
+     "gold_scale": null,
+     "answers": [
+      "$3.94"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "FY2023 guidance range (high)",
+     "gold": "$4.06",
+     "gold_scale": null,
+     "answers": [
+      "4.06"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "FY2024 Adjusted Diluted EPS (reported)",
+     "gold": "$4.52",
+     "gold_scale": null,
+     "answers": [
+      "$4.52"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "FY2024 guidance range (low)",
+     "gold": "$4.47",
+     "gold_scale": null,
+     "answers": [
+      "$4.47"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "FY2024 guidance range (high)",
+     "gold": "$4.56",
+     "gold_scale": null,
+     "answers": [
+      "4.56"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "FY2025 guidance range (low)",
+     "gold": "$4.47",
+     "gold_scale": null,
+     "answers": [
+      "$4.47"
+     ],
+     "answer_scale": null
+    },
+    {
+     "label": "FY2025 guidance range (high)",
+     "gold": "$4.57",
+     "gold_scale": null,
+     "answers": [
+      "$4.57"
+     ],
+     "answer_scale": null
+    }
+   ]
+  }
+ }
+}

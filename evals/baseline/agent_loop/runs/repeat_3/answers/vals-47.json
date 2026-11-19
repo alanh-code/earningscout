@@ -1,0 +1,52 @@
+{
+  "id": "vals-47",
+  "type": "Beat or Miss",
+  "question": "Did FOUR beat or miss its end to end payment volume guidance at midpoint for Q3 2024 provided in Q1 2024? Express as % BEAT or MISS",
+  "answer": "7.4% MISS",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "7.4% MISS"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "7.4% MISS"
+    }
+  ],
+  "model_answer": "**MISS of ~7.4%** (i.e., −7.4% vs. the guidance midpoint).\n\nDetails:\n- **Guidance given with Q1 2024 results (May 9, 2024):** Q3 2024 end‑to‑end payment volume of **$46.0B–$48.0B** → **midpoint $47.0B** (from the quarterly breakdown on p. 19 of the Q1 2024 shareholder letter).\n- **Actual Q3 2024 (reported Nov 12, 2024):** end‑to‑end payment volume of **$43.5B**, up 56% YoY.\n\nCalculation: (43.5 − 47.0) / 47.0 = **−7.45%**, so FOUR **missed** its Q3 2024 E2E volume guidance midpoint by **≈7.4%** (and came in below even the low end of the $46B–$48B range).",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 28392,
+    "output_tokens": 930,
+    "cache_hit_tokens": 18304,
+    "cache_miss_tokens": 10088,
+    "reasoning_tokens": 387
+  },
+  "model_cost_usd": 0.002126112,
+  "tool_cost_usd": {
+    "exa": 0.012,
+    "e2b": 8.3e-05
+  },
+  "cost_usd": 0.01420877256390584,
+  "latency_s": 17.505923542077653,
+  "tool_calls": {
+    "total": 5,
+    "web_search": 3,
+    "web_fetch": 1,
+    "code_execution": 1
+  },
+  "n_tool_calls": 5,
+  "n_refused": 0,
+  "n_turns": 4,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The model identifies a ~7.4% MISS, matching the official answer.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

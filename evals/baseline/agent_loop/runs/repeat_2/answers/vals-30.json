@@ -1,0 +1,51 @@
+{
+  "id": "vals-30",
+  "type": "Financial Modeling  Projections",
+  "question": "What is the maximum dilutive impact in number of shares of Snapchat's outstanding convertible notes as of 12/31/2024?",
+  "answer": "85,945,127 shares if all converts were converted (including out of the money converts)",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "85,945,127 shares if all converts were converted (including out of the money converts)"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "85,945,127 shares if all converts were converted (including out of the money converts)"
+    }
+  ],
+  "model_answer": "**~85.9 million shares** (85,945,000, or 85,945 thousand as disclosed).\n\nThat is the “if-converted” share count for Snap’s convertible notes in the FY2024 10-K’s EPS footnote — i.e., the maximum number of Class A shares issuable if all outstanding convertible notes were converted at their applicable conversion rates as of 12/31/2024:\n\n| Notes | Principal outstanding | Conversion rate (shares/$1,000) | Shares |\n|---|---:|---:|---:|\n| 2025 Notes | $36.24M | 46.1233 | ~1.67M |\n| 2026 Notes | $249.75M | 43.8481 | ~10.95M |\n| 2027 Notes | $1.15B | 11.2042 | ~12.88M |\n| 2028 Notes | $1.50B | 17.7494 | ~26.62M |\n| 2030 Notes | $750M | 45.0846 | ~33.81M |\n| **Total** | **$3.686B** | | **~85.945M** |\n\nSnap’s FY2024 10-K reports this in the anti-dilutive securities table as **“Convertible Notes (if-converted): 85,945” thousand shares** for December 31, 2024.\n\nCaveats: the notes are convertible into cash, Class A shares, or a combination at Snap’s election, so actual share issuance could be lower; and this is the gross note share count before considering the capped-call transactions, which are intended to offset dilution above the conversion prices but do not reduce the legal maximum shares issuable.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 266438,
+    "output_tokens": 5849,
+    "cache_hit_tokens": 214784,
+    "cache_miss_tokens": 51654,
+    "reasoning_tokens": 4646
+  },
+  "model_cost_usd": 0.011901851999999997,
+  "tool_cost_usd": {
+    "exa": 0.042,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.05390185200000001,
+  "latency_s": 41.450403499999084,
+  "tool_calls": {
+    "total": 15,
+    "web_search": 9,
+    "web_fetch": 6
+  },
+  "n_tool_calls": 15,
+  "n_refused": 0,
+  "n_turns": 9,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The model's ~85.9 million share count is a pure rounding of the official 85,945,127 and does not contradict it.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

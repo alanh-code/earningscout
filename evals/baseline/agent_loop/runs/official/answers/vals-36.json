@@ -1,0 +1,62 @@
+{
+  "id": "vals-36",
+  "type": "Simple retrieval - Quantitative",
+  "question": "What price was RDFN acquired at? (include price per share, equity value and enterprise value)",
+  "answer": "0.7926 shares of Rocket Companies class A stock per share of Redfin, which represents an equity value of $1.75 billion, and a total enterprise value of $2.4 billion at $12.50 per share",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "0.7926 shares of Rocket Companies class A stock per share of Redfin"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "equity value of $1.75 billion"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "enterprise value of $2.4 billion"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "$12.50 per share"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "0.7926 shares of Rocket Companies class A stock per share of Redfin, which represents an equity value of $1.75 billion, and a total enterprise value of $2.4 billion at $12.50 per share"
+    }
+  ],
+  "model_answer": "## Redfin (RDFN) — acquired by Rocket Companies (RKT)\n\n**Announced March 10, 2025 (merger agreement dated March 9, 2025); closed July 1, 2025.**\n\n| Metric | Value |\n|---|---|\n| **Price per share** | **$12.50** per Redfin share (implied) |\n| **Equity value** | **$1.75 billion** |\n| **Enterprise value** | **$2.4 billion** (~$2.36B), including assumption of Redfin's debt under its outstanding convertible notes |\n\n**Deal structure — all-stock, fixed exchange ratio (not a fixed price):**\n- Each RDFN share converted into **0.7926 shares of Rocket Class A common stock** (plus cash in lieu of fractional shares).\n- The $12.50/share figure was the implied value at announcement (based on RKT's price at signing), representing a **63% premium** to Redfin's 30-day VWAP through March 7, 2025.\n- Post-close ownership: Rocket shareholders ~**95%**, Redfin shareholders ~**5%** of the combined company (fully diluted).\n- Strategic rationale: linking Redfin's ~50 million monthly site visitors and ~2,200 agents in 42 states to Rocket's mortgage platform.\n\n**Important caveat:** Because the consideration was a fixed *ratio* of Rocket stock, the actual value delivered moved with RKT's share price. At closing (July 1, 2025), Rocket issued ~103.4 million Class A shares to Redfin holders. Rocket's later ASC 805 disclosure put the total acquisition-date consideration transferred at **~$1.742 billion** — comprising ~$1.466B of Rocket stock (≈$14.18/share of RKT × 0.7926 ≈ **~$11.24 per Redfin share**), ~$24M for converted Redfin equity awards, and ~$252M cash to settle Redfin's term loan principal, interest, and prepayment premium. So the \"headline\" $12.50/share, $1.75B equity / $2.4B EV figures are the announcement-date values, while the realized equity value at close was somewhat lower.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 13812,
+    "output_tokens": 900,
+    "cache_hit_tokens": 6144,
+    "cache_miss_tokens": 7668,
+    "reasoning_tokens": 276
+  },
+  "model_cost_usd": 0.0017086319999999999,
+  "tool_cost_usd": {
+    "exa": 0.012,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.013708632,
+  "latency_s": 7.865300167002715,
+  "tool_calls": {
+    "total": 3,
+    "web_search": 3
+  },
+  "n_tool_calls": 3,
+  "n_refused": 0,
+  "n_turns": 3,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "States all required official deal values; additional closing consideration caveat is not contradictory.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "wrong"
+  ]
+}

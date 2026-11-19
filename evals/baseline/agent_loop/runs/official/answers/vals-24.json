@@ -1,0 +1,50 @@
+{
+  "id": "vals-24",
+  "type": "Numerical Reasoning",
+  "question": "As of March 10, 2025, what is the face value of Salesforce's debt excluding their sustainability notes?",
+  "answer": "Salesforce's debt excluding sustainability notes is $7.5 billion as of March 10, 2025",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Salesforce's debt excluding sustainability notes is $7.5 billion as of March 10, 2025"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "Salesforce's debt excluding sustainability notes is $7.5 billion as of March 10, 2025"
+    }
+  ],
+  "model_answer": "**Answer: $7.5 billion** in face (principal) value.\n\nPer Salesforce's FY2025 Form 10‑K (fiscal year ended January 31, 2025, filed March 5, 2025), total principal outstanding was **$8,500 million**, of which **$1,000 million** was the 2028 Senior Sustainability Notes (1.50%, due July 2028).\n\nExcluding the sustainability notes:\n\n| Instrument | Maturity | Rate | Principal |\n|---|---|---|---|\n| 2028 Senior Notes | Apr 2028 | 3.70% | $1,500M |\n| 2031 Senior Notes | Jul 2031 | 1.95% | $1,500M |\n| 2041 Senior Notes | Jul 2041 | 2.70% | $1,250M |\n| 2051 Senior Notes | Jul 2051 | 2.90% | $2,000M |\n| 2061 Senior Notes | Jul 2061 | 3.05% | $1,250M |\n| **Total (ex‑sustainability)** | | | **$7,500M** |\n\nNotes:\n- No borrowings were outstanding on the $5.0B revolving credit facility, and the 2024 Senior Notes (0.625%) were fully repaid during fiscal 2025.\n- On a **carrying value** basis (net of unamortized discount/issuance costs), the comparable figure is about **$7,438 million** ($8,433M total carrying value less $995M for the sustainability notes).",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 9064,
+    "output_tokens": 1102,
+    "cache_hit_tokens": 1280,
+    "cache_miss_tokens": 7784,
+    "reasoning_tokens": 657
+  },
+  "model_cost_usd": 0.0018326399999999997,
+  "tool_cost_usd": {
+    "exa": 0.008,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.00983264,
+  "latency_s": 8.23801883298438,
+  "tool_calls": {
+    "total": 2,
+    "web_search": 2
+  },
+  "n_tool_calls": 2,
+  "n_refused": 0,
+  "n_turns": 2,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The answer gives $7.5 billion excluding sustainability notes, matching the official figure.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

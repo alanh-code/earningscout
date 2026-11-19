@@ -1,0 +1,50 @@
+{
+  "id": "vals-26",
+  "type": "Numerical Reasoning",
+  "question": "As of June 30, 2024, what % of Microsoft's (NASDAQ: MSFT) full-time employees are located outside of the United State? (give the numbers that led to the percentage calculation)",
+  "answer": "45% (102,000/228,000) of Microsoft's full-time employees are located outside of the United States as of June 30, 2024.",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "45% (102,000/228,000) of Microsoft's full-time employees are located outside of the United States as of June 30, 2024."
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "45% (102,000/228,000) of Microsoft's full-time employees are located outside of the United States as of June 30, 2024."
+    }
+  ],
+  "model_answer": "As of **June 30, 2024**, Microsoft’s FY2024 Form 10-K reported:\n\n- **Total full-time employees:** ~**228,000**\n- **U.S. employees:** ~**126,000**\n- **International employees:** ~**102,000**\n\nCalculation:\n\n\\[\n\\frac{102{,}000}{228{,}000} \\times 100 \\approx 44.74\\%\n\\]\n\nSo, **approximately 44.7% of Microsoft’s full-time employees were located outside the United States** as of June 30, 2024.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 3842,
+    "output_tokens": 451,
+    "cache_hit_tokens": 896,
+    "cache_miss_tokens": 2946,
+    "reasoning_tokens": 266
+  },
+  "model_cost_usd": 0.0007151880000000001,
+  "tool_cost_usd": {
+    "exa": 0.004,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.004715188,
+  "latency_s": 4.229113084031269,
+  "tool_calls": {
+    "total": 1,
+    "web_search": 1
+  },
+  "n_tool_calls": 1,
+  "n_refused": 0,
+  "n_turns": 2,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The model gives the same underlying numbers and a more precise 44.7% that rounds to the official 45%.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

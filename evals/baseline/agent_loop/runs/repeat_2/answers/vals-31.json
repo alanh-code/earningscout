@@ -1,0 +1,51 @@
+{
+  "id": "vals-31",
+  "type": "Financial Modeling  Projections",
+  "question": "Assume BROS grows revenue by 30% CAGR and gross margins compress by 500bps from YE 2024. What is BROS gross profit in 2026? Round answer to nearest million.",
+  "answer": "$467 million",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "BROS gross profit in 2026 is $467 million"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "$467 million"
+    }
+  ],
+  "model_answer": "BROS 2024 gross margin was **26.55%** on revenue of **$1,281M**.\n\n- 2026 revenue at 30% CAGR: \\(1,281 \\times 1.30^2 \\approx \\$2,165M\\)\n- 2026 gross margin: \\(26.55\\% - 5.00\\% = 21.55\\%\\)\n- 2026 gross profit: \\(2,165 \\times 21.55\\% \\approx \\$467M\\)\n\n**BROS gross profit in 2026 ≈ $467 million.**",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 20339,
+    "output_tokens": 849,
+    "cache_hit_tokens": 10752,
+    "cache_miss_tokens": 9587,
+    "reasoning_tokens": 538
+  },
+  "model_cost_usd": 0.0019797059999999995,
+  "tool_cost_usd": {
+    "exa": 0.008,
+    "e2b": 7.4e-05
+  },
+  "cost_usd": 0.010053700304418097,
+  "latency_s": 8.041003457969055,
+  "tool_calls": {
+    "total": 3,
+    "web_search": 2,
+    "code_execution": 1
+  },
+  "n_tool_calls": 3,
+  "n_refused": 0,
+  "n_turns": 3,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "Answer gives $467 million, matching the official gross profit figure.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "vals-32",
+  "type": "Simple retrieval - Quantitative",
+  "question": "For loanDepot (NYSE: LDI) what is the breakdown of loan originations between purchases and refinancings for the last 9 months as of 11/12/2024?",
+  "answer": "Purchase: $12,057,993\nRefinance: $5,250,321\nIn thousands",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Purchase loan originations: $12,057,993 in thousands"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Refinance loan originations: $5,250,321 in thousands"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "Purchase: $12,057,993\nRefinance: $5,250,321\nIn thousands"
+    }
+  ],
+  "model_answer": "For the nine months ended **September 30, 2024**—reported in loanDepot’s Q3 2024 results and 10-Q filed **November 12, 2024**—loan originations by purpose were:\n\n| Origination type | Volume ($ thousands) | % of total |\n|---|---:|---:|\n| **Purchase** | **$12,057,993** | **69.7%** |\n| Refinance — cash-out | $4,660,580 | 26.9% |\n| Refinance — rate/term | $589,741 | 3.4% |\n| **Total refinancings** | **$5,250,321** | **30.3%** |\n| **Total originations** | **$17,308,314** | **100.0%** |\n\nSo roughly **$12.06 billion, or 69.7%, were purchase loans**, while **$5.25 billion, or 30.3%, were refinancings**.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 18750,
+    "output_tokens": 924,
+    "cache_hit_tokens": 9984,
+    "cache_miss_tokens": 8766,
+    "reasoning_tokens": 508
+  },
+  "model_cost_usd": 0.001899252,
+  "tool_cost_usd": {
+    "exa": 0.008,
+    "e2b": 8.3e-05
+  },
+  "cost_usd": 0.009981971473271312,
+  "latency_s": 8.733857999905013,
+  "tool_calls": {
+    "total": 3,
+    "web_search": 2,
+    "code_execution": 1
+  },
+  "n_tool_calls": 3,
+  "n_refused": 0,
+  "n_turns": 3,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "Both purchase and refinance origination figures match the official answer exactly.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

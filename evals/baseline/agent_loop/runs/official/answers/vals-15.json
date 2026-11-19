@@ -1,0 +1,67 @@
+{
+  "id": "vals-15",
+  "type": "Numerical Reasoning",
+  "question": "Calculate the inventory turnover for US Steel in FY2024.",
+  "answer": "2024 Inventory turnover is equal to COGS over average inventory. $14,060M / (($2,168 + $2,128) / 2) = 6.55. Average inventory should be used for the year - 2.168B is end of period inventory, should be averaged with 2.128B from the prior year to get 2.148B average inventory and 6.55 inventory turnover.",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "COGS: $14,060M"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "2024 ending inventory: $2,168M"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "2023 ending inventory: $2,128M"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Average inventory: ($2,168 + $2,128) / 2 = $2,148M"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Inventory Turnover = 6.55"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "2024 Inventory turnover is equal to COGS over average inventory. $14,060M / (($2,168 + $2,128) / 2) = 6.55. Average inventory should be used for the year - 2.168B is end of period inventory, should be averaged with 2.128B from the prior year to get 2.148B average inventory and 6.55 inventory turnover."
+    }
+  ],
+  "model_answer": "**U.S. Steel FY2024 inventory turnover ≈ 6.55×**\n\nUsing data from the FY2024 Form 10-K (dollars in millions):\n\n- Cost of sales: **$14,060**\n- Inventory, Dec. 31, 2023: **$2,128**\n- Inventory, Dec. 31, 2024: **$2,168**\n- Average inventory: **($2,128 + $2,168) / 2 = $2,148**\n\n\\[\n\\text{Inventory turnover}=\\frac{\\text{COGS}}{\\text{Average inventory}}\n=\\frac{14{,}060}{2{,}148}\n\\approx 6.55\n\\]\n\nSo U.S. Steel turned over its inventory about **6.55 times** during FY2024, equivalent to roughly **56 days** of inventory.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 17846,
+    "output_tokens": 1163,
+    "cache_hit_tokens": 9600,
+    "cache_miss_tokens": 8246,
+    "reasoning_tokens": 804
+  },
+  "model_cost_usd": 0.0019635,
+  "tool_cost_usd": {
+    "exa": 0.008,
+    "e2b": 0.00014
+  },
+  "cost_usd": 0.010103760865727469,
+  "latency_s": 10.593791833962314,
+  "tool_calls": {
+    "total": 3,
+    "web_search": 2,
+    "code_execution": 1
+  },
+  "n_tool_calls": 3,
+  "n_refused": 0,
+  "n_turns": 3,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "All required figures and the 6.55 inventory turnover are correctly stated.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

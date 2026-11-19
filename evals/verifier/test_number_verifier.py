@@ -80,6 +80,10 @@ class Signs(unittest.TestCase):
 
 
 class RangesAndHedges(unittest.TestCase):
+    def test_plain_range_written_with_to(self):
+        self.assertEqual(parse("0.3312 to 0.4140 shares").kind, "range")
+        self.assertTrue(ok("0.3312-0.4140 shares", "0.3312 to 0.4140 shares"))
+
     def test_hedged_estimate_containing_gold(self):
         self.assertTrue(ok("$105.2 billion", "about $100B or more"))
         self.assertTrue(ok("$105.2 billion", "about $100 billion"))
@@ -140,6 +144,20 @@ class Checks(unittest.TestCase):
 
     def test_no_numbers(self):
         self.assertEqual(grade_check("correctness", [])[0], "not numeric")
+
+    def test_worked_expression_compares_the_result(self):
+        gold = parse("($2,168 + $2,128) / 2 = $2,148M")
+        ans = parse("($2,128 + $2,168) / 2 = $2,148")
+        self.assertTrue(compare(gold, ans)[0])
+        self.assertFalse(compare(gold, parse("= $2,150"))[0])
+
+    def test_typographic_minus_signs(self):
+        gold = parse("-0.8%")
+        self.assertTrue(compare(gold, parse("\u20130.8%"))[0])
+        self.assertTrue(compare(gold, parse("\u20110.8%"))[0])
+        self.assertFalse(compare(parse("2%"), parse("\u20112.0%"))[0])
+        rng = parse("10\u201312%")
+        self.assertEqual(rng.kind, "range")
 
 
 if __name__ == "__main__":

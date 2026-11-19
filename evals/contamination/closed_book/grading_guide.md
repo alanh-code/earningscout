@@ -1,6 +1,6 @@
 # Closed-book grading guide
 
-For human and LLM judges scoring Claude Sonnet 5.5 closed-book answers to the 50 public Vals Finance Agent questions (no tools). Checks come from the `Rubric` column in `data/vals/public.csv`. This is not an official Vals grading key.
+For human and LLM judges scoring closed-book answers to the 50 public Vals Finance Agent questions (no tools). Checks come from the `Rubric` column in `data/vals/public.csv`. This is not an official Vals grading key.
 
 ## Procedure
 

@@ -1,17 +1,17 @@
 # Benchmark contamination check
 
-**Question:** has the model seen the benchmark data in training? Here the model is Claude Sonnet 5.5 and the benchmark is the Vals Finance Agent public set. It also measures how many questions the model answers from memory alone.
+**Question:** has the model seen the benchmark data in training? Here the model is the agent model, `deepseek-flash`, and the benchmark is the Vals Finance Agent public set. It also measures how many questions the model answers from memory alone.
 
-The public set has been on GitHub since May 2025, before the model's training cutoff. If the model memorized it, any later score on these questions measures recall, not research.
+The public set has been on GitHub since May 2025. If the model memorized it, any later score on these questions measures recall, not research.
 
 ## Closed environment
 
 Every model call in this check:
 
-* goes straight to the Anthropic Messages API, never through an app or agent that brings its own tools, memory or files
-* sends no `tools`, no system prompt and no files
+* goes straight to the DeepSeek API, never through an app or agent that brings its own tools, memory or files
+* sends no `tools`, no system prompt and no files, with thinking off, temperature 0 and seed 42
 * is one fresh request, never several questions in one conversation
-* is checked after the response: every content block is `text`, `stop_reason` is not `tool_use`, and `usage` shows no server tool use
+* is checked after the response (`closed_violations` in `agent/llm.py`): one plain text answer, no tool calls, no thinking output, `finish_reason` `stop`, served by the requested model
 
 Without this, web search could simply find the questions on GitHub.
 
@@ -22,7 +22,7 @@ Without this, web search could simply find the questions on GitHub.
 | 1 | this folder | `select_questions.py` picks 10 questions into `questions.csv` |
 | 2 | `completion/` | Completion test on all 50 questions plus the 50 control questions in `controls.csv` |
 | 3 | `closed_book/` | The model answers the current 10 (`runs/selected`) and, separately, a frozen human-graded 15 |
-| 4 | `closed_book/judge/` | A Claude Opus 5.5 judge grades the answers (strict guide for the current 10; calibration vs human on the 15) |
+| 4 | `closed_book/judge/` | The `deepseek-v4-pro` judge grades the answers (strict guide for the current 10; calibration vs human on the 15) |
 
 ## The 10 questions
 
@@ -30,7 +30,7 @@ Without this, web search could simply find the questions on GitHub.
 
 Current ids: vals-01, 03, 11, 16, 17, 18, 19, 31, 33, 44. vals-11 is also listed in `evals/baseline/excluded_questions.csv` (answer depends on an unstated relative time period); it stays in this set.
 
-A previous seed produced vals-01, 03, 04, 08, 17, 22, 27, 30, 33, 34. That set, plus five more in `closed_book/batch2_questions.csv` (vals-06, 09, 12, 14, 18), is the human-graded 15 in `closed_book/runs/batch-1` and `batch-2`. Those answers, human grades, and judge calibrations are kept as a frozen record. They were not re-collected for the current 10.
+A previous seed produced vals-01, 03, 04, 08, 17, 22, 27, 30, 33, 34. That set, plus five more in `closed_book/batch2_questions.csv` (vals-06, 09, 12, 14, 18), is the human-graded 15 in `closed_book/runs/batch-1` and `batch-2`. Those answers and their human grades are a frozen calibration set for the judge.
 
 ## Scoring
 
@@ -47,15 +47,15 @@ Both are also reported by question type.
 
 | Group | Mode | n | Mean | Median | Min | Max |
 |---|---|---|---|---|---|---|
-| vals | guided | 50 | 0.51 | 0.50 | 0.23 | 0.81 |
-| vals | general | 50 | 0.44 | 0.42 | 0.09 | 0.82 |
-| control | guided | 50 | 0.53 | 0.55 | 0.14 | 0.87 |
-| control | general | 50 | 0.54 | 0.56 | 0.13 | 0.86 |
+| vals | guided | 50 | 0.49 | 0.47 | 0.03 | 0.94 |
+| vals | general | 50 | 0.44 | 0.46 | -0.06 | 0.92 |
+| control | guided | 50 | 0.48 | 0.50 | 0.06 | 0.83 |
+| control | general | 50 | 0.47 | 0.48 | 0.03 | 0.99 |
 
-Vals is not above control on either prompt. Guided is above general on 60 of 100 questions. Cost about $0.13. See `completion/runs/official/summary.md` and `analysis.md`. The `selected` flags in `results.csv` mark the current 10; they do not change the Vals-versus-control stats.
+Vals is not above control on either prompt, and guided is above general on only 49 of 100 questions. The highest-scoring Vals endings change the period or wording (see `completion/runs/official/summary.md`). Cost about $0.004.
 
-**Closed book, human-graded 15** (previous 10 plus five more): 2 right, 9 wrong, 4 abstain, 13.3% (2/15). See `closed_book/runs/batch-1/results.md`.
+**Closed book, current 10** (`closed_book/runs/selected`, graded in `closed_book/judge/runs/selected` by the strict 3-pass judge): 0 right, 9 wrong, 1 abstain (vals-31); average rubric fraction 0.19. Cost about $0.15.
 
-**Closed book, current 10** (`closed_book/runs/selected`): fresh answers, graded by the same strict 3-pass Opus 5.5 judge used for the baseline. No new human grades. 1 right, 6 wrong, 3 abstain, 10.0% (1/10); 14.3% (1/7) among attempted. Average rubric fraction 0.1625. See `closed_book/runs/selected/results.md`.
+**Judge calibration** (`closed_book/judge/runs/strict-calibration`, the human-graded 15): majority vote matches the human overall label on 13/15 (kappa 0.727) and the rubric checks on 68/73 (kappa 0.858). The two overall disagreements (vals-06, vals-18) are contradictions the judge triggered and the human did not; see `agreement.md`.
 
-**Conclusion:** No sign that Sonnet 5.5 memorized the public set. Completion similarity for Vals is at or below the control questions, and closed-book accuracy is well below the tool-using baseline. Changing the selection seed did not change that conclusion.
+**Conclusion:** no sign that the model memorized the public set. Completion similarity for Vals is at the control level, and closed-book accuracy is far below the tool-using baseline.

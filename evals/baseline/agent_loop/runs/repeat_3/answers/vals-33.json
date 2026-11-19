@@ -1,0 +1,56 @@
+{
+  "id": "vals-33",
+  "type": "Adjustments",
+  "question": "What would be the impact to net income in dollars and percent if all debt for Boeing in 2024 were refinanced at 3% higher interest rates than current?",
+  "answer": "$1.261 Billion Negative Impact to Net Income, or a 10.7% decrease",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "$1.261 Billion Negative Impact to Net Income"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "10.7% decrease in Net Income"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "$1.261 Billion Negative Impact to Net Income, or a 10.7% decrease"
+    }
+  ],
+  "model_answer": "Using Boeing’s **12/31/2024 total debt of $53.864 billion** and interpreting “3% higher” as **+300 basis points**:\n\n| Item | Calculation | Amount |\n|---|---:|---:|\n| Additional annual interest expense | $53.864B × 3.0% | **~$1.616B pre-tax** |\n| After-tax net income hit at 21% tax rate | $1.616B × (1 − 21%) | **~$1.277B** |\n| 2024 consolidated net loss | 2024 10-K | **$11.829B** |\n| Percentage impact | $1.277B ÷ $11.829B | **~10.8%** |\n\n**Answer:** Net income would fall by approximately **$1.28 billion after tax**, or about **10.8%**. Because Boeing reported a net loss in 2024, this means its net loss would widen from **$11.829B to roughly $13.11B**.\n\nOn a **pre-tax basis**, the impact is about **$1.62B**, or **13.7%** of the 2024 net loss. Using average 2024 debt instead of year-end debt gives a similar after-tax impact of about **$1.26B, or ~10.6%**.\n\n*Note: Boeing’s 2024 effective tax rate was only 3.1% because of valuation allowances; if no incremental tax benefit is assumed, the $1.62B pre-tax / 13.7% figure is the better measure.*",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 511607,
+    "output_tokens": 6350,
+    "cache_hit_tokens": 446591,
+    "cache_miss_tokens": 65016,
+    "reasoning_tokens": 4769
+  },
+  "model_cost_usd": 0.014902173000000001,
+  "tool_cost_usd": {
+    "exa": 0.048,
+    "e2b": 0.000396
+  },
+  "cost_usd": 0.0632980035506347,
+  "latency_s": 54.31143320794217,
+  "tool_calls": {
+    "total": 19,
+    "web_search": 10,
+    "web_fetch": 8,
+    "code_execution": 1
+  },
+  "n_tool_calls": 19,
+  "n_refused": 0,
+  "n_turns": 13,
+  "error": null,
+  "overall": "wrong",
+  "judge_reason": "Dollar impact is met via a rounded $1.26B, but the percent impact misses 10.7% and conflicting 10.8%/10.6% figures trigger contradiction.",
+  "judge_run_overalls": [
+    "wrong",
+    "wrong",
+    "wrong"
+  ]
+}

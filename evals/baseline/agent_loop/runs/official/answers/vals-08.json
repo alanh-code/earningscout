@@ -1,0 +1,51 @@
+{
+  "id": "vals-08",
+  "type": "Simple retrieval - Quantitative",
+  "question": "What was the total consideration cost TKO paid to acquired Endeavor assets measured at transaction close?",
+  "answer": "$3.25 Billion",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "$3.25 Billion"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "$3.25 Billion"
+    }
+  ],
+  "model_answer": "**About $3.30 billion in total** — comprised of a **$3.25 billion base purchase price plus a $50 million purchase-price adjustment** settled at closing.\n\nDetails:\n- **Transaction:** TKO's acquisition of the IMG business, On Location, and Professional Bull Riders (PBR) from Endeavor, which closed **February 28, 2025**.\n- **Form of consideration:** All equity — approximately **26.54 million common units of TKO OpCo** plus an equivalent number of corresponding **Class B common shares** issued to Endeavor affiliates. The value was measured using the 25-trading-day VWAP of TKO Class A stock ending October 23, 2024.\n- **Accounting note:** Because Endeavor controlled both TKO and the acquired businesses, the deal was treated as a **common-control acquisition** — the net assets were recorded at Endeavor's historical carrying amounts (with prior periods recast), rather than at fair value, so the $3.30 billion is the stated transaction consideration rather than a purchase-accounting fair value. TKO also expensed **$41.3 million** of related transaction costs in 2025.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 91971,
+    "output_tokens": 2116,
+    "cache_hit_tokens": 61568,
+    "cache_miss_tokens": 30403,
+    "reasoning_tokens": 1287
+  },
+  "model_cost_usd": 0.006014754000000001,
+  "tool_cost_usd": {
+    "exa": 0.028,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.03401475400000001,
+  "latency_s": 19.050354000064544,
+  "tool_calls": {
+    "total": 10,
+    "web_search": 6,
+    "web_fetch": 4
+  },
+  "n_tool_calls": 10,
+  "n_refused": 0,
+  "n_turns": 6,
+  "error": null,
+  "overall": "wrong",
+  "judge_reason": "The model gives $3.30 billion as the total consideration, conflicting with the official $3.25 billion figure.",
+  "judge_run_overalls": [
+    "wrong",
+    "wrong",
+    "wrong"
+  ]
+}

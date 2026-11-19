@@ -1,0 +1,52 @@
+{
+  "check_changes": [
+    {
+      "id": "vals-08",
+      "check_id": 1,
+      "operator": "correctness",
+      "judge": "not met",
+      "final": "met",
+      "source": "verifier",
+      "criteria": "$3.25 Billion"
+    },
+    {
+      "id": "vals-14",
+      "check_id": 4,
+      "operator": "correctness",
+      "judge": "met",
+      "final": "not met",
+      "source": "verifier",
+      "criteria": "FCF margin has declined substantially since 2022"
+    },
+    {
+      "id": "vals-43",
+      "check_id": 7,
+      "operator": "correctness",
+      "judge": "met",
+      "final": "not met",
+      "source": "verifier",
+      "criteria": "Delivery segment growth: 17%"
+    },
+    {
+      "id": "vals-48",
+      "check_id": 5,
+      "operator": "correctness",
+      "judge": "not met",
+      "final": "met",
+      "source": "verifier",
+      "criteria": "Stock-based Compensation: $64.5 Million, above the expected $64 Million"
+    },
+    {
+      "id": "vals-49",
+      "check_id": 7,
+      "operator": "correctness",
+      "judge": "met",
+      "final": "not met",
+      "source": "verifier",
+      "criteria": "FY2025 Range = $4.47 - $4.57"
+    }
+  ],
+  "overall_changes": [],
+  "n_check_changes": 5,
+  "n_overall_changes": 0
+}

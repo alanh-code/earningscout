@@ -1,0 +1,50 @@
+{
+  "id": "vals-24",
+  "type": "Numerical Reasoning",
+  "question": "As of March 10, 2025, what is the face value of Salesforce's debt excluding their sustainability notes?",
+  "answer": "Salesforce's debt excluding sustainability notes is $7.5 billion as of March 10, 2025",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Salesforce's debt excluding sustainability notes is $7.5 billion as of March 10, 2025"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "Salesforce's debt excluding sustainability notes is $7.5 billion as of March 10, 2025"
+    }
+  ],
+  "model_answer": "**Short answer: $7.5 billion (face/principal amount).**\n\n**Reasoning**\n\nAs of March 10, 2025, the most recent financial disclosure was Salesforce's FY2025 Form 10‑K (fiscal year ended January 31, 2025, filed March 5, 2025), and nothing had changed in the debt stack between year‑end and that date (no notes were issued or retired in that window). That filing shows total principal outstanding of **$8.5 billion**:\n\n| Instrument | Principal (face) |\n|---|---|\n| 3.70% Senior Notes due April 2028 | $1,500M |\n| 1.50% Senior Sustainability Notes due July 2028 | $1,000M |\n| 1.95% Senior Notes due July 2031 | $1,500M |\n| 2.70% Senior Notes due July 2041 | $1,250M |\n| 2.90% Senior Notes due July 2051 | $2,000M |\n| 3.05% Senior Notes due July 2061 | $1,250M |\n| **Total** | **$8,500M** |\n\nThe only sustainability instrument is the **$1.0 billion 1.50% Senior Sustainability Notes due July 2028**. Stripping that out:\n\n$8,500M − $1,000M = **$7,500M, i.e., $7.5 billion of face value**.\n\n**Notes / caveats**\n- On a *carrying-value* basis (net of unamortized discount and issuance costs) rather than face value, the same figure would be about **$7.44 billion** ($8,433M total carrying value − $995M sustainability notes).\n- The $5.0 billion revolving credit facility was undrawn at the time, and there were no commercial paper or term-loan borrowings, so the bond face value is the whole of the debt. (The large $6.0 billion term loans came later, in connection with the Informatica acquisition in fiscal 2026.)",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 237969,
+    "output_tokens": 4650,
+    "cache_hit_tokens": 191616,
+    "cache_miss_tokens": 46353,
+    "reasoning_tokens": 3400
+  },
+  "model_cost_usd": 0.010317798000000001,
+  "tool_cost_usd": {
+    "exa": 0.06,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.07031779800000003,
+  "latency_s": 38.692064291913994,
+  "tool_calls": {
+    "total": 16,
+    "web_search": 16
+  },
+  "n_tool_calls": 16,
+  "n_refused": 0,
+  "n_turns": 9,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The answer matches the official $7.5 billion debt excluding sustainability notes.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "vals-21",
+  "type": "Simple retrieval - Qualitative",
+  "question": "What is Shift4's vendor concentration risk as of Dec 31, 2024?",
+  "answer": "The Company’s merchant processing activity in North America is facilitated by one vendor. The Company believes that this vendor maintains appropriate backup systems and alternative arrangements to avoid a significant disruption of the processing in the event of an unforeseen event.",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Shift4's merchant processing activity in North America is facilitated by one vendor."
+    },
+    {
+      "operator": "correctness",
+      "criteria": "The Company believes that this vendor maintains appropriate backup systems and alternative arrangements to avoid a significant disruption of the processing in the event of an unforeseen event."
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "The Company’s merchant processing activity in North America is facilitated by one vendor. The Company believes that this vendor maintains appropriate backup systems and alternative arrangements to avoid a significant disruption of the processing in the event of an unforeseen event."
+    }
+  ],
+  "model_answer": "## Short answer\n\nAs of December 31, 2024, Shift4 discloses a **single-vendor operational dependency, not a quantified financial concentration**: its entire North American merchant-processing activity runs through **one vendor**, and the company does **not** disclose that vendor's share of cost of sales or any dollar/percentage threshold.\n\n## What the FY2024 10‑K actually says\n\n**Note 1 — \"Concentration Risk\" (Significant Accounting Policies), 10‑K filed Feb. 19, 2025:**\n\n> \"The Company's merchant processing activity in North America is facilitated by one vendor. The Company believes that this vendor maintains appropriate backup systems and alternative arrangements to avoid a significant disruption of the processing in the event of an unforeseen event.\"\n\nKey points:\n\n- **Unnamed in the filing.** Shift4 refers only to \"one vendor.\" (Shift4's August 2021 Form 8‑K, disclosing a multi-hour platform outage that it estimated cost ~$25 million, identified **TSYS, a Global Payments company**, as \"an important vendor\" — the relationship behind this disclosure. The FY2024 10‑K still references that outage in its third-party vendor risk factor.)\n- **No quantification.** Unlike many peers, Shift4 gives no \"X% of cost of sales\" or \"10% threshold\" vendor table. There is no disclosed vendor payables or purchase concentration figure. The concentration is described qualitatively as a business-continuity risk.\n- **Scope narrowed/reframed:** the prior (FY2023) 10‑K said processing in the \"U.S. and Canada\" was facilitated by one vendor; the FY2024 language says \"North America.\"\n\n## Related dependencies disclosed alongside it\n\n| Dependency | Disclosure |\n|---|---|\n| **Sponsor bank** | Shift4 is not a \"member bank,\" so card processing requires a sponsorship agreement with a member bank (Citizens Bank, N.A.; amended Sept. 30, 2024 alongside a $100M settlement line, $73.2M drawn at year‑end). If the sponsorship agreement is breached/terminated, Shift4 has **180 days** to find an alternative sponsor. |\n| **Hardware/component suppliers** | Risk factor: \"Certain key components are procured from a limited number of suppliers… at risk of shortage, price increases, tariffs, changes, delay, or discontinuation.\" |\n| **Third-party vendors generally** | Risk factor: \"Because we rely on third-party vendors to provide products and services, we could be adversely impacted if they fail to fulfill their obligations.\" |\n\n## What is *not* concentrated (per the same filing)\n\n- No single merchant accounts for more than **3%** of revenue.\n- No single VAR accounts for more than **3%** of volume in 2024.\n\n## Mitigants noted\n\nShift4 has been in-sourcing processing — a next-generation in-house platform announced in 2021 explicitly to \"eliminate our reliance on third party payment processing technology vendors,\" plus a proprietary gateway and, internationally, the Finaro/Credorax direct-member model (Malta license converted from a banking to a payment-institution license in 2024), which avoids sponsor-bank and third-party processor dependence outside North America.\n\n**Bottom line:** treat this as a *critical single-vendor operational/concentration risk* in North America — if that processor failed, North American merchant processing would be disrupted — but as an *unquantified* one: the 10‑K gives no percentage of spend, revenue, or cost of sales attributable to that vendor, so any quantification would require estimation from cost-of-sales mix.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 613900,
+    "output_tokens": 9048,
+    "cache_hit_tokens": 553856,
+    "cache_miss_tokens": 60044,
+    "reasoning_tokens": 6899
+  },
+  "model_cost_usd": 0.016096968,
+  "tool_cost_usd": {
+    "exa": 0.043,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.059096968000000014,
+  "latency_s": 86.11409199994523,
+  "tool_calls": {
+    "total": 23,
+    "web_search": 7,
+    "web_fetch": 16
+  },
+  "n_tool_calls": 23,
+  "n_refused": 0,
+  "n_turns": 15,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The answer states both required facts and does not contradict them.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

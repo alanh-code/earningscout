@@ -1,0 +1,56 @@
+{
+  "id": "vals-21",
+  "type": "Simple retrieval - Qualitative",
+  "question": "What is Shift4's vendor concentration risk as of Dec 31, 2024?",
+  "answer": "The Company’s merchant processing activity in North America is facilitated by one vendor. The Company believes that this vendor maintains appropriate backup systems and alternative arrangements to avoid a significant disruption of the processing in the event of an unforeseen event.",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Shift4's merchant processing activity in North America is facilitated by one vendor."
+    },
+    {
+      "operator": "correctness",
+      "criteria": "The Company believes that this vendor maintains appropriate backup systems and alternative arrangements to avoid a significant disruption of the processing in the event of an unforeseen event."
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "The Company’s merchant processing activity in North America is facilitated by one vendor. The Company believes that this vendor maintains appropriate backup systems and alternative arrangements to avoid a significant disruption of the processing in the event of an unforeseen event."
+    }
+  ],
+  "model_answer": "## Short answer\n\nShift4's fiscal‑2024 Form 10‑K (filed Feb. 19, 2025, for the year ended Dec. 31, 2024) discloses a **single‑source vendor dependency, but only qualitatively — no dollar or percentage of spend is quantified and the counterparties are not named.**\n\n### 1. The core disclosure (Note 2, \"Concentration Risk\")\n\n> \"The Company's merchant processing activity in North America is facilitated by **one vendor**. The Company believes that this vendor maintains appropriate backup systems and alternative arrangements to avoid a significant disruption of the processing in the event of an unforeseen event.\"\n\nThe XBRL tagging confirms this is a count of exactly one: `four_MerchantProcessingNumberOfVendors = 1` at Dec. 31, 2024 (and Dec. 31, 2023).\n\n### 2. How it is described in the risk factors (Item 1A)\n\nRisk factor: *\"Because we rely on third‑party vendors to provide products and services, we could be adversely impacted if they fail to fulfill their obligations.\"*\n\n> \"We depend on third‑party vendors for certain products and services, including components of our computer systems, software, data centers and telecommunications networks… For example, **in the U.S., EU, and Canada we are dependent on our relationship with a single third‑party processor** for services such as merchant authorization, processing, risk and chargeback monitoring accounting and clearing and settlement for the transactions we service. **There can be no assurance that our backup systems and alternative arrangements would successfully avoid a significant disruption of processing** in the event of an unforeseen event with this third‑party. In the event our agreement with our third‑party processor is terminated, or if upon its expiration we are unable to renew the contract on terms favorable to us, or at all, it may be difficult for us to replace these services…\"\n\nThe filing also notes that \"some of these organizations and service providers provide similar services and technology to our competitors, and we do not have long‑term or exclusive contracts with them.\"\n\n### 3. Two related single‑source dependencies worth flagging\n\n- **Sponsor bank (North America):** Because Shift4 is not a member bank, card processing runs through a sponsorship agreement with one member bank (Citizens Bank, N.A., per the Settlement Line/sponsorship disclosure). The Concentration Risk note states that if Shift4 breaches the sponsorship agreement, the bank \"may terminate the agreement and… the Company would have **180 days** to identify an alternative bank sponsor.\" A separate risk factor notes reliance on the sponsor bank for card‑network sponsorship and treasury services in the U.S. and Canada.\n- **Hardware/components:** \"**Certain key components are procured from a limited number of suppliers.** Thus, we are at risk of shortage, price increases, tariffs, changes, delay, or discontinuation of key components, which could disrupt and materially and adversely affect our business\" — i.e., the POS/SkyTab hardware supply chain is a limited‑source exposure.\n\n### 4. What is *not* concentrated (for contrast)\n\nThe filing emphasizes customer/partner diversification: \"Our merchant base is diversified, with **no single merchant accounting for more than 3% of our revenue** in recent years,\" and \"**no single VAR accounting for more than 3% of our volume** for the year ended December 31, 2024.\" So the concentration story is squarely on the **supply/vendor side**, not the customer side.\n\n### Caveats\n- The disclosures are narrative only; Shift4 does not quantify the share of cost of sales or processing volume attributable to the single processor, nor identify it by name.\n- I verified via SEC EDGAR full‑text search that both quoted risk‑factor passages and the \"facilitated by one vendor\" note appear in the FY2024 filing (`0001794669-25-000011`), not just in the subsequent FY2025 10‑K.\n\nSources: [Shift4 FY2024 Form 10‑K](https://www.sec.gov/Archives/edgar/data/1794669/000179466925000011/four-20241231.htm); [Note 2 policies — Concentration Risk (R36)](https://www.sec.gov/Archives/edgar/data/1794669/000179466925000011/R36.htm); [policies narrative detail — vendor count (R55)](https://www.sec.gov/Archives/edgar/data/1794669/000179466925000011/R55.htm)",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 635774,
+    "output_tokens": 6282,
+    "cache_hit_tokens": 561664,
+    "cache_miss_tokens": 74110,
+    "reasoning_tokens": 3637
+  },
+  "model_cost_usd": 0.016570692,
+  "tool_cost_usd": {
+    "exa": 0.038,
+    "e2b": 0.002192
+  },
+  "cost_usd": 0.056762257134790134,
+  "latency_s": 76.89737187500577,
+  "tool_calls": {
+    "total": 23,
+    "web_search": 6,
+    "code_execution": 1,
+    "web_fetch": 16
+  },
+  "n_tool_calls": 23,
+  "n_refused": 0,
+  "n_turns": 15,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "Both required vendor-concentration disclosures are stated accurately, and no contradictory claim is triggered.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

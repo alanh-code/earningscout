@@ -1,0 +1,50 @@
+{
+  "id": "vals-45",
+  "type": "Adjustments",
+  "question": "In 2024, what was Airbnb's (NASDAQ: ABNB) adjustment for Stock-based Compensation Expense?",
+  "answer": "In 2024, Airbnb adjusted its EBITDA by $1,407,000,000 to exclude stock-based compensation expense",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "In 2024, Airbnb adjusted its EBITDA by $1,407,000,000 to exclude stock-based compensation expense"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "In 2024, Airbnb adjusted its EBITDA by $1,407,000,000 to exclude stock-based compensation expense"
+    }
+  ],
+  "model_answer": "**Airbnb's stock-based compensation expense adjustment for fiscal year 2024 was $1,407 million (≈ $1.41 billion).**\n\nThis is the non-cash add-back to net income in the Consolidated Statement of Cash Flows (\"Adjustments to reconcile net income to cash provided by operating activities\"), reported in Airbnb's FY2024 Form 10-K and Q4 2024 shareholder letter:\n\n| Cash flow line (in $M) | 2023 | 2024 |\n|---|---|---|\n| Net income | 4,792 | 2,648 |\n| Depreciation & amortization | 44 | 65 |\n| **Stock-based compensation expense** | **1,120** | **1,407** |\n| Deferred income taxes | (2,875) | 433 |\n| Other, net | 83 | 32 |\n| … Net cash provided by operating activities | 3,884 | 4,518 |\n\nBreakdown by function (FY2024 vs. FY2023, $M):\n- Operations and support: 90 (vs. 68)\n- Product development: 886 (vs. 694)\n- Sales and marketing: 170 (vs. 130)\n- General and administrative: 261 (vs. 228)\n- **Total: $1,407M** (vs. $1,120M, +26% YoY)\n\nContext: the 26% increase was driven by headcount growth plus the accounting for pre-IPO double-trigger RSUs, the final tranche of which fully vested in 2024 — which is why management guided 2025 SBC growth to roughly track headcount growth (actual 2025 SBC came in at ~$1,592M).\n\nNote: SBC is excluded from Airbnb's non-GAAP Adjusted EBITDA, and the related cash outflow appears separately in financing activities as \"taxes paid related to tax on equity awards\" ($630M in 2024).",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 8923,
+    "output_tokens": 646,
+    "cache_hit_tokens": 768,
+    "cache_miss_tokens": 8155,
+    "reasoning_tokens": 145
+  },
+  "model_cost_usd": 0.0016131539999999999,
+  "tool_cost_usd": {
+    "exa": 0.008,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.009613154,
+  "latency_s": 5.803797291009687,
+  "tool_calls": {
+    "total": 2,
+    "web_search": 2
+  },
+  "n_tool_calls": 2,
+  "n_refused": 0,
+  "n_turns": 2,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The answer states the correct adjustment of $1,407 million, matching the official $1,407,000,000.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

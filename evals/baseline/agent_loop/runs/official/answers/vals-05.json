@@ -1,0 +1,79 @@
+{
+  "id": "vals-05",
+  "type": "Simple retrieval - Qualitative",
+  "question": "In 2024, who was Nominated to Serve on BBSI's (NASDAQ: BBSI) Board of Directors?",
+  "answer": "Thomas Carley\nJoseph Clabby\nThomas Cusick\nGary Kramer\nAnthony Meeker\nCarla Moradi\nAlexandra Morehouse\nVincent Price",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Thomas Carley"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Joseph Clabby"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Thomas Cusick"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Gary Kramer"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Anthony Meeker"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Carla Moradi"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Alexandra Morehouse"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Vincent Price"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "Thomas Carley\nJoseph Clabby\nThomas Cusick\nGary Kramer\nAnthony Meeker\nCarla Moradi\nAlexandra Morehouse\nVincent Price"
+    }
+  ],
+  "model_answer": "At BBSI’s 2024 Annual Meeting (held June 3, 2024), the Board nominated—and stockholders elected—eight directors to serve one‑year terms until the 2025 annual meeting:\n\n- **Thomas J. Carley**\n- **Joseph S. Clabby**\n- **Thomas B. Cusick**\n- **Gary E. Kramer**\n- **Anthony Meeker**\n- **Carla A. Moradi**\n- **Alexandra Morehouse**\n- **Vincent P. Price**\n\nAll eight were incumbent directors standing for re‑election; BBSI did not add a new outside nominee to its Board in 2024. (The next new director, Mark S. Finn, was appointed in April 2025.)",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 38226,
+    "output_tokens": 1797,
+    "cache_hit_tokens": 21248,
+    "cache_miss_tokens": 16978,
+    "reasoning_tokens": 1322
+  },
+  "model_cost_usd": 0.003688644,
+  "tool_cost_usd": {
+    "exa": 0.021,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.024688644000000003,
+  "latency_s": 18.75995924999006,
+  "tool_calls": {
+    "total": 6,
+    "web_search": 5,
+    "web_fetch": 1
+  },
+  "n_tool_calls": 6,
+  "n_refused": 0,
+  "n_turns": 4,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "All eight nominated directors are correctly identified, and no contradictory information is stated.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "id": "vals-45",
+  "type": "Adjustments",
+  "question": "In 2024, what was Airbnb's (NASDAQ: ABNB) adjustment for Stock-based Compensation Expense?",
+  "answer": "In 2024, Airbnb adjusted its EBITDA by $1,407,000,000 to exclude stock-based compensation expense",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "In 2024, Airbnb adjusted its EBITDA by $1,407,000,000 to exclude stock-based compensation expense"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "In 2024, Airbnb adjusted its EBITDA by $1,407,000,000 to exclude stock-based compensation expense"
+    }
+  ],
+  "model_answer": "## Airbnb (ABNB) — FY2024 Stock-Based Compensation\n\n**In its 2024 cash flow statement, Airbnb's adjustment for stock-based compensation expense was $1,407 million** (a non-cash add-back to reconcile net income to operating cash flow).\n\n| | FY 2023 | FY 2024 | Change |\n|---|---|---|---|\n| Stock-based compensation expense | $1,120M | **$1,407M** | +26% |\n\n**Breakdown by line item (FY2024, in millions):**\n\n| Expense category | FY2023 | FY2024 |\n|---|---|---|\n| Operations and support | $68 | $90 |\n| Product development | $694 | $886 |\n| Sales and marketing | $130 | $170 |\n| General and administrative | $228 | $261 |\n| **Total SBC** | **$1,120** | **$1,407** |\n\n**Context from the company:**\n- The 26% growth was driven by headcount growth and the accounting for RSU awards, which has changed over time.\n- The remaining portion of the \"double-trigger\" RSUs issued prior to the December 2020 IPO fully vested in 2024, which inflated the 2024 figure. Management guided that in 2025 SBC growth should approximate headcount growth.\n- Related cash cost: Airbnb also reported **$630 million of taxes paid related to tax on equity awards** in 2024 (down from $1,224M in 2023), shown as a financing outflow.\n\nSources: Airbnb's Q4/FY2024 shareholder letter and the FY2024 Form 10-K (filed Feb. 13, 2025).",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 9272,
+    "output_tokens": 640,
+    "cache_hit_tokens": 896,
+    "cache_miss_tokens": 8376,
+    "reasoning_tokens": 179
+  },
+  "model_cost_usd": 0.001643088,
+  "tool_cost_usd": {
+    "exa": 0.008,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.009643088000000001,
+  "latency_s": 4.614845208008774,
+  "tool_calls": {
+    "total": 2,
+    "web_search": 2
+  },
+  "n_tool_calls": 2,
+  "n_refused": 0,
+  "n_turns": 2,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The answer states $1,407 million, equivalent to the official $1,407,000,000 adjustment.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "vals-06",
+  "type": "Complex Retrieval",
+  "question": "Of AMZN, META, or GOOG, who plans to spend the most in capex in 2025?",
+  "answer": "FY 2025 capital expenditure guidance\nAMZN: $105.2 billion (management guided 2025 = Q4 2024 run-rate)\nGOOG: $75.0 billion\nMETA: $62.5 billion (at midpoint)\n\nAMZN plans to spend the most on capital expenditures in 2025.",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "AMZN FY 2025 capital expenditure guidance: $105.2 billion"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "GOOG FY 2025 capital expenditure guidance: $75.0 billion"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "META FY 2025 capital expenditure guidance: $62.5 billion"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "AMZN plans to spend the most on capital expenditures in 2025"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "FY 2025 capital expenditure guidance\nAMZN: $105.2 billion (management guided 2025 = Q4 2024 run-rate)\nGOOG: $75.0 billion\nMETA: $62.5 billion (at midpoint)\n\nAMZN plans to spend the most on capital expenditures in 2025."
+    }
+  ],
+  "model_answer": "**Amazon (AMZN)** plans to spend by far the most.\n\nBased on the most recent guidance (each company's Q3 2025 earnings reports, late October 2025):\n\n| Company | 2025 Capex Plan | Trend |\n|---|---|---|\n| **Amazon (AMZN)** | **~$125 billion** (cash capex) | Up from ~$83B in 2024; management says it will rise again in 2026 |\n| **Alphabet (GOOGL)** | **$91–93 billion** | Raised from ~$85B; \"significant increase\" expected in 2026 |\n| **Meta (META)** | **$70–72 billion** (incl. finance lease principal) | Raised from $66–72B; 2026 growth to be \"notably larger\" |\n\nKey details:\n- **Amazon:** CFO Brian Olsavsky said on the Q3 call (Oct. 30, 2025): \"we expect our full-year cash CapEx to be approximately $125 billion in 2025, and we expect that amount will increase in 2026.\" It had already spent $89.9B through Q3, with the bulk going to AWS AI infrastructure and custom silicon (Trainium). Note this excludes finance leases, so on a comparable basis its total would be even higher.\n- **Alphabet:** Raised 2025 guidance to $91–93B (from ~$85B), with ~60% of spend on servers and 40% on data centers/networking. Q3 capex alone was $24B.\n- **Meta:** Guided to $70–72B, up from $66–72B, driven by data centers and higher infrastructure hardware costs. Meta also said dollar growth in capex will be \"notably larger\" in 2026.\n\nSo Amazon is the biggest spender in 2025 by a wide margin — roughly $30B+ more than Alphabet and over $50B more than Meta (though Meta's pace of increase is steepening fastest into 2026).",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 22314,
+    "output_tokens": 1098,
+    "cache_hit_tokens": 9472,
+    "cache_miss_tokens": 12842,
+    "reasoning_tokens": 416
+  },
+  "model_cost_usd": 0.0026135159999999998,
+  "tool_cost_usd": {
+    "exa": 0.02,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.022613516,
+  "latency_s": 9.4613343749661,
+  "tool_calls": {
+    "total": 5,
+    "web_search": 5
+  },
+  "n_tool_calls": 5,
+  "n_refused": 0,
+  "n_turns": 3,
+  "error": null,
+  "overall": "wrong",
+  "judge_reason": "The model correctly identifies AMZN as the top spender but commits to later revised capex figures that conflict with the official FY2025 guidance figures.",
+  "judge_run_overalls": [
+    "wrong",
+    "wrong",
+    "wrong"
+  ]
+}

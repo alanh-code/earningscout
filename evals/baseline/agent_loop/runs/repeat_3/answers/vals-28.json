@@ -1,0 +1,52 @@
+{
+  "id": "vals-28",
+  "type": "Simple retrieval - Quantitative",
+  "question": "What are Netflix's (NASDAQ: NFLX) Total Projected Material Cash Requirements for 2025?",
+  "answer": "$14,426,266,000",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "$14,426,266,000"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "$14,426,266,000"
+    }
+  ],
+  "model_answer": "## Netflix — Total Projected Material Cash Requirements\n\nNetflix reports this in the **\"Material Cash Requirements\"** table in Item 7 (MD&A) of its 10‑K. The figure depends on which annual report you're reading:\n\n### Per FY2024 10‑K (filed Jan 27, 2025 — the report whose \"next 12 months\" = 2025)\n\n| Contractual obligations ($ thousands) | Total | **2025 (next 12 mo.)** | Beyond 12 mo. |\n|---|---|---|---|\n| Content obligations | 23,248,931 | **11,424,696** | 11,824,235 |\n| Debt (principal + interest) | 19,841,462 | **2,486,945** | 17,354,517 |\n| Operating lease obligations | 2,761,120 | **514,625** | 2,246,495 |\n| **Total** | **$45,851,513** | **$14,426,266** | **$31,425,247** |\n\n**So: ~$14.4 billion of the ~$45.9 billion total projected material cash requirements was scheduled for 2025** (≈31% of the total). The 2025 amount is dominated by content obligations ($11.4B), consistent with the ~$11.5B/year of content payments Netflix has been making, plus $2.5B of debt principal and interest and ~$0.5B of leases.\n\n### Per the newest FY2025 10‑K (filed Jan 23, 2026 — \"next 12 months\" = 2026)\n\n| Contractual obligations ($ thousands) | Total | Next 12 months | Beyond 12 months |\n|---|---|---|---|\n| Content obligations | 24,039,228 | 11,528,030 | 12,511,198 |\n| Debt | 18,091,887 | 1,690,445 | 16,401,442 |\n| Operating leases | 2,898,017 | 558,051 | 2,339,966 |\n| **Total** | **$45,029,132** | **$13,776,526** | **$31,252,606** |\n\n### Important caveats Netflix flags\n- The table **excludes \"unknown\" future-title license obligations** (e.g., film output deals, series with an undetermined number of seasons), which management estimates at **~$1B–$4B over the next three years**, mostly payable beyond 12 months.\n- It also **excludes ~$0.8B of expected tax deposits** (Brazilian non-income tax assessments) and any WBD acquisition financing needs disclosed in the newest filing (a $42.2B bridge facility, etc.).\n- Debt figures include both principal and interest; lease figures are undiscounted (including imputed interest).\n\n**Bottom line:** If you mean \"how much of Netflix's contractual/material cash obligations come due in 2025,\" the answer is **$14.4 billion** (out of $45.9 billion total) per the FY2024 10‑K; the latest FY2025 10‑K shows a comparable **$13.8 billion** due in the next twelve months against **$45.0 billion** of total obligations.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 109279,
+    "output_tokens": 5069,
+    "cache_hit_tokens": 70400,
+    "cache_miss_tokens": 38879,
+    "reasoning_tokens": 3890
+  },
+  "model_cost_usd": 0.00908445,
+  "tool_cost_usd": {
+    "exa": 0.023,
+    "e2b": 0.000679
+  },
+  "cost_usd": 0.032763035060996995,
+  "latency_s": 36.00064745906275,
+  "tool_calls": {
+    "total": 9,
+    "web_search": 5,
+    "web_fetch": 3,
+    "code_execution": 1
+  },
+  "n_tool_calls": 9,
+  "n_refused": 0,
+  "n_turns": 6,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The model states the official 2025 total material cash requirements figure and does not contradict it.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

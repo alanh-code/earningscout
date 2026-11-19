@@ -1,0 +1,68 @@
+{
+  "id": "vals-27",
+  "type": "Simple retrieval - Qualitative",
+  "question": "As of FY 2024, what are the terms of the Junior Subordinated Debentures in the Allstate Corporation's (NYSE: ALL) capital structure?",
+  "answer": "As of December 31, 2024, the Company had outstanding $500 million of Series A 6.500% Fixed-to-Floating Rate Junior Subordinated Debentures (“Junior Subordinated Debentures”). The scheduled maturity date for the Debentures is May 15, 2057 with a final maturity date of May 15, 2067. The Junior Subordinated Debentures may be redeemed (i) in whole or in part, at any time on or after May 15, 2037 at the principal amount plus accrued and unpaid interest to the date of redemption, or (ii) in certain circumstances, in whole or in part, prior to May 15, 2037 at the principal amount plus accrued and unpaid interest to the date of redemption or, if greater, a make-whole price. Additional information can be provided upon request.",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "$500 million of Series A 6.500% Fixed-to-Floating Rate Junior Subordinated Debentures"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Scheduled maturity date: May 15, 2057"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Final maturity date: May 15, 2067"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Redeemable on or after May 15, 2037 at principal amount plus accrued and unpaid interest"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Redeemable prior to May 15, 2037 at principal amount plus accrued and unpaid interest or make-whole price"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "As of December 31, 2024, the Company had outstanding $500 million of Series A 6.500% Fixed-to-Floating Rate Junior Subordinated Debentures (“Junior Subordinated Debentures”). The scheduled maturity date for the Debentures is May 15, 2057 with a final maturity date of May 15, 2067. The Junior Subordinated Debentures may be redeemed (i) in whole or in part, at any time on or after May 15, 2037 at the principal amount plus accrued and unpaid interest to the date of redemption, or (ii) in certain circumstances, in whole or in part, prior to May 15, 2037 at the principal amount plus accrued and unpaid interest to the date of redemption or, if greater, a make-whole price. Additional information can be provided upon request."
+    }
+  ],
+  "model_answer": "## Bottom line\n\nAs of FY 2024 (Dec. 31, 2024), Allstate's only junior subordinated debentures are **$500 million of its Series A 6.500% Fixed-to-Floating Rate Junior Subordinated Debentures due 2067** (CUSIP 020002 AU5). They are the deepest subordinated layer of the holding company's debt stack — below all senior notes/debentures and pari passu with the two 2053 subordinated debenture series, but senior to the preferred and common stock. They were originally issued alongside a Series B 6.125% sister series that has since been retired (partially tendered in 2013, and the remaining $223.8 million redeemed May 13, 2018), so only the Series A remains.\n\n## Key terms (per the FY2024 Form 10-K, Note 14 – Capital Structure, and the Fifth Supplemental Indenture dated May 10, 2007)\n\n| Item | Term |\n|---|---|\n| Issuer / instrument | The Allstate Corporation; unsecured, subordinated, junior subordinated debentures |\n| Amount outstanding | $500 million principal (unchanged from 2023), included in \"Due after ten years\"; carried at principal less unamortized issuance costs |\n| Original issue | $500M sold May 10, 2007 at 99.619% (reoffer yield 6.529%), under the Subordinated Indenture dated Nov. 25, 1996 (as amended), Fifth Supplemental Indenture; trustee/calculation/paying agent U.S. Bank |\n| Stated interest | **6.500% fixed** from issue to but excluding **May 15, 2037**, payable **semi-annually** May 15 / Nov 15 (30/360) |\n| Floating leg | From May 15, 2037: quarterly (Feb/May/Aug/Nov) at **3‑month LIBOR + 2.120%**; the LIBOR reference has been replaced by **3‑month CME Term SOFR plus a 0.26161% spread adjustment** — i.e., an all-in spread of roughly **+2.38161%** over 3‑month CME Term SOFR |\n| Scheduled maturity | **May 15, 2057** — principal due then *only to the extent* Allstate has raised sufficient net proceeds from issuing \"qualifying capital securities\" in the 180‑day period before the notice date; if not repaid, the bonds stay outstanding, keep bearing the floating rate, and must be repaid on subsequent interest payment dates as proceeds are raised |\n| Final maturity | **May 15, 2067** — full principal plus accrued interest due regardless of qualifying-capital-securities proceeds, or earlier on acceleration |\n| Optional redemption | At par plus accrued: in whole or in part **on or after May 15, 2037**; before that date, in whole or in part at the greater of par plus accrued or a **make-whole amount** (make-whole spreads: 0.50% for a tax event, 0.50% for a rating agency event, 0.25% otherwise); also redeemable in whole on tax/rating-agency (and regulatory-capital) events. Partial redemptions must leave at least $25 million outstanding. All pre-2067 redemptions are subject to the replacement capital covenant |\n| Ranking | Unsecured and subordinated/junior in right of payment to all senior indebtedness (substantially all of Allstate's debt); ranks **pari passu** with other pari passu/trade obligations and with the 2053 subordinated debentures; ranks **senior to all capital securities (preferred and common stock)**; **effectively subordinated** to all liabilities of the insurance subsidiaries, including policyholder obligations |\n| Interest deferral | Allstate may defer interest for one or more consecutive periods of **up to 10 years** (plus grace period) without an event of default; deferred interest **compounds** at the then-applicable rate. In bankruptcy, holders may have only a **limited claim** for deferred interest |\n| Alternative Payment Mechanism (APM) | After 5 consecutive years of deferral (or upon paying current interest during a deferral), Allstate must use commercially reasonable efforts to issue \"qualifying APM securities\" (common stock, qualifying warrants, mandatorily convertible preferred, qualifying non‑cumulative preferred) to settle deferred interest, subject to caps: ~2% of shares outstanding common-equity issuance cap, a 25%-of-principal preferred cap, and a share cap (37.5 million shares per series originally; the FY2024 10-K states **75 million authorized and unissued shares are reserved** to satisfy this obligation). Market disruption events relieve the obligation |\n| Dividend/repurchase stopper | While interest is deferred, Allstate may not declare or pay dividends on, or redeem/repurchase, common or preferred stock (limited exceptions) — the same stopper applies under the 2053 subordinated debentures |\n| Replacement Capital Covenant (RCC) | Allstate covenanted (for the benefit of holders of designated \"covered debt,\" currently the **$800 million Floating Rate Subordinated Debentures due 2053**) not to repay, redeem or purchase the 2067 debentures on or before May 15, 2067 unless funded with net cash proceeds from sales of common stock or specified qualifying securities. Not enforceable by the debenture holders. Terminates in 2067 or earlier on specified events (e.g., S&P upgrade of Allstate's issuer rating to A or better, tax-event redemption, market disruption after notice, loss of equity-credit relevance, acceleration, certain rating-agency/change-of-control events) |\n| Events of default | Failure to pay interest (incl. compounded interest) for 30 days after the end of a 10‑year deferral period; failure to pay principal when due; bankruptcy/insolvency/receivership. Trustee or holders of ≥25% of principal may accelerate |\n| Other features | Book-entry only through DTC; **not exchange-listed** (only the 5.100% subordinated debentures due 2053 trade as ALL.PR.B); no conversion/exchange rights; treated as indebtedness for U.S. tax purposes; structured as hybrid capital that has historically received rating-agency equity credit |\n\n## Capital-structure context\n\nTotal debt at 12/31/2024 was **$8,085 million** (principal $8,141 million less $56 million issuance costs), of which \"due after ten years\" was $4,659 million — comprising the 2035–2049 senior notes, the $500 million 5.100% and $800 million 5.750%/floating-rate subordinated debentures due 2053, and this $500 million 6.500% junior subordinated issue. No junior subordinated debt matures before 2057/2067, and no short-term debt or commercial paper was outstanding at year-end.\n\nA caveat: the FY2024 10-K is a summary. The controlling documents are the Subordinated Indenture (Nov. 25, 1996), the Third/Fourth Supplemental Indentures, the Fifth Supplemental Indenture (May 10, 2007), and the Series A Replacement Capital Covenant, together with any later amendment implementing the SOFR-based benchmark replacement — worth reviewing if you need precise make-whole formulas, definitions of \"qualifying capital securities,\" or the LIBOR fallback mechanics for the 2037+ floating period.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 220965,
+    "output_tokens": 7855,
+    "cache_hit_tokens": 166912,
+    "cache_miss_tokens": 54053,
+    "reasoning_tokens": 5481
+  },
+  "model_cost_usd": 0.013321686000000001,
+  "tool_cost_usd": {
+    "exa": 0.027,
+    "e2b": 0.001606
+  },
+  "cost_usd": 0.04192728047709408,
+  "latency_s": 58.43309683399275,
+  "tool_calls": {
+    "total": 13,
+    "web_search": 5,
+    "web_fetch": 7,
+    "code_execution": 1
+  },
+  "n_tool_calls": 13,
+  "n_refused": 0,
+  "n_turns": 8,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "All required terms are stated correctly and no contradiction is triggered.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

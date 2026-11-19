@@ -2,51 +2,99 @@
 
 An earnings research agent and the evaluation loop that measures it: questions on SEC filings, gold answers, grading by hand and by an LLM judge, and a record of where the agent fails.
 
+Earlier work is archived under the git tag `legacy-claude-baseline`.
+
+## Setup
+
+| Part | Choice |
+|---|---|
+| Benchmark | Vals AI Finance Agent v1.1 public set, 50 questions with reference answers (`data/vals/`) |
+| Agent | `deepseek-flash` (DeepSeek V4.1 Flash), thinking on, in a hand-built tool loop (`agent/`) |
+| Judge | `deepseek-v4-pro` (DeepSeek V4 Pro), strict grading guide, 3 passes, majority vote |
+| Search and fetch | Exa (`/search` type `lite`, `/contents`), published-date cutoff at the protocol as-of date |
+| Code execution | E2B sandbox with internet access off, killed after each question |
+| Number verifier | Deterministic: an LLM locates the figures, Python compares them (`evals/verifier/`) |
+| Seed | 42 |
+
+Model names, prices and peak hours live in `agent/llm.py`; the scoring protocol (as-of date, prompts, blocklist) in `agent/protocol.py`.
+
+## Protocol
+
+* **As-of date:** Thursday, May 1, 2025, after the newest as-of in the gold set (April 7, 2025). It is added to the system prompt when a question says "current"; a date in the question takes precedence.
+* **Blocklist:** search results and fetches never reach the gold answers. Blocked: the benchmark repo and dataset hosts (GitHub, Hugging Face, vals.ai, Zenodo and their mirrors), sites that redistribute the dataset or tasks, GitHub CDN and proxy mirrors, the DOI prefixes that resolve to the dataset copies, and agent skills tuned to the benchmark. A URL that wraps a blocked URL (archives, proxies) or names the gold repo is refused too. The list is `BLOCKED_DOMAINS` in `agent/protocol.py`; every run gets a leak scan of its saved tool traces.
+* **Budgets per question:** 15 searches, 15 fetches, 30 code runs, 40 turns; the last turn must answer.
+* **Scoring:** a question is right when every correctness check in its rubric passes and no contradiction is triggered. The verifier wins on decided numeric correctness checks; the judge wins on contradictions and non-numeric checks. Two questions whose answers depend on an unstated relative time period are not scored (`evals/baseline/excluded_questions.csv`), so 48 are scored.
+
+## Results
+
+**Contamination check** (`evals/contamination/`): no sign that the model memorized the public set. Closed book (no tools) on 10 seeded questions: 0 right, 9 wrong, 1 abstain. Completion test: Vals question endings score no higher than 50 newly written control questions (mean similarity 0.49 vs 0.48 guided, 0.44 vs 0.47 general).
+
+**Judge vs human** on the 15 hand-graded answers (`evals/contamination/closed_book/judge/runs/strict-calibration`): overall 13/15 (Cohen's kappa 0.727), rubric checks 68/73 (kappa 0.858). Both overall disagreements are the judge calling a contradiction the human did not, so the judge errs strict.
+
+**Baseline** (`evals/baseline/agent_loop/runs/`), 3 runs on the 48 scored questions:
+
+| Run | Right | Accuracy | Cost |
+|---|---:|---:|---:|
+| `official` | 32/48 | 66.7% | $2.00 |
+| `repeat_2` | 31/48 | 64.6% | $2.20 |
+| `repeat_3` | 30/48 | 62.5% | $2.02 |
+| Mean | | **64.6%** (SD 2.1 pts) | about $2 per run |
+
+Verifier and judge agree on 94.9% of decided numeric checks (464/489). The leak scan found no gold-source hits in any run. About half of the cost is Exa and over a third is the judge.
+
+By question type (3 runs pooled):
+
+| Type | Right | Accuracy |
+|---|---:|---:|
+| Numerical Reasoning | 21/24 | 88% |
+| Simple retrieval, Qualitative | 23/27 | 85% |
+| Simple retrieval, Quantitative | 20/24 | 83% |
+| Adjustments | 7/12 | 58% |
+| Beat or Miss | 10/18 | 56% |
+| Financial Modeling, Projections | 6/12 | 50% |
+| Complex Retrieval | 3/9 | 33% |
+| Trends | 3/9 | 33% |
+| Market Analysis | 0/9 | 0% |
+
+**Failure taxonomy** (`evals/baseline/agent_loop/failure_taxonomy.md`), primary cause of the 51 wrong answers across the 3 runs:
+
+| Cause | Count |
+|---|---:|
+| Gold answer is the problem (rounding, narrower than the question) | 11 |
+| Different but stated interpretation (basis, peer set, scope) | 10 |
+| Data newer than the question implies | 10 |
+| Different guidance reference in beat/miss | 7 |
+| Retrieved but left out of the answer | 5 |
+| Never retrieved (stopped at snippets or the start of a filing) | 4 |
+| Misread source | 4 |
+
+15 questions are wrong in all 3 runs.
+
 ## Layout
 
 | Path | Contents |
 |---|---|
-| `data/vals/` | The 50 question public set of the Vals AI Finance Agent benchmark, pinned to a source commit |
-| `evals/contamination/` | Benchmark contamination check: has the model seen the benchmark data in training? |
-| `evals/baseline/` | Native-tools baseline: Sonnet 5.5 answers the 50 public questions with Anthropic built-in tools |
-| `evals/verifier/` | Deterministic number verifier used with the LLM judge |
+| `agent/` | Model client, scoring protocol, tools (Exa, E2B) and the agent loop, with tests |
+| `data/vals/` | The 50-question public set, pinned to a source commit |
+| `evals/contamination/` | Contamination check: completion test, closed-book answers, judge and its human calibration |
+| `evals/baseline/` | Baseline runner, leak scan, failure taxonomy and the scored runs |
+| `evals/verifier/` | Number verifier and the verifier/judge policy step |
 
-## Benchmark contamination check
-
-This check asks whether the model has seen the benchmark data in training, before any score on it is trusted. The model tested is Claude Sonnet 5.5, and the benchmark is the Vals public set. It also measures how much the model answers from memory alone. Every model call runs in a closed environment: the Anthropic API directly, with no tools, no system prompt and no files.
-
-1. **Pick 10 questions** with a fixed seed: `python3 evals/contamination/select_questions.py`
-2. **Completion test** (`evals/contamination/completion/`): the model sees the first part of each of the 50 questions, plus 50 newly written control questions, and is asked for the rest.
-3. **Closed book answers** (`evals/contamination/closed_book/`): the model answers the current 10 selected questions from memory; a strict Opus 5.5 judge grades them. A frozen 15-question set from a previous selection keeps the human grades used to calibrate the judge.
-
-See `evals/contamination/README.md` for details.
-
-## Native-tools baseline
-
-Sonnet 5.5 answers the 50 public Vals questions with Anthropic built-in web search, web fetch, and code execution. Gold-host domains (GitHub, Hugging Face, vals.ai, and known mirrors) are blocked on search and fetch for the official run. Answers are graded by a three-pass Claude Opus 5.5 judge using the strict grading guide (`evals/contamination/closed_book/grading_guide_strict.md`), then by a deterministic number verifier: the verifier wins on decided numeric correctness checks, and the judge wins on contradictions. Two questions whose answers depend on an unstated relative time period are left out of the score; the list is `evals/baseline/excluded_questions.csv`.
-
-The scoring protocol as-of date is Thursday, May 1, 2025. That date is after the newest as-of in the gold set (April 7, 2025) and falls in the month the public set appeared on GitHub. It is injected into the system prompt when a question contains "current"; a date given in the question takes precedence.
-
-```bash
-.venv/bin/python evals/baseline/native_tools/run.py --name my-run --no-pilot --workers 8 --spend-cap 30
-.venv/bin/python evals/verifier/run_verifier.py baseline evals/baseline/native_tools/runs/<name>
-.venv/bin/python evals/verifier/apply_policy.py evals/baseline/native_tools/runs/<name>
-.venv/bin/python evals/baseline/native_tools/scan_leaks.py evals/baseline/native_tools/runs/<name>
-```
-
-The official scored run is `evals/baseline/native_tools/runs/official`: 26 right, 22 wrong, 0 abstain on 48 questions, 54.2% (bootstrap 95% CI 39.6–68.8%). `runs/first-run` is the same protocol without the gold-host domain block: 27 right, 21 wrong, 0 abstain, 56.2% (bootstrap 95% CI 41.7–70.8%). Versus first-run, official flips vals-35 and vals-36 wrong→right and vals-03, vals-10, and vals-40 right→wrong.
-
-## Setup
-
-Requires Python 3.10 or later.
+## Running it
 
 ```bash
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
-cp .env.example .env
+cp .env.example .env   # add DEEPSEEK_API_KEY, EXA_API_KEY, E2B_API_KEY
+
+.venv/bin/python -m pytest -q agent evals
+.venv/bin/python evals/baseline/agent_loop/run.py --name my-run --workers 8 --spend-cap 6
+.venv/bin/python evals/verifier/run_verifier.py baseline evals/baseline/agent_loop/runs/my-run
+.venv/bin/python evals/verifier/apply_policy.py evals/baseline/agent_loop/runs/my-run
+.venv/bin/python evals/baseline/scan_leaks.py evals/baseline/agent_loop/runs/my-run
 ```
 
-Add an Anthropic API key to `.env` before running any model call.
+Runs refuse to start, and pause before any paid call, during DeepSeek peak hours unless `--allow-peak` is passed; `--resume --run-dir <run>` continues a paused run. Requires Python 3.10 or later.
 
 ## License
 

@@ -1,0 +1,51 @@
+{
+  "id": "vals-23",
+  "type": "Simple retrieval - Qualitative",
+  "question": "When is production expected to begin in J M Smucker's (NYSE: SJ) new distribution center in McCalla, Alabama?",
+  "answer": "Production expected to begin in 2025",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Production expected to begin in 2025"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "Production expected to begin in 2025"
+    }
+  ],
+  "model_answer": "**Short answer:** The company's original, formal guidance was that production would begin in **calendar year 2025** — but it actually started ahead of schedule, in the **fall of 2024**.\n\n**Details:**\n\n- **Original announcement (Nov. 18, 2021):** J.M. Smucker (ticker is **SJM**, not SJ) said it would invest $1.1 billion to build \"a new manufacturing facility and distribution center in McCalla, Alabama\" dedicated to Smucker's Uncrustables, stating: *\"Construction of the facility is expected to begin no later than January 2022, with production commencing in calendar year 2025.\"* The project was to be built in three phases over multiple years, creating up to 750 jobs.\n- **What actually happened:** Production was pulled forward. The 900,000-sq-ft facility held its grand opening/ribbon-cutting on **Nov. 7, 2024**, and CEO Mark Smucker said at the event that the first line had already started, with more lines coming \"in the coming months.\" In the FY25 Q2 earnings remarks, the company confirmed it had \"successfully started production at our third plant in McCalla, Alabama.\"\n- **Current status / next milestone:** On the FY27 Q1 call (Aug. 2026), management said it is *\"accelerating our plans to bring the second phase of our McCalla, Alabama facility online toward the end of this fiscal year\"* — i.e., by roughly **April 2027** (fiscal year ends April 30, 2027). That phase is already built out; it mainly needs staffing and activation, and will focus on the core crimped soft-bread Uncrustables format. The company also disclosed a **$27 million expansion/equipment project** at the plant announced in early 2026.\n\nSo: the *expected* start date per the original plan was **2025**; the *actual* start was **November 2024** (line 1), with Phase 2 capacity coming online **around the end of FY2027**.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 32609,
+    "output_tokens": 1727,
+    "cache_hit_tokens": 17536,
+    "cache_miss_tokens": 15073,
+    "reasoning_tokens": 942
+  },
+  "model_cost_usd": 0.0033497579999999996,
+  "tool_cost_usd": {
+    "exa": 0.021,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.024349758,
+  "latency_s": 13.284638250013813,
+  "tool_calls": {
+    "total": 6,
+    "web_search": 5,
+    "web_fetch": 1
+  },
+  "n_tool_calls": 6,
+  "n_refused": 0,
+  "n_turns": 4,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The model states the expected production start was 2025, matching the rubric.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

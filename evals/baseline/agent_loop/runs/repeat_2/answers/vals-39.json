@@ -1,0 +1,71 @@
+{
+  "id": "vals-39",
+  "type": "Simple retrieval - Qualitative",
+  "question": "What financial metrics does Delta Airlines (NYSE: DAL) guide on in its quarterly earnings reports?",
+  "answer": "Delta Airlines provides quarterly guidance and full FY guidance. \n\nFor the Quarter, Delta provides guidance for Total Revenue YoY Growth, Operating Margin, and Earnings Per Share\n\nFor the Full FY, Delta provides guidance for Earnings per Share YoY Growth, Free Cash Flow, and Gross Leverage",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Quarterly guidance includes Total Revenue YoY Growth"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Quarterly guidance includes Operating Margin"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Quarterly guidance includes Earnings Per Share"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Full FY guidance includes Earnings per Share YoY Growth"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Full FY guidance includes Free Cash Flow"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Full FY guidance includes Gross Leverage"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "Delta Airlines provides quarterly guidance and full FY guidance. \n\nFor the Quarter, Delta provides guidance for Total Revenue YoY Growth, Operating Margin, and Earnings Per Share\n\nFor the Full FY, Delta provides guidance for Earnings per Share YoY Growth, Free Cash Flow, and Gross Leverage"
+    }
+  ],
+  "model_answer": "## Short answer\n\nDelta guides on a **small, stable set of metrics** every quarter — the headline quarterly table is only three lines, and the annual table adds two more:\n\n| Horizon | Metrics guided |\n|---|---|\n| **Next quarter** | Total revenue YoY (%), Adjusted operating margin (%), Adjusted EPS ($) |\n| **Full year** | Adjusted EPS ($) and EPS growth YoY (%), Free cash flow ($B), Gross leverage (adjusted debt/EBITDAR) |\n| **Long-term (3–5 yr, from Nov-2024 Investor Day)** | Mid-teens operating margin, ≥15% ROIC, FCF of $3–5B, gross leverage ~1x, ~10% average annual EPS growth |\n\n## Detail by metric\n\n**1. Revenue — total revenue growth YoY.** Given as a percentage range vs. prior year (e.g., \"Up 2%–4%\", \"Up 5%–7%\", \"Approx. 20%\"). This is *adjusted* total revenue, which strips out third-party refinery sales from Monroe Energy — so it's effectively airline-only revenue. Unit revenue (TRASM) growth and capacity (ASM) growth are given as supporting assumptions in the outlook narrative rather than as headline guided figures.\n\n**2. Adjusted operating margin.** A percentage range (e.g., 6%–8%, 11%–13%, 7%–9%). Also presented on a pre-tax margin basis in the results and commentary.\n\n**3. Adjusted earnings per share.** The primary guided bottom-line number, as a dollar range. Guidance is **non-GAAP** — Delta explicitly notes it cannot reconcile forward-looking non-GAAP measures without unreasonable effort because adjusting items (MTM on hedges and equity investments, refinery sales, debt extinguishment) aren't known until period end.\n\n**4. Free cash flow.** Guided annually in dollars (e.g., \"$3–4 billion\", \"approx. $2.5 billion\"). Defined as net cash from operating *and* investing activities, adjusted for pension contributions, certain airport construction cash flows, and strategic investments. Notably, Delta uses FCF as a component of internal incentive compensation.\n\n**5. Gross leverage.** Adjusted debt to EBITDAR — guided annually (e.g., \"less than 2.5x\", \"approx. 2x\", \"approx. 2.2x\"). This is the balance-sheet metric Delta manages to most visibly; its long-term target is ~1x.\n\n## Supporting assumptions that get guided in the narrative\n\nThese appear in the outlook sections and on the earnings call rather than the headline table, but are effectively part of guidance:\n- **All-in fuel price per gallon**, with the forward curve date stated and a disclosed refinery benefit (e.g., ~$4.25/gal for 4Q26, including ~$0.40/gal refinery benefit)\n- **Non-fuel unit cost (CASM-Ex) growth**\n- **Capacity (ASM) growth** and **TRASM growth**\n- Sometimes **pre-tax profit in dollars** (e.g., \"roughly $4.5 billion\" for FY2026), **debt paydown** (\"more than $2 billion\"), and **ROIC** (\"double-digit\")\n\n## What Delta does *not* guide on\n\nDelta doesn't issue GAAP EPS or GAAP margin guidance, doesn't guide quarterly free cash flow or leverage (those are annual), and doesn't give explicit guidance on operating cash flow, capex, or share repurchases in the quarterly table — capex and shareholder returns are discussed qualitatively or in the long-term framework (~50% of operating cash flow to shareholder returns, ~50% to reinvestment).\n\n## Most recent example (September-quarter 2026 release, Oct 9, 2026)\n\n- **4Q26:** total revenue ~+20% YoY; operating margin 7%–9%; EPS $1.15–$1.65\n- **FY2026:** EPS $5.10–$5.60; free cash flow ~$2.5B; gross leverage ~2.2x\n- **Assumptions:** fuel ~$4.25/gal (incl. ~$0.40 refinery benefit), non-fuel unit cost growth improving 1–2 points sequentially, capacity up less than 2%\n\nThe pattern has been consistent for years — the December 2024, March 2025, June 2025, September 2025 and January 2026 releases use the identical framework, just with different numbers.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 63312,
+    "output_tokens": 2627,
+    "cache_hit_tokens": 28800,
+    "cache_miss_tokens": 34512,
+    "reasoning_tokens": 1303
+  },
+  "model_cost_usd": 0.006839399999999999,
+  "tool_cost_usd": {
+    "exa": 0.018,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.0248394,
+  "latency_s": 19.755795417004265,
+  "tool_calls": {
+    "total": 6,
+    "web_search": 4,
+    "web_fetch": 2
+  },
+  "n_tool_calls": 6,
+  "n_refused": 0,
+  "n_turns": 4,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "All six required quarterly and full-year guided metrics are identified, with no contradiction.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

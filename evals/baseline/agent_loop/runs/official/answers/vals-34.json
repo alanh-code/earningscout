@@ -1,0 +1,58 @@
+{
+  "id": "vals-34",
+  "type": "Simple retrieval - Quantitative",
+  "question": "In fiscal 2024, what percentage of Cloudflare's (NYSE: NET) revenue was derived from channel partners?",
+  "answer": "20% of revenue was derived from channel partners",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "20% of revenue was derived from channel partners"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Cloudflare fiscal 2024 channel partner revenue percentage"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "20% revenue from channel partners in fiscal 2024"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "20% of revenue was derived from channel partners"
+    }
+  ],
+  "model_answer": "**20% of Cloudflare's fiscal 2024 revenue came from channel partners.**\n\nPer Cloudflare's Form 10-K for the year ended December 31, 2024 (filed February 20, 2025), revenue disaggregated by type of customer was:\n\n| Customer type | FY2024 revenue | % of revenue | FY2023 | YoY |\n|---|---|---|---|---|\n| Channel partners | $337.4M | **20%** | $202.4M (16%) | +67% |\n| Direct customers | $1,332.2M | 80% | $1,094.3M (84%) | +22% |\n| **Total** | **$1,669.6M** | **100%** | $1,296.7M | +29% |\n\nChannel partner share has risen steadily — from 13% in FY2022 to 16% in FY2023 to 20% in FY2024 — with channel revenue growing faster than direct (channel was 22% of revenue in Q4 2024 alone).",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 7812,
+    "output_tokens": 410,
+    "cache_hit_tokens": 768,
+    "cache_miss_tokens": 7044,
+    "reasoning_tokens": 90
+  },
+  "model_cost_usd": 0.001304904,
+  "tool_cost_usd": {
+    "exa": 0.008,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.009304904,
+  "latency_s": 4.490692332969047,
+  "tool_calls": {
+    "total": 2,
+    "web_search": 2
+  },
+  "n_tool_calls": 2,
+  "n_refused": 0,
+  "n_turns": 2,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The answer correctly states 20% of Cloudflare's fiscal 2024 revenue was derived from channel partners.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

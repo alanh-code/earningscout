@@ -1,0 +1,51 @@
+{
+  "id": "vals-23",
+  "type": "Simple retrieval - Qualitative",
+  "question": "When is production expected to begin in J M Smucker's (NYSE: SJ) new distribution center in McCalla, Alabama?",
+  "answer": "Production expected to begin in 2025",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Production expected to begin in 2025"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "Production expected to begin in 2025"
+    }
+  ],
+  "model_answer": "**Short answer:** The original guidance was **calendar year 2025**, but the timeline was pulled forward — production actually began in **2024**, ahead of schedule.\n\n**Timeline details:**\n\n- **Nov. 18, 2021 (original announcement):** The J.M. Smucker Co. said it would invest $1.1 billion in a manufacturing facility and distribution center in McCalla, Alabama (Jefferson Metropolitan Park, ~24 miles from Birmingham) for Smucker's Uncrustables, with construction to begin no later than January 2022 and **production commencing in calendar year 2025**, built out in three phases.\n- **Aug. 2023 (update):** The site's director of operations said the project was on schedule and the company **expected to begin production in May 2024**.\n- **Nov. 7, 2024:** Smucker held the grand opening/ribbon-cutting for the 900,000‑square‑foot facility with CEO Mark Smucker and Alabama Gov. Kay Ivey.\n- **Q2 FY2025 earnings (quarter ended Oct. 31, 2024):** Management confirmed it had **\"successfully started production at our third plant in McCalla, Alabama\"** — i.e., production was underway in 2024, roughly a year ahead of the original 2025 target.\n\nSo if you're going by the initial press release, the answer is **2025**; the realized date was **2024** (production started in the fall of 2024, with the formal opening on November 7, 2024).\n\nSmall correction: Smucker's NYSE ticker is **SJM**, not SJ.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 14525,
+    "output_tokens": 991,
+    "cache_hit_tokens": 6400,
+    "cache_miss_tokens": 8125,
+    "reasoning_tokens": 443
+  },
+  "model_cost_usd": 0.00183255,
+  "tool_cost_usd": {
+    "exa": 0.013,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.014832550000000002,
+  "latency_s": 8.777804750017822,
+  "tool_calls": {
+    "total": 4,
+    "web_search": 3,
+    "web_fetch": 1
+  },
+  "n_tool_calls": 4,
+  "n_refused": 0,
+  "n_turns": 3,
+  "error": null,
+  "overall": "wrong",
+  "judge_reason": "The answer introduces a later revised 2024 production start that conflicts with the official expected 2025 date.",
+  "judge_run_overalls": [
+    "wrong",
+    "wrong",
+    "wrong"
+  ]
+}

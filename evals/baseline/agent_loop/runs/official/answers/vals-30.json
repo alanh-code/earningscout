@@ -1,0 +1,52 @@
+{
+  "id": "vals-30",
+  "type": "Financial Modeling  Projections",
+  "question": "What is the maximum dilutive impact in number of shares of Snapchat's outstanding convertible notes as of 12/31/2024?",
+  "answer": "85,945,127 shares if all converts were converted (including out of the money converts)",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "85,945,127 shares if all converts were converted (including out of the money converts)"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "85,945,127 shares if all converts were converted (including out of the money converts)"
+    }
+  ],
+  "model_answer": "## Answer\n\n**≈ 85.9 million shares (85,945 thousand)** — that is the maximum share dilution from Snap’s convertible notes outstanding at 12/31/2024, computed on the if-converted basis (i.e., presuming every note is settled entirely in Class A shares at its stated conversion rate).\n\nSnap’s FY2024 Form 10-K (filed Feb 5, 2025), in the “Net loss per share” note, reports the potentially dilutive shares excluded as anti-dilutive:\n\n| Anti-dilutive securities (in thousands) | 12/31/2024 | 12/31/2023 |\n|---|---|---|\n| Stock options | 680 | 1,697 |\n| Unvested RSUs and RSAs | 134,253 | 157,130 |\n| **Convertible Notes (if-converted)** | **85,945** | 89,379 |\n\n### How the 85,945 thousand is built (from the Debt note)\n\n| Series | Principal at 12/31/24 | Conversion rate per $1,000 | Max shares (thous.) |\n|---|---|---|---|\n| 0.25% 2025 Notes | $36.24M | 46.1233 | 1,672 |\n| 0.75% 2026 Notes | $249.75M | 43.8481 | 10,951 |\n| 0% 2027 Notes | $1,150M | 11.2042 ($89.25/sh) | 12,885 |\n| 0.125% 2028 Notes | $1,500M | 17.7494 ($56.34/sh) | 26,624 |\n| 0.50% 2030 Notes | $750M | 45.0846 ($22.18/sh) | 33,813 |\n| **Total** | **$3.686B** | | **≈85,945** |\n\nContext worth noting:\n- That equals roughly **5% of the ~1.69 billion Class A/B/C shares outstanding** at year‑end (1,436.5M A + 22.5M B + 231.6M C).\n- Snap reaffirmed in the same filing that **as of 12/31/2024 the if-converted value of the notes did not exceed principal** (all series were out-of-the-money), so none were actually dilutive to reported EPS — the 85,945k is the \"maximum\" exposure if fully converted into stock.\n- Capped call transactions (remaining on the 2026, 2027, 2028 and 2030 Notes; the 2025 capped calls were terminated in May 2024) are intended to offset dilution up to cap prices of $32.58, $121.02, $93.90 and $33.48 respectively, so *economic* dilution would be lower unless the stock trades above those caps.\n\nSources: Snap Inc. FY2024 Form 10-K (SEC accession 0001564408‑25‑000019), Note “Net Loss per Share” (R54) and Note “Debt” (R15).",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 357082,
+    "output_tokens": 6098,
+    "cache_hit_tokens": 311552,
+    "cache_miss_tokens": 45530,
+    "reasoning_tokens": 4171
+  },
+  "model_cost_usd": 0.011422956000000001,
+  "tool_cost_usd": {
+    "exa": 0.031,
+    "e2b": 0.001991
+  },
+  "cost_usd": 0.04441396992300996,
+  "latency_s": 70.93724816699978,
+  "tool_calls": {
+    "total": 18,
+    "web_search": 5,
+    "code_execution": 2,
+    "web_fetch": 11
+  },
+  "n_tool_calls": 18,
+  "n_refused": 0,
+  "n_turns": 13,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The answer's 85,945 thousand / ~85.9 million is a rounding of the official 85,945,127 shares, with no contradiction.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

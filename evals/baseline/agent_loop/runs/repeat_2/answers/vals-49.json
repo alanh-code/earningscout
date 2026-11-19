@@ -1,0 +1,75 @@
+{
+  "id": "vals-49",
+  "type": "Beat or Miss",
+  "question": "How many times has General Mills beaten Adjusted Diluted EPS guidance in the last two years (FY2023 and FY2024) and what is the guidance for 2025?",
+  "answer": "FY2023 - BEAT\nFY2023 Adj. Diluted EPS (Reported) = $4.30\nFY2023 Guidance = Adjusted diluted EPS are expected to range between flat and up 3 percent in constant-currency from the base of $3.94 earned in fiscal 2022, including a 3-point net headwind from divestitures and acquisitions announced or closed in fiscal 2022.\nFY2023 Range = $3.94 - $4.06\n\nFY2024 - MET EXPECTATIONS\nFY2024 Adj. Diluted EPS (Reported) = $4.52\nFY2024 Guidance = Adjusted diluted EPS are expected to range between 4 to 6 percent in constant-currency from the base of $4.30 earned in fiscal 2023.\nFY2024 Range = $4.47 - $4.56\n\nFY2025 - FORECASTS\nFY2025 Guidance = Adjusted diluted EPS is expected to range between down 1 percent and up 1 percent in constant-currency from the base of $4.52 earned in fiscal 2024.\nFY2025 Range = $4.47 - $4.57",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "General Mills beat Adjusted Diluted EPS guidance in FY2023"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "FY2023 Adj. Diluted EPS (Reported) = $4.30"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "FY2023 Range = $3.94 - $4.06"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "General Mills met Adjusted Diluted EPS expectations in FY2024"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "FY2024 Adj. Diluted EPS (Reported) = $4.52"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "FY2024 Range = $4.47 - $4.56"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "FY2025 Range = $4.47 - $4.57"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "FY2023 - BEAT\nFY2023 Adj. Diluted EPS (Reported) = $4.30\nFY2023 Guidance = Adjusted diluted EPS are expected to range between flat and up 3 percent in constant-currency from the base of $3.94 earned in fiscal 2022, including a 3-point net headwind from divestitures and acquisitions announced or closed in fiscal 2022.\nFY2023 Range = $3.94 - $4.06\n\nFY2024 - MET EXPECTATIONS\nFY2024 Adj. Diluted EPS (Reported) = $4.52\nFY2024 Guidance = Adjusted diluted EPS are expected to range between 4 to 6 percent in constant-currency from the base of $4.30 earned in fiscal 2023.\nFY2024 Range = $4.47 - $4.56\n\nFY2025 - FORECASTS\nFY2025 Guidance = Adjusted diluted EPS is expected to range between down 1 percent and up 1 percent in constant-currency from the base of $4.52 earned in fiscal 2024.\nFY2025 Range = $4.47 - $4.57"
+    }
+  ],
+  "model_answer": "## Short answer\n\n**Two out of two.** General Mills beat (i.e., finished at or above the top end of) its own full‑year adjusted diluted EPS guidance in **both FY2023 and FY2024** — and in each year it raised the target multiple times along the way.\n\n## FY2023 (ended May 28, 2023) — BEAT\n\n| When | Constant‑currency adj. diluted EPS guidance |\n|---|---|\n| Initial (Jun 29, 2022) | Flat to **+3%** vs. $3.94 base |\n| Q1 (Sep 21, 2022) | **+2% to +5%** |\n| Q2 (Dec 21, 2022) | **+4% to +6%** |\n| Q3 (Mar 23, 2023) – final | **+8% to +9%** |\n| **Actual** | **$4.30, +10% in constant currency** |\n\n➡️ Landed ~1 point **above** the top of the final 8–9% range (and above the ~$4.26–$4.29 implied dollar range).\n\n## FY2024 (ended May 26, 2024) — BEAT\n\n| When | Constant‑currency adj. diluted EPS guidance |\n|---|---|\n| Initial (Jun 28, 2023) | **+4% to +6%** vs. $4.30 base |\n| Q2 (Dec 20, 2023) | Narrowed to **+4% to +5%** |\n| Q3 (Mar 20, 2024) | Reaffirmed **+4% to +5%** (≈$4.47–$4.52) |\n| **Actual** | **$4.52, +6% in constant currency** (≈$4.56 cc) |\n\n➡️ Delivered **above** the 4–5% range — the company itself said it \"delivered on our updated guidance.\"\n\nSo: **FY2023 = beat, FY2024 = beat → 2 of 2.**\n\n## FY2025 guidance (and how it played out)\n\nFY2025 guidance was cut three times during the year:\n\n- **June 26, 2024 (initial):** adjusted diluted EPS **down 1% to up 1%** in constant currency from the $4.52 FY2024 base\n- **Sep 18, 2024 (Q1):** reaffirmed down 1% to up 1%\n- **Dec 18, 2024 (Q2):** lowered to **down 3% to down 1%** (higher promotional investment)\n- **Mar 19, 2025 (Q3):** lowered to **down 8% to down 7%** in constant currency (≈ **$4.16–$4.20**), reflecting retailer inventory headwinds, slower U.S. snacking, and softer away‑from‑home demand; excluded any tariff impact\n\n**FY2025 is now closed:** results reported June 25, 2025 showed **adjusted diluted EPS of $4.21, down 7% in constant currency** — the favorable end of that final range, i.e., essentially in line/slightly better. (Diluted EPS was $4.10.)\n\n## Where that leaves the forward outlook\n\nSince FY2025 has ended, the live guidance is now **fiscal 2026** (given June 25, 2025):\n\n- Organic net sales: **down 1% to up 1%**\n- Adjusted operating profit: **down 10% to 15%** in constant currency from the $3.4B FY2025 base\n- **Adjusted diluted EPS: down 10% to 15% in constant currency from the $4.21 base** (≈ $3.58–$3.79), reflecting stepped‑up investment in consumer value/innovation (incl. Blue Buffalo fresh pet food launch), tariff‑driven input inflation, a corporate incentive reset, and the yogurt divestiture/Whitebridge acquisition mix (≈5‑point hit to profit growth), partly offset by 5% HMM savings, $100M transformation savings, and a 53rd week.\n\n*Note on method: \"beating guidance\" here means actual adjusted diluted EPS came in at or above the company's own most recent guidance range. Measured against sell‑side consensus instead, the count would look different (e.g., GIS missed consensus EPS in several quarters of FY2024–FY2025).*",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 136677,
+    "output_tokens": 6555,
+    "cache_hit_tokens": 90112,
+    "cache_miss_tokens": 46565,
+    "reasoning_tokens": 4969
+  },
+  "model_cost_usd": 0.011188086,
+  "tool_cost_usd": {
+    "exa": 0.027,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.038188086,
+  "latency_s": 36.49003387498669,
+  "tool_calls": {
+    "total": 9,
+    "web_search": 6,
+    "web_fetch": 3
+  },
+  "n_tool_calls": 9,
+  "n_refused": 0,
+  "n_turns": 6,
+  "error": null,
+  "overall": "wrong",
+  "judge_reason": "The answer claims General Mills beat in FY2024 (two of two), contradicting the official met-expectations result, and fails the FY2024 expectation check.",
+  "judge_run_overalls": [
+    "wrong",
+    "wrong",
+    "wrong"
+  ]
+}

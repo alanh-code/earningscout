@@ -1,0 +1,84 @@
+{
+  "id": "vals-02",
+  "type": "Trends",
+  "question": "How has Netflix's (NASDAQ: NFLX) Average Revenue Per Paying User Changed from 2019 to 2024?",
+  "answer": "2019: 10.82\n2020: 10.91\n2021: 11.67\n2022: 11.76\n2023: 11.64\n2024: 11.70\n\nFrom 2019-2022, average revenue per paying membership increased approximately 2.8% annually. From 2022 to 2024, the average revenue per paying membership has been roughly flat, likely due to the introduction of lower priced ad plans",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "2019: 10.82"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "2020: 10.91"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "2021: 11.67"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "2022: 11.76"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "2023: 11.64"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "2024: 11.70"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "From 2019-2022, average revenue per paying membership increased approximately 2.8% annually"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "From 2022 to 2024, the average revenue per paying membership has been roughly flat"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Flat revenue from 2022 to 2024 likely due to introduction of lower priced ad plans"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "2019: 10.82\n2020: 10.91\n2021: 11.67\n2022: 11.76\n2023: 11.64\n2024: 11.70\n\nFrom 2019-2022, average revenue per paying membership increased approximately 2.8% annually. From 2022 to 2024, the average revenue per paying membership has been roughly flat, likely due to the introduction of lower priced ad plans"
+    }
+  ],
+  "model_answer": "## Bottom Line\n\nNetflix's **blended global ARM (Average Revenue per Membership) rose only modestly** — from **$10.82/month in 2019 to ~$11.70/month in 2024, about +8% over five years** (and just +5.7% on a Q4-to-Q4 basis: $11.06 → $11.69).\n\nThat's a striking result given how aggressively Netflix raised prices. The explanation is **geographic mix shift**: growth came overwhelmingly from lower-priced APAC and LATAM, which diluted the global average. Regionally, the picture is wildly divergent.\n\n---\n\n## Reported ARM, Q4 2019 vs. Q4 2024 (monthly, USD)\n\n| Region | Q4 2019 | Q4 2024 | Change |\n|---|---|---|---|\n| **UCAN** (US/Canada) | $13.22 | $17.26 | **+30.6%** |\n| **EMEA** | $10.51 | $11.11 | +5.7% |\n| **LATAM** | $8.18 | $8.00 | **−2.2%** |\n| **APAC** | $9.07 | $7.34 | **−19.1%** |\n| **Global blended** | **$11.06** | **$11.69** | **+5.7%** |\n\n## Full-Year ARM, 2019 vs. 2024\n\n| Region | FY2019 | FY2024 | Change |\n|---|---|---|---|\n| UCAN | $12.57 | ~$17.20 | +37% |\n| EMEA | $10.33 | ~$10.96 | +6% |\n| LATAM | $8.21 | ~$8.24 | flat |\n| APAC | $9.24 | ~$7.29 | −21% |\n| **Global** | **$10.82** | **~$11.70** | **+8%** |\n\n*(Global FY2024 = $39,001M streaming revenue ÷ ~277.7M average paid memberships ÷ 12. Netflix ceased disclosing ARM after Q4 2024, so 2024 is the final data point.)*\n\n---\n\n## Why the blended number barely moved\n\n1. **Mix shift to low-ARM markets.** APAC went from 9.7% to 19.1% of global members (membership nearly quadrupled from 16M to 58M), while UCAN fell from 40.5% to 29.7% of members. Every APAC member adds ~$7/month vs. ~$17 in UCAN, dragging the average down.\n\n2. **FX headwinds.** The strong dollar crushed reported ARM in LATAM and APAC. On an **F/X-neutral basis**, LATAM ARM actually grew ~16–27% per quarter in 2024, and APAC was only modestly negative — the reported dollar figures mask real local-currency pricing gains.\n\n3. **Cheaper plan tiers.** The ad-supported tier and mobile-only plans in emerging markets lowered revenue per membership by design, trading ARPU for volume.\n\n4. **Total memberships grew +80% (167M → 302M)**, so while ARM per user grew only ~8%, total streaming revenue more than doubled ($19.9B → $39.0B).\n\n**Net effect:** The headline \"ARM\" number understates Netflix's pricing power — in its mature, high-value markets (UCAN) ARM rose ~30–37%, while the blended figure is held back by deliberate expansion into lower-ARPU, high-growth regions and currency translation.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 56990,
+    "output_tokens": 6157,
+    "cache_hit_tokens": 35584,
+    "cache_miss_tokens": 21406,
+    "reasoning_tokens": 3908
+  },
+  "model_cost_usd": 0.007011852,
+  "tool_cost_usd": {
+    "exa": 0.013,
+    "e2b": 0.000254
+  },
+  "cost_usd": 0.02026539605415751,
+  "latency_s": 42.796687499969266,
+  "tool_calls": {
+    "total": 5,
+    "web_search": 3,
+    "web_fetch": 1,
+    "code_execution": 1
+  },
+  "n_tool_calls": 5,
+  "n_refused": 0,
+  "n_turns": 4,
+  "error": null,
+  "overall": "wrong",
+  "judge_reason": "Model provides only the 2019 and 2024 annual ARM figures and omits the required 2020-2023 values and 2019-2022/2022-2024 trend and cause statements.",
+  "judge_run_overalls": [
+    "wrong",
+    "wrong",
+    "wrong"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "vals-47",
+  "type": "Beat or Miss",
+  "question": "Did FOUR beat or miss its end to end payment volume guidance at midpoint for Q3 2024 provided in Q1 2024? Express as % BEAT or MISS",
+  "answer": "7.4% MISS",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "7.4% MISS"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "7.4% MISS"
+    }
+  ],
+  "model_answer": "**MISS — by ~7.4%** (actual came in $3.5B below the midpoint).\n\n| Item | Value |\n|---|---|\n| Q3 2024 E2E volume guidance (issued with Q1 2024 results, May 9, 2024) | $46.0B – $48.0B |\n| Midpoint of guidance | $47.0B |\n| Q3 2024 actual E2E payment volume | $43.5B |\n| Variance vs. midpoint | –$3.5B |\n| Variance % | **–7.4% → MISS** |\n\nDetails:\n- Shift4 introduced quarter-by-quarter guidance in its Q1 2024 shareholder letter, laying out Q3 2024 end‑to‑end payment volume of **$46.0B–$48.0B** (midpoint **$47.0B**), alongside Q3 GRLNF of $345M–$365M and Adjusted EBITDA of $175M–$183M.\n- Actual Q3 2024 E2E volume, reported Nov 12, 2024, was **$43.5B** (+56% YoY), i.e., **$3.5B / 7.4% short of the $47.0B midpoint** (~5.4% below the low end of the range).\n- Consequently, the company cut its full‑year E2E volume outlook from $167B–$175B (later $167B–$172B) to $164B–$166B.\n\nComputation: (43.5 − 47.0) / 47.0 = −7.45% → **MISS 7.4%**.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 112733,
+    "output_tokens": 3062,
+    "cache_hit_tokens": 78720,
+    "cache_miss_tokens": 34013,
+    "reasoning_tokens": 2144
+  },
+  "model_cost_usd": 0.007175309999999999,
+  "tool_cost_usd": {
+    "exa": 0.02,
+    "e2b": 0.000266
+  },
+  "cost_usd": 0.027441225172323037,
+  "latency_s": 24.781727291992866,
+  "tool_calls": {
+    "total": 9,
+    "web_search": 4,
+    "web_fetch": 4,
+    "code_execution": 1
+  },
+  "n_tool_calls": 9,
+  "n_refused": 0,
+  "n_turns": 6,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The answer states a 7.4% miss, matching the official answer.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

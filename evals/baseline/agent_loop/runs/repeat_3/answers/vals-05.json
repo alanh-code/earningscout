@@ -1,0 +1,78 @@
+{
+  "id": "vals-05",
+  "type": "Simple retrieval - Qualitative",
+  "question": "In 2024, who was Nominated to Serve on BBSI's (NASDAQ: BBSI) Board of Directors?",
+  "answer": "Thomas Carley\nJoseph Clabby\nThomas Cusick\nGary Kramer\nAnthony Meeker\nCarla Moradi\nAlexandra Morehouse\nVincent Price",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Thomas Carley"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Joseph Clabby"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Thomas Cusick"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Gary Kramer"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Anthony Meeker"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Carla Moradi"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Alexandra Morehouse"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Vincent Price"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "Thomas Carley\nJoseph Clabby\nThomas Cusick\nGary Kramer\nAnthony Meeker\nCarla Moradi\nAlexandra Morehouse\nVincent Price"
+    }
+  ],
+  "model_answer": "At BBSI’s 2024 Annual Meeting of Stockholders (held June 3, 2024), the Board nominated **eight directors** for one‑year terms expiring at the 2025 annual meeting — all of them incumbent directors:\n\n| Nominee | Principal Occupation (per 2024 proxy) | Director Since |\n|---|---|---|\n| Thomas J. Carley | Retired COO, Urth Organic Corporation | 2000 |\n| Joseph S. Clabby | Retired Vice President, Chubb Limited | 2022 |\n| Thomas B. Cusick | Retired Executive Advisor, Columbia Sportswear | 2016 |\n| Gary E. Kramer | President & CEO of BBSI | 2020 |\n| Anthony Meeker | Retired Managing Director, Victory Capital Management | 1993 |\n| Carla A. Moradi | Board member, BBSI and Patriot Growth Insurance Services | 2021 |\n| Alexandra Morehouse | Board member, BBSI and Evalueserve | 2022 |\n| Vincent P. Price | Advisor to the CEO, Cambia Health Solutions | 2017 |\n\nAll eight were elected at the June 3, 2024 meeting (per the 8‑K filed June 5, 2024). Because every 2024 nominee was already serving, there was no new director nominee that year — the next newly appointed director was Mark S. Finn, who joined the Board effective April 7, 2025 (and was first nominated to stand for election in the 2025 proxy).",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 38660,
+    "output_tokens": 1391,
+    "cache_hit_tokens": 20608,
+    "cache_miss_tokens": 18052,
+    "reasoning_tokens": 771
+  },
+  "model_cost_usd": 0.003604224,
+  "tool_cost_usd": {
+    "exa": 0.024,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.027604224,
+  "latency_s": 13.1017927499488,
+  "tool_calls": {
+    "total": 6,
+    "web_search": 6
+  },
+  "n_tool_calls": 6,
+  "n_refused": 0,
+  "n_turns": 4,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "All eight official director names are present and no contradiction is triggered.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

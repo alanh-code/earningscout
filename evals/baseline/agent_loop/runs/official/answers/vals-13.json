@@ -1,0 +1,51 @@
+{
+  "id": "vals-13",
+  "type": "Numerical Reasoning",
+  "question": "What is the total amount of director compensation (in dollars) that was paid to the directors of 3D Systems in 2023?",
+  "answer": "The total amount of directors compensations paid by 3D Systems in 2023 was $2,263,113.",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "The total amount of directors compensations paid by 3D Systems in 2023 was $2,263,113."
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "The total amount of directors compensations paid by 3D Systems in 2023 was $2,263,113."
+    }
+  ],
+  "model_answer": "**Total director compensation paid to 3D Systems' directors in 2023: $2,263,113**\n\nFrom the \"Director Compensation for 2023\" table in 3D Systems' 2024 proxy statement (DEF 14A filed Aug. 13, 2024):\n\n| Director | Fees Earned/Paid in Cash | Stock Awards | Total |\n|---|---|---|---|\n| Malissia R. Clinton | $90,000 | $150,000 | $240,000 |\n| William E. Curran | $105,000 | $150,000 | $255,000 |\n| Claudia N. Drayton | $68,113 | $150,000 | $218,113 |\n| Thomas W. Erickson | $78,764 | $150,000 | $228,764 |\n| Jim D. Kever | $70,000 | $150,000 | $220,000 |\n| Charles G. McClure, Jr. | $250,000 | $150,000 | $400,000 |\n| Kevin S. Moore | $95,000 | $150,000 | $245,000 |\n| Vasant Padmanabhan | $66,236 | $150,000 | $216,236 |\n| John J. Tracy | $90,000 | $150,000 | $240,000 |\n| **Total** | **$913,113** | **$1,350,000** | **$2,263,113** |\n\nNotes:\n- The stock awards reflect 18,094 shares granted to each director on May 16, 2023, valued at the $8.29 grant-date closing price ($150,000 each).\n- No \"All Other Compensation\" was reported for any director.\n- Dr. Jeffrey Graves (CEO) is an employee director and received no additional compensation for board service in 2023, so he is excluded from the table.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 14465,
+    "output_tokens": 871,
+    "cache_hit_tokens": 7808,
+    "cache_miss_tokens": 6657,
+    "reasoning_tokens": 201
+  },
+  "model_cost_usd": 0.0015445739999999997,
+  "tool_cost_usd": {
+    "exa": 0.008,
+    "e2b": 8.7e-05
+  },
+  "cost_usd": 0.00963109309760281,
+  "latency_s": 7.11132495792117,
+  "tool_calls": {
+    "total": 3,
+    "web_search": 2,
+    "code_execution": 1
+  },
+  "n_tool_calls": 3,
+  "n_refused": 0,
+  "n_turns": 3,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The stated total director compensation matches the official figure.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

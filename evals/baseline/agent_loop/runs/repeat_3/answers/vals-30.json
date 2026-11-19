@@ -1,0 +1,52 @@
+{
+  "id": "vals-30",
+  "type": "Financial Modeling  Projections",
+  "question": "What is the maximum dilutive impact in number of shares of Snapchat's outstanding convertible notes as of 12/31/2024?",
+  "answer": "85,945,127 shares if all converts were converted (including out of the money converts)",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "85,945,127 shares if all converts were converted (including out of the money converts)"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "85,945,127 shares if all converts were converted (including out of the money converts)"
+    }
+  ],
+  "model_answer": "**~85.9 million shares (85,945 thousand)** — that's the maximum dilutive share count from Snap's outstanding convertible notes as of December 31, 2024, per the \"Net Loss per Share\" footnote in Snap's 2024 Form 10-K (filed Feb. 5, 2025).\n\nThe 10-K lists \"Convertible Notes (if-converted)\" of **85,945 thousand shares** as potentially dilutive shares excluded from diluted EPS (because including them would be anti-dilutive, since the if-converted value did not exceed principal at year-end).\n\nBreakdown at each series' initial conversion rate:\n\n| Notes | Principal ($M) | Conversion rate (shares/$1,000) | Shares (M) |\n|---|---|---|---|\n| 2025 Notes (0.25%) | 36.240 | 46.1233 | ~1.67 |\n| 2026 Notes (0.75%) | 249.754 | 43.8481 | ~10.95 |\n| 2027 Notes (0%) | 1,150.000 | 11.2042 | ~12.88 |\n| 2028 Notes (0.125%) | 1,500.000 | 17.7494 | ~26.62 |\n| 2030 Notes (0.50%) | 750.000 | 45.0846 | ~33.81 |\n| **Total** | **3,685.994** | | **~85.95** |\n\nTwo caveats: (1) this assumes full physical settlement in stock at the initial conversion rates; Snap can elect cash/cash-and-stock settlement, and the capped-call transactions are designed to offset dilution up to their cap prices; (2) make-whole/conversion-rate adjustments in a fundamental change or redemption could raise the share count — e.g., the 2030 Notes' maximum conversion rate of 59.7371 shares per $1,000 would imply up to ~44.8 million shares for that series alone.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 267697,
+    "output_tokens": 4680,
+    "cache_hit_tokens": 217472,
+    "cache_miss_tokens": 50225,
+    "reasoning_tokens": 3378
+  },
+  "model_cost_usd": 0.010994166,
+  "tool_cost_usd": {
+    "exa": 0.027,
+    "e2b": 0.000212
+  },
+  "cost_usd": 0.038206105920841664,
+  "latency_s": 34.58910804090556,
+  "tool_calls": {
+    "total": 13,
+    "web_search": 5,
+    "web_fetch": 7,
+    "code_execution": 1
+  },
+  "n_tool_calls": 13,
+  "n_refused": 0,
+  "n_turns": 9,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The answer gives 85,945 thousand shares, a pure rounding of the official 85,945,127 shares.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

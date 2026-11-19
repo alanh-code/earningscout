@@ -1,0 +1,80 @@
+{
+  "id": "vals-25",
+  "type": "Simple retrieval - Qualitative",
+  "question": "Summarize the regulatory risks Paylocity's (NASDAQ: PCTY) lists in its FY 2024 10-K.",
+  "answer": "- The global data privacy regulatory environment is evolving, impacting HCM and payroll providers.\n- Federal and state laws, including FTC rules, HIPAA, CCPA/CPRA, BIPA, and state breach notification laws, govern data privacy.\n- GDPR and other foreign laws affect operations due to clients with global footprints.\n- Changing tax, benefit, and privacy laws may require product modifications, increase costs, delay new offerings, or reduce demand.\n- Potential licensing requirements for money transmitter businesses could limit operations or increase compliance costs.\n- Third-party partners and suppliers may experience breaches, supply-chain attacks, or system failures, which could harm business operations and lead to significant liabilities.\n- Security incidents could damage trust in HCM and payroll solutions, affecting client retention and acquisition.\n- Regulatory scrutiny on cybersecurity is increasing, requiring additional investment to maintain compliance.",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Global data privacy regulatory environment is evolving, impacting HCM and payroll providers."
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Federal and state laws, including FTC rules, HIPAA, CCPA/CPRA, BIPA, and state breach notification laws, govern data privacy."
+    },
+    {
+      "operator": "correctness",
+      "criteria": "GDPR and other foreign laws affect operations due to clients with global footprints."
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Changing tax, benefit, and privacy laws may require product modifications, increase costs, delay new offerings, or reduce demand."
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Potential licensing requirements for money transmitter businesses could limit operations or increase compliance costs."
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Third-party partners and suppliers may experience breaches, supply-chain attacks, or system failures, which could harm business operations and lead to significant liabilities."
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Security incidents could damage trust in HCM and payroll solutions, affecting client retention and acquisition."
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Regulatory scrutiny on cybersecurity is increasing, requiring additional investment to maintain compliance."
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "- The global data privacy regulatory environment is evolving, impacting HCM and payroll providers.\n- Federal and state laws, including FTC rules, HIPAA, CCPA/CPRA, BIPA, and state breach notification laws, govern data privacy.\n- GDPR and other foreign laws affect operations due to clients with global footprints.\n- Changing tax, benefit, and privacy laws may require product modifications, increase costs, delay new offerings, or reduce demand.\n- Potential licensing requirements for money transmitter businesses could limit operations or increase compliance costs.\n- Third-party partners and suppliers may experience breaches, supply-chain attacks, or system failures, which could harm business operations and lead to significant liabilities.\n- Security incidents could damage trust in HCM and payroll solutions, affecting client retention and acquisition.\n- Regulatory scrutiny on cybersecurity is increasing, requiring additional investment to maintain compliance."
+    }
+  ],
+  "model_answer": "## Where the regulatory risk sits in Paylocity's FY 2024 10-K\n\n- **Item 1 – Business → \"Governmental Regulation\"** (p. ~13): describes the regulatory environment and compliance program.\n- **Item 1A – Risk Factors → \"Risks Related to Legal and Regulatory Matters\"** (pp. 14–27): four dedicated risk factors.\n- **Item 1C – Cybersecurity** (p. 27) and **Item 3 – Legal Proceedings** (p. 29).\n- Filed August 2, 2024 for FYE June 30, 2024. Paylocity's Q1 FY2025 10-Q (Oct. 31, 2024) states there were **no material changes** to these risk factors.\n\n## The four \"Legal and Regulatory Matters\" risk factors\n\n**1. Changing regulatory requirements could raise costs, delay new products, and impair existing products.** The filing says its products \"may become subject to increasing and/or changing regulatory requirements, including changes in tax, benefit, wage and hour, employment laws and other international and domestic laws.\" Consequences flagged: new rules may *reduce or eliminate demand* for some products, block development of new ones, make launches costlier/slower, or force costly re-engineering.\n\nThe concrete example is **money transmission/money services business (MSB) licensing**: new state or federal money-transmitter statutes, or changed regulator interpretations, \"could subject us to registration or licensing or limit business activities until we are appropriately licensed.\" Such developments \"could also impact how we conduct some aspects of our business or invest client funds, which could adversely impact interest income from investing client funds\" — notable because float/interest income on client funds is a meaningful earnings driver. And if regulators conclude Paylocity operated as an **unlicensed money services business or money transmitter**, it \"could be subject to civil and criminal fines, penalties, costs, legal fees, reputational damage or other negative consequences.\"\n\n**2. Failure to comply with data privacy laws could materially hurt reputation, financial condition and/or operations.** The filing names the FTC's rules, **HIPAA**, state breach-notification laws, **CCPA as amended by CPRA**, the **Illinois Biometric Information Privacy Act (BIPA)**, and — because clients have international employees — the **EU GDPR** and other foreign privacy laws. (BIPA is a live exposure area for time-clock/biometric punch products.)\n\n**3. Adverse tax laws or regulations, or new application of existing ones to Paylocity or its clients**, \"could increase the costs of our services and adversely impact our business\" — relevant given it prepares and files payroll tax returns and remits deposits on clients' behalf.\n\n**4. Any future litigation could be costly and time-consuming to defend.**\n\n## Adjacent regulatory risks elsewhere in Item 1A\n\n- **Client-funds/ACH settlement risk:** Paylocity pays employees and taxing authorities before client ACH debits finally settle; ACH reversals or failed transfers could require short-term liquidity (banking-regulation driven).\n- **Cybersecurity breach:** a breach exposing payroll, bank, SSN, tax and (through BeneFLEX) HIPAA health data could trigger \"regulatory fines,\" government enforcement, notification obligations, and client loss — plus it notes rising regulatory focus on cyber, requiring more compliance spend.\n- **Third-party/bank dependencies:** use of major U.S. banks for ACH/wire and international partners in countries where it lacks operations exposes it to foreign regulatory, economic and political risk.\n- **Client funds / corporate investments:** market, credit, liquidity and interest-rate risk on funds held for clients.\n- **Software defects:** errors are more likely precisely because \"changes in employer and legal requirements… relating to benefits, filing of tax returns and other regulatory reports are frequent.\"\n\n## Bottom line\n\nPaylocity's regulatory exposure is framed as (a) **licensing risk** around money movement (money transmitter/MSB status, which could restrict how it invests client funds and thus its interest income, plus civil/criminal penalties), (b) **privacy/biometric regulation** (CCPA/CPRA, BIPA, HIPAA, GDPR), (c) **ever-changing payroll tax, wage-hour and benefits rules** that force continuous product modification and can obsolete features, and (d) **litigation/defense costs**. Management's stated mitigants are operating policies, voluntary audits/examinations, and maintaining compliance certifications.\n\n*Caveat on sourcing: the SEC HTML version truncated in retrieval, so factor 1 (including the money-transmitter passage) and the Business-section regulation disclosure are quoted verbatim from the FY 2024 filing; items 2–4 are confirmed as headings in the filing and summarized at the level of detail available — the 10-K itself should be checked for exact wording.*",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 911985,
+    "output_tokens": 12140,
+    "cache_hit_tokens": 819072,
+    "cache_miss_tokens": 92913,
+    "reasoning_tokens": 9357
+  },
+  "model_cost_usd": 0.023678166,
+  "tool_cost_usd": {
+    "exa": 0.051,
+    "e2b": 0.002463
+  },
+  "cost_usd": 0.07714109383549869,
+  "latency_s": 133.94013529096264,
+  "tool_calls": {
+    "total": 27,
+    "web_search": 10,
+    "web_fetch": 16,
+    "code_execution": 1
+  },
+  "n_tool_calls": 27,
+  "n_refused": 0,
+  "n_turns": 16,
+  "error": null,
+  "overall": "wrong",
+  "judge_reason": "Six of eight regulatory-risk checks are met; missing evolving global data privacy environment and third-party breach/supply-chain/system failure risks, so overall wrong.",
+  "judge_run_overalls": [
+    "wrong",
+    "wrong",
+    "wrong"
+  ]
+}

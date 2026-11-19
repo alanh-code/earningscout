@@ -1,0 +1,75 @@
+{
+  "id": "vals-40",
+  "type": "Adjustments",
+  "question": "What adjustments does Airbnb (NASDAQ: ABNB) make to its Net Income to Derive Adjusted EBITDA?",
+  "answer": "Provision for (benefit from) income taxes;\nOther income (expense), net;\nInterest income;\nDepreciation and amortization;\nStock-based compensation expense;\nAcquisition-related impacts consisting of gains (losses) recognized on changes in the fair value of contingent consideration arrangements, and\nLodging taxes, withholding taxes, and transactional taxes where there is significant uncertainty as to how the taxes apply to our platform.",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Provision for (benefit from) income taxes"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Other income (expense), net"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Interest income"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Depreciation and amortization"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Stock-based compensation expense"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Acquisition-related impacts consisting of gains (losses) recognized on changes in the fair value of contingent consideration arrangements"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Lodging taxes, withholding taxes, and transactional taxes with significant uncertainty on application to platform"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "Provision for (benefit from) income taxes;\nOther income (expense), net;\nInterest income;\nDepreciation and amortization;\nStock-based compensation expense;\nAcquisition-related impacts consisting of gains (losses) recognized on changes in the fair value of contingent consideration arrangements, and\nLodging taxes, withholding taxes, and transactional taxes where there is significant uncertainty as to how the taxes apply to our platform."
+    }
+  ],
+  "model_answer": "## Airbnb's Adjusted EBITDA definition\n\nAirbnb defines **Adjusted EBITDA as net income (loss) adjusted for** (as currently worded in its FY2025 Form 10-K and 2026 shareholder letters):\n\n1. Provision for (benefit from) income taxes\n2. Other income (expense), net\n3. Interest income\n4. Interest expense\n5. Depreciation and amortization\n6. Stock-based compensation expense\n7. Acquisition‑related impacts — gains/losses on changes in fair value of contingent consideration arrangements (equity‑settled, marked to market each period)\n8. Settlements and reserves for lodging, withholding, transactional and other non‑income taxes where significant uncertainty exists as to how those taxes apply to users of the platform and Airbnb\n9. Stock‑settlement obligations — employer and related taxes tied to the 2020 IPO\n\n**Adjusted EBITDA Margin** = Adjusted EBITDA ÷ revenue. The company says it excludes these items because they are either non‑cash, or unpredictable in amount/timing and not driven by core operations (which makes period‑to‑period and peer comparisons less meaningful). Management uses it internally for operating decisions, performance evaluation and budgeting.\n\n## The reconciliation (recent quarters, $M)\n\n| | Q3 2024 | Q4 2024 | Q1 2025 | Q2 2025 | Q3 2025 | Q4 2025 | Q1 2026 | Q2 2026 | Q3 2026 |\n|---|---|---|---|---|---|---|---|---|---|\n| Revenue | 3,732 | 2,480 | 2,272 | 3,096 | 4,095 | 2,778 | 2,678 | 3,608 | 4,869 |\n| **Net income** | 1,368 | 461 | 154 | 642 | 1,374 | 341 | 160 | 816 | 1,890 |\n| Provision for income taxes | 367 | 161 | 19 | 137 | 418 | 52 | 121 | 81 | 283 |\n| Other (income) expense, net | (5) | (19) | 33 | 17 | 7 | 12 | (61) | 7 | (15) |\n| Interest expense | 2 | 10 | 5 | 6 | 6 | 26 | 21 | 37 | 45 |\n| Interest income | (207) | (183) | (173) | (190) | (180) | (162) | (155) | (183) | (182) |\n| Depreciation & amortization | 15 | 22 | 25 | 21 | 22 | 23 | 22 | 17 | 14 |\n| Stock‑based compensation | 362 | 368 | 358 | 424 | 399 | 411 | 410 | 487 | 462 |\n| Acquisition‑related impacts | (2) | (12) | – | (2) | 1 | 2 | (2) | 1 | (1) |\n| Lodging/host withholding/transactional taxes, net | 58 | (43) | (4) | (7) | 4 | 81 | 3 | (2) | 13 |\n| Stock‑settlement obligations (IPO) | – | – | – | (5) | – | – | – | – | – |\n| **Adjusted EBITDA** | **1,958** | **765** | **417** | **1,043** | **2,051** | **786** | **519** | **1,261** | **2,509** |\n| Adj. EBITDA margin | 52% | 31% | 18% | 34% | 50% | 28% | 19% | 35% | 52% |\n\n## Annual reconciliations ($M)\n\n| | FY2023 | FY2024 | FY2025 |\n|---|---|---|---|\n| Net income | 4,792 | 2,648 | 2,511 |\n| Provision for (benefit from) income taxes | (2,690) | 683 | 626 |\n| Other expense, net | 137 | 40 | 69 |\n| Interest expense | – | – | 43 |\n| Interest income | (721) | (818) | (705) |\n| Depreciation & amortization | 44 | 65 | 91 |\n| Stock‑based compensation | 1,120 | 1,407 | 1,592 |\n| Acquisition‑related impacts | (3) | (7) | 1 |\n| Lodging/host withholding/transactional taxes, net | 974 | 23 | 74 |\n| Stock‑settlement obligations (IPO) | – | – | (5) |\n| **Adjusted EBITDA** | **3,653** | **4,041** | **4,297** |\n| Margin | 37% | 36% | 35% |\n\n(FY2023's tax line is a benefit, driven by the ~$2.9B release of the U.S. deferred‑tax valuation allowance; the $974M lodging/withholding tax adjustment largely reflects the Italy withholding‑tax settlement. FY2025 includes a $213M CAMT‑credit valuation allowance inside the tax line.)\n\n## Notes on how the definition has evolved\n\n- **Restructuring charges** were an add‑back in 2022 only (a $89M charge in Q2 2022); that line has since disappeared.\n- **Stock‑settlement obligations** (IPO‑related employer taxes) were added as an adjustment item in 2025.\n- **Interest expense** began being shown as its own adjustment line in 2026 (it was previously embedded within \"other income (expense), net\"), and the lodging/withholding tax line was broadened to \"and other non‑income taxes.\"\n- It is a non‑GAAP measure with disclosed limitations (it ignores real recurring costs like SBC, D&A, and taxes), and Airbnb does not reconcile forward‑looking Adjusted EBITDA guidance to net income because the excluded items can't be reliably predicted.\n\nSources: Airbnb FY2025 Form 10-K (Item 7, Non‑GAAP Financial Measures), Q4 2025 Shareholder Letter (Ex‑99.1, 8‑K filed Feb. 12, 2026) and Q3 2026 Shareholder Letter (Ex‑99.1, 8‑K filed Nov. 5, 2026).",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 100048,
+    "output_tokens": 4394,
+    "cache_hit_tokens": 67072,
+    "cache_miss_tokens": 32976,
+    "reasoning_tokens": 2631
+  },
+  "model_cost_usd": 0.0077840159999999995,
+  "tool_cost_usd": {
+    "exa": 0.018,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.025784016,
+  "latency_s": 27.90367904107552,
+  "tool_calls": {
+    "total": 6,
+    "web_search": 4,
+    "web_fetch": 2
+  },
+  "n_tool_calls": 6,
+  "n_refused": 0,
+  "n_turns": 5,
+  "error": null,
+  "overall": "wrong",
+  "judge_reason": "All official adjustments are present, but the answer also presents interest expense and stock-settlement obligations as current adjustments, conflicting with the official exhaustive adjustment list.",
+  "judge_run_overalls": [
+    "wrong",
+    "wrong",
+    "wrong"
+  ]
+}

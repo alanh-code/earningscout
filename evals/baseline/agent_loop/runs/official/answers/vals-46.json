@@ -1,0 +1,71 @@
+{
+  "id": "vals-46",
+  "type": "Market Analysis",
+  "question": "As of December 2024, what has been Zillow's (NASDAQ:Z) acquisition strategy over the past 2 years and how does it align with the company's evolving revenue mix?",
+  "answer": "The company has made several acquisitions of subscription revenue platforms. On December 8, it acquired Follow Up Boss, a CRM for real estate professionals, for $399 million, with up to $100 million in contingent consideration. On September 11, it acquired Spruce, a title and escrow platform, for $19 million. On July 31, the company acquired Aryeo, a software company for real estate photographers, for $35 million. In the post-COVID tight housing market environment, revenue related to Mortgages and Residential (Premier Agent) has declined. The business has acquired various software subscription revenue businesses as it continues to round out its portfolio of home-buying services.",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Acquisition of Follow Up Boss for $399 million with up to $100 million in contingent consideration on December 8"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Acquisition of Spruce for $19 million on September 11"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Acquisition of Aryeo for $35 million on July 31"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Decline in revenue related to Mortgages and Residential (Premier Agent) in post-COVID tight housing market"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Acquisition strategy focused on subscription revenue platforms"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Strategy to round out portfolio of home-buying services"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "The company has made several acquisitions of subscription revenue platforms. On December 8, it acquired Follow Up Boss, a CRM for real estate professionals, for $399 million, with up to $100 million in contingent consideration. On September 11, it acquired Spruce, a title and escrow platform, for $19 million. On July 31, the company acquired Aryeo, a software company for real estate photographers, for $35 million. In the post-COVID tight housing market environment, revenue related to Mortgages and Residential (Premier Agent) has declined. The business has acquired various software subscription revenue businesses as it continues to round out its portfolio of home-buying services."
+    }
+  ],
+  "model_answer": "## Short answer\n\nAs of December 2024, Zillow’s M&A strategy was **not a large-scale roll-up or a diversification program**. It was a series of **small-to-mid-sized capability tuck-ins** designed to build out the “housing super app”: software for agents, listing-media/Showcase tools, title/closing capability, and AI-enabled listing features. The only sizeable deal was **Follow Up Boss**; the others were small or undisclosed. The strategy was aimed mainly at **increasing conversion and revenue per transaction inside the core For Sale/Residential funnel**, not at buying new traffic or new verticals.\n\nThat aligns only partially with the revenue mix: Zillow’s mix has shifted materially toward **Rentals**, but that growth was largely **organic and partnership-driven**, not acquisition-driven. M&A mostly reinforced the largest, slower-growing **Residential/For Sale** bucket by adding recurring software and transaction-service layers.\n\n## Acquisitions, late 2022–2024\n\n| Closed | Target | Consideration | Strategic role |\n|---|---:|---:|---|\n| Dec. 2022 | **VRX Media** | Undisclosed | Real-estate media/photographer network; supported launch of ShowingTime+ Listing Media Services and Listing Showcase |\n| Jul. 2023 | **Aryeo** | ~$35M total consideration, including ~$15M cash and $20M in Class C stock | Real-estate media software/content-management platform for photographers; folded into ShowingTime+ |\n| Sep. 2023 | **Spruce** | ~$19M cash, net of cash acquired | Tech-enabled title and escrow platform; adds a closing/title attach to the transaction stack |\n| Dec. 2023 | **Follow Up Boss** (Enchant, LLC) | $399M cash net plus up to $100M contingent consideration; ~$484M fair value at closing | CRM for agents/teams; central agent workflow and lead-management layer |\n| Oct. 2024 | **Virtual Staging AI** | Undisclosed | AI virtual staging for listing photos; team joined Zillow’s AI/tech organization |\n\nVRX closed in December 2022, just before the strict two-year window, but it is part of the same listing-media buildout. The 2024 10-K explicitly says the Follow Up Boss deal was “consistent with our strategy to invest in a more integrated software experience for our customers,” and it describes Aryeo and Follow Up Boss as examples of investing in “industry software” to help professionals manage leads, create listings, and effectuate transactions. ([2024 10-K, Note 4](https://www.sec.gov/Archives/edgar/data/1617640/000161764025000016/z-20241231.htm))\n\n## What the revenue mix did\n\nZillow recast its reporting into **For Sale** (Residential + Mortgages) and **Rentals** in 2024. Using the 2024 10-K’s disaggregated revenue:\n\n| $M | FY2022 | FY2023 | FY2024 | 2022→2024 growth |\n|---|---:|---:|---:|---:|\n| Residential | 1,522 | 1,452 | 1,594 | +4.7% |\n| Mortgages | 119 | 96 | 145 | +21.8% |\n| **For Sale** | **1,641** | **1,548** | **1,739** | **+6.0%** |\n| Rentals | 274 | 357 | 453 | +65.3% |\n| Other | 43 | 40 | 44 | +2.3% |\n| **Total** | **1,958** | **1,945** | **2,236** | **+14.2%** |\n\nMix as a percentage of total:\n\n| | FY2022 | FY2023 | FY2024 |\n|---|---:|---:|---:|\n| Residential | 77.7% | 74.7% | **71.3%** |\n| Mortgages | 6.1% | 4.9% | **6.5%** |\n| Rentals | 14.0% | 18.4% | **20.3%** |\n| Other | 2.2% | 2.1% | **2.0%** |\n\nSo the mix shift was overwhelmingly a **Rentals** story: Residential fell about 6.4 percentage points, while Rentals gained about 6.3 points. Mortgages recovered modestly after a weak 2023. Zillow still disclosed that Residential was **71% of total revenue in 2024**, and it specifically flagged that concentration as a risk. ([2024 10-K](https://www.sec.gov/Archives/edgar/data/1617640/000161764025000016/z-20241231.htm); [FY2023 release](https://www.sec.gov/Archives/edgar/data/1617640/000161764024000012/q42023991.htm))\n\n## How the M&A strategy aligns with that mix\n\n**1. The deals mostly sit inside Residential/For Sale, the largest but slower-growing bucket.**  \nAryeo and Follow Up Boss are explicitly part of Residential revenue; VRX and VSAI support ShowingTime+/listing media. Spruce is a title/closing attach used in For Sale customer transactions. These deals deepen Zillow’s presence in the transaction workflow rather than shifting revenue toward Rentals. In that sense, M&A is **vertical integration within the core**, not portfolio diversification.\n\n**2. They improve revenue quality and revenue per transaction.**  \nFollow Up Boss gives Zillow a CRM layer that helps agents manage and convert Zillow leads; by year-end 2024, **more than 80% of Enhanced Market connections were being managed through Follow Up Boss**. Aryeo, VRX, and VSAI support listing media and Zillow Showcase, which management said was on **1.7% of new for-sale listings** and targeted at **5%–10%**, representing a **$150M–$300M revenue opportunity**. Spruce adds title/closing as another attach point. This supports the “For Sale revenue per TTV” strategy—earning more from transactions Zillow already influences. ([Q4 2024 shareholder letter](https://www.sec.gov/Archives/edgar/data/1617640/000161764025000015/exhibit993.htm))\n\n**3. The fastest-growing revenue line, Rentals, was built organically—not through M&A.**  \nRentals grew 27% in 2024 and 30% in 2023, driven by multifamily properties, increased listing inventory, and distribution partnerships such as Realtor.com and Redfin. Zillow did not make a meaningful rental acquisition in this period. So the revenue mix is diversifying away from Residential faster than the acquisition program would suggest; the M&A is not the engine of that shift.\n\n**4. Mortgages is also primarily an integration execution story.**  \nMortgages revenue rose 51% in 2024 to $145M, driven by purchase-loan volume and better integration between Zillow Home Loans and Premier Agent partners in Enhanced Markets. Spruce supports the broader closing experience, but the mortgage rebound was not acquisition-led. It reflects Zillow’s “For Sale” integration strategy.\n\n**5. The financial footprint is small.**  \nZillow’s 10-K states that the aggregate effects of the Follow Up Boss, Aryeo, and Spruce acquisitions were **not material** to its consolidated financial statements, and acquisition-related costs were only about **$1M in 2024**. That reinforces that M&A is an enabler/capability layer, not the primary driver of reported revenue growth or mix.\n\n## Bottom line\n\nZillow’s 2023–2024 M&A strategy was a **disciplined, asset-light buildout of the For Sale transaction stack**: CRM, listing media, Showcase/AI, and title/closing. It aligns with the company’s push toward **more integrated, higher-revenue-per-transaction services** and recurring software revenue inside Residential. But it does **not** explain the main revenue-mix shift, which was the organic growth of **Rentals** from 14% to 20% of revenue. In short: the acquisitions make Zillow’s core Residential/For Sale business stickier and more monetizable, while Rentals—built largely without M&A—is doing most of the actual mix diversification.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 268866,
+    "output_tokens": 12415,
+    "cache_hit_tokens": 215936,
+    "cache_miss_tokens": 52930,
+    "reasoning_tokens": 9797
+  },
+  "model_cost_usd": 0.016036308,
+  "tool_cost_usd": {
+    "exa": 0.041,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.05703630800000001,
+  "latency_s": 80.62645437498577,
+  "tool_calls": {
+    "total": 14,
+    "web_search": 9,
+    "web_fetch": 5
+  },
+  "n_tool_calls": 14,
+  "n_refused": 0,
+  "n_turns": 9,
+  "error": null,
+  "overall": "wrong",
+  "judge_reason": "Most acquisition facts match, but the model contradicts the official decline in Mortgages and Residential revenue by reporting growth, triggering contradiction.",
+  "judge_run_overalls": [
+    "wrong",
+    "wrong",
+    "wrong"
+  ]
+}

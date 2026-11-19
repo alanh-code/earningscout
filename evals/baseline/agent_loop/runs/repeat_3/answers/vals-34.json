@@ -1,0 +1,58 @@
+{
+  "id": "vals-34",
+  "type": "Simple retrieval - Quantitative",
+  "question": "In fiscal 2024, what percentage of Cloudflare's (NYSE: NET) revenue was derived from channel partners?",
+  "answer": "20% of revenue was derived from channel partners",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "20% of revenue was derived from channel partners"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Cloudflare fiscal 2024 channel partner revenue percentage"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "20% revenue from channel partners in fiscal 2024"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "20% of revenue was derived from channel partners"
+    }
+  ],
+  "model_answer": "**20%** of Cloudflare's fiscal 2024 revenue came from channel partners.\n\nFrom the disaggregation of revenue note in Cloudflare's FY2024 Form 10-K (fiscal year ended December 31, 2024):\n\n| Customer type | FY2024 revenue | % of revenue |\n|---|---|---|\n| Channel partners | $337.394M | **20%** |\n| Direct customers | $1,332.232M | 80% |\n| **Total** | **$1,669.626M** | **100%** |\n\nFor context, channel partner revenue has been rising as a share of the total: 13% in FY2022 ($122.5M), 16% in FY2023 ($202.4M), and 20% in FY2024 (up ~67% year over year).",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 7381,
+    "output_tokens": 385,
+    "cache_hit_tokens": 896,
+    "cache_miss_tokens": 6485,
+    "reasoning_tokens": 100
+  },
+  "model_cost_usd": 0.0012064379999999998,
+  "tool_cost_usd": {
+    "exa": 0.008,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.009206438,
+  "latency_s": 4.4517032919684425,
+  "tool_calls": {
+    "total": 2,
+    "web_search": 2
+  },
+  "n_tool_calls": 2,
+  "n_refused": 0,
+  "n_turns": 2,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The answer correctly states 20% of Cloudflare's fiscal 2024 revenue was from channel partners.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

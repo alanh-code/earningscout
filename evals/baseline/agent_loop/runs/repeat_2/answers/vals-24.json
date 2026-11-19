@@ -1,0 +1,52 @@
+{
+  "id": "vals-24",
+  "type": "Numerical Reasoning",
+  "question": "As of March 10, 2025, what is the face value of Salesforce's debt excluding their sustainability notes?",
+  "answer": "Salesforce's debt excluding sustainability notes is $7.5 billion as of March 10, 2025",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Salesforce's debt excluding sustainability notes is $7.5 billion as of March 10, 2025"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "Salesforce's debt excluding sustainability notes is $7.5 billion as of March 10, 2025"
+    }
+  ],
+  "model_answer": "## Answer\n\n**$7.5 billion** — that is the aggregate principal (face) amount of Salesforce's senior notes outstanding as of the most recent balance sheet date (January 31, 2025, per the FY2025 Form 10-K filed March 5, 2025), after excluding the 2028 Senior Sustainability Notes.\n\n### Breakdown (principal outstanding, $ millions)\n\n| Instrument | Maturity | Coupon | Principal |\n|---|---|---|---|\n| 2028 Senior Notes | Apr 2028 | 3.70% | 1,500 |\n| ~~2028 Senior Sustainability Notes~~ | ~~Jul 2028~~ | ~~1.50%~~ | ~~(1,000)~~ |\n| 2031 Senior Notes | Jul 2031 | 1.95% | 1,500 |\n| 2041 Senior Notes | Jul 2041 | 2.70% | 1,250 |\n| 2051 Senior Notes | Jul 2051 | 2.90% | 2,000 |\n| 2061 Senior Notes | Jul 2061 | 3.05% | 1,250 |\n| **Total ex‑sustainability** | | | **7,500** |\n\nFor context: total principal across all notes = **$8.5B** (including the $1.0B 1.50% Sustainability Notes due 2028); total *carrying* value = $8.433B, of which $995M is the sustainability notes, leaving **~$7.44B carrying value** excluding them. The $5.0B revolving credit facility (maturing Oct 2029) was undrawn, so it adds nothing to the face value of debt.\n\nNote: no new notes were issued between January 31, 2025 and March 10, 2025, so the figure is unchanged as of March 10, 2025; any later periods (e.g., the Informatica credit agreements from November 2025) would change the total.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 25040,
+    "output_tokens": 2043,
+    "cache_hit_tokens": 9472,
+    "cache_miss_tokens": 15568,
+    "reasoning_tokens": 1361
+  },
+  "model_cost_usd": 0.0035894160000000002,
+  "tool_cost_usd": {
+    "exa": 0.009,
+    "e2b": 0.000173
+  },
+  "cost_usd": 0.012762910363970793,
+  "latency_s": 13.277758624986745,
+  "tool_calls": {
+    "total": 4,
+    "web_search": 2,
+    "code_execution": 1,
+    "web_fetch": 1
+  },
+  "n_tool_calls": 4,
+  "n_refused": 0,
+  "n_turns": 3,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The model states the official $7.5 billion face value excluding sustainability notes.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

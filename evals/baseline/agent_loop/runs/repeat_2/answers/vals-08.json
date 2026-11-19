@@ -1,0 +1,52 @@
+{
+  "id": "vals-08",
+  "type": "Simple retrieval - Quantitative",
+  "question": "What was the total consideration cost TKO paid to acquired Endeavor assets measured at transaction close?",
+  "answer": "$3.25 Billion",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "$3.25 Billion"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "$3.25 Billion"
+    }
+  ],
+  "model_answer": "**Short answer: ≈ $3.3 billion** — specifically, **$3.25 billion of base consideration plus a $50 million purchase‑price adjustment**, settled entirely in TKO equity (≈26.54 million TKO OpCo common units paired with an equivalent number of TKO Class B shares, i.e., roughly $124 per unit implied).\n\nDetails (from TKO's filings — Q1 2025 10‑Q, the Feb./May 2025 Form 8‑K recast financials, and the FY2025 10‑K):\n\n- **What was acquired (closed February 28, 2025):** the IMG business (including Wimbledon, Soccer & Stadia, SailGP, R&A, Mailman, Golf Events, Formula Drift, International Figure Skating), On Location, and Professional Bull Riders — collectively the \"Acquired Businesses.\"\n- **Consideration:** \"total consideration of approximately **$3.25 billion plus a $50 million purchase price adjustment** (based on the volume‑weighted average sales price of TKO Class A common stock for the twenty‑five trading days ending on October 23, 2024).\" The XBRL detail in the FY2025 10‑K confirms: *Consideration transferred $3,250.0M* and *Purchase price adjustment $50.0M*.\n- **Form of payment:** Endeavor received ≈**26.54 million** common units of TKO OpCo and subscribed for an equal number of TKO Class B shares; the equity consideration increased non‑controlling interest with an offsetting credit to APIC. Endeavor's voting interest rose from ~54% to ~61% of TKO.\n\nTwo accounting notes that matter for \"how it was measured at close\":\n1. Because Endeavor controlled both TKO and the acquired businesses, the deal was treated as a **common‑control merger**, so the assets were recorded at **Endeavor's historical carrying amounts** (with retrospective recasting of prior periods) — the ~$3.3B is the disclosed consideration/deal value, not a fair‑value purchase price allocation, and no new goodwill or step‑up was created.\n2. The share count/value was **fixed at signing off the pre‑closing VWAP** (plus the $50M adjustment), so the recorded consideration does not fluctuate with TKO's share price on the closing date.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 120876,
+    "output_tokens": 4405,
+    "cache_hit_tokens": 83840,
+    "cache_miss_tokens": 37036,
+    "reasoning_tokens": 3336
+  },
+  "model_cost_usd": 0.00844992,
+  "tool_cost_usd": {
+    "exa": 0.027,
+    "e2b": 0.000981
+  },
+  "cost_usd": 0.03643133605901032,
+  "latency_s": 40.14601941604633,
+  "tool_calls": {
+    "total": 10,
+    "web_search": 6,
+    "code_execution": 1,
+    "web_fetch": 3
+  },
+  "n_tool_calls": 10,
+  "n_refused": 0,
+  "n_turns": 6,
+  "error": null,
+  "overall": "wrong",
+  "judge_reason": "The model states a total of approximately $3.3 billion including a $50 million adjustment, which contradicts the official $3.25 billion total consideration.",
+  "judge_run_overalls": [
+    "wrong",
+    "wrong",
+    "wrong"
+  ]
+}

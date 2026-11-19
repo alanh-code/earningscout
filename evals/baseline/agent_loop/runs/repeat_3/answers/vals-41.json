@@ -1,0 +1,50 @@
+{
+  "id": "vals-41",
+  "type": "Simple retrieval - Quantitative",
+  "question": "What was FND same-store sales growth in Q4 2024?",
+  "answer": "FND same-store sales growth in Q4 2024 is -0.8%",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "FND same-store sales growth in Q4 2024 is -0.8%"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "FND same-store sales growth in Q4 2024 is -0.8%"
+    }
+  ],
+  "model_answer": "**Floor & Decor (NYSE: FND) posted Q4 fiscal 2024 comparable store sales of –0.8%** (i.e., a 0.8% decline year over year) for the quarter ended December 26, 2024.\n\nContext from the Feb. 20, 2025 release and earnings call:\n\n| Metric | Q4 FY2024 |\n|---|---|\n| Net sales | $1,107.4M (+5.7% y/y) |\n| **Comparable store sales** | **–0.8%** |\n| Comp transactions | –2.1% |\n| Comp average ticket | +1.3% |\n| Diluted EPS | $0.44 (+29.4%, incl. $0.05 litigation-settlement benefit) |\n| New warehouse stores opened | 10 (251 total + 5 design studios) |\n\nNotes:\n- This was a sharp sequential improvement from –6.4% in Q3, –9.0% in Q2 and –11.6% in Q1, and it beat consensus expectations of roughly –3.6%. Full-year FY2024 comps were –7.1%.\n- Monthly comps were lumpy: October –4.8%, November +8.1%, December –4.8% (November/December combined +1.2% adjusting for the Thanksgiving calendar shift).\n- Management estimated hurricanes Helene and Milton added about 110 bps to the Q4 comp, and noted the West division grew modestly.\n\n(Floor & Decor reports \"comparable store sales\" rather than \"same-store sales,\" but the two refer to the same metric.)",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 7350,
+    "output_tokens": 692,
+    "cache_hit_tokens": 768,
+    "cache_miss_tokens": 6582,
+    "reasoning_tokens": 262
+  },
+  "model_cost_usd": 0.0014048040000000002,
+  "tool_cost_usd": {
+    "exa": 0.008,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.009404804000000001,
+  "latency_s": 7.775076417019591,
+  "tool_calls": {
+    "total": 2,
+    "web_search": 2
+  },
+  "n_tool_calls": 2,
+  "n_refused": 0,
+  "n_turns": 2,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "Model correctly states Q4 2024 comparable/same-store sales of -0.8%.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

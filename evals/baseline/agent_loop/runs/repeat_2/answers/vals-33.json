@@ -1,0 +1,56 @@
+{
+  "id": "vals-33",
+  "type": "Adjustments",
+  "question": "What would be the impact to net income in dollars and percent if all debt for Boeing in 2024 were refinanced at 3% higher interest rates than current?",
+  "answer": "$1.261 Billion Negative Impact to Net Income, or a 10.7% decrease",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "$1.261 Billion Negative Impact to Net Income"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "10.7% decrease in Net Income"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "$1.261 Billion Negative Impact to Net Income, or a 10.7% decrease"
+    }
+  ],
+  "model_answer": "Assuming “3% higher” means **300 basis points higher** and using Boeing’s year-end 2024 total debt:\n\n- **Total debt at 12/31/2024:** $53.864 billion  \n- **Additional annual interest expense:** $53.864B × 3% = **≈ $1.616 billion pretax**\n- **After-tax impact at Boeing’s 21% U.S. statutory tax rate:** $1.616B × (1 − 21%) = **≈ $1.277 billion lower net income**\n\nBoeing’s 2024 net loss was **$11.829 billion**. The added after-tax interest would widen that loss to about **$13.106 billion**.\n\n**Impact:**\n- **Dollar impact:** about **−$1.28 billion to net income**\n- **Percent impact:** about **10.8% larger net loss** relative to 2024’s $11.829 billion net loss\n\nIf using Boeing’s reported **3.1% effective tax rate**, the after-tax hit would be about **$1.57 billion**, or **~13.2%** of the 2024 net loss. If “3% higher” meant a **3% relative increase** rather than 300 bps, the impact would be much smaller—about **$82 million pretax / $65 million after tax**, or roughly **0.55%** of the net loss.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 480910,
+    "output_tokens": 6416,
+    "cache_hit_tokens": 417919,
+    "cache_miss_tokens": 62991,
+    "reasoning_tokens": 4976
+  },
+  "model_cost_usd": 0.014552006999999999,
+  "tool_cost_usd": {
+    "exa": 0.031,
+    "e2b": 0.000156
+  },
+  "cost_usd": 0.04570806228939708,
+  "latency_s": 53.21329008298926,
+  "tool_calls": {
+    "total": 17,
+    "web_search": 5,
+    "web_fetch": 11,
+    "code_execution": 1
+  },
+  "n_tool_calls": 17,
+  "n_refused": 0,
+  "n_turns": 12,
+  "error": null,
+  "overall": "wrong",
+  "judge_reason": "Primary dollar and percent impacts are nearby but not exact or pure roundings, and they conflict with the official values.",
+  "judge_run_overalls": [
+    "wrong",
+    "wrong",
+    "wrong"
+  ]
+}

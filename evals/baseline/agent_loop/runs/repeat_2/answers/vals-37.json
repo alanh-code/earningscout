@@ -1,0 +1,52 @@
+{
+  "id": "vals-37",
+  "type": "Simple retrieval - Quantitative",
+  "question": "As of Dec 31, 2024, what was Warner Discovery's (NASDQ: WBD) Total Restructuring Costs incurred as a result of its 2022 Merger?",
+  "answer": "$4.7 Billion",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Warner Discovery's Total Restructuring Costs as of Dec 31, 2024, were $4.7 Billion"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "$4.7 Billion"
+    }
+  ],
+  "model_answer": "**$4.7 billion** (pre-tax) — that's the cumulative amount Warner Bros. Discovery disclosed it had incurred as of December 31, 2024 under its Merger-related restructuring program.\n\nFrom the FY2024 Form 10-K (MD&A, \"Business Overview\"):\n\n> \"In connection with the Merger, we have announced and taken actions to implement projects to achieve cost synergies for the Company. We finalized the framework supporting our ongoing restructuring and transformation initiatives during the year ended December 31, 2022... **At that time, we expected to incur approximately $4.1 – $5.3 billion in pre-tax restructuring charges, of which we have incurred $4.7 billion as of December 31, 2024.** Of the total expected pre-tax restructuring charges, we expected total cash expenditures to be $1.0 – $1.5 billion. While our restructuring efforts are ongoing, the Merger-related restructuring program was substantially completed at the end of 2024.\"\n\nContext / caveats:\n- The $4.7B is the merger-specific figure, i.e., it sits within the original $4.1–$5.3B estimated range, near the midpoint-to-upper end.\n- The face of the income statement shows total \"Restructuring and other charges\" of $3,757M (2022), $585M (2023) and $447M (2024) — a sum of ~$4.79B. That three-year aggregate is close to, but not identical to, the $4.7B, because it also captures non-Merger initiatives (the 2023 Warner Bros. Pictures Animation realignment and the two 2024 plans — an organizational/personnel restructuring and a Warner Bros. Games restructuring), and excludes items like the $411M of facility-consolidation ROU asset impairments recorded in \"Impairments and loss on dispositions\" rather than in restructuring.\n- Remaining restructuring liability on the balance sheet at 12/31/24 was $289M (down from $864M at 12/31/22), with $423M of cash paid in 2024 and $853M in 2023.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 24348,
+    "output_tokens": 1042,
+    "cache_hit_tokens": 8192,
+    "cache_miss_tokens": 16156,
+    "reasoning_tokens": 371
+  },
+  "model_cost_usd": 0.0030731760000000004,
+  "tool_cost_usd": {
+    "exa": 0.009,
+    "e2b": 0.000127
+  },
+  "cost_usd": 0.012199962608228579,
+  "latency_s": 8.66594175004866,
+  "tool_calls": {
+    "total": 4,
+    "web_search": 2,
+    "code_execution": 1,
+    "web_fetch": 1
+  },
+  "n_tool_calls": 4,
+  "n_refused": 0,
+  "n_turns": 3,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The model answer gives the correct $4.7 billion total restructuring cost as of Dec 31, 2024.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

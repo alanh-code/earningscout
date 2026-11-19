@@ -1,0 +1,111 @@
+{
+  "id": "vals-29",
+  "type": "Simple retrieval - Qualitative",
+  "question": "List the Operating KPIs Spirit Airlines (NYSE: SAVE) tracked in FY 2024. Provide the KPI and FY 2024 Total.",
+  "answer": "Average aircraft: 209.9\nAircraft at end of period: 213\nAverage daily aircraft utilization (hours): 9.9\nDepartures: 288,180\nPassenger flight segments (PFSs): 44,180,000\nRevenue passenger miles (RPMs): 43,671,009,000\nAvailable seat miles (ASMs) : 53,017,948,000\nLoad factor: 0.824\nTotal revenue per passenger flight segment: $111.21\nAverage yield: $0.1125\nTRASM: $0.0927\nCASM: $0.1135\nAdjusted CASM: $0.1076\nAdjusted CASM ex-fuel: $0.0797\nFuel gallons consumed: 551,819,000\nAverage fuel cost per gallon: $2.68",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Average aircraft: 209.9"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Aircraft at end of period: 213"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Average daily aircraft utilization (hours): 9.9"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Departures: 288,180"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Passenger flight segments (PFSs): 44,180,000"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Revenue passenger miles (RPMs): 43,671,009,000"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Available seat miles (ASMs): 53,017,948,000"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Load factor: 0.824"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Total revenue per passenger flight segment: $111.21"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Average yield: $0.1125"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "TRASM: $0.0927"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "CASM: $0.1135"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Adjusted CASM: $0.1076"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Adjusted CASM ex-fuel: $0.0797"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Fuel gallons consumed: 551,819,000"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Average fuel cost per gallon: $2.68"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "Average aircraft: 209.9\nAircraft at end of period: 213\nAverage daily aircraft utilization (hours): 9.9\nDepartures: 288,180\nPassenger flight segments (PFSs): 44,180,000\nRevenue passenger miles (RPMs): 43,671,009,000\nAvailable seat miles (ASMs) : 53,017,948,000\nLoad factor: 0.824\nTotal revenue per passenger flight segment: $111.21\nAverage yield: $0.1125\nTRASM: $0.0927\nCASM: $0.1135\nAdjusted CASM: $0.1076\nAdjusted CASM ex-fuel: $0.0797\nFuel gallons consumed: 551,819,000\nAverage fuel cost per gallon: $2.68"
+    }
+  ],
+  "model_answer": "## Spirit Airlines (SAVE) – Operating KPIs Reported for FY 2024\n\nSource: FY2024 Form 10-K (filed March 3, 2025), Item 7 – \"Comparative Operating Statistics\" for the twelve months ended December 31, 2024 (unaudited).\n\n| Operating KPI | FY 2024 Total | FY 2023 (comparison) |\n|---|---|---|\n| Average aircraft | 209.9 | 199.5 |\n| Aircraft at end of period¹ | 213 | 205 |\n| Average daily aircraft utilization (hours) | 9.9 | 11.1 |\n| Departures | 288,180 | 297,900 |\n| Passenger flight segments (PFSs, thousands) | 44,180 | 44,105 |\n| Revenue passenger miles (RPMs, thousands) | 43,671,009 | 45,243,787 |\n| Available seat miles (ASMs, thousands) | 53,017,948 | 55,665,561 |\n| Load factor (%) | 82.4% | 81.3% |\n| Total revenue per passenger flight segment ($) | 111.21 | 121.58 |\n| Average yield (cents per RPM) | 11.25 | 11.85 |\n| TRASM – total revenue per ASM (cents) | 9.27 | 9.63 |\n| CASM – operating expense per ASM (cents) | 11.35 | 10.52 |\n| Adjusted CASM (cents)² | 10.76 | 10.33 |\n| Adjusted CASM ex‑fuel (cents)² | 7.97 | 7.06 |\n| Fuel gallons consumed (thousands) | 551,819 | 591,796 |\n| Average fuel cost per gallon ($) | 2.68 | 3.08 |\n\n¹ Includes 21 aircraft recorded as assets held for sale on the December 31, 2024 balance sheet. Fleet composition at year‑end: 2 A319ceo, 63 A320ceo, 91 A320neo, 29 A321ceo, 28 A321neo (average age ~5.8 years).\n² Adjusted CASM excludes special items (asset disposal losses/gains, special charges, furlough‑related costs, litigation loss contingency adjustments); Adjusted CASM ex‑fuel additionally excludes aircraft fuel and related taxes.\n\n### Notes on scope\n- The 10‑K table above is the company's definitive full‑year KPI set (16 metrics: capacity/traffic, load factor, fleet, utilization, unit revenue, unit cost, and fuel).\n- Spirit's interim earnings releases (1Q–3Q24) additionally present **average stage length (miles)** and split total revenue per PFS into **fare revenue per segment** and **non‑ticket revenue per segment**; these two ancillary-split metrics and stage length are *not* carried in the 10‑K's annual operating statistics table (quarterly stage length readings were 995 mi in 1Q24 and 981 mi in 2Q24).\n- Key FY 2024 takeaways vs. 2023: capacity (ASMs) −4.8%, traffic (RPMs) −3.5%, load factor +1.1 pts to 82.4%, but unit costs rose (CASM +7.9%; Adjusted CASM ex‑fuel +12.9%) on lower utilization (9.9 hrs, −10.8%) and higher aircraft rent, while fuel price fell 13.0% to $2.68/gal.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 146271,
+    "output_tokens": 3552,
+    "cache_hit_tokens": 100864,
+    "cache_miss_tokens": 45407,
+    "reasoning_tokens": 2154
+  },
+  "model_cost_usd": 0.009244842,
+  "tool_cost_usd": {
+    "exa": 0.027,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.036244842,
+  "latency_s": 29.587410625070333,
+  "tool_calls": {
+    "total": 10,
+    "web_search": 6,
+    "web_fetch": 4
+  },
+  "n_tool_calls": 10,
+  "n_refused": 0,
+  "n_turns": 6,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "All 16 FY 2024 operating KPIs match the official figures with equivalent scale or units.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

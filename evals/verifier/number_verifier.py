@@ -17,6 +17,7 @@ figure located, left to the judge); contradiction checks are "triggered" /
 
 from __future__ import annotations
 
+import json
 import math
 import re
 from dataclasses import dataclass
@@ -127,6 +128,15 @@ def parse(span: str | None, scale_hint: str | None = None) -> Quantity | None:
     """Parse a short span holding one figure, a range, or a bound."""
     if not span:
         return None
+    # Typographic minus signs: hyphen variants always, an en dash only when it
+    # leads a number (not between two numbers, where it joins a range).
+    span = span.replace("\u2010", "-").replace("\u2011", "-")
+    span = re.sub(r"(?<![\d.])\u2013(?=\s?[$€£¥]?\d)", "-", span)
+    # A worked expression ("(2,168 + 2,128) / 2 = 2,148") states its figure after the last "=".
+    if "=" in span:
+        result = span.rsplit("=", 1)[1]
+        if re.search(r"\d", result):
+            span = result
     hint_word = (
         scale_hint.strip().lower().split()[-1]
         if scale_hint and scale_hint.strip()
@@ -181,8 +191,9 @@ def parse(span: str | None, scale_hint: str | None = None) -> Quantity | None:
 
 def _is_label(span: str, m: re.Match) -> bool:
     text = m["num"]
-    if m.start() > 0 and span[m.start() - 1].isalpha() and not m["cur"]:
-        return True  # Q1, H2, FY24
+    start = m.start("num")
+    if start > 0 and span[start - 1].isalpha() and not m["cur"]:
+        return True  # Q1, H2, FY24 (a letter right before the digits, not "to 5")
     if m["cur"] or m["unit"] or m["scale"] or "." in text or "," in text:
         return False
     if not (len(text) == 4 and 1900 <= int(text) <= 2100):
@@ -423,14 +434,26 @@ RECORD_TOOL = {
         },
     },
 }
-EXTRACT_MODEL = "claude-sonnet-5-5"
-PRICES = {"input": 2.00, "output": 10.00}  # USD per million tokens
+RECORD_FUNCTION = {
+    "type": "function",
+    "function": {
+        "name": RECORD_TOOL["name"],
+        "description": RECORD_TOOL["description"],
+        "parameters": RECORD_TOOL["input_schema"],
+    },
+}
 
 
 def extract(
-    client, question: str, gold_answer: str, checks: list[dict], model_answer: str
+    question: str,
+    gold_answer: str,
+    checks: list[dict],
+    model_answer: str,
+    model: str | None = None,
 ) -> tuple[dict, float]:
     """One LLM call per question; returns ({check_id: extraction}, cost_usd)."""
+    from agent import llm
+
     listing = "\n".join(
         f"{c['check_id']}. [{c['operator']}] {c['criteria']}" for c in checks
     )
@@ -440,15 +463,16 @@ def extract(
         .replace("{checks}", listing)
         .replace("{model_answer}", model_answer)
     )
-    msg = client.messages.create(
-        model=EXTRACT_MODEL,
+    out = llm.chat(
+        model or llm.VERIFIER_MODEL,
+        [{"role": "user", "content": prompt}],
         max_tokens=16000,
-        tools=[RECORD_TOOL],
-        messages=[{"role": "user", "content": prompt}],
+        thinking=False,
+        temperature=0,
+        tools=[RECORD_FUNCTION],
+        tool_choice={"type": "function", "function": {"name": RECORD_TOOL["name"]}},
     )
-    data = next(b.input for b in msg.content if b.type == "tool_use")
-    cost = (
-        msg.usage.input_tokens * PRICES["input"]
-        + msg.usage.output_tokens * PRICES["output"]
-    ) / 1e6
-    return {int(c["check_id"]): c for c in data["checks"]}, cost
+    calls = llm.message_of(out["response"]).get("tool_calls") or []
+    call = next(c for c in calls if c["function"]["name"] == RECORD_TOOL["name"])
+    data = json.loads(call["function"]["arguments"])
+    return {int(c["check_id"]): c for c in data["checks"]}, out["cost_usd"]

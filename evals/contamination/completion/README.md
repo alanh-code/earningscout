@@ -30,11 +30,11 @@ The score measures closeness of meaning. It changes little when only a value cha
 .venv/bin/python evals/contamination/completion/run_completion.py --name official
 ```
 
-`--dry-run` prints where each question is cut and calls nothing. `--ids vals-07,ctrl-01` runs only those questions. `--vals-only` skips the controls. The full run sends 200 requests. The saved run used `--cut 0.4`.
+`--dry-run` prints where each question is cut and calls nothing. `--ids vals-07,ctrl-01` runs only those questions. `--vals-only` skips the controls. The full run sends 200 requests. The saved run shows the first 60% of each question (the default `--cut`).
 
-Each call sends only `model`, `max_tokens`, one user message and `thinking: {"type": "between_tools"}`, which turns thinking off so the answer is recall alone. The client gets the key from `.env` and the API URL explicitly, so nothing in the surrounding shell changes where requests go. The script stops at the first response that has a non text block, a stop reason other than `end_turn`, any server tool use, or a different model.
+Each call is one user message with thinking off, temperature 0 and seed 42, so the answer is recall alone. The key is read from `.env` and the API URL is set explicitly, so nothing in the surrounding shell changes where requests go. The script stops at the first response that fails the closed-environment checks (`closed_violations` in `agent/llm.py`): tool calls, thinking output, a finish reason other than `stop`, or a different model.
 
-Each run writes to `runs/<name>/` (pass `--name`): `raw/` holds every request and full response, `results.csv` the scores per question and mode, and `summary.md` the averages by group and mode with the highest scoring Vals questions. `runs/official/analysis.md` adds the Vals-versus-control statistical comparison.
+Each run writes to `runs/<name>/` (pass `--name`): `raw/` holds every request and full response, `results.csv` the scores per question and mode, and `summary.md` the averages by group and mode with the highest scoring Vals questions. 
 
 ## Reading the results
 

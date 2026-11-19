@@ -2,58 +2,53 @@
   "question_id": "vals-31",
   "question_type": "Financial Modeling  Projections",
   "question": "Assume BROS grows revenue by 30% CAGR and gross margins compress by 500bps from YE 2024. What is BROS gross profit in 2026? Round answer to nearest million.",
-  "model": "claude-sonnet-5-5",
+  "model": "deepseek-flash",
+  "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
   "tokens": {
-    "input": 68,
-    "output": 535
+    "input": 45,
+    "output": 365,
+    "cached_input": 0
   },
-  "cost_usd": 0.0054859999999999996,
+  "peak": false,
+  "cost_usd": 0.00022574999999999998,
   "request": {
-    "model": "claude-sonnet-5-5",
-    "max_tokens": 4096,
-    "thinking": {
-      "type": "between_tools"
-    },
+    "model": "deepseek-flash",
     "messages": [
       {
         "role": "user",
         "content": "Assume BROS grows revenue by 30% CAGR and gross margins compress by 500bps from YE 2024. What is BROS gross profit in 2026? Round answer to nearest million."
       }
-    ]
+    ],
+    "max_tokens": 4096,
+    "thinking": {
+      "type": "disabled"
+    },
+    "temperature": 0,
+    "seed": 42
   },
   "response": {
-    "id": "msg_011Ch7tWsAKVSdMg6Ub5UZ1B",
-    "container": null,
-    "content": [
+    "choices": [
       {
-        "citations": null,
-        "text": "Dutch Bros (BROS) FY2024 figures, from memory: revenue was about $1,281 million and gross profit was about... Let me reason about which definition to use.\n\nDutch Bros doesn't report a \"gross profit\" line directly. It reports \"costs of sales\" (company-operated shops) and shop-level operating costs. Using a straightforward revenue minus cost of sales approach:\n\n**FY2024 inputs (approximate, from memory):**\n- Revenue: ~$1,281M\n- Gross margin: I don't have a precisely reported figure, so the answer depends on the definition. Company-operated shop cost of sales (COGS) in 2024 was roughly 22% of company-operated shop revenue ($1,182M). Shop-level margin was about 26-27% of company-operated revenue.\n\n**Using a shop-level/gross margin of ~26% for 2024 as the base:**\n\n1. Revenue 2026 = $1,281M × 1.30² = $1,281 × 1.69 = **$2,165M**\n2. Gross margin 2026 = 26% − 5% = **21%**\n3. Gross profit 2026 = $2,165M × 0.21 ≈ **$455M**\n\n**Answer: ~$455 million**\n\nI'm working from memory and can't verify the exact 2024 revenue or margin. If you have the 10-K figures, plug them in with this formula:\n\nGross Profit 2026 = Revenue₂₀₂₄ × 1.30² × (GM₂₀₂₄ − 0.05)\n\nIf you supply your intended 2024 revenue and gross margin, I'll recompute precisely.",
-        "type": "text"
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "To answer this, I need BROS’s **YE 2024 revenue** and **YE 2024 gross margin**. Those figures aren’t provided in your prompt, so I’ll lay out the exact calculation and then show the result once those two inputs are plugged in.\n\n**Formula**\n\nLet:\n- \\( R_{2024} \\) = BROS revenue in 2024\n- \\( GM_{2024} \\) = BROS gross margin in 2024 (as a decimal)\n\nRevenue grows at 30% CAGR:\n\\[\nR_{2026} = R_{2024} \\times 1.30^2 = R_{2024} \\times 1.69\n\\]\n\nGross margin compresses by 500 bps from YE 2024:\n\\[\nGM_{2026} = GM_{2024} - 0.05\n\\]\n\nGross profit in 2026:\n\\[\nGP_{2026} = R_{2026} \\times GM_{2026}\n= R_{2024} \\times 1.69 \\times (GM_{2024} - 0.05)\n\\]\n\n**Example (illustrative only):**  \nIf 2024 revenue were \\$1,000M and 2024 gross margin were 25.0%, then:\n\\[\nGP_{2026} = 1000 \\times 1.69 \\times (0.25 - 0.05)\n= 1000 \\times 1.69 \\times 0.20\n= \\$338M\n\\]\n\n**Answer:** Please provide BROS’s 2024 revenue and 2024 gross margin (or the 2024 gross profit), and I’ll compute the 2026 gross profit rounded to the nearest million.",
+          "role": "assistant"
+        }
       }
     ],
-    "diagnostics": null,
-    "model": "claude-sonnet-5-5",
-    "role": "assistant",
-    "stop_details": null,
-    "stop_reason": "end_turn",
-    "stop_sequence": null,
-    "type": "message",
+    "model": "deepseek-flash",
+    "object": "chat.completion",
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
     "usage": {
-      "cache_creation": {
-        "ephemeral_1h_input_tokens": 0,
-        "ephemeral_5m_input_tokens": 0
+      "completion_tokens": 365,
+      "prompt_tokens": 45,
+      "total_tokens": 410,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
       },
-      "cache_creation_input_tokens": 0,
-      "cache_read_input_tokens": 0,
-      "inference_geo": "global",
-      "input_tokens": 68,
-      "output_tokens": 535,
-      "output_tokens_details": {
-        "thinking_tokens": 0
-      },
-      "server_tool_use": null,
-      "service_tier": "standard",
-      "speed": "standard"
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 45
     }
   }
 }

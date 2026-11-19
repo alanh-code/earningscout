@@ -2,8 +2,8 @@
 """Judge runner: three independent grades of closed-book answers.
 
 The judge sees the question, official answer, rubric, model answer, and the
-grading guide. It never sees the human grades. The default model is Claude
-Opus 5.5. By default it grades the frozen human-graded 15 and writes
+grading guide. It never sees the human grades. The default model is the
+judge model in agent/llm.py (DeepSeek V4 Pro), with thinking on. By default it grades the frozen human-graded 15 and writes
 agreement.md. Pass --answers-dir to grade another answer folder and skip
 the human comparison.
 
@@ -26,6 +26,12 @@ from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[4]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from agent import llm  # noqa: E402
+from agent.protocol import SEED  # noqa: E402
+
 VALS = ROOT / "data" / "vals" / "public.csv"
 CLOSED = ROOT / "evals" / "contamination" / "closed_book"
 JUDGE = Path(__file__).resolve().parent
@@ -38,20 +44,10 @@ ANSWER_RUNS = [
     CLOSED / "runs" / "batch-2",
 ]
 
-API_URL = "https://api.anthropic.com"
 PASSES = 3
-MAX_TOKENS = 16384
+# Thinking tokens count toward the limit, so it is higher than the visible JSON needs.
+MAX_TOKENS = 32768
 COST_CAP_USD = 10.0
-# USD per million tokens.
-MODEL_PRICES = {
-    "claude-opus-5-5": {
-        "input": 4.00,
-        "output": 20.00,
-        "cached_input": 4.00,
-        "cache_write": 4.00,
-        "label": "Opus 5.5 list price",
-    },
-}
 CSV_FIELDS = [
     "question_id",
     "check_id",
@@ -74,31 +70,6 @@ POSITIVE = {"met", "triggered"}
 OVERALL_LABELS = ("right", "wrong", "abstain")
 
 
-def env_key(name: str) -> str:
-    env = ROOT / ".env"
-    if env.exists():
-        for line in env.read_text().splitlines():
-            if line.startswith(name + "="):
-                value = line.split("=", 1)[1].strip().strip('"').strip("'")
-                if value:
-                    return value
-    sys.exit(f"{name} is not set in .env")
-
-
-def api_key() -> str:
-    return env_key("ANTHROPIC_API_KEY")
-
-
-def prices_for(model: str | None) -> dict:
-    name = model or "claude-opus-5-5"
-    if name in MODEL_PRICES:
-        return MODEL_PRICES[name]
-    for prefix, prices in MODEL_PRICES.items():
-        if name.startswith(prefix):
-            return prices
-    sys.exit(f"no list prices configured for model {name!r}")
-
-
 def cost_usd(
     tokens_in: int,
     tokens_out: int,
@@ -106,53 +77,18 @@ def cost_usd(
     cached_in: int = 0,
     cache_write: int = 0,
 ) -> float:
-    prices = prices_for(model)
+    """Off-peak list cost from token totals (runs refuse to start in peak hours)."""
     cached_in = min(max(cached_in, 0), tokens_in)
-    cache_write = min(max(cache_write, 0), max(tokens_in - cached_in, 0))
-    uncached = max(tokens_in - cached_in - cache_write, 0)
-    return (
-        uncached / 1e6 * prices["input"]
-        + cached_in / 1e6 * prices["cached_input"]
-        + cache_write / 1e6 * prices["cache_write"]
-        + tokens_out / 1e6 * prices["output"]
-    )
+    usage = {
+        "cache_hit_tokens": cached_in,
+        "cache_miss_tokens": max(tokens_in - cached_in, 0),
+        "output_tokens": tokens_out,
+    }
+    return llm.cost_usd(model or llm.JUDGE_MODEL, usage)
 
 
 def price_caption(model: str | None) -> str:
-    prices = prices_for(model)
-    text = (
-        f"${prices['input']:.2f}/${prices['output']:.2f} per million "
-        f"input/output tokens ({prices['label']})"
-    )
-    if prices["cached_input"] != prices["input"]:
-        text += f". Cached input ${prices['cached_input']:.2f}/M"
-        if prices["cache_write"] != prices["input"]:
-            text += f", cache writes ${prices['cache_write']:.2f}/M"
-    return text
-
-
-def resolve_model(client, requested: str | None) -> str:
-    matches = []
-    for model in client.models.list(limit=100):
-        mid = model.id
-        name = (getattr(model, "display_name", None) or "").strip()
-        if (
-            mid == "claude-opus-5-5"
-            or name == "Claude Opus 5.5"
-            or requested
-            and mid == requested
-        ):
-            matches.append(mid)
-    if requested:
-        if requested in matches or any(m == requested for m in matches):
-            return requested
-        sys.exit(f"model {requested!r} was not in the API model list")
-    unique = list(dict.fromkeys(matches))
-    if len(unique) == 1:
-        return unique[0]
-    if not unique:
-        sys.exit("could not find Claude Opus 5.5 in the API model list")
-    sys.exit(f"ambiguous Opus 5.5 ids in the API model list: {unique}")
+    return llm.price_caption(model or llm.JUDGE_MODEL)
 
 
 def norm_ws(text: str) -> str:
@@ -160,11 +96,7 @@ def norm_ws(text: str) -> str:
 
 
 def answer_text(response: dict) -> str:
-    return "".join(
-        block.get("text", "")
-        for block in response.get("content", [])
-        if block.get("type") == "text"
-    )
+    return llm.response_text(response)
 
 
 def load_official() -> list[dict]:
@@ -286,14 +218,16 @@ def build_prompt(item: dict, template: str, guide: str) -> str:
     )
 
 
-def build_request(model: str, prompt: str) -> dict:
-    # Temperature left unset so the API default applies. The judge never
-    # receives the human grades; the prompt has only the guide and the item.
-    return {
-        "model": model,
-        "max_tokens": MAX_TOKENS,
-        "messages": [{"role": "user", "content": prompt}],
-    }
+def build_request(model: str, prompt: str, seed: int | None = SEED) -> dict:
+    # Thinking on, so temperature does not apply. The judge never receives the
+    # human grades; the prompt has only the guide and the item.
+    return llm.build_request(
+        model,
+        [{"role": "user", "content": prompt}],
+        max_tokens=MAX_TOKENS,
+        thinking=True,
+        seed=seed,
+    )
 
 
 def extract_json(text: str) -> dict:
@@ -394,7 +328,8 @@ def consistency_flags(item: dict, data: dict) -> list[str]:
     stated_frac = data.get("rubric_fraction")
     expected_frac = (met / total) if total else 0.0
     try:
-        if abs(float(stated_frac) - expected_frac) > 1e-9:
+        # Judges often round the stated fraction (0.2727 for 3/11), so allow rounding.
+        if abs(float(stated_frac) - expected_frac) > 5e-4:
             flags.append(
                 f"rubric_fraction stated {stated_frac} vs {expected_frac:.4f} from checks"
             )
@@ -504,11 +439,14 @@ def usage_of(response: dict) -> tuple[int, int, int, int]:
 
 
 def is_truncated(response: dict) -> bool:
+    if "choices" in response:
+        return llm.finish_reason(response) == "length"
     return response.get("stop_reason") == "max_tokens"
 
 
 def call(client, request: dict) -> dict:
-    return client.messages.create(**request).model_dump(mode="json")
+    """One judge call. `client` is unused and kept for the legacy call signature."""
+    return llm.send(request)["response"]
 
 
 def grade_one(client, request: dict, item: dict) -> tuple[dict, dict, list[str], bool]:
@@ -703,7 +641,7 @@ def write_agreement(
     lines = [
         f"# Judge agreement — {name}",
         "",
-        f"Model `{model}`, 3 independent passes over {len(items)} closed-book answers, temperature left at the API default.",
+        f"Model `{model}`, 3 independent passes over {len(items)} closed-book answers, thinking on (temperature does not apply), seed {SEED} plus the pass number.",
         f"Prompt template: `{prompt_label or 'evals/contamination/closed_book/judge/judge_prompt.md'}`. Grading guide: `{guide_label or 'evals/contamination/closed_book/grading_guide.md'}`. The judge saw the grading guide, question, official answer, rubric, model answer, and any worked examples in the prompt. It did not see the human reference grades. Those grades were not changed.",
         f"Tokens: {tokens_in} in, {tokens_out} out. Cost about ${cost:.4f} at {price_caption(model)}. Parse retries: {retries}. Failures: {len(failures)}.",
         "",
@@ -874,7 +812,7 @@ def write_summary(
     lines = [
         f"# Judge run {name}",
         "",
-        f"Model `{model}`, {len(items)} answers, {PASSES} independent passes, temperature at the API default.",
+        f"Model `{model}`, {len(items)} answers, {PASSES} independent passes, thinking on (temperature does not apply), seed {SEED} plus the pass number.",
         f"Prompt template: `{prompt_label or 'evals/contamination/closed_book/judge/judge_prompt.md'}`. Grading guide: `{guide_label or 'evals/contamination/closed_book/grading_guide.md'}`. Judge inputs: grading guide, question, official answer, rubric, model answer, and any worked examples in the prompt. Human reference grades were not sent.",
         f"Tokens: {tokens_in} in, {tokens_out} out. Cost about ${cost:.4f} at {price_caption(model)}.",
         f"Parse retries: {retries}. Failures: {len(failures)}.",
@@ -971,7 +909,7 @@ def main() -> None:
     )
     ap.add_argument(
         "--model",
-        help="model id (default: resolve Claude Opus 5.5 from the Anthropic API list)",
+        help="model id (default: the judge model in agent/llm.py, checked against the provider model list)",
     )
     ap.add_argument(
         "--run-dir",
@@ -1000,6 +938,9 @@ def main() -> None:
         help="stop if projected cost would exceed this USD amount (default: 10)",
     )
     ap.add_argument("--name", help="folder name under runs/ for a new judge run")
+    ap.add_argument(
+        "--allow-peak", action="store_true", help="run even in provider peak hours"
+    )
     ap.add_argument(
         "--answers-dir",
         type=Path,
@@ -1042,10 +983,10 @@ def main() -> None:
         )
         return
 
-    import anthropic
-
-    client = anthropic.Anthropic(api_key=api_key(), base_url=API_URL)
-    model = resolve_model(client, args.model)
+    client = None
+    model = llm.resolve_model(args.model or llm.JUDGE_MODEL)
+    if not args.compare_only:
+        llm.require_off_peak([model], args.allow_peak)
 
     if args.compare_only:
         if not args.run_dir:
@@ -1163,7 +1104,7 @@ def main() -> None:
                 sys.exit(
                     f"{item['id']}: prompt unexpectedly mentions the human grades file"
                 )
-            request = build_request(model, prompt)
+            request = build_request(model, prompt, seed=SEED + pass_i - 1)
             try:
                 response, parsed, warnings, retried = grade_one(client, request, item)
             except Exception as exc:  # noqa: BLE001 — record the failure and continue

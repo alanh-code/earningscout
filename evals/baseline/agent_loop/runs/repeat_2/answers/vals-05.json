@@ -1,0 +1,79 @@
+{
+  "id": "vals-05",
+  "type": "Simple retrieval - Qualitative",
+  "question": "In 2024, who was Nominated to Serve on BBSI's (NASDAQ: BBSI) Board of Directors?",
+  "answer": "Thomas Carley\nJoseph Clabby\nThomas Cusick\nGary Kramer\nAnthony Meeker\nCarla Moradi\nAlexandra Morehouse\nVincent Price",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Thomas Carley"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Joseph Clabby"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Thomas Cusick"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Gary Kramer"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Anthony Meeker"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Carla Moradi"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Alexandra Morehouse"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Vincent Price"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "Thomas Carley\nJoseph Clabby\nThomas Cusick\nGary Kramer\nAnthony Meeker\nCarla Moradi\nAlexandra Morehouse\nVincent Price"
+    }
+  ],
+  "model_answer": "**Short answer:** In 2024, BBSI (Barrett Business Services, Inc.) nominated an eight‑person, all‑incumbent slate for election at its June 3, 2024 Annual Meeting (2024 proxy statement filed April 22, 2024):\n\n| Nominee | Principal Occupation (per 2024 proxy) | Director Since |\n|---|---|---|\n| Thomas J. Carley | Retired COO, Urth Organic Corporation | 2000 |\n| Joseph S. Clabby | Retired Vice President, Chubb Limited | 2022 |\n| Thomas B. Cusick | Retired Executive Advisor, Columbia Sportswear | 2016 |\n| Gary E. Kramer | President & CEO of BBSI | 2020 |\n| Anthony Meeker | Retired Managing Director, Victory Capital Management | 1993 |\n| Carla A. Moradi | Board member of BBSI and Patriot Growth Insurance Services | 2021 |\n| Alexandra Morehouse | Board member of BBSI and Evalueserve, Inc. | 2022 |\n| Vincent P. Price | Advisor to the CEO, Cambia Health Solutions | 2017 |\n\nKey details:\n- The proxy explicitly stated that **“All of our director nominees are currently serving on the Board”** — i.e., **no brand‑new director was nominated in 2024**; the slate was a re‑nomination of the sitting eight‑member board (the board had been reduced from nine to eight in 2023 when Jon Justesen stepped down).\n- All eight were elected at the June 3, 2024 annual meeting (per the 8‑K filed June 5, 2024), each for a one‑year term ending at the 2025 annual meeting.\n- The only 2024 board‑related change was structural, not a new nominee: in December 2024 the board created a **Vice Chairman** role and appointed sitting director **Joseph S. Clabby** to it (effective December 13, 2024). (The next new director, Mark S. Finn, was appointed in April 2025.)\n\nSources: BBSI 2024 DEF 14A (filed 4/22/2024), BBSI 8‑K (6/5/2024) with 2024 annual meeting voting results, and BBSI 8‑K/press release (12/17/2024).",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 155628,
+    "output_tokens": 5277,
+    "cache_hit_tokens": 121728,
+    "cache_miss_tokens": 33900,
+    "reasoning_tokens": 4015
+  },
+  "model_cost_usd": 0.008616384,
+  "tool_cost_usd": {
+    "exa": 0.047,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.05561638400000001,
+  "latency_s": 41.21474566706456,
+  "tool_calls": {
+    "total": 14,
+    "web_search": 11,
+    "web_fetch": 3
+  },
+  "n_tool_calls": 14,
+  "n_refused": 0,
+  "n_turns": 8,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "All eight official nominees are identified correctly, with no contradiction.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

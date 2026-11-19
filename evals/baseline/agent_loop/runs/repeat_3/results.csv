@@ -1,0 +1,49 @@
+id,type,overall,cost_usd,latency_s,n_tool_calls,stop_reason,judge_reason,judge_overall
+vals-01,Market Analysis,wrong,0.06755308400000001,59.82227816595696,17,stop,"Meets announcement date, golden share, and $14B/$11B investment figures, but omits or misses the CEO's global-expertise highlight, long-term survival framing, 100,000 jobs, up-to-$4B advanced mill, and Western Pennsylvania jobs focus.",wrong
+vals-02,Trends,wrong,0.02026539605415751,42.796687499969266,5,stop,Model provides only the 2019 and 2024 annual ARM figures and omits the required 2020-2023 values and 2019-2022/2022-2024 trend and cause statements.,wrong
+vals-03,Beat or Miss,wrong,0.009391238,6.358529207995161,2,stop,States the 70bps high-end beat but omits the required 80bps low-end beat.,wrong
+vals-04,Complex Retrieval,right,0.017982459908054138,10.273369082948193,5,stop,All four quarterly guidance ranges and midpoint percentages match the official answer.,right
+vals-05,Simple retrieval - Qualitative,right,0.027604224,13.1017927499488,6,stop,All eight official director names are present and no contradiction is triggered.,right
+vals-06,Complex Retrieval,wrong,0.031727542,13.403630250017159,7,stop,"Model correctly identifies Amazon as the top spender and includes some official GOOG/META figures, but it states later revised capex values that contradict the official answer.",wrong
+vals-07,Simple retrieval - Qualitative,right,0.004621054,3.7985035409219563,1,stop,Correctly identifies Elinor Mertz as Airbnb's CFO; the additional tenure date is outside the rubric and does not affect the grade.,right
+vals-08,Simple retrieval - Quantitative,wrong,0.038845713692169485,53.11510179203469,12,stop,"The model gives total consideration as roughly $3.30 billion rather than the official $3.25 billion, and its $50 million adjustment interpretation contradicts the official total.",wrong
+vals-09,Beat or Miss,right,0.018866128,10.122377334046178,4,stop,"The answer states a 140 basis point beat, matching the official result.",right
+vals-10,Numerical Reasoning,right,0.00942781846845749,6.216423333971761,3,stop,Revenues are pure roundings of the official figures and CAGR matches at 22.6%.,right
+vals-12,Financial Modeling  Projections,wrong,0.01584123408368885,27.80611245892942,7,stop,"Most inputs match, but the model fails the required Q1 -1.2% Miss conclusion and instead gives a conflicting beat/miss characterization.",wrong
+vals-13,Numerical Reasoning,right,0.032479039825895534,32.87203595798928,11,stop,The stated total director compensation matches the official figure exactly.,right
+vals-14,Trends,wrong,0.012918522000000002,15.252528291079216,3,stop,"2023 and 2024 margins match and trend wording is acceptable, but FY2022 margin is ~224% instead of 24.8%, triggering contradiction.",wrong
+vals-15,Numerical Reasoning,right,0.009639416533458576,6.73846575000789,3,stop,All required inputs and the inventory turnover calculation match the official answer.,right
+vals-16,Complex Retrieval,wrong,0.022694842000000003,26.98210329201538,7,stop,"Offering size is described inconsistently with the official base offering, and the common-dividend restriction condition differs, triggering contradiction.",wrong
+vals-17,Trends,right,0.014262036826343845,8.176474750041962,4,stop,All three annual take rates and the year-over-year increasing trend are correctly stated; extra commentary is outside the official answer and does not trigger contradiction.,right
+vals-18,Simple retrieval - Qualitative,right,0.045060152000000006,44.03088320803363,11,stop,Correctly identifies Workday's Gross Revenue Retention Rate and provides a substantively identical definition covering all rubric elements.,right
+vals-19,Numerical Reasoning,right,0.01082466,10.179272082983516,3,stop,The model gives the exact official value and percentage.,right
+vals-20,Numerical Reasoning,right,0.009443654,3.9275479579810053,2,stop,All three KPI values match the official answer and there is no contradiction.,right
+vals-21,Simple retrieval - Qualitative,right,0.056762257134790134,76.89737187500577,23,stop,"Both required vendor-concentration disclosures are stated accurately, and no contradictory claim is triggered.",right
+vals-22,Numerical Reasoning,wrong,0.009546893134613467,7.4704971249448135,3,stop,All three FY figures are precise nearby values that do not match the official figures and are not pure roundings.,wrong
+vals-23,Simple retrieval - Qualitative,right,0.05332487836013399,64.06506749999244,16,stop,"The answer gives the expected production start as 2025, matching the rubric.",right
+vals-24,Numerical Reasoning,right,0.07031779800000003,38.692064291913994,16,stop,The answer matches the official $7.5 billion debt excluding sustainability notes.,right
+vals-25,Simple retrieval - Qualitative,wrong,0.036806403606905576,93.32420854200609,20,stop,"Five of eight regulatory risk facts are stated; third-party breach/system-failure liability, trust/retention/acquisition impact, and increasing cybersecurity scrutiny/investment are not stated.",wrong
+vals-26,Numerical Reasoning,right,0.008934104,4.67318729206454,2,stop,The model states the same employee counts and a more precise 44.7% that rounds to the official 45%.,right
+vals-27,Simple retrieval - Qualitative,right,0.051363342000000006,55.29770479199942,15,stop,All five required terms are correctly stated and no contradiction is triggered.,right
+vals-28,Simple retrieval - Quantitative,right,0.032763035060996995,36.00064745906275,9,stop,The model states the official 2025 total material cash requirements figure and does not contradict it.,right
+vals-29,Simple retrieval - Qualitative,right,0.063425614,87.06103091698606,19,stop,"All 16 FY2024 Operating KPI values match the official rubric, with equivalent unit and scale restatements.",right
+vals-30,Financial Modeling  Projections,right,0.038206105920841664,34.58910804090556,13,stop,"The answer gives 85,945 thousand shares, a pure rounding of the official 85,945,127 shares.",right
+vals-31,Financial Modeling  Projections,right,0.010148477232272392,8.729704042081721,3,stop,The final rounded gross profit of approximately $467 million matches the official answer.,right
+vals-32,Simple retrieval - Quantitative,right,0.00990166186301821,7.739855082938448,3,stop,"Purchase and refinance originations match the official figures exactly, with no contradiction.",right
+vals-33,Adjustments,wrong,0.0632980035506347,54.31143320794217,19,stop,"Dollar impact is met via a rounded $1.26B, but the percent impact misses 10.7% and conflicting 10.8%/10.6% figures trigger contradiction.",wrong
+vals-34,Simple retrieval - Quantitative,right,0.009206438,4.4517032919684425,2,stop,The answer correctly states 20% of Cloudflare's fiscal 2024 revenue was from channel partners.,right
+vals-35,Adjustments,right,0.004801588,5.376776874996722,1,stop,Correctly identifies stock-based compensation expense as the largest adjustment and states the matching $1.935 billion amount.,right
+vals-36,Simple retrieval - Quantitative,right,0.009239138000000001,8.114513334003277,2,stop,All required acquisition price terms are stated consistently with the official answer.,right
+vals-37,Simple retrieval - Quantitative,right,0.014895856,8.93658416706603,4,stop,The answer provides the correct total restructuring cost of $4.7 billion.,right
+vals-38,Beat or Miss,wrong,0.01028372510959361,11.814832458971068,3,stop,"The range contains the official 26.1bps, but the answer also commits to a precise 29bps figure that contradicts the official answer.",wrong
+vals-39,Simple retrieval - Qualitative,right,0.024816768000000003,19.887447500019334,6,stop,"All six required quarterly and full-year guidance metrics are identified, with no contradiction.",right
+vals-40,Adjustments,wrong,0.022250292000000005,20.856964500038885,6,stop,"All seven official adjustments are present, but the model adds an eighth adjustment (stock-settlement obligations related to the IPO) and states eight items, triggering contradiction.",wrong
+vals-41,Simple retrieval - Quantitative,right,0.009404804000000001,7.775076417019591,2,stop,Model correctly states Q4 2024 comparable/same-store sales of -0.8%.,right
+vals-42,Market Analysis,wrong,0.06473916567814761,44.49744233302772,14,stop,"Only KO matches; KDP and PEP are different precise values, KHC and SJM are omitted, and the conflicting stated ratios trigger contradiction.",wrong
+vals-43,Financial Modeling  Projections,wrong,0.034176822279248203,67.8685017080279,9,stop,"The model gets reported take rates and total growth, but attributes 10% of growth to take rate and gives mobility/freight growth inconsistent with the official answer, triggering contradiction.",wrong
+vals-44,Simple retrieval - Quantitative,right,0.025831527953426033,34.17371204099618,8,stop,The model correctly states Asia Pacific average nights per booking as 3.3.,right
+vals-45,Adjustments,right,0.009613154,5.803797291009687,2,stop,"The answer states the correct adjustment of $1,407 million, matching the official $1,407,000,000.",right
+vals-46,Market Analysis,wrong,0.0657289230090022,80.49909591604955,16,stop,"Most acquisition facts met, but the model contradicts the official Mortgage/Residential revenue decline by saying Residential grew and Mortgages rebounded.",wrong
+vals-47,Beat or Miss,right,0.01420877256390584,17.505923542077653,5,stop,"The model identifies a ~7.4% MISS, matching the official answer.",right
+vals-48,Beat or Miss,wrong,0.014838024,11.816798249958083,3,stop,"Most FY2024 figures match, but stock-based compensation is labeled in line rather than above expected, triggering contradiction.",wrong
+vals-49,Beat or Miss,wrong,0.041920302000000007,38.22218416607939,9,stop,"Contradiction triggered: the model says General Mills beat guidance in both FY2023 and FY2024, but the official answer states FY2024 met expectations.",wrong

@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Closed-book run: Claude Sonnet 5.5 answers the 10 frozen selected questions from memory.
+"""Closed-book run: the agent model answers the 10 frozen selected questions from memory.
 
-Every call goes straight to the Anthropic Messages API, with no tools, no system
-prompt and no files. The user message is only the question text. One fresh
-request is used per question. Every response is checked, and the run stops on
-the first closed-environment violation.
+Every call goes straight to the provider's chat completions API (agent/llm.py),
+with no tools, no system prompt and no files. The user message is only the
+question text. Thinking is off, temperature 0, seed 42. One fresh request is
+used per question. Every response is checked, and the run stops on the first
+closed-environment violation.
 
 Usage:
   .venv/bin/python evals/contamination/closed_book/run_closed_book.py --dry-run
@@ -21,30 +22,24 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from agent import llm  # noqa: E402
+from agent.protocol import SEED  # noqa: E402
+
 VALS = ROOT / "data" / "vals" / "public.csv"
 EVAL_DIR = ROOT / "evals" / "contamination"
 SELECTED = EVAL_DIR / "questions.csv"
 RUNS = EVAL_DIR / "closed_book" / "runs"
 
-MODEL = "claude-sonnet-5-5"
-API_URL = "https://api.anthropic.com"
+MODEL = llm.AGENT_MODEL
 MAX_TOKENS = 4096
-PRICE_IN, PRICE_OUT = 2.00, 10.00  # USD per million tokens, same as the completion runs
+TEMPERATURE = 0
 
 
 class ClosedEnvironmentError(RuntimeError):
     pass
-
-
-def api_key() -> str:
-    env = ROOT / ".env"
-    if env.exists():
-        for line in env.read_text().splitlines():
-            if line.startswith("ANTHROPIC_API_KEY="):
-                value = line.split("=", 1)[1].strip().strip('"').strip("'")
-                if value:
-                    return value
-    sys.exit("ANTHROPIC_API_KEY is not set in .env")
 
 
 def resolve_questions_path(raw: Path) -> Path:
@@ -89,58 +84,33 @@ def load_questions(selected_path: Path | None = None) -> list[dict]:
 
 def build_request(question: str) -> dict:
     # No tools, no system prompt, no files. Thinking off, same as the completion runs.
-    return {
-        "model": MODEL,
-        "max_tokens": MAX_TOKENS,
-        "thinking": {"type": "between_tools"},
-        "messages": [{"role": "user", "content": question}],
-    }
+    return llm.build_request(
+        MODEL,
+        [{"role": "user", "content": question}],
+        max_tokens=MAX_TOKENS,
+        thinking=False,
+        temperature=TEMPERATURE,
+        seed=SEED,
+    )
 
 
-def check_closed(request: dict, response: dict) -> None:
-    problems = []
-    extra = set(request) - {"model", "max_tokens", "thinking", "messages"}
-    if extra:
-        problems.append(f"unexpected request fields {sorted(extra)}")
-    if "tools" in request or "system" in request:
-        problems.append("request includes tools or a system prompt")
-    if len(request.get("messages") or []) != 1:
-        problems.append("request is not a single fresh message")
-    message = (request.get("messages") or [{}])[0]
-    if message.get("role") != "user" or not isinstance(message.get("content"), str):
-        problems.append("user message is not plain question text")
-    types = [b.get("type") for b in response.get("content", [])]
-    if not types:
-        problems.append("response has no content blocks")
-    if any(t != "text" for t in types):
-        problems.append(f"non text content blocks {types}")
-    if "tool_use" in types or "server_tool_use" in types:
-        problems.append(f"tool content blocks {types}")
-    if response.get("stop_reason") == "tool_use":
-        problems.append("stop_reason is tool_use")
-    server_tools = (response.get("usage") or {}).get("server_tool_use") or {}
-    if isinstance(server_tools, dict):
-        used = {
-            k: v for k, v in server_tools.items() if isinstance(v, (int, float)) and v
-        }
-        if used:
-            problems.append(f"server tool use {used}")
-    elif server_tools:
-        problems.append(f"server tool use {server_tools}")
+def check_closed(request: dict, response: dict, model: str | None = None) -> None:
+    problems = llm.closed_violations(request, response, model)
     if problems:
         raise ClosedEnvironmentError("; ".join(problems))
 
 
-def cost_usd(tokens_in: int, tokens_out: int) -> float:
-    return tokens_in / 1e6 * PRICE_IN + tokens_out / 1e6 * PRICE_OUT
+def cost_usd(tokens_in: int, tokens_out: int, cached_in: int = 0) -> float:
+    usage = {
+        "cache_hit_tokens": cached_in,
+        "cache_miss_tokens": max(tokens_in - cached_in, 0),
+        "output_tokens": tokens_out,
+    }
+    return llm.cost_usd(MODEL, usage)
 
 
 def answer_text(response: dict) -> str:
-    return "".join(
-        block.get("text", "")
-        for block in response.get("content", [])
-        if block.get("type") == "text"
-    )
+    return llm.response_text(response)
 
 
 def fence(text: str) -> str:
@@ -239,14 +209,14 @@ def run_folder_name(raw: str | None) -> str:
 def write_summary(
     run_dir: Path, name: str, records: list[dict], tokens_in: int, tokens_out: int
 ) -> None:
-    total_cost = cost_usd(tokens_in, tokens_out)
+    total_cost = sum(r["cost"] for r in records)
     lines = [
         f"# Closed-book run {name}",
         "",
         f"Model `{MODEL}`, {len(records)} questions, one fresh request each.",
-        "No tools, no system prompt, no files. User message was only the question text.",
+        f"No tools, no system prompt, no files. User message was only the question text. Thinking off, temperature {TEMPERATURE}, seed {SEED}.",
         f"All {len(records)} responses passed the closed-environment checks.",
-        f"Tokens: {tokens_in} in, {tokens_out} out. Cost about ${total_cost:.4f} at ${PRICE_IN:.2f}/${PRICE_OUT:.2f} per million input/output tokens.",
+        f"Tokens: {tokens_in} in, {tokens_out} out. Cost about ${total_cost:.4f} at {llm.price_caption(MODEL)}.",
         "",
         "This file has no grades.",
         "",
@@ -261,8 +231,8 @@ def write_summary(
     (run_dir / "summary.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
-def call(client, request: dict) -> dict:
-    return client.messages.create(**request).model_dump(mode="json")
+def call(request: dict) -> dict:
+    return llm.send(request)
 
 
 def main() -> None:
@@ -279,6 +249,9 @@ def main() -> None:
         help="CSV of questions to run (default: evals/contamination/questions.csv)",
     )
     ap.add_argument("--name", help="folder name under runs/ for a new run")
+    ap.add_argument(
+        "--allow-peak", action="store_true", help="run even in provider peak hours"
+    )
     args = ap.parse_args()
 
     items = load_questions(resolve_questions_path(args.questions))
@@ -291,9 +264,8 @@ def main() -> None:
     if not args.name:
         sys.exit("a new run requires --name (a role name, not a timestamp)")
 
-    import anthropic
-
-    client = anthropic.Anthropic(api_key=api_key(), base_url=API_URL)
+    llm.resolve_model(MODEL)
+    llm.require_off_peak([MODEL], args.allow_peak)
     name = run_folder_name(args.name)
     run_dir = RUNS / name
     if run_dir.exists() and any(run_dir.iterdir()):
@@ -304,11 +276,12 @@ def main() -> None:
     tokens_in = tokens_out = 0
     for q in items:
         request = build_request(q["question"])
-        response = call(client, request)
-        check_closed(request, response)
-        usage = response.get("usage") or {}
-        q_in = int(usage.get("input_tokens") or 0)
-        q_out = int(usage.get("output_tokens") or 0)
+        out = call(request)
+        response = out["response"]
+        check_closed(request, response, MODEL)
+        usage = out["usage"]
+        q_in = usage["input_tokens"]
+        q_out = usage["output_tokens"]
         tokens_in += q_in
         tokens_out += q_out
         rec = {
@@ -318,17 +291,23 @@ def main() -> None:
             "answer": q["answer"],
             "rubric": q["rubric"],
             "model_answer": answer_text(response),
-            "stop_reason": response.get("stop_reason"),
+            "stop_reason": llm.finish_reason(response),
             "tokens_in": q_in,
             "tokens_out": q_out,
-            "cost": cost_usd(q_in, q_out),
+            "cost": out["cost_usd"],
         }
         payload = {
             "question_id": q["id"],
             "question_type": q["type"],
             "question": q["question"],
             "model": response.get("model") or MODEL,
-            "tokens": {"input": q_in, "output": q_out},
+            "system_fingerprint": response.get("system_fingerprint"),
+            "tokens": {
+                "input": q_in,
+                "output": q_out,
+                "cached_input": usage["cache_hit_tokens"],
+            },
+            "peak": out["peak"],
             "cost_usd": rec["cost"],
             "request": request,
             "response": response,
@@ -342,7 +321,7 @@ def main() -> None:
 
     write_summary(run_dir, name, records, tokens_in, tokens_out)
     write_grading_sheet(run_dir, records)
-    total_cost = cost_usd(tokens_in, tokens_out)
+    total_cost = sum(r["cost"] for r in records)
     print(
         f"\nAll {len(records)} passed the closed-environment checks. "
         f"Tokens: {tokens_in} in, {tokens_out} out. Cost about ${total_cost:.4f}.\n"

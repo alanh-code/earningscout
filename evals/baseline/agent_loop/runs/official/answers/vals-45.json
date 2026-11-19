@@ -1,0 +1,50 @@
+{
+  "id": "vals-45",
+  "type": "Adjustments",
+  "question": "In 2024, what was Airbnb's (NASDAQ: ABNB) adjustment for Stock-based Compensation Expense?",
+  "answer": "In 2024, Airbnb adjusted its EBITDA by $1,407,000,000 to exclude stock-based compensation expense",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "In 2024, Airbnb adjusted its EBITDA by $1,407,000,000 to exclude stock-based compensation expense"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "In 2024, Airbnb adjusted its EBITDA by $1,407,000,000 to exclude stock-based compensation expense"
+    }
+  ],
+  "model_answer": "**Airbnb's stock-based compensation (SBC) expense for full-year 2024 was $1,407 million (≈$1.4 billion)** — the non-cash adjustment added back on the consolidated statement of cash flows.\n\n**Key details (FY2024, in millions):**\n\n| | FY2023 | FY2024 | YoY |\n|---|---|---|---|\n| Stock-based compensation expense | $1,120 | **$1,407** | +26% |\n\n**Breakdown by income-statement line (FY2024):**\n- Operations and support: $90 (vs. $68 in 2023)\n- Product development: $886 (vs. $694)\n- Sales and marketing: $170 (vs. $130)\n- General and administrative: $261 (vs. $228)\n- **Total: $1,407**\n\n**Context:**\n- The 26% increase was driven by headcount growth plus the accounting for RSU awards; the remaining pre-IPO \"double-trigger\" RSUs fully vested in 2024, so management guided that 2025 SBC growth should roughly track headcount growth (actual 2025: $1,592M, +13%).\n- SBC was a meaningful piece of the cash-flow reconciliation: net income of $2,648M plus $1,407M SBC (alongside $433M deferred taxes) produced $4,518M in operating cash flow.\n- Related cash cost: taxes paid on equity awards of $630M in 2024 (down from $1,224M in 2023). SBC equaled roughly 12.7% of 2024 revenue (~$11.1B).\n\nSources: Airbnb FY2024 Form 10-K and Q4 2024 shareholder letter.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 9153,
+    "output_tokens": 632,
+    "cache_hit_tokens": 896,
+    "cache_miss_tokens": 8257,
+    "reasoning_tokens": 162
+  },
+  "model_cost_usd": 0.0016204379999999999,
+  "tool_cost_usd": {
+    "exa": 0.008,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.009620438,
+  "latency_s": 6.1978220420423895,
+  "tool_calls": {
+    "total": 2,
+    "web_search": 2
+  },
+  "n_tool_calls": 2,
+  "n_refused": 0,
+  "n_turns": 2,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The model states the SBC adjustment as $1,407 million, matching the official $1,407,000,000.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

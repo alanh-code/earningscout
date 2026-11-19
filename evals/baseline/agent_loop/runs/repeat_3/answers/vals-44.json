@@ -1,0 +1,52 @@
+{
+  "id": "vals-44",
+  "type": "Simple retrieval - Quantitative",
+  "question": "In 2024, what was the Average Nights per Booking for Airbnb (NASDAQ: ABNB) in the Asia Pacific region?",
+  "answer": "Asia Pacific - 3.3 Nights per Booking",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Asia Pacific - 3.3 Nights per Booking"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "Asia Pacific - 3.3 Nights per Booking"
+    }
+  ],
+  "model_answer": "In 2024, Airbnb’s **average nights per booking in Asia Pacific was 3.3 nights**.\n\nFor context, Airbnb’s 2024 Form 10-K reported regional averages of **4.1** for North America, **3.8** for EMEA, **3.7** for Latin America, and **3.3** for Asia Pacific, with a global company average of **3.8 nights**.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 85065,
+    "output_tokens": 1456,
+    "cache_hit_tokens": 51072,
+    "cache_miss_tokens": 33993,
+    "reasoning_tokens": 814
+  },
+  "model_cost_usd": 0.0061257659999999995,
+  "tool_cost_usd": {
+    "exa": 0.019,
+    "e2b": 0.000706
+  },
+  "cost_usd": 0.025831527953426033,
+  "latency_s": 34.17371204099618,
+  "tool_calls": {
+    "total": 8,
+    "web_search": 4,
+    "web_fetch": 3,
+    "code_execution": 1
+  },
+  "n_tool_calls": 8,
+  "n_refused": 0,
+  "n_turns": 5,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The model correctly states Asia Pacific average nights per booking as 3.3.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

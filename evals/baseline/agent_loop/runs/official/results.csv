@@ -1,0 +1,49 @@
+id,type,overall,cost_usd,latency_s,n_tool_calls,stop_reason,judge_reason,judge_overall
+vals-01,Market Analysis,wrong,0.06795280600000002,50.18688445794396,16,stop,"Four of eight correctness criteria met; omissions on Burritt global expertise, long-term survival framing, 100,000 jobs, and $4B advanced mill.",wrong
+vals-02,Trends,wrong,0.022163874622981805,25.125037208083086,6,stop,"All ARPU figures and flat/ad-tier reasoning met, but the answer does not state the 2019-2022 ~2.8% annual increase.",wrong
+vals-03,Beat or Miss,right,0.018506158,9.284442458068952,4,stop,Correctly identifies the result as a beat with +80 bps from the low end and +70 bps from the high end.,right
+vals-04,Complex Retrieval,right,0.01890515076093514,13.246996833011508,5,stop,"All four AMD guidance ranges and midpoint percentages match the official answer, and the additional explanatory notes do not conflict.",right
+vals-05,Simple retrieval - Qualitative,right,0.024688644000000003,18.75995924999006,6,stop,"All eight nominated directors are correctly identified, and no contradictory information is stated.",right
+vals-06,Complex Retrieval,wrong,0.01397409,8.545048416010104,3,stop,"Conclusion that Amazon spends the most is correct, but the stated capex figures are later revised values that do not match the official rubric amounts and trigger contradiction.",wrong
+vals-07,Simple retrieval - Qualitative,right,0.009076538,4.042522166972049,2,stop,Correctly names Elinor Mertz as Airbnb's CFO; no contradiction.,right
+vals-08,Simple retrieval - Quantitative,wrong,0.03401475400000001,19.050354000064544,10,stop,"The model gives $3.30 billion as the total consideration, conflicting with the official $3.25 billion figure.",wrong
+vals-09,Beat or Miss,right,0.016856068000000002,11.532791042001918,4,stop,The model correctly states a 140 basis points beat.,right
+vals-10,Numerical Reasoning,right,0.004861167634936468,5.051967874984257,2,stop,Revenue figures are equivalent roundings and the CAGR matches the official 22.6%.,right
+vals-12,Financial Modeling  Projections,wrong,0.017501174615168574,35.808267540996894,6,stop,"Most inputs and estimate match, but NT$ guidance conversion and final beat/miss conclusion differ from official -1.2% miss.",wrong
+vals-13,Numerical Reasoning,right,0.00963109309760281,7.11132495792117,3,stop,The stated total director compensation matches the official figure.,right
+vals-14,Trends,wrong,0.03328714394795914,46.3878215419827,8,stop,"Contradiction triggered by stated FY2022 FCF margin ~224% versus official 24.8%, despite otherwise matching margins/trend.",wrong
+vals-15,Numerical Reasoning,right,0.010103760865727469,10.593791833962314,3,stop,All required figures and the 6.55 inventory turnover are correctly stated.,right
+vals-16,Complex Retrieval,wrong,0.019786842000000002,17.1300554999616,6,stop,"Several terms match, but the answer omits the over-allotment dollar amount, misstates the common-dividend restriction, and misstates the mandatory conversion VWAP period, triggering contradictions.",wrong
+vals-17,Trends,right,0.0096724701979793,8.392606499954127,3,stop,All three take rates are pure more-precise roundings of the official figures and the trend comment matches an incremental year-over-year increase.,right
+vals-18,Simple retrieval - Qualitative,right,0.02641591,25.684160082950257,7,stop,All five rubric facts are stated; extra net retention/SEC claims do not conflict with the official answer.,right
+vals-19,Numerical Reasoning,right,0.018442315121269058,17.357519624987617,7,stop,"The answer states $85,002 thousand and 51.3%, matching the official figure, with the later-period alternative noted separately.",right
+vals-20,Numerical Reasoning,right,0.009568238,5.154338042018935,2,stop,All three correctness checks match the official figures and direction.,right
+vals-21,Simple retrieval - Qualitative,right,0.07199624949711458,90.36259462498128,27,stop,The model states both required facts; additional disclosures do not contradict the official answer.,right
+vals-22,Numerical Reasoning,wrong,0.023768708603167654,12.163040624931455,7,stop,All three FY values are precise nearby figures that do not match the official values and contradict them.,wrong
+vals-23,Simple retrieval - Qualitative,wrong,0.014832550000000002,8.777804750017822,4,stop,The answer introduces a later revised 2024 production start that conflicts with the official expected 2025 date.,wrong
+vals-24,Numerical Reasoning,right,0.00983264,8.23801883298438,2,stop,"The answer gives $7.5 billion excluding sustainability notes, matching the official figure.",right
+vals-25,Simple retrieval - Qualitative,wrong,0.08987328950408535,109.03175587509759,30,stop,"Five of eight regulatory-risk facts are met; third-party breach, trust/retention, and cybersecurity scrutiny risks are omitted.",wrong
+vals-26,Numerical Reasoning,right,0.004715188,4.229113084031269,1,stop,The model gives the same underlying numbers and a more precise 44.7% that rounds to the official 45%.,right
+vals-27,Simple retrieval - Qualitative,right,0.04192728047709408,58.43309683399275,13,stop,All required terms are stated correctly and no contradiction is triggered.,right
+vals-28,Simple retrieval - Quantitative,right,0.014955106000000001,16.4239432499744,4,stop,"The model gives $14,426,266 thousand, which equals the official $14,426,266,000 for 2025.",right
+vals-29,Simple retrieval - Qualitative,right,0.036244842,29.587410625070333,10,stop,All 16 FY 2024 operating KPIs match the official figures with equivalent scale or units.,right
+vals-30,Financial Modeling  Projections,right,0.04441396992300996,70.93724816699978,18,stop,"The answer's 85,945 thousand / ~85.9 million is a rounding of the official 85,945,127 shares, with no contradiction.",right
+vals-31,Financial Modeling  Projections,right,0.010050926170906409,9.065993333002552,3,stop,The model's $467 million gross profit matches the official answer.,right
+vals-32,Simple retrieval - Quantitative,right,0.009981971473271312,8.733857999905013,3,stop,Both purchase and refinance origination figures match the official answer exactly.,right
+vals-33,Adjustments,wrong,0.028799136232929127,42.43865133402869,8,stop,"Dollar and percent impacts differ from official figures, and the contradictory stated values trigger contradiction.",wrong
+vals-34,Simple retrieval - Quantitative,right,0.009304904,4.490692332969047,2,stop,The answer correctly states 20% of Cloudflare's fiscal 2024 revenue was derived from channel partners.,right
+vals-35,Adjustments,right,0.009515888,5.931262084050104,2,stop,Correctly identifies stock-based compensation expense at the equivalent $1.935 billion amount.,right
+vals-36,Simple retrieval - Quantitative,right,0.013708632,7.865300167002715,3,stop,States all required official deal values; additional closing consideration caveat is not contradictory.,right
+vals-37,Simple retrieval - Quantitative,right,0.018750143388917426,36.82219391700346,6,stop,"The model states the requested figure as about $4.7 billion, matching the official answer.",right
+vals-38,Beat or Miss,right,0.02590521885010281,35.89663133304566,7,stop,"The answer states a beat of roughly 26 bps, which is a valid rounding of the official 26.1 bps.",right
+vals-39,Simple retrieval - Qualitative,right,0.027373918000000004,22.408494499977678,7,stop,All six required quarterly and full-year guidance metrics are stated; extra narrative metrics do not contradict the official list.,right
+vals-40,Adjustments,right,0.01774456,24.667923083063215,4,stop,All seven official adjustments are stated; the additional stock-settlement item is outside the official answer and does not trigger contradiction.,right
+vals-41,Simple retrieval - Quantitative,right,0.009182954,4.0685332079883665,2,stop,The model correctly states FND Q4 2024 same-store sales growth as a 0.8% decline.,right
+vals-42,Market Analysis,wrong,0.06535741804844752,53.38220858294517,15,stop,"KDP and KO match, but PEP is 75.5% vs 0.75 and KHC/SJM are omitted; contradiction triggered.",wrong
+vals-43,Financial Modeling  Projections,wrong,0.04252537460370712,91.64003062492702,11,stop,"Main total take-rate, flat, revenue, bookings, and volume-driven growth checks are met, but the mobility, delivery, and freight segment growth figures are omitted.",wrong
+vals-44,Simple retrieval - Quantitative,right,0.020573048,8.675302666961215,5,stop,Correctly states Asia Pacific average nights per booking as 3.3 nights.,right
+vals-45,Adjustments,right,0.009620438,6.1978220420423895,2,stop,"The model states the SBC adjustment as $1,407 million, matching the official $1,407,000,000.",right
+vals-46,Market Analysis,wrong,0.05703630800000001,80.62645437498577,14,stop,"Most acquisition facts match, but the model contradicts the official decline in Mortgages and Residential revenue by reporting growth, triggering contradiction.",wrong
+vals-47,Beat or Miss,right,0.015202727193824608,8.735715958056971,5,stop,The model correctly states 7.4% MISS.,right
+vals-48,Beat or Miss,wrong,0.023704416000000002,27.75330441596452,6,stop,"Most FY2024 figures match, but capex actual and SBC comparison are not met, and capex triggers contradiction.",wrong
+vals-49,Beat or Miss,wrong,0.06604605800000002,64.71214612503536,14,stop,"All required figures are stated, but the model contradicts the official answer by claiming FY2024 beat guidance and by giving later revised FY2025 guidance that conflicts with the official FY2025 range.",wrong

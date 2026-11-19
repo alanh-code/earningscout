@@ -1,0 +1,52 @@
+{
+  "id": "vals-08",
+  "type": "Simple retrieval - Quantitative",
+  "question": "What was the total consideration cost TKO paid to acquired Endeavor assets measured at transaction close?",
+  "answer": "$3.25 Billion",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "$3.25 Billion"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "$3.25 Billion"
+    }
+  ],
+  "model_answer": "**Answer: approximately $3.30 billion.**\n\nAt the February 28, 2025 close of the Endeavor Asset Acquisition (IMG, On Location and Professional Bull Riders), TKO acquired the businesses for:\n\n- **$3.25 billion** base closing consideration, plus\n- a **$50 million purchase price adjustment** settled at closing in equity,\n\nfor **total consideration of roughly $3.3 billion**, paid entirely in equity — about **26.54 million TKO OpCo common units** paired with an equivalent number of TKO Class B shares (up from the ~26.14 million units / $3.25 billion contemplated at signing in October 2024).\n\nThe per-unit value was set using the volume-weighted average sales price of TKO Class A common stock over the 25 trading days ending October 23, 2024 (≈$124 per unit), i.e., the $3.25 billion figure was fixed at signing rather than marked to the actual share price on the closing date. Because Endeavor controlled both TKO and the acquired businesses, the deal was accounted for as a **common-control merger**, so the acquired net assets were recorded at Endeavor's historical carrying amounts (with retrospective recast) rather than at fair value.\n\nSources: TKO 10-K for FY2025 (Note 1 – Description of Business; MD&A) and FY2024 10-K/10-Q disclosures; TKO 8-K filed Feb. 28, 2025; TKO Q4 2025 earnings release.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 97943,
+    "output_tokens": 3637,
+    "cache_hit_tokens": 77056,
+    "cache_miss_tokens": 20887,
+    "reasoning_tokens": 2448
+  },
+  "model_cost_usd": 0.005546418,
+  "tool_cost_usd": {
+    "exa": 0.032,
+    "e2b": 0.001299
+  },
+  "cost_usd": 0.038845713692169485,
+  "latency_s": 53.11510179203469,
+  "tool_calls": {
+    "total": 12,
+    "web_search": 7,
+    "web_fetch": 4,
+    "code_execution": 1
+  },
+  "n_tool_calls": 12,
+  "n_refused": 0,
+  "n_turns": 8,
+  "error": null,
+  "overall": "wrong",
+  "judge_reason": "The model gives total consideration as roughly $3.30 billion rather than the official $3.25 billion, and its $50 million adjustment interpretation contradicts the official total.",
+  "judge_run_overalls": [
+    "right",
+    "wrong",
+    "wrong"
+  ]
+}

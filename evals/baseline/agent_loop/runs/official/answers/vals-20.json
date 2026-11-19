@@ -1,0 +1,58 @@
+{
+  "id": "vals-20",
+  "type": "Numerical Reasoning",
+  "question": "What was ORCL's effective tax rate for the fiscal year ended 5/31/2024 and how did it change vs. the prior year? Each section represents a KPI. Format the change as: \"Delta: XXXbps\"",
+  "answer": "Effective Tax Rate\n2023: 6.8%\n2024: 10.9%\nDelta: increased 410bps",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Effective Tax Rate 2023: 6.8%"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Effective Tax Rate 2024: 10.9%"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Delta: increased 410bps"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "Effective Tax Rate\n2023: 6.8%\n2024: 10.9%\nDelta: increased 410bps"
+    }
+  ],
+  "model_answer": "**Effective Tax Rate (FY ended 5/31/2024):** 10.9%, up from 6.8% in FY2023.  \n**Delta: +410bps**",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 9313,
+    "output_tokens": 505,
+    "cache_hit_tokens": 896,
+    "cache_miss_tokens": 8417,
+    "reasoning_tokens": 365
+  },
+  "model_cost_usd": 0.001568238,
+  "tool_cost_usd": {
+    "exa": 0.008,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.009568238,
+  "latency_s": 5.154338042018935,
+  "tool_calls": {
+    "total": 2,
+    "web_search": 2
+  },
+  "n_tool_calls": 2,
+  "n_refused": 0,
+  "n_turns": 2,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "All three correctness checks match the official figures and direction.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

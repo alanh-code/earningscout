@@ -1,0 +1,74 @@
+{
+  "id": "vals-48",
+  "type": "Beat or Miss",
+  "question": "How did Lemonade Insurance FY2024 results compare to the prior quarter's full year guidance?",
+  "answer": "In Force Premium (IFP): $944 Million, high end of guidance range\nGross Earned Premium (GEP): $827 Million, above high end of guidance range\nRevenue: $526.5 Million, above high end of range\nAdjusted EBITDA Loss: $(149.7) Million, above high end of range\nStock-based Compensation: $64.5 Million, above the expected $64 Million\nCapital Expenditures: $9.4 Million, below the expected $10 million\nWeighted Common Shares: 71 Million, right on target",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "In Force Premium (IFP): $944 Million, high end of guidance range"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Gross Earned Premium (GEP): $827 Million, above high end of guidance range"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Revenue: $526.5 Million, above high end of range"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Adjusted EBITDA Loss: $(149.7) Million, above high end of range"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Stock-based Compensation: $64.5 Million, above the expected $64 Million"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Capital Expenditures: $9.4 Million, below the expected $10 million"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Weighted Common Shares: 71 Million, right on target"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "In Force Premium (IFP): $944 Million, high end of guidance range\nGross Earned Premium (GEP): $827 Million, above high end of guidance range\nRevenue: $526.5 Million, above high end of range\nAdjusted EBITDA Loss: $(149.7) Million, above high end of range\nStock-based Compensation: $64.5 Million, above the expected $64 Million\nCapital Expenditures: $9.4 Million, below the expected $10 million\nWeighted Common Shares: 71 Million, right on target"
+    }
+  ],
+  "model_answer": "## Lemonade (NYSE: LMND) — FY2024 Actuals vs. the FY2024 Guidance Given in the Prior Quarter (Q3 2024, Oct. 30, 2024)\n\n| Metric | Q3'24 guidance (FY2024) | FY2024 actual | Result |\n|---|---|---|---|\n| In-force premium (IFP, 12/31) | $940 – $944M | **$943.7M** (2.43M customers, +20%) | Top end of range ✅ |\n| Gross earned premium | $823 – $826M | **$827.3M** (+23% YoY) | Beat by ~$1.3M ✅ |\n| Total revenue | $522 – $524M | **$526.5M** (+22.5% YoY) | Beat by ~$2.5M ✅ |\n| Adjusted EBITDA loss | ($155) – ($151)M | **($149.7)M** (13% better YoY) | Beat (smaller loss) ✅ |\n| Stock-based comp | ~$64M | **$64.5M** | In line ➖ |\n| Capex | ~$10M | **$9.4M** | Slightly favorable ➖ |\n| Weighted shares | ~71M | **~71M** | In line ➖ |\n\n**Bottom line:** Lemonade cleared every line of the guidance it issued one quarter earlier. IFP landed at the very top of the range, GEP and revenue came in modestly above, and the Adjusted EBITDA loss of $149.7M was about $1.3M smaller than even the best end of the guided range. Management framed it as delivering \"with notable precision.\"\n\n### Context worth noting\n- **Versus the *original* FY2024 guide (Feb 2024):** IFP $938–942M and an Adj. EBITDA loss of ($160)–($155)M. Measured against that first guide, the EBITDA beat is more meaningful — ~$5–10M better than initially promised — with IFP slightly above the top end.\n- **Q4 itself beat the quarter's guide:** revenue $148.8M vs. $144–146M guided; Adj. EBITDA loss $23.8M vs. ($29)–($25)M; GEP $226.4M vs. $222–225M; IFP at the high end ($943.7M vs. $940–944M).\n- **Profitability trajectory:** gross profit jumped 98% to $166.9M, gross loss ratio improved to 73% from 85%, net loss narrowed to $202.2M from $236.9M, and adjusted free cash flow turned positive at +$47.6M (vs. –$113.4M in 2023) — consistent with the \"positive cash flow exiting 2024\" pledge.\n- **What came next:** Alongside the print, Lemonade guided FY2025 to IFP of $1.203–1.208B (~28% growth), revenue of $655–657M, and an Adj. EBITDA loss of ($140)–($135)M, including an estimated $20M hit from the California wildfires.\n\nSources: Lemonade Q3 2024 Shareholder Letter (guidance), Q4/FY2024 Shareholder Letter and Q4 2024 earnings call/transcript, Q4 2024 press release, and the FY2024 10-K.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 18672,
+    "output_tokens": 1975,
+    "cache_hit_tokens": 7808,
+    "cache_miss_tokens": 10864,
+    "reasoning_tokens": 1063
+  },
+  "model_cost_usd": 0.0028380239999999998,
+  "tool_cost_usd": {
+    "exa": 0.012,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.014838024,
+  "latency_s": 11.816798249958083,
+  "tool_calls": {
+    "total": 3,
+    "web_search": 3
+  },
+  "n_tool_calls": 3,
+  "n_refused": 0,
+  "n_turns": 3,
+  "error": null,
+  "overall": "wrong",
+  "judge_reason": "Most FY2024 figures match, but stock-based compensation is labeled in line rather than above expected, triggering contradiction.",
+  "judge_run_overalls": [
+    "wrong",
+    "wrong",
+    "wrong"
+  ]
+}

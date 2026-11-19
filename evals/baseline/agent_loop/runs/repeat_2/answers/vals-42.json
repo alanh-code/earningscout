@@ -1,0 +1,67 @@
+{
+  "id": "vals-42",
+  "type": "Market Analysis",
+  "question": "Compare the FY24 dividend payout ratio of Coca-Cola (KO) to that of its competitors and rank in order from highest to lowest.",
+  "answer": "KDP: 0.83\nKO: 0.79\nPEP: 0.75\nKHC: 0.70\nSJM: 0.59",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "KDP: 0.83"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "KO: 0.79"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "PEP: 0.75"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "KHC: 0.70"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "SJM: 0.59"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "KDP: 0.83\nKO: 0.79\nPEP: 0.75\nKHC: 0.70\nSJM: 0.59"
+    }
+  ],
+  "model_answer": "Using the standard **FY24 payout ratio = dividends per share ÷ diluted EPS (GAAP)**, and the common US-listed beverage peer group:\n\n| Rank | Company | FY24 DPS | FY24 diluted EPS | Payout ratio |\n|---:|---|---:|---:|---:|\n| 1 | **Keurig Dr Pepper (KDP)** | $0.89 | $1.05 | **84.8%** |\n| 2 | **Coca-Cola (KO)** | $1.94 | $2.46 | **78.9%** |\n| 3 | **PepsiCo (PEP)** | $5.33 | $6.95 | **76.7%** |\n| 4 | **Monster Beverage (MNST)** | $0.00 | $1.49 | **0.0%** |\n\n**Bottom line:** Coca-Cola’s FY24 payout ratio was **about 78.9%**, ranking **second-highest** in this group—**above PepsiCo but below Keurig Dr Pepper**. Monster ranks last because it pays no dividend.\n\n**Important caveat:** KDP’s GAAP payout is inflated by a roughly **$718 million impairment** and **$225 million GHOST-related charge** in FY24, which depressed GAAP EPS. On **adjusted EPS of $1.92**, KDP’s payout would be only **46.4%**. On adjusted/comparable EPS, the ranking becomes:\n\n1. **KO:** $1.94 / $2.88 = **67.4%**  \n2. **PEP:** $5.33 / $8.16 = **65.3%**  \n3. **KDP:** $0.89 / $1.92 = **46.4%**  \n4. **MNST:** **0.0%**\n\nSo on a **reported GAAP basis**, KDP is highest; on an **underlying/adjusted basis**, Coca-Cola is highest.\n\n**Sources:**  \n- Coca-Cola FY24 dividends per share: [KO year-end dividend table](https://investors.coca-colacompany.com/stock-info/year-end); FY24 EPS: [KO Q4/FY24 release](https://investors.coca-colacompany.com/news-events/press-releases/detail/1128/coca-cola-reports-fourth-quarter-and-full-year-2024-results)  \n- PepsiCo FY24 DPS and EPS: [PepsiCo FY24 10-K/Q4 release](https://investor.pepsico.com/docs/pepsico-5v9wci20/media/Files/investors/q4-2024-earnings-release.pdf)  \n- KDP FY24 DPS, EPS, adjusted EPS: [KDP FY24 earnings release](https://www.sec.gov/Archives/edgar/data/1418135/000141813525000011/ex991-keurigdrpepperreport.htm) and [KDP 10-K](https://www.sec.gov/Archives/edgar/data/1418135/000141813525000013/kdp-20241231.htm)  \n- Monster FY24 EPS and no dividend: [Monster FY24 release](https://investors.monsterbevcorp.com/news-releases/news-release-details/monster-beverage-reports-2024-fourth-quarter-and-full-year)",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 397209,
+    "output_tokens": 8416,
+    "cache_hit_tokens": 300672,
+    "cache_miss_tokens": 96537,
+    "reasoning_tokens": 6860
+  },
+  "model_cost_usd": 0.020432165999999998,
+  "tool_cost_usd": {
+    "exa": 0.028,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.048432166000000006,
+  "latency_s": 57.144721499993466,
+  "tool_calls": {
+    "total": 14,
+    "web_search": 5,
+    "web_fetch": 9
+  },
+  "n_tool_calls": 14,
+  "n_refused": 0,
+  "n_turns": 7,
+  "error": null,
+  "overall": "wrong",
+  "judge_reason": "Only KO matches; KDP and PEP differ, KHC and SJM are omitted, and conflicting stated ratios trigger contradiction.",
+  "judge_run_overalls": [
+    "wrong",
+    "wrong",
+    "wrong"
+  ]
+}

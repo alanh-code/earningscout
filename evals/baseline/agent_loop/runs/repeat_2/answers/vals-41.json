@@ -1,0 +1,50 @@
+{
+  "id": "vals-41",
+  "type": "Simple retrieval - Quantitative",
+  "question": "What was FND same-store sales growth in Q4 2024?",
+  "answer": "FND same-store sales growth in Q4 2024 is -0.8%",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "FND same-store sales growth in Q4 2024 is -0.8%"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "FND same-store sales growth in Q4 2024 is -0.8%"
+    }
+  ],
+  "model_answer": "**Floor & Decor's (FND) Q4 fiscal 2024 same-store sales (comparable store sales) declined 0.8% year over year** — for the quarter ended December 26, 2024.\n\nContext from the Feb. 20, 2025 release/call:\n\n- **Comps: –0.8%**, a big improvement from –6.4% in Q3, –9.0% in Q2, and –11.6% in Q1 (FY2024 total: –7.1%). It beat the ~–3.6% consensus estimate.\n- **Drivers:** average ticket comp +1.3% (the first positive ticket comp of the year, helped by mix and hurricane-related demand), while comparable transactions fell 2.1%.\n- **Monthly:** October –4.8%, November +8.1%, December –4.8% (Nov + Dec combined +1.2% adjusting for the Thanksgiving calendar shift).\n- **Hurricanes Helene and Milton** added an estimated ~110 bps to Q4 comps.\n- **Total sales** rose 5.7% to $1,107.4 million on 30 new stores opened during the year (10 in Q4), ending with 251 warehouse stores and 5 design studios.\n\nFor reference, FY2025 guidance called for comps flat to +3%.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 7103,
+    "output_tokens": 511,
+    "cache_hit_tokens": 896,
+    "cache_miss_tokens": 6207,
+    "reasoning_tokens": 133
+  },
+  "model_cost_usd": 0.001240338,
+  "tool_cost_usd": {
+    "exa": 0.008,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.009240338,
+  "latency_s": 4.66224666708149,
+  "tool_calls": {
+    "total": 2,
+    "web_search": 2
+  },
+  "n_tool_calls": 2,
+  "n_refused": 0,
+  "n_turns": 2,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The model correctly states Q4 2024 same-store sales growth as a 0.8% decline (-0.8%).",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

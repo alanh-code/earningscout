@@ -1,0 +1,52 @@
+{
+  "id": "vals-13",
+  "type": "Numerical Reasoning",
+  "question": "What is the total amount of director compensation (in dollars) that was paid to the directors of 3D Systems in 2023?",
+  "answer": "The total amount of directors compensations paid by 3D Systems in 2023 was $2,263,113.",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "The total amount of directors compensations paid by 3D Systems in 2023 was $2,263,113."
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "The total amount of directors compensations paid by 3D Systems in 2023 was $2,263,113."
+    }
+  ],
+  "model_answer": "## 3D Systems — Director Compensation Paid in Fiscal Year 2023\n\nThe figures come from the \"Director Compensation for 2023\" table in 3D Systems' 2024 definitive proxy statement (DEF 14A filed Aug. 13, 2024, which reports compensation for the year ended Dec. 31, 2023):\n\n| Director | Fees Earned or Paid in Cash | Stock Awards | All Other Comp. | **Total** |\n|---|---|---|---|---|\n| Malissia R. Clinton | $90,000 | $150,000 | — | **$240,000** |\n| William E. Curran | $105,000 | $150,000 | — | **$255,000** |\n| Claudia N. Drayton | $68,113 | $150,000 | — | **$218,113** |\n| Thomas W. Erickson | $78,764 | $150,000 | — | **$228,764** |\n| Jim D. Kever | $70,000 | $150,000 | — | **$220,000** |\n| Charles G. McClure, Jr. (Chair) | $250,000 | $150,000 | — | **$400,000** |\n| Kevin S. Moore | $95,000 | $150,000 | — | **$245,000** |\n| Vasant Padmanabhan | $66,236 | $150,000 | — | **$216,236** |\n| John J. Tracy | $90,000 | $150,000 | — | **$240,000** |\n| **Total (9 non-employee directors)** | **$913,113** | **$1,350,000** | **$0** | **$2,263,113** |\n\n### Answer\n**Total director compensation paid in 2023 was $2,263,113** — consisting of **$913,113 in cash fees** plus **$1,350,000 in stock awards** (9 directors × $150,000 of immediately vested restricted stock, 18,094 shares each at $8.29/share, granted May 16, 2023).\n\nNotes:\n- CEO Dr. Jeffrey A. Graves, an employee director, received **no additional compensation** for Board service in 2023, so he isn't in the table.\n- If you instead meant the compensation disclosed in the proxy *filed* in 2023, that document covered fiscal 2022, when the same nine directors received a total of **$2,230,000** (cash $885,000 + stock $1,350,000, with McClure at $400,000 and the others ranging $210,000–$255,000).",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 119312,
+    "output_tokens": 2502,
+    "cache_hit_tokens": 93568,
+    "cache_miss_tokens": 25744,
+    "reasoning_tokens": 1058
+  },
+  "model_cost_usd": 0.005643504000000001,
+  "tool_cost_usd": {
+    "exa": 0.012,
+    "e2b": 0.001161
+  },
+  "cost_usd": 0.018804057090362467,
+  "latency_s": 44.25535933300853,
+  "tool_calls": {
+    "total": 9,
+    "web_search": 2,
+    "web_fetch": 5,
+    "code_execution": 2
+  },
+  "n_tool_calls": 9,
+  "n_refused": 0,
+  "n_turns": 8,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The answer states the exact official 2023 total director compensation amount.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "vals-32",
+  "type": "Simple retrieval - Quantitative",
+  "question": "For loanDepot (NYSE: LDI) what is the breakdown of loan originations between purchases and refinancings for the last 9 months as of 11/12/2024?",
+  "answer": "Purchase: $12,057,993\nRefinance: $5,250,321\nIn thousands",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Purchase loan originations: $12,057,993 in thousands"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Refinance loan originations: $5,250,321 in thousands"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "Purchase: $12,057,993\nRefinance: $5,250,321\nIn thousands"
+    }
+  ],
+  "model_answer": "For the nine months ended **September 30, 2024** (10-Q filed **November 12, 2024**), loanDepot’s loan origination volume was **$17.308 billion**, broken down as:\n\n| Origination purpose | Volume | % of total |\n|---|---:|---:|\n| Purchase | **$12.058 billion** | **69.7%** |\n| Refinance — cash-out | $4.661 billion | 26.9% |\n| Refinance — rate/term | $0.590 billion | 3.4% |\n| **Total refinancings** | **$5.250 billion** | **30.3%** |\n| **Total originations** | **$17.308 billion** | **100%** |\n\nSo purchases were about **70%** of volume, while refinancings were about **30%**—mostly cash-out refinancings.\n\nSource: loanDepot Form 10-Q for the quarter ended Sept. 30, 2024, and Q3 2024 earnings release.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 18873,
+    "output_tokens": 828,
+    "cache_hit_tokens": 10112,
+    "cache_miss_tokens": 8761,
+    "reasoning_tokens": 388
+  },
+  "model_cost_usd": 0.0018412860000000001,
+  "tool_cost_usd": {
+    "exa": 0.008,
+    "e2b": 8.2e-05
+  },
+  "cost_usd": 0.00992377846087554,
+  "latency_s": 8.224488083971664,
+  "tool_calls": {
+    "total": 3,
+    "web_search": 2,
+    "code_execution": 1
+  },
+  "n_tool_calls": 3,
+  "n_refused": 0,
+  "n_turns": 3,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "Both purchase and refinance originations are pure roundings of the official values, with no contradiction.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

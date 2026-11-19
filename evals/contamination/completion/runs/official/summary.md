@@ -1,27 +1,27 @@
 # Completion test run official
 
-Model `claude-sonnet-5-5`, 200 requests, all passed the closed environment checks. Shown: first 40% of each question. Tokens: 17840 in, 9644 out. Cost about $0.13.
+Model `deepseek-flash`, thinking off, temperature 0, seed 42. 200 requests, all passed the closed environment checks. Shown: first 60% of each question. Tokens: 14572 in, 3129 out. Cost about $0.0041.
 
 Score: embedding cosine similarity, `all-mpnet-base-v2`, sentence-transformers 6.2.0.
 
 | Group | Mode | n | Mean | Median | Min | Max |
 |---|---|---|---|---|---|---|
-| vals | guided | 50 | 0.51 | 0.50 | 0.23 | 0.81 |
-| vals | general | 50 | 0.44 | 0.42 | 0.09 | 0.82 |
-| control | guided | 50 | 0.53 | 0.55 | 0.14 | 0.87 |
-| control | general | 50 | 0.54 | 0.56 | 0.13 | 0.86 |
+| vals | guided | 50 | 0.49 | 0.47 | 0.03 | 0.94 |
+| vals | general | 50 | 0.44 | 0.46 | -0.06 | 0.92 |
+| control | guided | 50 | 0.48 | 0.50 | 0.06 | 0.83 |
+| control | general | 50 | 0.47 | 0.48 | 0.03 | 0.99 |
 
-Guided above general on 60 of 100 questions.
+Guided above general on 49 of 100 questions.
 
 Highest similarity, Vals questions (* = one of the 10 selected questions):
 
-* vals-12 general 0.82: real "to the average growth rate in March over the past 3 years, will TSM beat or miss Q1 2025 guidance and by how much? Show your work, including Q1 guidance, historical March growth rates, average growth, and projected implied Q1 revenue.", model "to its average month-over-month growth rate observed in January and February 2025, what will TSM's total revenue for Q1 2025 be, and how does it compare to the company's Q1 guidance range?"
-* vals-01 * guided 0.81: real "merger with Nippon Steel and its effect on its business operations?", model "mergers and acquisitions strategy in its recent financial filings, including any discussion of the proposed transaction with Nippon Steel and the associated regulatory risks?"
-* vals-40 guided 0.79: real "make to its Net Income to Derive Adjusted EBITDA?", model "make to its net income to arrive at adjusted EBITDA, and how have these adjustments changed over the past few fiscal years?"
-* vals-41 general 0.79: real "sales growth in Q4 2024?", model "sales growth in the most recent quarter?"
-* vals-40 general 0.78: real "make to its Net Income to Derive Adjusted EBITDA?", model "make to its EBITDA calculation to arrive at Adjusted EBITDA, and how does this metric differ from traditional EBITDA?"
-* vals-44 * guided 0.78: real "per Booking for Airbnb (NASDAQ: ABNB) in the Asia Pacific region?", model "per Stay for Airbnb, Inc. (ABNB) reported in its annual 10-K filing?"
-* vals-12 guided 0.76: real "to the average growth rate in March over the past 3 years, will TSM beat or miss Q1 2025 guidance and by how much? Show your work, including Q1 guidance, historical March growth rates, average growth, and projected implied Q1 revenue.", model "to the average month-over-month growth rate observed in the previous three months (December 2024, January 2025, and February 2025), what would be TSM's estimated total revenue for the first quarter of 2025 in NT$ billions? Use the monthly revenue figures reported by TSMC and round your answer to the nearest whole number."
-* vals-41 guided 0.76: real "sales growth in Q4 2024?", model "sales growth for the most recent fiscal quarter?"
-* vals-01 * general 0.76: real "merger with Nippon Steel and its effect on its business operations?", model "investments in new steelmaking technology and capacity, particularly following its acquisition by Nippon Steel, and what impact are those commitments expected to have on its workforce and domestic operations?"
-* vals-32 general 0.75: real "loan originations between purchases and refinancings for the last 9 months as of 11/12/2024?", model "its originations between purchase and refinance loans, and how has that mix changed year over year?"
+* vals-07 guided 0.94: real "as of April 07, 2025?", model "as of December 31, 2024?"
+* vals-41 general 0.92: real "growth in Q4 2024?", model "growth in the third quarter of 2024?"
+* vals-06 guided 0.91: real "the most in capex in 2025?", model "the most on capital expenditures in 2025?"
+* vals-06 general 0.91: real "the most in capex in 2025?", model "the most on capital expenditures in 2025?"
+* vals-07 general 0.90: real "as of April 07, 2025?", model "as of 2024?"
+* vals-33 * general 0.81: real "in 2024 were refinanced at 3% higher interest rates than current?", model "were refinanced at a lower interest rate?"
+* vals-17 * general 0.80: real "year on a separate line and provide a brief one sentence comment on the trend.", model "year and explain the key drivers behind the trend."
+* vals-32 guided 0.80: real "refinancings for the last 9 months as of 11/12/2024?", model "refinances for Q2 2024? Please provide the dollar amounts and percentages for each category."
+* vals-17 * guided 0.79: real "year on a separate line and provide a brief one sentence comment on the trend.", model "year, and explain the primary factors driving the trend."
+* vals-29 guided 0.70: real "2024. Provide the KPI and FY 2024 Total.", model "2023, along with their reported values for that fiscal year."

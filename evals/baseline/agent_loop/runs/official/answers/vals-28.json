@@ -1,0 +1,51 @@
+{
+  "id": "vals-28",
+  "type": "Simple retrieval - Quantitative",
+  "question": "What are Netflix's (NASDAQ: NFLX) Total Projected Material Cash Requirements for 2025?",
+  "answer": "$14,426,266,000",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "$14,426,266,000"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "$14,426,266,000"
+    }
+  ],
+  "model_answer": "## Netflix's Projected Material Cash Requirements\n\nNetflix discloses these in the \"Material Cash Requirements\" section of Item 7 (MD&A), in a **total / next 12 months / beyond 12 months** table covering content, debt and lease obligations.\n\n### For FY2025 (per the FY2024 10-K, filed Jan 27, 2025)\n\n| Contractual obligations ($ thousands) | Total | Next 12 Months (2025) | Beyond 12 Months |\n|---|---:|---:|---:|\n| Content obligations | 23,248,931 | 11,424,696 | 11,824,235 |\n| Debt (principal + interest) | 19,841,462 | 2,486,945 | 17,354,517 |\n| Operating leases | 2,761,120 | 514,625 | 2,246,495 |\n| **Total** | **$45,851,513** | **$14,426,266** | **$31,425,247** |\n\nSo the **total projected material cash requirements ≈ $45.85 billion**, of which **≈ $14.43 billion (~31%) was expected to be paid within 2025** and ~$31.43 billion thereafter.\n\n**Not included in the table:**\n- Content obligations for *unknown* future titles (output deals, series with undetermined seasons): management estimates **$1–4 billion over the next three years**, mostly beyond 12 months.\n- ~**$800 million** of expected tax deposits (certain direct/indirect taxes).\n- Share repurchases (not contractual): $17.1 billion authorization remaining at 12/31/2024.\n\n### For reference — latest figures (FY2025 10-K, filed Jan 23, 2026)\n\n| ($ thousands) | Total | Next 12 Months (2026) | Beyond |\n|---|---:|---:|---:|\n| Content obligations | 24,039,228 | 11,528,030 | 12,511,198 |\n| Debt | 18,091,887 | 1,690,445 | 16,401,442 |\n| Operating leases | 2,898,017 | 558,051 | 2,339,966 |\n| **Total** | **$45,029,132** | **$13,776,526** | **$31,252,606** |\n\n(Plus ~$700M of Brazil non-income tax deposits, and — importantly — the separate WBD transaction financing: ~$72.0B equity value / ~$82.7B enterprise value, backed by $42.2B of bridge commitments plus $25B of transaction credit facilities, none drawn as of 12/31/2025.)\n\n**Bottom line:** the \"total projected material cash requirements\" figure is roughly **$46 billion**, with ~$14.4 billion falling in the 2025 (next-12-month) bucket per the FY2024 10-K.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 32203,
+    "output_tokens": 2058,
+    "cache_hit_tokens": 7552,
+    "cache_miss_tokens": 24651,
+    "reasoning_tokens": 1220
+  },
+  "model_cost_usd": 0.004955105999999999,
+  "tool_cost_usd": {
+    "exa": 0.01,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.014955106000000001,
+  "latency_s": 16.4239432499744,
+  "tool_calls": {
+    "total": 4,
+    "web_search": 2,
+    "web_fetch": 2
+  },
+  "n_tool_calls": 4,
+  "n_refused": 0,
+  "n_turns": 3,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The model gives $14,426,266 thousand, which equals the official $14,426,266,000 for 2025.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

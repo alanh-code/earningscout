@@ -1,0 +1,52 @@
+{
+  "id": "vals-19",
+  "type": "Numerical Reasoning",
+  "question": "As of April 07, 2025, what is the total value of MSCI's operating leases (in $'s, thousands) that are maturing in the next three years? What percentage?",
+  "answer": "$85,002 thousands which is 51.3% of leases",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "$85,002 thousands which is 51.3% of leases"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "$85,002 thousands which is 51.3% of leases"
+    }
+  ],
+  "model_answer": "## MSCI Inc. — Operating Lease Maturities (FY2024 Form 10-K, filed Feb. 7, 2025 — latest filing as of April 7, 2025)\n\nMaturities of operating lease liabilities as of **December 31, 2024** (in thousands):\n\n| Year | Operating Leases |\n|---|---|\n| 2025 | $30,220 |\n| 2026 | $30,361 |\n| 2027 | $24,421 |\n| 2028 | $23,931 |\n| 2029 | $16,573 |\n| Thereafter | $40,099 |\n| **Total lease payments (undiscounted)** | **$165,605** |\n| Less: Interest | ($19,601) |\n| **Present value of lease liabilities** | **$146,004** |\n\n### Answer — next three years (2025 + 2026 + 2027)\n\n- **Total maturing in the next three years: $85,002 thousand** ($30,220 + $30,361 + $24,421)\n- **Percentage: ~51.3%** of total undiscounted lease payments ($85,002 ÷ $165,605)\n\n(For reference, against the present value of the lease liabilities of $146,004, that three‑year amount equals approximately **58.2%**.)\n\n*Note: If you instead use the Q1 2025 10‑Q (balance sheet date March 31, 2025 — but filed April 22, 2025, i.e., after April 7), the next-three-year buckets were Remainder of 2025 $23,341 + 2026 $31,990 + 2027 $25,739 = **$81,070 thousand, or ~49.7%** of $163,139 thousand total lease payments.*",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 46651,
+    "output_tokens": 2026,
+    "cache_hit_tokens": 34304,
+    "cache_miss_tokens": 12347,
+    "reasoning_tokens": 1105
+  },
+  "model_cost_usd": 0.0031705620000000005,
+  "tool_cost_usd": {
+    "exa": 0.015,
+    "e2b": 8.9e-05
+  },
+  "cost_usd": 0.018259071880354808,
+  "latency_s": 15.712750833015889,
+  "tool_calls": {
+    "total": 7,
+    "web_search": 3,
+    "web_fetch": 3,
+    "code_execution": 1
+  },
+  "n_tool_calls": 7,
+  "n_refused": 0,
+  "n_turns": 5,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The answer states the official $85,002 thousand and 51.3% figures, with only a later-period alternative noted.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

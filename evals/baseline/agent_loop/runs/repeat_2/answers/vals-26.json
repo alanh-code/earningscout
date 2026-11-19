@@ -1,0 +1,51 @@
+{
+  "id": "vals-26",
+  "type": "Numerical Reasoning",
+  "question": "As of June 30, 2024, what % of Microsoft's (NASDAQ: MSFT) full-time employees are located outside of the United State? (give the numbers that led to the percentage calculation)",
+  "answer": "45% (102,000/228,000) of Microsoft's full-time employees are located outside of the United States as of June 30, 2024.",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "45% (102,000/228,000) of Microsoft's full-time employees are located outside of the United States as of June 30, 2024."
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "45% (102,000/228,000) of Microsoft's full-time employees are located outside of the United States as of June 30, 2024."
+    }
+  ],
+  "model_answer": "As of June 30, 2024, **about 44.7%** of Microsoft’s full-time employees were located outside the United States.\n\nCalculation from Microsoft’s FY2024 Form 10-K:\n- Total full-time employees: **~228,000**\n- U.S. employees: **~126,000**\n- International employees: **~102,000**\n\n\\[\n\\frac{102{,}000}{228{,}000} \\times 100 = 44.7368\\% \\approx \\boxed{44.7\\%}\n\\]\n\nSo roughly **44.7% outside the U.S.** (and **55.3% in the U.S.**).",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 9980,
+    "output_tokens": 395,
+    "cache_hit_tokens": 5376,
+    "cache_miss_tokens": 4604,
+    "reasoning_tokens": 95
+  },
+  "model_cost_usd": 0.0009437279999999999,
+  "tool_cost_usd": {
+    "exa": 0.008,
+    "e2b": 4.7e-05
+  },
+  "cost_usd": 0.008990800507730249,
+  "latency_s": 5.829762166016735,
+  "tool_calls": {
+    "total": 3,
+    "web_search": 2,
+    "code_execution": 1
+  },
+  "n_tool_calls": 3,
+  "n_refused": 0,
+  "n_turns": 3,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The stated 44.7% from 102,000/228,000 matches the official calculation and rounds to the official 45%.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

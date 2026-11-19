@@ -1,0 +1,52 @@
+{
+  "id": "vals-37",
+  "type": "Simple retrieval - Quantitative",
+  "question": "As of Dec 31, 2024, what was Warner Discovery's (NASDQ: WBD) Total Restructuring Costs incurred as a result of its 2022 Merger?",
+  "answer": "$4.7 Billion",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Warner Discovery's Total Restructuring Costs as of Dec 31, 2024, were $4.7 Billion"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "$4.7 Billion"
+    }
+  ],
+  "model_answer": "## Answer\n\n**≈ $4.7 billion** of pre-tax restructuring charges — that's the Merger-related (WarnerMedia/Discovery, closed April 8, 2022) cumulative amount WBD reported as incurred as of December 31, 2024.\n\n### Exact disclosure (FY2024 Form 10-K, MD&A – Business Overview)\n\n> \"In connection with the Merger, we have announced and taken actions to implement projects to achieve cost synergies for the Company... At that time, we expected to incur approximately **$4.1 – $5.3 billion in pre-tax restructuring charges, of which we have incurred $4.7 billion as of December 31, 2024**. Of the total expected pre-tax restructuring charges, we expected total cash expenditures to be $1.0 – $1.5 billion. While our restructuring efforts are ongoing, the **Merger-related restructuring program was substantially completed at the end of 2024**.\"\n\n### Supporting detail\n\n| Item | Amount |\n|---|---|\n| Expected Merger-related pre-tax restructuring charges (initial estimate, 2022) | $4.1B – $5.3B |\n| **Incurred as of 12/31/2024 (Merger program)** | **$4.7B** |\n| Expected cash expenditures | $1.0B – $1.5B |\n\n**GAAP \"Restructuring and other charges\" (income statement) by year:**\n- 2022: $3,757M (mostly content programming write-offs of $3,133M + org restructuring $607M)\n- 2023: $585M\n- 2024: $447M\n- **Total 2022–2024: $4,789M (~$4.8B)**\n\nNote the nuance: the ~$4.8B income-statement total is slightly higher than the $4.7B Merger-specific figure because it also includes non-Merger initiatives launched after closing — the 2023 Warner Bros. Pictures Animation realignment, plus two 2024 programs (an organizational/personnel restructuring plan and a Warner Bros. Games restructuring). The $4.7B is therefore the cleanest answer to \"costs incurred as a result of the 2022 Merger.\"\n\nAlso relevant: $411M of facility-consolidation ROU asset impairments in 2024 (e.g., Hudson Yards lease) were recorded in \"Impairments and loss on dispositions,\" not in restructuring and other charges, so they are not part of the $4.7B restructuring figure.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 41871,
+    "output_tokens": 1955,
+    "cache_hit_tokens": 24704,
+    "cache_miss_tokens": 17167,
+    "reasoning_tokens": 958
+  },
+  "model_cost_usd": 0.0038221619999999996,
+  "tool_cost_usd": {
+    "exa": 0.014,
+    "e2b": 0.000928
+  },
+  "cost_usd": 0.018750143388917426,
+  "latency_s": 36.82219391700346,
+  "tool_calls": {
+    "total": 6,
+    "web_search": 3,
+    "code_execution": 1,
+    "web_fetch": 2
+  },
+  "n_tool_calls": 6,
+  "n_refused": 0,
+  "n_turns": 4,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The model states the requested figure as about $4.7 billion, matching the official answer.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

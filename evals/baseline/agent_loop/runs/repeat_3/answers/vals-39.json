@@ -1,0 +1,71 @@
+{
+  "id": "vals-39",
+  "type": "Simple retrieval - Qualitative",
+  "question": "What financial metrics does Delta Airlines (NYSE: DAL) guide on in its quarterly earnings reports?",
+  "answer": "Delta Airlines provides quarterly guidance and full FY guidance. \n\nFor the Quarter, Delta provides guidance for Total Revenue YoY Growth, Operating Margin, and Earnings Per Share\n\nFor the Full FY, Delta provides guidance for Earnings per Share YoY Growth, Free Cash Flow, and Gross Leverage",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Quarterly guidance includes Total Revenue YoY Growth"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Quarterly guidance includes Operating Margin"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Quarterly guidance includes Earnings Per Share"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Full FY guidance includes Earnings per Share YoY Growth"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Full FY guidance includes Free Cash Flow"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Full FY guidance includes Gross Leverage"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "Delta Airlines provides quarterly guidance and full FY guidance. \n\nFor the Quarter, Delta provides guidance for Total Revenue YoY Growth, Operating Margin, and Earnings Per Share\n\nFor the Full FY, Delta provides guidance for Earnings per Share YoY Growth, Free Cash Flow, and Gross Leverage"
+    }
+  ],
+  "model_answer": "## Short answer\n\nDelta's quarterly press releases contain a formal **\"Financial Guidance\"** table that guides on a deliberately small set of metrics — **three for the upcoming quarter and three for the full year** (all non-GAAP):\n\n| Horizon | Metrics guided |\n|---|---|\n| **Next quarter** | 1. Total revenue, year-over-year %<br>2. Operating margin %<br>3. Earnings per share (adjusted) |\n| **Full year** | 1. Earnings per share (adjusted)<br>2. Free cash flow ($B)<br>3. Gross leverage (adjusted debt / EBITDAR, in \"x\") |\n\n## The current framework in practice (from the Sept-quarter 2026 release, Oct 9, 2026)\n\n| | 4Q26 | FY 2026 |\n|---|---|---|\n| Total revenue YoY | ~20% | — |\n| Operating margin | 7% – 9% | — |\n| Earnings per share | $1.15 – $1.65 | $5.10 – $5.60 |\n| Free cash flow | — | ~$2.5B |\n| Gross leverage (adj. debt/EBITDAR) | — | ~2.2x |\n\nThe same table shape appeared in the June 2026 release (FY26 EPS $6.50–$7.50, FCF $3–4B, gross leverage ~2x; 3Q26 revenue up mid-teens, margin 11–13%, EPS $2.00–$2.50) and the Dec-2025 release (which also added an \"EPS YoY growth\" line — +20% at the midpoint).\n\n## The fuel-price assumption (always disclosed with guidance)\n\nEvery guidance table carries a footnote stating the quarter's assumed **all-in fuel price per gallon**, based on the forward curve as of a specified date, and the embedded **refinery (Monroe Energy) benefit** in cents per gallon. E.g., 4Q26 assumes ~$4.25/gal all-in, including ~$0.40/gal of refinery benefit; 3Q26 assumed ~$3.15/gal with a 5¢ refinery benefit. This is the single most important swing input to the EPS guide.\n\n## Metrics Delta guides on *narratively* (in the CFO/CCO commentary) rather than in the table\n\n- **Capacity (ASMs / seats)** — e.g., \"seats growing less than 2%,\" \"flat capacity\"\n- **Unit revenue (TRASM, adjusted)** — directional, e.g., \"another quarter of sequential improvement in unit revenue\"\n- **Non-fuel unit cost (CASM-Ex)** — e.g., \"December quarter non-fuel unit cost growth to improve 1–2 points sequentially\"; \"low-single-digit unit cost growth\" for the following year\n- **Pre-tax profit** — e.g., \"full-year pre-tax profit of roughly $4.5 billion\"\n- **ROIC** — \"double-digit return on invested capital\"\n- **Debt paydown** — \"pay down more than $2 billion of debt in 2026\"\n\n## Historical note: the guidance table used to be much fuller\n\nIn 2022–2024 Delta published a detailed per-quarter table with explicit rows for **Capacity (ASMs) YoY, TRASM YoY, CASM-Ex YoY, Fuel price ($/gal), Operating margin, EPS**, and sometimes **gross capital expenditures**. For example, the Sept-2023 update guided Total Revenue +11–14%, TRASM −2% to −3%, ASMs +16%, CASM-Ex +1% to +2%, fuel $2.75–$2.90/gal, operating margin ~13%, and EPS $1.85–$2.05. Since 2025 Delta has trimmed the formal table to the six metrics above and moved capacity, TRASM, and CASM-Ex into the commentary.\n\n## Long-term targets (Nov 2024 Investor Day, reaffirmed since)\n\nNot quarterly guidance, but quoted alongside it: **mid-teens operating margin, ~10% average annual EPS growth, $3–5B annual free cash flow, 1x gross leverage, 15%+ ROIC, and $40B+ unencumbered assets.**\n\n## Caveats worth knowing\n\n- Delta guides **adjusted (non-GAAP)** EPS, operating margin, and free cash flow, and explicitly states it **cannot reconcile forward-looking non-GAAP measures without unreasonable effort** because adjusting items (refinery sales, hedge MTM, investment MTM, debt extinguishment) aren't known until period end.\n- Guidance excludes third-party refinery sales and hedge mark-to-market, so it is not comparable to GAAP line items.\n- Delta does **not** guide on GAAP net income, EBITDA, operating cash flow, capex (only occasionally/directionally), or dividend/share repurchases.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 68912,
+    "output_tokens": 2820,
+    "cache_hit_tokens": 35456,
+    "cache_miss_tokens": 33456,
+    "reasoning_tokens": 1376
+  },
+  "model_cost_usd": 0.006816767999999999,
+  "tool_cost_usd": {
+    "exa": 0.018,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.024816768000000003,
+  "latency_s": 19.887447500019334,
+  "tool_calls": {
+    "total": 6,
+    "web_search": 4,
+    "web_fetch": 2
+  },
+  "n_tool_calls": 6,
+  "n_refused": 0,
+  "n_turns": 4,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "All six required quarterly and full-year guidance metrics are identified, with no contradiction.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

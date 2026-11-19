@@ -1,0 +1,80 @@
+{
+  "id": "vals-25",
+  "type": "Simple retrieval - Qualitative",
+  "question": "Summarize the regulatory risks Paylocity's (NASDAQ: PCTY) lists in its FY 2024 10-K.",
+  "answer": "- The global data privacy regulatory environment is evolving, impacting HCM and payroll providers.\n- Federal and state laws, including FTC rules, HIPAA, CCPA/CPRA, BIPA, and state breach notification laws, govern data privacy.\n- GDPR and other foreign laws affect operations due to clients with global footprints.\n- Changing tax, benefit, and privacy laws may require product modifications, increase costs, delay new offerings, or reduce demand.\n- Potential licensing requirements for money transmitter businesses could limit operations or increase compliance costs.\n- Third-party partners and suppliers may experience breaches, supply-chain attacks, or system failures, which could harm business operations and lead to significant liabilities.\n- Security incidents could damage trust in HCM and payroll solutions, affecting client retention and acquisition.\n- Regulatory scrutiny on cybersecurity is increasing, requiring additional investment to maintain compliance.",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Global data privacy regulatory environment is evolving, impacting HCM and payroll providers."
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Federal and state laws, including FTC rules, HIPAA, CCPA/CPRA, BIPA, and state breach notification laws, govern data privacy."
+    },
+    {
+      "operator": "correctness",
+      "criteria": "GDPR and other foreign laws affect operations due to clients with global footprints."
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Changing tax, benefit, and privacy laws may require product modifications, increase costs, delay new offerings, or reduce demand."
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Potential licensing requirements for money transmitter businesses could limit operations or increase compliance costs."
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Third-party partners and suppliers may experience breaches, supply-chain attacks, or system failures, which could harm business operations and lead to significant liabilities."
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Security incidents could damage trust in HCM and payroll solutions, affecting client retention and acquisition."
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Regulatory scrutiny on cybersecurity is increasing, requiring additional investment to maintain compliance."
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "- The global data privacy regulatory environment is evolving, impacting HCM and payroll providers.\n- Federal and state laws, including FTC rules, HIPAA, CCPA/CPRA, BIPA, and state breach notification laws, govern data privacy.\n- GDPR and other foreign laws affect operations due to clients with global footprints.\n- Changing tax, benefit, and privacy laws may require product modifications, increase costs, delay new offerings, or reduce demand.\n- Potential licensing requirements for money transmitter businesses could limit operations or increase compliance costs.\n- Third-party partners and suppliers may experience breaches, supply-chain attacks, or system failures, which could harm business operations and lead to significant liabilities.\n- Security incidents could damage trust in HCM and payroll solutions, affecting client retention and acquisition.\n- Regulatory scrutiny on cybersecurity is increasing, requiring additional investment to maintain compliance."
+    }
+  ],
+  "model_answer": "## Where it sits in the filing\n\nPaylocity's FY 2024 10-K (fiscal year ended June 30, 2024; filed August 2, 2024) puts its regulatory exposure in two places:\n\n- **Part I, Item 1 – \"Governmental Regulation\"** (descriptive background), and\n- **Part I, Item 1A – \"Risk Factors,\" pp. 14–27**, specifically the subsection **\"Risks Related to Legal and Regulatory Matters.\"**\n\nThat subsection contains four risk factors, and regulatory themes also bleed into the cybersecurity, payroll-funding and third-party risks.\n\n## The four core legal/regulatory risk factors\n\n**1. \"Changes in regulatory laws or requirements applicable to our software and services could impose increased costs on us, delay or prevent our introduction of new products and services and impair the function or value of our existing products and services.\"**\n\nThis is the broadest one, and its core logic is that Paylocity's product *is* compliance: because the software calculates payroll, taxes, garnishments, wage payments and benefit deductions, every change in tax, benefit, wage-and-hour, employment and other domestic/international law is a product-change obligation. The filing states that as requirements proliferate, Paylocity \"may be required to change or adapt our products and services to comply,\" and that changing requirements might:\n- reduce or eliminate demand for some existing products,\n- block development of new products,\n- adversely affect functionality/acceptance of the platform,\n- impose added compliance, modification or development costs, and\n- make new product introductions \"more costly or more time-consuming than we currently anticipate or prevent introduction\" altogether.\n\nThe specific example given is **money transmission**: adoption of new money transmitter or money services business statutes, or changed regulator interpretation of existing state and federal statutes, \"could subject us to registration or licensing or limit business activities until we are appropriately licensed.\" That is a live issue for Paylocity because of **On Demand Payment** (earned-wage access) and its handling of client payroll funds — licensing delays could constrain a product line, not just add cost.\n\n**2. \"Failure to comply with data privacy laws and regulations may have a material adverse effect on reputation, financial condition, and/or operations.\"**\n\nPaylocity holds sensitive employee data for ~6 million employees of ~39,050 clients, so this risk is framed as existential rather than incidental. The regulatory regimes explicitly named in the filing are:\n- **FTC** rules and regulations,\n- **HIPAA**,\n- **state breach notification laws**,\n- **CCPA**, as amended by the **CPRA**,\n- the **Illinois Biometric Information Privacy Act (BIPA)** — notable because BIPA carries a private right of action with statutory per-violation damages, and Paylocity's time-collection products (photo punch-in, biometric clocks) are directly in scope, and\n- the **EU GDPR** and other foreign privacy laws, which apply because some clients have international operations and employees.\n\nThe filing notes the global data-privacy landscape \"is rapidly evolving and is likely to remain so for the foreseeable future.\" It also notes mitigating steps — operating policies and procedures for accuracy, privacy and security, plus voluntary periodic audits, examinations and certifications — while flagging that compliance depends on solution design *and* on how clients and their employees actually use the tools (i.e., client misuse can create Paylocity exposure).\n\n**3. \"Adverse tax laws or regulations could be enacted, or existing laws could be applied to us or our clients, which could increase the costs of our services and adversely impact our business.\"**\n\nThis is a two-sided risk: (a) tax law changes affecting Paylocity itself (corporate income tax, state apportionment/sales tax on SaaS, etc.), and (b) tax law changes or new interpretations affecting *clients'* payroll tax withholding, filing and remittance obligations — which flow straight into Paylocity's tax-filing service, its rules engine, and clients' willingness to pay for it. It also carries penalty/liability exposure: Paylocity prepares and files employment tax returns, deposits and amendments on clients' behalf, and errors or late filings can trigger penalties and client claims.\n\n**4. \"Any future litigation against us could be costly and time-consuming to defend.\"**\n\nThe catch-all litigation risk. For a payroll/HCM provider the realistic vectors are client or employee class actions over payroll or tax calculation errors, data-privacy and BIPA claims, wage-and-hour claims tied to time-and-attendance data, IP claims, and contract/indemnity disputes. The related risk-factor disclosure elsewhere acknowledges the possibility of \"unforeseen legal expenses, including litigation and settlement costs\" affecting quarterly results.\n\n## Regulatory exposures disclosed outside that subsection\n\n- **Client funds / money movement (a \"Risks Related to our Business\" factor).** Paylocity typically pays client employees, taxing authorities and vendors *before* client electronic funds transfers finally settle into its account. Rejected or failed client payments can force it to draw on short-term liquidity. This is the operational corollary of the money-transmission licensing risk.\n- **Cybersecurity and breach-notification obligations.** A breach or unauthorized access to systems, client data or client funds would trigger breach-notification duties, contractual liability to clients, and reputational harm.\n- **Third-party/partner dependency.** Reliance on third parties (data centers, integration partners, referral network) exposes Paylocity to their compliance failures.\n- **Product-level compliance features as a selling point.** Paylocity markets an HR Compliance Dashboard, HR Edge, E-Verify/I-9 support and garnishment validation — meaning regulatory change is both a risk (cost to update) and a demand driver.\n\n## How to think about the aggregate risk\n\nThree characteristics distinguish Paylocity's regulatory risk profile:\n\n1. **Compliance is the product, not a back-office function.** Regulatory change is simultaneously a revenue opportunity (clients pay to outsource compliance) and a cost/obsolescence risk. Paylocity must ship tax and legislative updates on every jurisdiction's schedule, with essentially zero tolerance for error.\n2. **The cost is recurring and open-ended, not one-time.** The disclosure does not quantify exposure; it says compliance \"might\" impose additional costs and \"might\" be more costly/time-consuming than anticipated. There are no specific accruals, fines or pending material proceedings quantified as regulatory matters.\n3. **Licensing is a gating risk.** The money-transmitter point is the sharpest: in a new jurisdiction, Paylocity could be *prohibited* from offering a product (earned-wage access, payments) until licensed — a binary business restriction rather than a marginal cost.\n\nOne contextual note: unlike its later filings, the FY 2024 10-K's regulatory risk factor does **not** separately call out **artificial-intelligence regulation**, even though the business section highlights generative-AI features and \"AI-assisted\" tools. That risk factor was added in a subsequent year's 10-K — so an FY 2024-only reading understates the current regulatory surface.\n\n*Sourcing caveat: the first regulatory heading and its leading language above are quoted from the filed text; the descriptions of the remaining factors reflect the section's headings and the regulatory frameworks named in the filing's Item 1 \"Governmental Regulation\" discussion, paraphrased rather than quoted verbatim. If you need exact wording for citation, pull Item 1A pp. 14–27 directly from the EDGAR filing (accession 0001591698-24-000151).*",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 333575,
+    "output_tokens": 8260,
+    "cache_hit_tokens": 284928,
+    "cache_miss_tokens": 48647,
+    "reasoning_tokens": 5473
+  },
+  "model_cost_usd": 0.013107834,
+  "tool_cost_usd": {
+    "exa": 0.021,
+    "e2b": 0.002699
+  },
+  "cost_usd": 0.036806403606905576,
+  "latency_s": 93.32420854200609,
+  "tool_calls": {
+    "total": 20,
+    "web_search": 3,
+    "code_execution": 1,
+    "web_fetch": 16
+  },
+  "n_tool_calls": 20,
+  "n_refused": 0,
+  "n_turns": 12,
+  "error": null,
+  "overall": "wrong",
+  "judge_reason": "Five of eight regulatory risk facts are stated; third-party breach/system-failure liability, trust/retention/acquisition impact, and increasing cybersecurity scrutiny/investment are not stated.",
+  "judge_run_overalls": [
+    "wrong",
+    "wrong",
+    "wrong"
+  ]
+}

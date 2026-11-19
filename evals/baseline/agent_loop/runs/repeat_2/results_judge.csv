@@ -1,0 +1,49 @@
+id,type,overall,cost_usd,latency_s,n_tool_calls,stop_reason,judge_reason
+vals-01,Market Analysis,wrong,0.038008984,34.381295332917944,10,stop,"Meets announcement date, golden share, $14B/$11B capital, and Western PA focus; misses CEO global expertise, survival framing, 100k jobs, and $4B mill."
+vals-02,Trends,wrong,0.04971298742188643,54.413353084004484,16,stop,"Annual ARM figures and flat 2022-2024/ad-tier explanation met, but the explicit 2019-2022 approximate 2.8% annual increase is not stated."
+vals-03,Beat or Miss,right,0.01635121,11.96697137504816,4,stop,"States a 70bps beat vs high end and an 80bps beat vs low end, matching both official checks."
+vals-04,Complex Retrieval,right,0.017884818544586165,10.78672104200814,5,stop,All four quarterly guidance ranges and midpoint percentages match the official answer.
+vals-05,Simple retrieval - Qualitative,right,0.05561638400000001,41.21474566706456,14,stop,"All eight official nominees are identified correctly, with no contradiction."
+vals-06,Complex Retrieval,wrong,0.022613516,9.4613343749661,5,stop,The model correctly identifies AMZN as the top spender but commits to later revised capex figures that conflict with the official FY2025 guidance figures.
+vals-07,Simple retrieval - Qualitative,right,0.004705738,3.0602592080831528,1,stop,Correctly identifies Elinor Mertz as Airbnb's CFO.
+vals-08,Simple retrieval - Quantitative,wrong,0.03643133605901032,40.14601941604633,10,stop,"The model states a total of approximately $3.3 billion including a $50 million adjustment, which contradicts the official $3.25 billion total consideration."
+vals-09,Beat or Miss,right,0.009695072,9.398752125096507,2,stop,"Correctly states a 140 basis point beat, matching the official answer."
+vals-10,Numerical Reasoning,right,0.004945627947614525,4.281253875000402,2,stop,Revenue values are consistent roundings and the stated CAGR matches the official answer.
+vals-12,Financial Modeling  Projections,wrong,0.01777569709204134,44.34640162496362,7,stop,"Inputs and Q1 estimate match, but the final Q1 verdict is wrong (-0.9% midpoint miss/low-end beat instead of -1.2% Miss), triggering contradiction."
+vals-13,Numerical Reasoning,right,0.018804057090362467,44.25535933300853,9,stop,The answer states the exact official 2023 total director compensation amount.
+vals-14,Trends,wrong,0.010362616906488816,8.405480624991469,3,stop,"2022 FCF margin is ~224% instead of 24.8%, triggering contradiction, despite meeting 2023/2024 and trend checks."
+vals-15,Numerical Reasoning,right,0.01862150476061456,11.841037083999254,7,stop,All required values and the 6.55 inventory turnover calculation match the official answer.
+vals-16,Complex Retrieval,wrong,0.026527340000000003,22.11263541597873,8,stop,"Nearly all terms match, but the common-dividend restriction is conditioned on unpaid preferred dividends rather than on the preferreds remaining outstanding, which contradicts the official term."
+vals-17,Trends,right,0.014561036015405602,11.004550958052278,4,stop,All three fiscal-year take rates and the incremental year-over-year increase trend match the official answer.
+vals-18,Simple retrieval - Qualitative,right,0.05054650794618649,60.007919542025775,20,stop,All five correctness checks are met with the same definition and no contradiction with the official answer.
+vals-19,Numerical Reasoning,right,0.018259071880354808,15.712750833015889,7,stop,"The answer states the official $85,002 thousand and 51.3% figures, with only a later-period alternative noted."
+vals-20,Numerical Reasoning,right,0.004880188,5.7654220829717815,1,stop,All three KPI checks are met exactly and no contradiction is triggered.
+vals-21,Simple retrieval - Qualitative,right,0.059096968000000014,86.11409199994523,23,stop,The answer states both required facts and does not contradict them.
+vals-22,Numerical Reasoning,wrong,0.06192617980810592,40.68214529205579,20,stop,"All three yearly figures are nearby precise values that do not match or round to the official figures, and they contradict the official answer."
+vals-23,Simple retrieval - Qualitative,right,0.024349758,13.284638250013813,6,stop,"The model states the expected production start was 2025, matching the rubric."
+vals-24,Numerical Reasoning,right,0.012762910363970793,13.277758624986745,4,stop,The model states the official $7.5 billion face value excluding sustainability notes.
+vals-25,Simple retrieval - Qualitative,wrong,0.07714109383549869,133.94013529096264,27,stop,"Six of eight regulatory-risk checks are met; missing evolving global data privacy environment and third-party breach/supply-chain/system failure risks, so overall wrong."
+vals-26,Numerical Reasoning,right,0.008990800507730249,5.829762166016735,3,stop,"The stated 44.7% from 102,000/228,000 matches the official calculation and rounds to the official 45%."
+vals-27,Simple retrieval - Qualitative,right,0.09375180400000004,88.833218957996,26,stop,All required terms are correctly stated and no contradiction is triggered.
+vals-28,Simple retrieval - Quantitative,right,0.023156256,21.137606957927346,6,stop,"The stated 2025/next-12-months amount of $14,426,266 thousand equals the official $14,426,266,000."
+vals-29,Simple retrieval - Qualitative,right,0.042352966000000006,33.547176750027575,13,stop,"All 16 FY2024 operating KPI totals are stated with matching values, with unit conversions equivalent to the official answer."
+vals-30,Financial Modeling  Projections,right,0.05390185200000001,41.450403499999084,15,stop,"The model's ~85.9 million share count is a pure rounding of the official 85,945,127 and does not contradict it."
+vals-31,Financial Modeling  Projections,right,0.010053700304418097,8.041003457969055,3,stop,"Answer gives $467 million, matching the official gross profit figure."
+vals-32,Simple retrieval - Quantitative,right,0.00992377846087554,8.224488083971664,3,stop,"Both purchase and refinance originations are pure roundings of the official values, with no contradiction."
+vals-33,Adjustments,wrong,0.04570806228939708,53.21329008298926,17,stop,"Primary dollar and percent impacts are nearby but not exact or pure roundings, and they conflict with the official values."
+vals-34,Simple retrieval - Quantitative,right,0.009179504,3.55124637496192,2,stop,The answer correctly states 20% of Cloudflare's fiscal 2024 revenue came from channel partners.
+vals-35,Adjustments,right,0.004823338,5.831571500049904,1,stop,The model correctly identifies stock-based compensation expense and the $1.935B amount.
+vals-36,Simple retrieval - Quantitative,wrong,0.027103386557167264,20.605730791925453,8,stop,"All required deal figures are stated, but the added claim that Redfin holders received ~$11.24/share at closing contradicts the official $12.50 per share acquisition price."
+vals-37,Simple retrieval - Quantitative,right,0.012199962608228579,8.66594175004866,4,stop,"The model answer gives the correct $4.7 billion total restructuring cost as of Dec 31, 2024."
+vals-38,Beat or Miss,right,0.010564944173998378,14.794047000003047,3,stop,"Correctly states a beat of ~26 bps, which rounds to the official 26.1bps; no contradiction triggered."
+vals-39,Simple retrieval - Qualitative,right,0.0248394,19.755795417004265,6,stop,"All six required quarterly and full-year guided metrics are identified, with no contradiction."
+vals-40,Adjustments,wrong,0.025784016,27.90367904107552,6,stop,"All official adjustments are present, but the answer also presents interest expense and stock-settlement obligations as current adjustments, conflicting with the official exhaustive adjustment list."
+vals-41,Simple retrieval - Quantitative,right,0.009240338,4.66224666708149,2,stop,The model correctly states Q4 2024 same-store sales growth as a 0.8% decline (-0.8%).
+vals-42,Market Analysis,wrong,0.048432166000000006,57.144721499993466,14,stop,"Only KO matches; KDP and PEP differ, KHC and SJM are omitted, and conflicting stated ratios trigger contradiction."
+vals-43,Financial Modeling  Projections,wrong,0.05300629450244557,95.2263095000526,13,stop,"Most core figures match, but Mobility gross bookings growth is stated as 20.5% instead of 25%, triggering contradiction, and freight 2% is omitted."
+vals-44,Simple retrieval - Quantitative,right,0.020504414000000002,8.289514958043583,5,stop,The model correctly states 3.3 nights per booking for Asia Pacific.
+vals-45,Adjustments,right,0.009643088000000001,4.614845208008774,2,stop,"The answer states $1,407 million, equivalent to the official $1,407,000,000 adjustment."
+vals-46,Market Analysis,wrong,0.07231562109561449,118.2774934170302,17,stop,"Spruce extra $24M total conflicts with the official $19M price, and the post-COVID housing-market decline context is omitted."
+vals-47,Beat or Miss,right,0.027441225172323037,24.781727291992866,9,stop,"The answer states a 7.4% miss, matching the official answer."
+vals-48,Beat or Miss,wrong,0.019780752000000002,22.11768345895689,6,stop,"All items match except stock-based compensation is characterized as in line instead of above the expected $64 million, triggering contradiction."
+vals-49,Beat or Miss,wrong,0.038188086,36.49003387498669,9,stop,"The answer claims General Mills beat in FY2024 (two of two), contradicting the official met-expectations result, and fails the FY2024 expectation check."

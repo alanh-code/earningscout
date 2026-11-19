@@ -2,58 +2,53 @@
   "question_id": "vals-18",
   "question_type": "Simple retrieval - Qualitative",
   "question": "Does Workday (NASDAQ: WDAY) report a gross or net retention metric in its annual or quarterly reporting? If so, provide the definition",
-  "model": "claude-sonnet-5-5",
+  "model": "deepseek-flash",
+  "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
   "tokens": {
-    "input": 55,
-    "output": 530
+    "input": 33,
+    "output": 452,
+    "cached_input": 0
   },
-  "cost_usd": 0.00541,
+  "peak": false,
+  "cost_usd": 0.00027614999999999996,
   "request": {
-    "model": "claude-sonnet-5-5",
-    "max_tokens": 4096,
-    "thinking": {
-      "type": "between_tools"
-    },
+    "model": "deepseek-flash",
     "messages": [
       {
         "role": "user",
         "content": "Does Workday (NASDAQ: WDAY) report a gross or net retention metric in its annual or quarterly reporting? If so, provide the definition"
       }
-    ]
+    ],
+    "max_tokens": 4096,
+    "thinking": {
+      "type": "disabled"
+    },
+    "temperature": 0,
+    "seed": 42
   },
   "response": {
-    "id": "msg_011Ch7tWFNXHLUq3bh8dYfkz",
-    "container": null,
-    "content": [
+    "choices": [
       {
-        "citations": null,
-        "text": "Workday does report a customer retention metric, but with some nuances worth noting.\n\n**What Workday reports**\n\nWorkday discloses **gross retention rate** in its earnings materials and investor presentations (and has often cited it in earnings calls and in the key business metrics sections of its filings). Historically, the company has reported this figure at a high level, typically above 95%.\n\n**Definition**\n\nWorkday defines its gross retention rate as the percentage of subscription revenue retained from customers over a trailing period, excluding the effects of upsells and cross-sells. In essence, it measures the share of beginning-of-period recurring subscription revenue that remains after accounting for customer cancellations and non-renewals, without crediting any expansion revenue.\n\n**What it does not report**\n\nWorkday does not prominently report a **net revenue retention (or net dollar retention) rate** in the way many SaaS peers do (e.g., Snowflake, Datadog). Instead, it emphasizes metrics like subscription revenue growth, subscription revenue backlog, and 24-month backlog.\n\n**Caveats**\n\n- The precise wording of the definition, the measurement period (e.g., trailing 12 months), and the exact figure can vary between filings and presentations, and I may not have the most current phrasing.\n- I'd recommend verifying against Workday's most recent 10-K, 10-Q, or investor presentation, where the metric and its definition are typically spelled out in the Key Business Metrics or MD&A sections.\n\nIf you need the exact quoted definition and latest figure for a citation or model, checking Workday's investor relations site (investor.workday.com) is the most reliable route.",
-        "type": "text"
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "Workday does **not** publicly report a gross retention rate or net retention rate as a formal metric in its quarterly earnings releases, 10-Q filings, or 10-K annual reports. This is a notable point because Workday is a subscription-based SaaS company where such metrics are commonly disclosed by peers (e.g., Salesforce, ServiceNow).\n\n**What Workday does disclose instead:**\n\n- **Subscription revenue backlog** (both 12-month and total), which gives visibility into contracted future revenue.\n- **Subscription revenue growth rates** and **renewal/expansion commentary** qualitatively on earnings calls.\n- Management has occasionally referenced retention **qualitatively** (e.g., describing retention as \"strong\" or \"in line with historical levels\") but without publishing a defined numeric gross or net retention rate.\n\n**Definitions (for reference, since Workday doesn't publish its own):**\n\n- **Gross retention rate (GRR):** The percentage of recurring revenue retained from existing customers over a period, excluding expansion/upsell — i.e., (starting recurring revenue − churned/downgraded revenue) ÷ starting recurring revenue. Measures how much revenue is kept from the existing base.\n- **Net retention rate (NRR):** The percentage of recurring revenue retained from existing customers **including** expansion, cross-sell, and upsell, minus churn and downgrades — i.e., (starting recurring revenue + expansion − churn − downgrades) ÷ starting recurring revenue. A value above 100% indicates the existing customer base is growing revenue net of churn.\n\n**Caveat:** Workday has discussed retention trends directionally on earnings calls (e.g., noting stable or improving gross retention and net expansion dynamics, particularly around the HCM and Financials segments and during periods of elevated churn scrutiny), but these are not formal, defined metrics in SEC filings. If you need the exact language, the earnings call transcripts and shareholder letters on Workday's investor relations site are the place to check, as the specific figures/definitions have varied by quarter and are not consistently reported.\n\nSo: **no formal gross or net retention metric is reported in annual/quarterly reporting** — only backlog, subscription revenue growth, and qualitative commentary.",
+          "role": "assistant"
+        }
       }
     ],
-    "diagnostics": null,
-    "model": "claude-sonnet-5-5",
-    "role": "assistant",
-    "stop_details": null,
-    "stop_reason": "end_turn",
-    "stop_sequence": null,
-    "type": "message",
+    "model": "deepseek-flash",
+    "object": "chat.completion",
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
     "usage": {
-      "cache_creation": {
-        "ephemeral_1h_input_tokens": 0,
-        "ephemeral_5m_input_tokens": 0
+      "completion_tokens": 452,
+      "prompt_tokens": 33,
+      "total_tokens": 485,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
       },
-      "cache_creation_input_tokens": 0,
-      "cache_read_input_tokens": 0,
-      "inference_geo": "global",
-      "input_tokens": 55,
-      "output_tokens": 530,
-      "output_tokens_details": {
-        "thinking_tokens": 0
-      },
-      "server_tool_use": null,
-      "service_tier": "standard",
-      "speed": "standard"
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 33
     }
   }
 }

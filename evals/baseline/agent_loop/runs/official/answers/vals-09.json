@@ -1,0 +1,51 @@
+{
+  "id": "vals-09",
+  "type": "Beat or Miss",
+  "question": "How many basis points did MU beat or miss its Q3 2024 GAAP gross margin guidance?",
+  "answer": "140bps BEAT",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "140 basis points beat on Q3 2024 GAAP gross margin guidance"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "140bps BEAT"
+    }
+  ],
+  "model_answer": "Micron’s **fiscal Q3 2024 GAAP gross margin guidance** was **25.5% ± 1.5%** (range **24.0%–27.0%**). Actual GAAP gross margin came in at **26.9%**.\n\n- **Vs. guidance midpoint (25.5%): beat by 1.4 percentage points = 140 basis points**\n- Vs. high end (27.0%): **10 bps below**\n- Vs. low end (24.0%): **290 bps above**\n\nSo, on the standard midpoint basis, **MU beat its Q3 2024 GAAP gross margin guidance by 140 basis points**.\n\nSources: [Micron FQ2 2024 release—FQ3 guidance](https://investors.micron.com/news/press-release/2024/Micron-Technology-Inc--Reports-Results-for-the-Second-Quarter-of-Fiscal-2024-03-20-2024/default.aspx), [Micron FQ3 2024 results](https://investors.micron.com/news/press-release/2024/Micron-Technology-Inc--Reports-Results-for-the-Third-Quarter-of-Fiscal-2024-06-26-2024/default.aspx).",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 28686,
+    "output_tokens": 1670,
+    "cache_hit_tokens": 9856,
+    "cache_miss_tokens": 18830,
+    "reasoning_tokens": 1162
+  },
+  "model_cost_usd": 0.003856068,
+  "tool_cost_usd": {
+    "exa": 0.013,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.016856068000000002,
+  "latency_s": 11.532791042001918,
+  "tool_calls": {
+    "total": 4,
+    "web_search": 3,
+    "web_fetch": 1
+  },
+  "n_tool_calls": 4,
+  "n_refused": 0,
+  "n_turns": 3,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The model correctly states a 140 basis points beat.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

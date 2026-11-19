@@ -1,0 +1,34 @@
+{
+  "check_changes": [
+    {
+      "id": "vals-33",
+      "check_id": 1,
+      "operator": "correctness",
+      "judge": "met",
+      "final": "not met",
+      "source": "verifier",
+      "criteria": "$1.261 Billion Negative Impact to Net Income"
+    },
+    {
+      "id": "vals-38",
+      "check_id": 1,
+      "operator": "correctness",
+      "judge": "met",
+      "final": "not met",
+      "source": "verifier",
+      "criteria": "Lyft's Q4'24 Adjusted EBITDA margin beat management guidance at midpoint in Q3'24 by 26.1bps"
+    },
+    {
+      "id": "vals-48",
+      "check_id": 5,
+      "operator": "correctness",
+      "judge": "not met",
+      "final": "met",
+      "source": "verifier",
+      "criteria": "Stock-based Compensation: $64.5 Million, above the expected $64 Million"
+    }
+  ],
+  "overall_changes": [],
+  "n_check_changes": 3,
+  "n_overall_changes": 0
+}

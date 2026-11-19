@@ -1,0 +1,51 @@
+{
+  "id": "vals-37",
+  "type": "Simple retrieval - Quantitative",
+  "question": "As of Dec 31, 2024, what was Warner Discovery's (NASDQ: WBD) Total Restructuring Costs incurred as a result of its 2022 Merger?",
+  "answer": "$4.7 Billion",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Warner Discovery's Total Restructuring Costs as of Dec 31, 2024, were $4.7 Billion"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "$4.7 Billion"
+    }
+  ],
+  "model_answer": "**Answer: ≈ $4.7 billion (pre-tax restructuring charges incurred since the Merger).**\n\nPer Warner Bros. Discovery's Form 10-K for fiscal year 2024 (filed Feb. 27, 2025), in the Restructuring discussion:\n\n> \"We finalized the framework supporting our ongoing restructuring and transformation initiatives during the year ended December 31, 2022 … At that time, we expected to incur approximately **$4.1 – $5.3 billion** in pre-tax restructuring charges, of which **we have incurred $4.7 billion as of December 31, 2024**. Of the total expected pre-tax restructuring charges, we expected total cash expenditures to be $1.0 – $1.5 billion. … the Merger-related restructuring program was substantially completed at the end of 2024.\"\n\nSupporting context from Note 6 (\"Restructuring and Other Charges\"):\n\n| Year | Restructuring & other charges |\n|---|---|\n| 2022 | $3,757M |\n| 2023 | $585M |\n| 2024 | $447M |\n| **3-yr total (P&L line)** | **$4,789M** |\n\nTwo nuances worth noting:\n- The $4.7 billion is the company's own cumulative figure for **Merger-related** charges. The $4.79B income-statement total for 2022–2024 also includes non-merger initiatives announced later (the 2023 Warner Bros. Pictures Animation realignment, and the 2024 organizational/personnel restructuring plan and Warner Bros. Games initiative).\n- Separately, facility consolidation **impairment** charges were recorded in \"Impairments and loss on dispositions\" rather than the restructuring line (e.g., **$411 million in 2024**), and the remaining restructuring liability was **$289 million** at 12/31/2024 (down from $460M at 12/31/2023), with $423M of cash paid during 2024.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 15104,
+    "output_tokens": 1234,
+    "cache_hit_tokens": 7552,
+    "cache_miss_tokens": 7552,
+    "reasoning_tokens": 583
+  },
+  "model_cost_usd": 0.0018958559999999998,
+  "tool_cost_usd": {
+    "exa": 0.013,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.014895856,
+  "latency_s": 8.93658416706603,
+  "tool_calls": {
+    "total": 4,
+    "web_search": 3,
+    "web_fetch": 1
+  },
+  "n_tool_calls": 4,
+  "n_refused": 0,
+  "n_turns": 3,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The answer provides the correct total restructuring cost of $4.7 billion.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

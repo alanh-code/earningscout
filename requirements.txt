@@ -1,2 +1,4 @@
-anthropic>=2.6
 sentence-transformers>=5
+openai>=3.55
+e2b-code-interpreter>=2.11
+requests>=2.34

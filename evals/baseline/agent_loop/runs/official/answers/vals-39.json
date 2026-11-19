@@ -1,0 +1,71 @@
+{
+  "id": "vals-39",
+  "type": "Simple retrieval - Qualitative",
+  "question": "What financial metrics does Delta Airlines (NYSE: DAL) guide on in its quarterly earnings reports?",
+  "answer": "Delta Airlines provides quarterly guidance and full FY guidance. \n\nFor the Quarter, Delta provides guidance for Total Revenue YoY Growth, Operating Margin, and Earnings Per Share\n\nFor the Full FY, Delta provides guidance for Earnings per Share YoY Growth, Free Cash Flow, and Gross Leverage",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "Quarterly guidance includes Total Revenue YoY Growth"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Quarterly guidance includes Operating Margin"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Quarterly guidance includes Earnings Per Share"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Full FY guidance includes Earnings per Share YoY Growth"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Full FY guidance includes Free Cash Flow"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "Full FY guidance includes Gross Leverage"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "Delta Airlines provides quarterly guidance and full FY guidance. \n\nFor the Quarter, Delta provides guidance for Total Revenue YoY Growth, Operating Margin, and Earnings Per Share\n\nFor the Full FY, Delta provides guidance for Earnings per Share YoY Growth, Free Cash Flow, and Gross Leverage"
+    }
+  ],
+  "model_answer": "## Short answer\n\nDelta's quarterly earnings release contains a formal **\"Financial Guidance\"** table covering five items, plus a set of operating metrics it guides on in the accompanying commentary. All forward guidance is **adjusted (non-GAAP)** — Delta explicitly states it cannot reconcile forward-looking non-GAAP measures without unreasonable effort.\n\n### The formal guidance table (fixed set of 5 metrics)\n\nEach release guides the **next quarter** and the **full year** on:\n\n| Metric | Basis |\n|---|---|\n| **Total revenue YoY (%)** | Adjusted, excluding third-party refinery sales; quarterly only |\n| **Operating margin** | Adjusted; quarterly and FY |\n| **Earnings per share** | Adjusted diluted; quarterly and FY |\n| **Free cash flow ($B)** | FY (and periodically updated intra-year) |\n| **Gross leverage** | Adjusted debt / EBITDAR; FY, expressed as \"approx. Xx\" |\n\n*Latest example (3Q26 release, Oct 9, 2026):* 4Q26 — revenue ≈ +20% YoY, operating margin 7–9%, EPS $1.15–$1.65; FY26 — EPS $5.10–$5.60, FCF ≈ $2.5B, gross leverage ≈ 2.2x. Delta typically also discloses **EPS growth YoY** for the year against its long-term framework (e.g., \"20% at mid-point\" for FY26).\n\n### Metrics guided in the narrative (not always in the table)\n\n- **Capacity (ASMs / seats YoY)** — e.g., \"seats growing less than 2%\" for 4Q26, ~3% for FY26\n- **Unit revenue (TRASM, adjusted)** — usually directional (\"sequential improvement in unit revenue,\" domestic/international splits)\n- **Non-fuel unit cost (CASM-Ex) YoY** — e.g., \"improve 1–2 points sequentially,\" \"low-single-digit growth\" for the following year. Note the definition was recently widened to exclude fuel, third-party refinery sales, **MRO expense, and profit sharing**\n- **All-in fuel price ($/gallon)** — with the forward-curve as-of date and an assumed refinery benefit (e.g., ≈$4.25/gal for 4Q26 including ≈$0.40/gal refinery benefit)\n- **Pre-tax margin / pre-tax income** — cited in commentary (FY26 pre-tax profit \"roughly $4.5 billion\"), though not a table row currently\n- **Capital spending / reinvestment** — e.g., \"$5.5 billion of expected reinvestment\" in 2026\n- **Debt paydown and balance-sheet items** — planned debt reduction (>$2B in 2026), adjusted net debt, liquidity, air traffic liability are discussed but generally only *leverage* is a hard guide\n- **Return on invested capital** — mentioned as an expectation (\"double-digit ROIC,\" vs. 15%+ long-term target)\n- **Operating cash flow** — in some years guided explicitly (e.g., the $9–11B annual framework), now mostly implied via FCF\n\n### Multi-year framework (Nov 2024 Investor Day, still referenced each quarter)\n\nMid-teens operating margin · 10% average annual EPS growth · $3–5B annual free cash flow · 1x gross leverage · 15%+ ROIC · $40B+ unencumbered assets · $9–11B annual operating cash flow · 50/50 capital allocation (shareholder returns vs. reinvestment).\n\n### Things to note\n\n- Delta does **not** guide GAAP EPS, net income, or a full P&L; guidance is on adjusted figures with a stated adjustment list (third-party refinery sales, MTM on investments, MTM/settlements on Monroe hedges, debt-extinguishment gains/losses).\n- The metric mix shifts. Mid-decade releases (2022–2023) published explicit quarterly tables with **Total Revenue, TRASM, ASMs, CASM-Ex, and Fuel price** rows; more recently those moved into the narrative, while **free cash flow and gross leverage** became permanent annual table rows. Delta also issues mid-quarter 8-K \"investor updates\" that revise the same metric set.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 120277,
+    "output_tokens": 2766,
+    "cache_hit_tokens": 77056,
+    "cache_miss_tokens": 43221,
+    "reasoning_tokens": 1390
+  },
+  "model_cost_usd": 0.008373918,
+  "tool_cost_usd": {
+    "exa": 0.019,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.027373918000000004,
+  "latency_s": 22.408494499977678,
+  "tool_calls": {
+    "total": 7,
+    "web_search": 4,
+    "web_fetch": 3
+  },
+  "n_tool_calls": 7,
+  "n_refused": 0,
+  "n_turns": 5,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "All six required quarterly and full-year guidance metrics are stated; extra narrative metrics do not contradict the official list.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

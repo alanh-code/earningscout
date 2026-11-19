@@ -1,0 +1,52 @@
+{
+  "id": "vals-19",
+  "type": "Numerical Reasoning",
+  "question": "As of April 07, 2025, what is the total value of MSCI's operating leases (in $'s, thousands) that are maturing in the next three years? What percentage?",
+  "answer": "$85,002 thousands which is 51.3% of leases",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "$85,002 thousands which is 51.3% of leases"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "$85,002 thousands which is 51.3% of leases"
+    }
+  ],
+  "model_answer": "## MSCI — Operating Lease Maturities (next three years)\n\n**Source:** MSCI Inc. Form 10‑K for fiscal year ended December 31, 2024 (filed Feb. 7, 2025) — the most recent filing as of April 7, 2025 (the Q1 2025 10‑Q wasn't filed until April 22, 2025). Leases note, \"Maturities of operating lease liabilities\" ($ in thousands, undiscounted):\n\n| Year | Lease payments |\n|---|---|\n| 2025 | $30,220 |\n| 2026 | $30,361 |\n| 2027 | $24,421 |\n| 2028 | $23,931 |\n| 2029 | $16,573 |\n| Thereafter | $40,099 |\n| **Total lease payments** | **$165,605** |\n| Less: interest | (19,601) |\n| Present value of lease liabilities | $146,004 |\n| — Other accrued liabilities (current) | $24,851 |\n| — Long-term operating lease liabilities | $121,153 |\n\n### Answer\n- **Total maturing in the next three years (2025 + 2026 + 2027): $85,002 thousand** ($30,220 + $30,361 + $24,421)\n- **Percentage: ≈ 51.3%** of total undiscounted operating lease payments ($85,002 ÷ $165,605). Measured against the recorded (discounted) lease liability of $146,004, it is ≈ 58.2%.\n\n*Note:* If instead you use the March 31, 2025 balance-sheet date from the Q1 2025 10‑Q (filed Apr. 22, 2025), the next three years (remainder of 2025 + 2026 + 2027) total **$81,070 thousand** — $23,341 + $31,990 + $25,739 — or **≈49.7%** of that quarter's $163,139 thousand total lease payments.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 44314,
+    "output_tokens": 2420,
+    "cache_hit_tokens": 32384,
+    "cache_miss_tokens": 11930,
+    "reasoning_tokens": 1492
+  },
+  "model_cost_usd": 0.0033386519999999992,
+  "tool_cost_usd": {
+    "exa": 0.015,
+    "e2b": 0.000104
+  },
+  "cost_usd": 0.018442315121269058,
+  "latency_s": 17.357519624987617,
+  "tool_calls": {
+    "total": 7,
+    "web_search": 3,
+    "web_fetch": 3,
+    "code_execution": 1
+  },
+  "n_tool_calls": 7,
+  "n_refused": 0,
+  "n_turns": 5,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The answer states $85,002 thousand and 51.3%, matching the official figure, with the later-period alternative noted separately.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

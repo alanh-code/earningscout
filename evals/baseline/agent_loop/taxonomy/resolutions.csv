@@ -1,0 +1,18 @@
+run,id,primary,secondary,note
+official,vals-08,interpretation_choice,gold_issue,added the $50M purchase price adjustment to the $3.25B headline by choice
+official,vals-12,guidance_benchmark,,pass_a reply truncated after naming guidance_benchmark; pass_b agrees
+official,vals-14,interpretation_choice,gold_issue,used reported CFO minus capex; gold excludes the inventory liquidation
+official,vals-22,gold_issue,unsourced_figure,gold divides by whole-million nights; the model used the filing's one-decimal nights
+official,vals-25,shallow_retrieval,omitted_item,fetched only the first 40k chars of the 10-K; risk-factor section never opened
+official,vals-46,gold_issue,interpretation_choice,10-K figures show growth over the window where the gold requires a decline
+official,vals-48,shallow_retrieval,misread_source,capex never fetched from the cash-flow statement ($8M vs $9.4M)
+repeat_2,vals-16,gold_issue,misread_source,model states the prospectus's conditional dividend stopper; gold states an unconditional ban
+repeat_2,vals-22,gold_issue,unsourced_figure,pass_a reply unparsed; same rounding artifact as the other runs
+repeat_2,vals-25,omitted_item,shallow_retrieval,points were in the fetched risk-factor pages but left out
+repeat_2,vals-36,later_data,gold_issue,answer adds closing-date value from a filing after the as-of date
+repeat_2,vals-42,interpretation_choice,,pass_a reply unparsed; beverage peer set (MNST) instead of the gold's food and beverage peers (KHC and SJM)
+repeat_2,vals-46,gold_issue,omitted_item,10-K figures contradict the gold's required decline
+repeat_2,vals-48,misread_source,,had $64.5M vs ~$64M but called it in line rather than above
+repeat_3,vals-22,gold_issue,unsourced_figure,same rounding artifact as the other runs
+repeat_3,vals-25,shallow_retrieval,omitted_item,fetched only the first 40k chars of the 10-K
+repeat_3,vals-43,gold_issue,interpretation_choice,retrieved segment growth (+20.5% and -2.0%) contradicts the gold's 25% and 2%

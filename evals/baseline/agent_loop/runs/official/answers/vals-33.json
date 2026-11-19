@@ -1,0 +1,56 @@
+{
+  "id": "vals-33",
+  "type": "Adjustments",
+  "question": "What would be the impact to net income in dollars and percent if all debt for Boeing in 2024 were refinanced at 3% higher interest rates than current?",
+  "answer": "$1.261 Billion Negative Impact to Net Income, or a 10.7% decrease",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "$1.261 Billion Negative Impact to Net Income"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "10.7% decrease in Net Income"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "$1.261 Billion Negative Impact to Net Income, or a 10.7% decrease"
+    }
+  ],
+  "model_answer": "Assuming **“3% higher” means +300 basis points** and using Boeing’s **12/31/2024 total debt of $53.864B**:\n\n- **Additional annual interest expense:**  \n  \\( \\$53.864\\text{B} \\times 3\\% = \\$1.616\\text{B} \\)\n\n- **2024 net loss:** $11.829B  \n- **No tax benefit assumed** — reasonable given Boeing’s valuation allowance on U.S. deferred tax assets:  \n  Net loss would widen to **$13.445B**.\n\n### Impact\n- **Dollar impact to net income:** **–$1.616B**\n- **Percent impact:** **13.7% larger net loss**  \n  \\( \\$1.616B / \\$11.829B = 13.7\\% \\)\n\nIf you instead assume a **21% tax benefit**, the after-tax impact would be:\n\n- **–$1.277B**, or **10.8% larger net loss**\n\nUsing average 2024 debt instead of year-end debt gives a slightly smaller pre-tax impact of about **$1.59B / 13.5%**.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 107785,
+    "output_tokens": 5492,
+    "cache_hit_tokens": 82175,
+    "cache_miss_tokens": 25610,
+    "reasoning_tokens": 4531
+  },
+  "model_cost_usd": 0.007383224999999999,
+  "tool_cost_usd": {
+    "exa": 0.021,
+    "e2b": 0.000416
+  },
+  "cost_usd": 0.028799136232929127,
+  "latency_s": 42.43865133402869,
+  "tool_calls": {
+    "total": 8,
+    "web_search": 5,
+    "web_fetch": 1,
+    "code_execution": 2
+  },
+  "n_tool_calls": 8,
+  "n_refused": 0,
+  "n_turns": 6,
+  "error": null,
+  "overall": "wrong",
+  "judge_reason": "Dollar and percent impacts differ from official figures, and the contradictory stated values trigger contradiction.",
+  "judge_run_overalls": [
+    "wrong",
+    "wrong",
+    "wrong"
+  ]
+}

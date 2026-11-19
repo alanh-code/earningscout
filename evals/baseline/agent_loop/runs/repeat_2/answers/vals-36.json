@@ -1,0 +1,64 @@
+{
+  "id": "vals-36",
+  "type": "Simple retrieval - Quantitative",
+  "question": "What price was RDFN acquired at? (include price per share, equity value and enterprise value)",
+  "answer": "0.7926 shares of Rocket Companies class A stock per share of Redfin, which represents an equity value of $1.75 billion, and a total enterprise value of $2.4 billion at $12.50 per share",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "0.7926 shares of Rocket Companies class A stock per share of Redfin"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "equity value of $1.75 billion"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "enterprise value of $2.4 billion"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "$12.50 per share"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "0.7926 shares of Rocket Companies class A stock per share of Redfin, which represents an equity value of $1.75 billion, and a total enterprise value of $2.4 billion at $12.50 per share"
+    }
+  ],
+  "model_answer": "## Redfin (RDFN) — Acquired by Rocket Companies (RKT)\n\n**Announced:** March 10, 2025 (merger agreement signed March 9, 2025) · **Closed:** July 1, 2025\n\n| Metric | Value |\n|---|---|\n| **Price per share** | **$12.50 per RDFN share** (implied at announcement) |\n| **Equity value** | **$1.75 billion** |\n| **Enterprise value** | **~$2.4 billion** (~$2.36B), including assumption/refinancing of Redfin's debt (convertible notes + term loan) |\n| Structure | 100% all-stock; fixed exchange ratio of **0.7926 RKT Class A shares** per RDFN share |\n| Premium | 63% to Redfin's 30-day VWAP through March 7, 2025 |\n| Ownership split | RKT holders ~95%, RDFN holders ~5% of combined company (fully diluted) |\n\n**Important nuance — it was a fixed-ratio deal, not a fixed price.** $12.50 was just the mark-to-market at signing (RKT was trading around ~$15.77). Because the exchange ratio was fixed, the actual value moved with Rocket's stock:\n\n- At closing, 130,446,226 Redfin shares × 0.7926 = **103,391,679 RKT shares issued at $14.18** (June 30, 2025 close) = **$1,466M** of stock, plus $24M of converted Redfin equity awards and $252M cash to settle Redfin's term loan → **total acquisition-date consideration of ~$1,742M** (per Rocket's accounting, ASC 805).\n- That works out to roughly **$11.24 of Rocket stock per Redfin share** at close (0.7926 × $14.18) — i.e., Redfin holders ultimately received somewhat less than the headline $12.50, and Rocket's 10-K describes the transaction as \"approximately $1,742\" million in fair value of consideration transferred.\n\n**Sources:** [Rocket press release, 3/10/25](https://ir.rocketcompanies.com/news-and-events/press-releases/press-release-details/2025/Rocket-Companies-to-Acquire-Redfin-Accelerating-Purchase-Mortgage-Strategy/default.aspx) · [Redfin Form 425 FAQ, 3/26/25](https://www.sec.gov/Archives/edgar/data/1382821/000162828025014827/redfin-425faqsround2.htm) · [Rocket Form 8-K, 7/1/25](https://www.sec.gov/Archives/edgar/data/1805284/000110465925064824/tm2519538d1_8k.htm) · [Rocket FY2025 10-K purchase accounting](https://www.sec.gov/Archives/edgar/data/1805284/000162828026013283/R9.htm)",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 60364,
+    "output_tokens": 2517,
+    "cache_hit_tokens": 38656,
+    "cache_miss_tokens": 21708,
+    "reasoning_tokens": 1345
+  },
+  "model_cost_usd": 0.004882368,
+  "tool_cost_usd": {
+    "exa": 0.022,
+    "e2b": 0.000221
+  },
+  "cost_usd": 0.027103386557167264,
+  "latency_s": 20.605730791925453,
+  "tool_calls": {
+    "total": 8,
+    "web_search": 5,
+    "web_fetch": 2,
+    "code_execution": 1
+  },
+  "n_tool_calls": 8,
+  "n_refused": 0,
+  "n_turns": 5,
+  "error": null,
+  "overall": "wrong",
+  "judge_reason": "All required deal figures are stated, but the added claim that Redfin holders received ~$11.24/share at closing contradicts the official $12.50 per share acquisition price.",
+  "judge_run_overalls": [
+    "wrong",
+    "right",
+    "wrong"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "vals-19",
+  "type": "Numerical Reasoning",
+  "question": "As of April 07, 2025, what is the total value of MSCI's operating leases (in $'s, thousands) that are maturing in the next three years? What percentage?",
+  "answer": "$85,002 thousands which is 51.3% of leases",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "$85,002 thousands which is 51.3% of leases"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "$85,002 thousands which is 51.3% of leases"
+    }
+  ],
+  "model_answer": "Based on MSCI’s FY2024 10-K (latest filing as of April 7, 2025), operating lease maturities for the next three years are:\n\n- 2025: **$30,220 thousand**\n- 2026: **$30,361 thousand**\n- 2027: **$24,421 thousand**\n\n**Total next three years = $85,002 thousand** (about **$85.0 million**).\n\nAs a percentage of total operating lease payments of **$165,605 thousand**:\n\n**$85,002 / $165,605 ≈ 51.3%**\n\nSo, the total is **$85,002 thousand**, or **51.3%** of total operating lease payments.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 15242,
+    "output_tokens": 1269,
+    "cache_hit_tokens": 8320,
+    "cache_miss_tokens": 6922,
+    "reasoning_tokens": 934
+  },
+  "model_cost_usd": 0.0018246599999999997,
+  "tool_cost_usd": {
+    "exa": 0.009,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.01082466,
+  "latency_s": 10.179272082983516,
+  "tool_calls": {
+    "total": 3,
+    "web_search": 2,
+    "web_fetch": 1
+  },
+  "n_tool_calls": 3,
+  "n_refused": 0,
+  "n_turns": 4,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "The model gives the exact official value and percentage.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

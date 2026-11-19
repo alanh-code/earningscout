@@ -1,0 +1,55 @@
+{
+  "id": "vals-03",
+  "type": "Beat or Miss",
+  "question": "Did TJX beat or miss its Q4 FY 2025 pre-tax margin guidance? Express result as BPS difference",
+  "answer": "80bps beat from low end and 70bps beat from high end",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "80bps beat from low end"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "70bps beat from high end"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "80bps beat from low end and 70bps beat from high end"
+    }
+  ],
+  "model_answer": "**TJX beat its Q4 FY2025 pre-tax margin guidance.**\n\n- **Q4 FY2025 actual pre-tax margin:** **11.6%**\n- **Guidance:** **10.8%–10.9%**\n- **Result vs. high end:** **+70 bps** (11.6% − 10.9%)\n- **Result vs. guidance midpoint:** **+75 bps**\n- **Result vs. low end:** **+80 bps**\n\nTJX itself described the result as **70 bps above the high end of its plan**.\n\nSources: [TJX Q4 FY25 results](https://investor.tjx.com/news-releases/news-release-details/tjx-companies-inc-reports-q4-and-fy25-results-q4-comp-store), [TJX Q3 FY25 guidance](https://investor.tjx.com/news-releases/news-release-details/tjx-companies-inc-reports-q3-fy25-results-comp-store-sales)",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 25683,
+    "output_tokens": 1203,
+    "cache_hit_tokens": 8320,
+    "cache_miss_tokens": 17363,
+    "reasoning_tokens": 765
+  },
+  "model_cost_usd": 0.00335121,
+  "tool_cost_usd": {
+    "exa": 0.013,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.01635121,
+  "latency_s": 11.96697137504816,
+  "tool_calls": {
+    "total": 4,
+    "web_search": 3,
+    "web_fetch": 1
+  },
+  "n_tool_calls": 4,
+  "n_refused": 0,
+  "n_turns": 3,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "States a 70bps beat vs high end and an 80bps beat vs low end, matching both official checks.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

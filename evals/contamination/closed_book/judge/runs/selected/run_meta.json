@@ -1,14 +1,18 @@
 {
-  "model": "claude-opus-5-5",
+  "model": "deepseek-v4-pro",
   "prompt": "evals/contamination/closed_book/judge/judge_prompt_strict.md",
   "guide": "evals/contamination/closed_book/grading_guide_strict.md",
-  "tokens_in": 242529,
-  "tokens_out": 23634,
-  "cached_input": 0,
+  "tokens_in": 171720,
+  "tokens_out": 59335,
+  "cached_input": 137472,
   "cache_write": 0,
   "retries": 0,
   "failures": [],
-  "flags": [],
+  "flags": [
+    "vals-16 run 1: rubric_fraction stated 0.2727 vs 0.2727 from checks",
+    "vals-16 run 2: rubric_fraction stated 0.2727 vs 0.2727 from checks",
+    "vals-16 run 3: rubric_fraction stated 0.2727 vs 0.2727 from checks"
+  ],
   "ties": [],
-  "cost_usd": 1.442796
+  "cost_usd": 0.143111364
 }

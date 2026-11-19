@@ -1,0 +1,68 @@
+{
+  "id": "vals-14",
+  "type": "Trends",
+  "question": "Approximate Zillow's Free Cash Flow as CFO - Capex. What was the trend of FCF margin from FY2022 to FY2024?",
+  "answer": "2024: 12.7%\n2023: 11.3%\n2022: 24.8%\n\nFCF margin has declined substantially since 2022 and seems to have settled into a new normal of low teens percent.",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "2024 FCF margin: 12.7%"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "2023 FCF margin: 11.3%"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "2022 FCF margin: 24.8%"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "FCF margin has declined substantially since 2022"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "FCF margin settled into low teens percent in 2023 and 2024"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "2024: 12.7%\n2023: 11.3%\n2022: 24.8%\n\nFCF margin has declined substantially since 2022 and seems to have settled into a new normal of low teens percent."
+    }
+  ],
+  "model_answer": "Using **CFO − purchases of property & equipment** (USD millions):\n\n| | FY2022 | FY2023 | FY2024 |\n|---|---:|---:|---:|\n| Cash flow from operations | $4,504 | $354 | $428 |\n| Capex (PP&E purchases) | $(115) | $(135) | $(143) |\n| **Approx. FCF** | **$4,389** | **$219** | **$285** |\n| Revenue | $1,958 | $1,945 | $2,236 |\n| **FCF margin** | **~224%** | **~11.3%** | **~12.7%** |\n\n**Trend:** FCF margin collapsed from an anomalous ~224% in FY2022 to ~11% in FY2023, then improved modestly to ~13% in FY2024. The FY2022 figure is distorted by roughly **$3.9 billion of inventory liquidation** as Zillow wound down its iBuying operations, which massively inflated CFO. Excluding that, FY2022 FCF margin would have been far lower—roughly mid-20s%. So the meaningful trend is: **a huge 2022-to-2023 normalization downward, followed by a small 2024 recovery driven by 15% revenue growth and CFO up 21% while capex rose only ~6%.**\n\nIf intangible purchases ($25M, $30M, $28M) are also treated as capex, FCF would be **$4,364M / $189M / $257M**, or margins of **~223% / ~9.7% / ~11.5%**—same trend.\n\nSources: [Zillow FY2024 10-K](https://www.sec.gov/Archives/edgar/data/1617640/000161764025000016/z-20241231.htm), [FY2024 earnings release](https://investors.zillowgroup.com/news-and-events/news/news-details/2025/Zillow-Group-Reports-Fourth-Quarter-and-Full-Year-2024-Financial-Results/default.aspx).",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 92510,
+    "output_tokens": 3561,
+    "cache_hit_tokens": 60928,
+    "cache_miss_tokens": 31582,
+    "reasoning_tokens": 2452
+  },
+  "model_cost_usd": 0.007056683999999999,
+  "tool_cost_usd": {
+    "exa": 0.025,
+    "e2b": 0.00123
+  },
+  "cost_usd": 0.03328714394795914,
+  "latency_s": 46.3878215419827,
+  "tool_calls": {
+    "total": 8,
+    "web_search": 6,
+    "code_execution": 1,
+    "web_fetch": 1
+  },
+  "n_tool_calls": 8,
+  "n_refused": 0,
+  "n_turns": 6,
+  "error": null,
+  "overall": "wrong",
+  "judge_reason": "Contradiction triggered by stated FY2022 FCF margin ~224% versus official 24.8%, despite otherwise matching margins/trend.",
+  "judge_run_overalls": [
+    "wrong",
+    "wrong",
+    "wrong"
+  ]
+}

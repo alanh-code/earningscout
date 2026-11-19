@@ -1,0 +1,54 @@
+{
+  "id": "vals-03",
+  "type": "Beat or Miss",
+  "question": "Did TJX beat or miss its Q4 FY 2025 pre-tax margin guidance? Express result as BPS difference",
+  "answer": "80bps beat from low end and 70bps beat from high end",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "80bps beat from low end"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "70bps beat from high end"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "80bps beat from low end and 70bps beat from high end"
+    }
+  ],
+  "model_answer": "TJX **beat** its Q4 FY2025 pre-tax margin guidance.\n\n- **Guidance:** 10.8%–10.9%\n- **Actual:** 11.6%\n- **Beat vs. high end:** **+70 bps**  \n  - vs. low end: +80 bps  \n  - vs. midpoint: +75 bps\n\nTJX explicitly stated the result was **70 bps above the high end of its plan**.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 20345,
+    "output_tokens": 1035,
+    "cache_hit_tokens": 7936,
+    "cache_miss_tokens": 12409,
+    "reasoning_tokens": 729
+  },
+  "model_cost_usd": 0.0025061579999999996,
+  "tool_cost_usd": {
+    "exa": 0.016,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.018506158,
+  "latency_s": 9.284442458068952,
+  "tool_calls": {
+    "total": 4,
+    "web_search": 4
+  },
+  "n_tool_calls": 4,
+  "n_refused": 0,
+  "n_turns": 3,
+  "error": null,
+  "overall": "right",
+  "judge_reason": "Correctly identifies the result as a beat with +80 bps from the low end and +70 bps from the high end.",
+  "judge_run_overalls": [
+    "right",
+    "right",
+    "right"
+  ]
+}

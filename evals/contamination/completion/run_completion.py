@@ -7,9 +7,10 @@ and is asked for the rest, two ways:
   guided   names the source (the Vals AI Finance Agent public set)
   general  asks only to complete the question
 
-Every call runs in a closed environment: the Anthropic Messages API directly,
-no tools, no system prompt, no files, one fresh request per prompt, thinking
-off. Every response is checked, and the run stops on the first violation.
+Every call runs in a closed environment: the provider's chat completions API
+directly (agent/llm.py), no tools, no system prompt, no files, one fresh
+request per prompt, thinking off, temperature 0, seed 42. Every response is
+checked, and the run stops on the first violation.
 
 Usage:
   .venv/bin/python evals/contamination/completion/run_completion.py --dry-run
@@ -28,17 +29,22 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from agent import llm  # noqa: E402
+from agent.protocol import SEED  # noqa: E402
+
 VALS = ROOT / "data" / "vals" / "public.csv"
 EVAL_DIR = ROOT / "evals" / "contamination"
 CONTROL = EVAL_DIR / "controls.csv"
 SELECTED = EVAL_DIR / "questions.csv"
 RUNS = EVAL_DIR / "completion" / "runs"
 
-MODEL = "claude-sonnet-5-5"
-API_URL = "https://api.anthropic.com"
+MODEL = llm.AGENT_MODEL
 MAX_TOKENS = 1024
+TEMPERATURE = 0
 CUT = 0.6
-PRICE_IN, PRICE_OUT = 2.00, 10.00  # USD per million tokens
 EMBED_MODEL = "all-mpnet-base-v2"
 
 PROMPTS = {
@@ -96,46 +102,23 @@ def cut(question: str, share: float = CUT) -> tuple[str, str]:
     return " ".join(words[:k]), " ".join(words[k:])
 
 
-def api_key() -> str:
-    env = ROOT / ".env"
-    if env.exists():
-        for line in env.read_text().splitlines():
-            if line.startswith("ANTHROPIC_API_KEY="):
-                value = line.split("=", 1)[1].strip().strip('"').strip("'")
-                if value:
-                    return value
-    sys.exit("ANTHROPIC_API_KEY is not set in .env")
-
-
 # Closed environment
 
 
 def build_request(prompt: str) -> dict:
     # No tools, no system prompt, no files. Thinking off, so the answer is recall only.
-    return {
-        "model": MODEL,
-        "max_tokens": MAX_TOKENS,
-        "thinking": {"type": "between_tools"},
-        "messages": [{"role": "user", "content": prompt}],
-    }
+    return llm.build_request(
+        MODEL,
+        [{"role": "user", "content": prompt}],
+        max_tokens=MAX_TOKENS,
+        thinking=False,
+        temperature=TEMPERATURE,
+        seed=SEED,
+    )
 
 
 def check_closed(request: dict, response: dict) -> None:
-    problems = []
-    if set(request) - {"model", "max_tokens", "thinking", "messages"}:
-        problems.append(f"unexpected request fields {sorted(set(request))}")
-    if len(request["messages"]) != 1:
-        problems.append("request is not a single fresh message")
-    types = [b.get("type") for b in response.get("content", [])]
-    if any(t != "text" for t in types):
-        problems.append(f"non text content blocks {types}")
-    if response.get("stop_reason") != "end_turn":
-        problems.append(f"stop_reason {response.get('stop_reason')}")
-    server_tools = (response.get("usage") or {}).get("server_tool_use") or {}
-    if any(v for v in server_tools.values() if isinstance(v, (int, float))):
-        problems.append(f"server tool use {server_tools}")
-    if not str(response.get("model", "")).startswith(MODEL):
-        problems.append(f"answered by {response.get('model')}")
+    problems = llm.closed_violations(request, response, MODEL)
     if problems:
         raise ClosedEnvironmentError("; ".join(problems))
 
@@ -170,8 +153,8 @@ def strip_echo(prefix: str, completion: str) -> str:
 # Run
 
 
-def call(client, request: dict) -> dict:
-    return client.messages.create(**request).model_dump(mode="json")
+def call(request: dict) -> dict:
+    return llm.send(request)
 
 
 def summarize(rows: list[dict], selected: set[str]) -> str:
@@ -244,6 +227,9 @@ def main() -> None:
         "--dry-run", action="store_true", help="print prompts, call nothing"
     )
     ap.add_argument("--name", help="folder name under runs/ for a new run")
+    ap.add_argument(
+        "--allow-peak", action="store_true", help="run even in provider peak hours"
+    )
     args = ap.parse_args()
 
     include_control = CONTROL.exists() and not args.vals_only
@@ -274,34 +260,38 @@ def main() -> None:
         sys.exit("a new run requires --name (a role name, not a timestamp)")
     name = run_folder_name(args.name)
 
-    import anthropic
-
-    # Explicit key and URL, so nothing from the surrounding shell or app changes where calls go.
-    client = anthropic.Anthropic(api_key=api_key(), base_url=API_URL)
+    llm.resolve_model(MODEL)
+    llm.require_off_peak([MODEL], args.allow_peak)
     scorer = Scorer()
     run_dir = RUNS / name
     if run_dir.exists() and any(run_dir.iterdir()):
         sys.exit(f"{run_dir} already exists")
     (run_dir / "raw").mkdir(parents=True)
 
-    rows, tokens_in, tokens_out = [], 0, 0
+    rows, tokens_in, tokens_out, cost = [], 0, 0, 0.0
     for q in items:
         prefix, hidden = cut(q["question"], args.cut)
         for mode in modes:
             request = build_request(PROMPTS[mode].format(prefix=prefix))
-            response = call(client, request)
+            out = call(request)
+            response = out["response"]
             (run_dir / "raw" / f"{q['id']}__{mode}.json").write_text(
                 json.dumps(
-                    {"request": request, "response": response},
+                    {
+                        "request": request,
+                        "response": response,
+                        "cost_usd": out["cost_usd"],
+                    },
                     indent=2,
                     ensure_ascii=False,
                 )
             )
             check_closed(request, response)
-            completion = "".join(b["text"] for b in response["content"])
-            usage = response["usage"]
+            completion = llm.response_text(response)
+            usage = out["usage"]
             tokens_in += usage["input_tokens"]
             tokens_out += usage["output_tokens"]
+            cost += out["cost_usd"]
             rows.append(
                 {
                     "id": q["id"],
@@ -324,10 +314,9 @@ def main() -> None:
         writer = csv.DictWriter(f, fieldnames=list(rows[0]))
         writer.writeheader()
         writer.writerows(rows)
-    cost = tokens_in / 1e6 * PRICE_IN + tokens_out / 1e6 * PRICE_OUT
     summary = (
-        f"# Completion test run {name}\n\nModel `{MODEL}`, {len(rows)} requests, all passed the closed "
-        f"environment checks. Shown: first {args.cut:.0%} of each question. Tokens: {tokens_in} in, {tokens_out} out. Cost about ${cost:.2f}.\n\n"
+        f"# Completion test run {name}\n\nModel `{MODEL}`, thinking off, temperature {TEMPERATURE}, seed {SEED}. {len(rows)} requests, all passed the closed "
+        f"environment checks. Shown: first {args.cut:.0%} of each question. Tokens: {tokens_in} in, {tokens_out} out. Cost about ${cost:.4f}.\n\n"
         f"Score: embedding cosine similarity, `{EMBED_MODEL}`, sentence-transformers {scorer.version}.\n\n"
         + summarize(rows, selected)
         + "\n"

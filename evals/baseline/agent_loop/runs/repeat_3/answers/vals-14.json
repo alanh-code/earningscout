@@ -1,0 +1,67 @@
+{
+  "id": "vals-14",
+  "type": "Trends",
+  "question": "Approximate Zillow's Free Cash Flow as CFO - Capex. What was the trend of FCF margin from FY2022 to FY2024?",
+  "answer": "2024: 12.7%\n2023: 11.3%\n2022: 24.8%\n\nFCF margin has declined substantially since 2022 and seems to have settled into a new normal of low teens percent.",
+  "rubric": [
+    {
+      "operator": "correctness",
+      "criteria": "2024 FCF margin: 12.7%"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "2023 FCF margin: 11.3%"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "2022 FCF margin: 24.8%"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "FCF margin has declined substantially since 2022"
+    },
+    {
+      "operator": "correctness",
+      "criteria": "FCF margin settled into low teens percent in 2023 and 2024"
+    },
+    {
+      "operator": "contradiction",
+      "criteria": "2024: 12.7%\n2023: 11.3%\n2022: 24.8%\n\nFCF margin has declined substantially since 2022 and seems to have settled into a new normal of low teens percent."
+    }
+  ],
+  "model_answer": "Using **FCF = CFO − Capex** and dividing by total revenue:\n\n| Fiscal year | Revenue | CFO | Capex | FCF | **FCF margin** |\n|---|---:|---:|---:|---:|---:|\n| FY2022 | $1,958M | $4,504M | $115M | **$4,389M** | **~224%** |\n| FY2023 | $1,945M | $354M | $135M | **$219M** | **~11.3%** |\n| FY2024 | $2,236M | $428M | $143M | **$285M** | **~12.7%** |\n\n**Trend:** FCF margin fell dramatically from FY2022 to FY2023, then improved modestly in FY2024.\n\n- **FY2022’s ~224% margin is not a normal operating result.** CFO was inflated by roughly **$3.9B of working-capital benefit from liquidating Zillow’s Homes/iBuying inventory** as it exited that business.\n- **FY2023 normalized to ~11%** as that one-time working-capital boost reversed; FCF fell to about **$219M**.\n- **FY2024 improved to ~13%** as revenue grew 15% and CFO rose about 21%, while capex increased only modestly. FCF rose to about **$285M**.\n\nSo the underlying trend is **from a distorted, one-time-inflated FY2022 margin to low-double-digit FCF margins in FY2023–FY2024, with a modest improvement in FY2024**.",
+  "stop_reason": "stop",
+  "reported_models": [
+    "deepseek-flash"
+  ],
+  "tokens": {
+    "input_tokens": 27915,
+    "output_tokens": 2155,
+    "cache_hit_tokens": 10624,
+    "cache_miss_tokens": 17291,
+    "reasoning_tokens": 1637
+  },
+  "model_cost_usd": 0.003918522,
+  "tool_cost_usd": {
+    "exa": 0.009,
+    "e2b": 0.0
+  },
+  "cost_usd": 0.012918522000000002,
+  "latency_s": 15.252528291079216,
+  "tool_calls": {
+    "total": 3,
+    "web_search": 2,
+    "web_fetch": 1
+  },
+  "n_tool_calls": 3,
+  "n_refused": 0,
+  "n_turns": 3,
+  "error": null,
+  "overall": "wrong",
+  "judge_reason": "2023 and 2024 margins match and trend wording is acceptable, but FY2022 margin is ~224% instead of 24.8%, triggering contradiction.",
+  "judge_run_overalls": [
+    "wrong",
+    "wrong",
+    "wrong"
+  ]
+}
