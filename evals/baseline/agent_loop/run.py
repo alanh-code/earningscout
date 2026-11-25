@@ -252,6 +252,15 @@ def rewrite_summary(run_dir: Path) -> None:
     write_summary(run_dir, list(records.values()), meta)
 
 
+def display_run_dir(run_dir: Path) -> str:
+    """Repo-relative path for a run folder, even when --run-dir was relative."""
+    path = Path(run_dir).resolve()
+    try:
+        return str(path.relative_to(ROOT))
+    except ValueError:
+        return str(path)
+
+
 def finish(
     run_dir: Path, records: list[dict], meta: dict, workers: int, cap: float
 ) -> None:
@@ -273,7 +282,7 @@ def finish(
     common.write_json(run_dir / "run_meta.json", meta)
     write_summary(run_dir, records, meta)
     print(
-        f"agent ${spent:.4f} + judge ${judge_cost:.4f} = ${spent + judge_cost:.4f}. Saved to {run_dir.relative_to(ROOT)}",
+        f"agent ${spent:.4f} + judge ${judge_cost:.4f} = ${spent + judge_cost:.4f}. Saved to {display_run_dir(run_dir)}",
         flush=True,
     )
 

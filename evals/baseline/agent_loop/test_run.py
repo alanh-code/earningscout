@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import os
 import tempfile
 import unittest
 from pathlib import Path
@@ -97,6 +98,32 @@ class DefaultQuestionSet(unittest.TestCase):
         self.assertEqual(meta["ids"], expected)
         records = finish.call_args.args[1]
         self.assertEqual([r["id"] for r in records], expected)
+
+
+class DisplayRunDir(unittest.TestCase):
+    def test_absolute_path_under_root(self):
+        path = run.ROOT / "evals" / "baseline" / "agent_loop" / "runs" / "example"
+        self.assertEqual(
+            run.display_run_dir(path),
+            "evals/baseline/agent_loop/runs/example",
+        )
+
+    def test_relative_path_from_repo_root(self):
+        rel = Path("evals/baseline/agent_loop/runs/example")
+        prev = Path.cwd()
+        os.chdir(run.ROOT)
+        try:
+            self.assertEqual(
+                run.display_run_dir(rel),
+                "evals/baseline/agent_loop/runs/example",
+            )
+        finally:
+            os.chdir(prev)
+
+    def test_path_outside_root_does_not_raise(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "outside"
+            self.assertEqual(run.display_run_dir(path), str(path.resolve()))
 
 
 if __name__ == "__main__":
