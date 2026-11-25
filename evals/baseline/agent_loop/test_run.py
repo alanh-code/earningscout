@@ -61,5 +61,43 @@ class Grade(unittest.TestCase):
             self.assertFalse(run.pass_path(run_dir, 0, "vals-02").exists())
 
 
+class DefaultQuestionSet(unittest.TestCase):
+    def test_scored_items_drop_exclusions(self):
+        items = [{"id": "vals-01"}, {"id": "vals-02"}, {"id": "vals-03"}]
+        got = run.scored_items(items, {"vals-02": "reason"})
+        self.assertEqual([q["id"] for q in got], ["vals-01", "vals-03"])
+
+    def test_new_run_defaults_to_the_scored_set(self):
+        all_ids = [q["id"] for q in run.common.load_questions()]
+        excluded = run.common.load_exclusions()
+        expected = [q for q in all_ids if q not in excluded]
+        self.assertTrue(excluded)
+
+        def fake_agent(item):
+            return {
+                "id": item["id"],
+                "cost_usd": 0.0,
+                "latency_s": 0.0,
+                "n_turns": 1,
+                "tool_calls": {},
+                "n_refused": 0,
+            }
+
+        with tempfile.TemporaryDirectory() as tmp:
+            with (
+                mock.patch.object(run, "RUNS", Path(tmp)),
+                mock.patch.object(run.llm, "resolve_model"),
+                mock.patch.object(run.llm, "require_off_peak"),
+                mock.patch.object(run, "agent_record", side_effect=fake_agent),
+                mock.patch.object(run, "finish") as finish,
+                mock.patch("sys.argv", ["run.py", "--name", "default_set"]),
+            ):
+                run.main()
+            meta = json.loads((Path(tmp) / "default_set" / "run_meta.json").read_text())
+        self.assertEqual(meta["ids"], expected)
+        records = finish.call_args.args[1]
+        self.assertEqual([r["id"] for r in records], expected)
+
+
 if __name__ == "__main__":
     unittest.main()

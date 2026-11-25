@@ -1,3 +1,8 @@
 id,reason
 vals-11,answer depends on an unstated relative time period
 vals-50,answer depends on an unstated relative time period
+vals-12,official answer uses an unstated exchange rate rather than the company's stated assumption
+vals-14,official answer applies an unstated adjustment that contradicts the question's own formula
+vals-16,official answer misstates a conditional dividend restriction in the filing as absolute
+vals-22,official answer divides by rounded figures rather than the filing's reported figures
+vals-43,official segment growth figures contradict the annual report

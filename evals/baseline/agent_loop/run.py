@@ -196,7 +196,7 @@ def write_summary(run_dir: Path, records: list[dict], meta: dict) -> None:
         f"Agent `{meta['model']}` ({meta['model_version']}) in the tool loop from `agent/`, {len(records)} questions from `data/vals/public.csv`.",
         f"Judge: `{meta['judge_model']}`, `judge_prompt_strict.md`, {JUDGE_PASSES} passes, majority vote.",
         f'Protocol as-of date: {PROTOCOL_AS_OF}. It is injected into the system prompt when the question contains "current"; a date given in the question takes precedence.',
-        f"Accuracy is scored on {n} questions after excluding {len(records) - n} listed in `evals/baseline/excluded_questions.csv`.",
+        f"Accuracy is scored on {n} questions; {len(records) - n} answered questions are excluded (`evals/baseline/excluded_questions.csv`).",
         f"Models reported by the API: agent {', '.join(meta.get('reported_agent_models') or [])}; judge {', '.join(meta.get('reported_judge_models') or [])}.",
         "",
         "## Tools",
@@ -226,6 +226,11 @@ def write_summary(run_dir: Path, records: list[dict], meta: dict) -> None:
             f"{r.get('n_tool_calls') or 0} | {r.get('n_refused') or 0} |"
         )
     (run_dir / "summary.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def scored_items(items: list[dict], exclusions: dict[str, str]) -> list[dict]:
+    """The default question set: every public question except the excluded ones."""
+    return [q for q in items if q["id"] not in exclusions]
 
 
 def load_answers(run_dir: Path) -> list[dict]:
@@ -280,7 +285,10 @@ def main() -> None:
     ap.add_argument(
         "--name", help="folder name under runs/ (a role name, not a timestamp)"
     )
-    ap.add_argument("--ids", help="comma separated question ids (default: all 50)")
+    ap.add_argument(
+        "--ids",
+        help="comma separated question ids (default: the scored set, all questions minus excluded_questions.csv)",
+    )
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument(
         "--spend-cap",
@@ -328,7 +336,7 @@ def main() -> None:
         if not args.name:
             sys.exit("a new run requires --name (a role name, not a timestamp)")
         name = common.run_folder_name(args.name)
-        items = all_items
+        items = scored_items(all_items, common.load_exclusions())
         if args.ids:
             wanted = args.ids.split(",")
             if missing := [i for i in wanted if i not in by_id]:

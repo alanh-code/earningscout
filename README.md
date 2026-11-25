@@ -23,7 +23,7 @@ Model names, prices and peak hours live in `agent/llm.py`; the scoring protocol 
 * **As-of date:** Thursday, May 1, 2025, after the newest as-of in the gold set (April 7, 2025). It is added to the system prompt when a question says "current"; a date in the question takes precedence.
 * **Blocklist:** search results and fetches never reach the gold answers. Blocked: the benchmark repo and dataset hosts (GitHub, Hugging Face, vals.ai, Zenodo and their mirrors), sites that redistribute the dataset or tasks, GitHub CDN and proxy mirrors, the DOI prefixes that resolve to the dataset copies, and agent skills tuned to the benchmark. A URL that wraps a blocked URL (archives, proxies) or names the gold repo is refused too. The list is `BLOCKED_DOMAINS` in `agent/protocol.py`; every run gets a leak scan of its saved tool traces.
 * **Budgets per question:** 15 searches, 15 fetches, 30 code runs, 40 turns; the last turn must answer.
-* **Scoring:** a question is right when every correctness check in its rubric passes and no contradiction is triggered. The verifier wins on decided numeric correctness checks; the judge wins on contradictions and non-numeric checks. Two questions whose answers depend on an unstated relative time period are not scored (`evals/baseline/excluded_questions.csv`), so 48 are scored.
+* **Scoring:** a question is right when every correctness check in its rubric passes and no contradiction is triggered. The verifier wins on decided numeric correctness checks; the judge wins on contradictions and non-numeric checks. Seven questions are not scored (`evals/baseline/excluded_questions.csv`): two whose answers depend on an unstated relative time period, and five whose official answers contradict the filings or the question's own definition. 43 are scored.
 
 ## Results
 
@@ -31,44 +31,43 @@ Model names, prices and peak hours live in `agent/llm.py`; the scoring protocol 
 
 **Judge vs human** on the 15 hand-graded answers (`evals/contamination/closed_book/judge/runs/strict-calibration`): overall 13/15 (Cohen's kappa 0.727), rubric checks 68/73 (kappa 0.858). Both overall disagreements are the judge calling a contradiction the human did not, so the judge errs strict.
 
-**Baseline** (`evals/baseline/agent_loop/runs/`), 3 runs on the 48 scored questions:
+**Baseline** (`evals/baseline/agent_loop/runs/`), 3 runs on the 43 scored questions:
 
 | Run | Right | Accuracy | Cost |
 |---|---:|---:|---:|
-| `official` | 32/48 | 66.7% | $2.00 |
-| `repeat_2` | 31/48 | 64.6% | $2.20 |
-| `repeat_3` | 30/48 | 62.5% | $2.02 |
-| Mean | | **64.6%** (SD 2.1 pts) | about $2 per run |
+| `official` | 32/43 | 74.4% | $2.00 |
+| `repeat_2` | 31/43 | 72.1% | $2.20 |
+| `repeat_3` | 30/43 | 69.8% | $2.02 |
+| Mean | | **72.1%** (SD 2.3 pts) | about $2 per run |
 
-Verifier and judge agree on 94.9% of decided numeric checks (464/489). The leak scan found no gold-source hits in any run. About half of the cost is Exa and over a third is the judge.
+Verifier and judge agree on 95.2% of decided numeric checks (375/394). The leak scan found no gold-source hits in any run. About half of the cost is Exa and over a third is the judge.
 
 By question type (3 runs pooled):
 
 | Type | Right | Accuracy |
 |---|---:|---:|
-| Numerical Reasoning | 21/24 | 88% |
+| Numerical Reasoning | 21/21 | 100% |
+| Financial Modeling, Projections | 6/6 | 100% |
 | Simple retrieval, Qualitative | 23/27 | 85% |
 | Simple retrieval, Quantitative | 20/24 | 83% |
 | Adjustments | 7/12 | 58% |
 | Beat or Miss | 10/18 | 56% |
-| Financial Modeling, Projections | 6/12 | 50% |
-| Complex Retrieval | 3/9 | 33% |
-| Trends | 3/9 | 33% |
+| Complex Retrieval | 3/6 | 50% |
+| Trends | 3/6 | 50% |
 | Market Analysis | 0/9 | 0% |
 
-**Failure taxonomy** (`evals/baseline/agent_loop/failure_taxonomy.md`), primary cause of the 51 wrong answers across the 3 runs:
+**Failure taxonomy** (`evals/baseline/agent_loop/failure_taxonomy.md`), primary cause of the 36 wrong answers across the 3 runs:
 
 | Cause | Count |
 |---|---:|
-| Gold answer is the problem (rounding, narrower than the question) | 11 |
-| Different but stated interpretation (basis, peer set, scope) | 10 |
 | Data newer than the question implies | 10 |
-| Different guidance reference in beat/miss | 7 |
-| Retrieved but left out of the answer | 5 |
-| Never retrieved (stopped at snippets or the start of a filing) | 4 |
-| Misread source | 4 |
+| Retrieved but left out of the answer | 9 |
+| Different but stated interpretation (basis, peer set, scope) | 9 |
+| Different guidance reference in beat/miss | 4 |
+| Never retrieved (stopped at snippets or the start of a filing) | 2 |
+| Misread source | 2 |
 
-15 questions are wrong in all 3 runs.
+10 questions are wrong in all 3 runs.
 
 ## Layout
 

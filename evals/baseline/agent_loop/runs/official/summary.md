@@ -3,7 +3,7 @@
 Agent `deepseek-flash` (DeepSeek-V4.1-Flash) in the tool loop from `agent/`, 48 questions from `data/vals/public.csv`.
 Judge: `deepseek-v4-pro`, `judge_prompt_strict.md`, 3 passes, majority vote.
 Protocol as-of date: Thursday, May 1, 2025. It is injected into the system prompt when the question contains "current"; a date given in the question takes precedence.
-Accuracy is scored on 48 questions after excluding 0 listed in `evals/baseline/excluded_questions.csv`.
+Accuracy is scored on 43 questions; 5 answered questions are excluded (`evals/baseline/excluded_questions.csv`).
 Models reported by the API: agent deepseek-flash; judge deepseek-v4-pro.
 
 ## Tools
@@ -16,8 +16,8 @@ Models reported by the API: agent deepseek-flash; judge deepseek-v4-pro.
 
 ## Accuracy
 
-n=48. Right 32, wrong 16, abstain 0.
-Accuracy 66.7% (32/48), bootstrap 95% CI 54.2–79.2%.
+n=43. Right 32, wrong 11, abstain 0.
+Accuracy 74.4% (32/43), bootstrap 95% CI 60.5–86.0%.
 
 ## Cost and usage
 
@@ -35,17 +35,17 @@ Total cost about $2.0021 (agent $1.2184 including tools, judge $0.7837).
 | vals-08 | Simple retrieval - Quantitative | wrong | yes | $0.0340 | $0.0060 | $0.0280 | $0.0000 | 19.1 | 6 | 10 | 0 |
 | vals-09 | Beat or Miss | right | yes | $0.0169 | $0.0039 | $0.0130 | $0.0000 | 11.5 | 3 | 4 | 0 |
 | vals-10 | Numerical Reasoning | right | yes | $0.0049 | $0.0008 | $0.0040 | $0.0001 | 5.1 | 2 | 2 | 0 |
-| vals-12 | Financial Modeling  Projections | wrong | yes | $0.0175 | $0.0048 | $0.0120 | $0.0007 | 35.8 | 5 | 6 | 0 |
+| vals-12 | Financial Modeling  Projections | wrong | no | $0.0175 | $0.0048 | $0.0120 | $0.0007 | 35.8 | 5 | 6 | 0 |
 | vals-13 | Numerical Reasoning | right | yes | $0.0096 | $0.0015 | $0.0080 | $0.0001 | 7.1 | 3 | 3 | 0 |
-| vals-14 | Trends | wrong | yes | $0.0333 | $0.0071 | $0.0250 | $0.0012 | 46.4 | 6 | 8 | 0 |
+| vals-14 | Trends | wrong | no | $0.0333 | $0.0071 | $0.0250 | $0.0012 | 46.4 | 6 | 8 | 0 |
 | vals-15 | Numerical Reasoning | right | yes | $0.0101 | $0.0020 | $0.0080 | $0.0001 | 10.6 | 3 | 3 | 0 |
-| vals-16 | Complex Retrieval | wrong | yes | $0.0198 | $0.0048 | $0.0150 | $0.0000 | 17.1 | 4 | 6 | 0 |
+| vals-16 | Complex Retrieval | wrong | no | $0.0198 | $0.0048 | $0.0150 | $0.0000 | 17.1 | 4 | 6 | 0 |
 | vals-17 | Trends | right | yes | $0.0097 | $0.0016 | $0.0080 | $0.0001 | 8.4 | 3 | 3 | 0 |
 | vals-18 | Simple retrieval - Qualitative | right | yes | $0.0264 | $0.0074 | $0.0190 | $0.0000 | 25.7 | 5 | 7 | 0 |
 | vals-19 | Numerical Reasoning | right | yes | $0.0184 | $0.0033 | $0.0150 | $0.0001 | 17.4 | 5 | 7 | 0 |
 | vals-20 | Numerical Reasoning | right | yes | $0.0096 | $0.0016 | $0.0080 | $0.0000 | 5.2 | 2 | 2 | 0 |
 | vals-21 | Simple retrieval - Qualitative | right | yes | $0.0720 | $0.0155 | $0.0540 | $0.0025 | 90.4 | 18 | 27 | 0 |
-| vals-22 | Numerical Reasoning | wrong | yes | $0.0238 | $0.0035 | $0.0200 | $0.0002 | 12.2 | 5 | 7 | 0 |
+| vals-22 | Numerical Reasoning | wrong | no | $0.0238 | $0.0035 | $0.0200 | $0.0002 | 12.2 | 5 | 7 | 0 |
 | vals-23 | Simple retrieval - Qualitative | wrong | yes | $0.0148 | $0.0018 | $0.0130 | $0.0000 | 8.8 | 3 | 4 | 0 |
 | vals-24 | Numerical Reasoning | right | yes | $0.0098 | $0.0018 | $0.0080 | $0.0000 | 8.2 | 2 | 2 | 0 |
 | vals-25 | Simple retrieval - Qualitative | wrong | yes | $0.0899 | $0.0217 | $0.0650 | $0.0032 | 109.0 | 17 | 30 | 0 |
@@ -66,7 +66,7 @@ Total cost about $2.0021 (agent $1.2184 including tools, judge $0.7837).
 | vals-40 | Adjustments | right | yes | $0.0177 | $0.0047 | $0.0130 | $0.0000 | 24.7 | 3 | 4 | 0 |
 | vals-41 | Simple retrieval - Quantitative | right | yes | $0.0092 | $0.0012 | $0.0080 | $0.0000 | 4.1 | 2 | 2 | 0 |
 | vals-42 | Market Analysis | wrong | yes | $0.0654 | $0.0144 | $0.0500 | $0.0009 | 53.4 | 8 | 15 | 0 |
-| vals-43 | Financial Modeling  Projections | wrong | yes | $0.0425 | $0.0142 | $0.0260 | $0.0023 | 91.6 | 9 | 11 | 0 |
+| vals-43 | Financial Modeling  Projections | wrong | no | $0.0425 | $0.0142 | $0.0260 | $0.0023 | 91.6 | 9 | 11 | 0 |
 | vals-44 | Simple retrieval - Quantitative | right | yes | $0.0206 | $0.0036 | $0.0170 | $0.0000 | 8.7 | 4 | 5 | 0 |
 | vals-45 | Adjustments | right | yes | $0.0096 | $0.0016 | $0.0080 | $0.0000 | 6.2 | 2 | 2 | 0 |
 | vals-46 | Market Analysis | wrong | yes | $0.0570 | $0.0160 | $0.0410 | $0.0000 | 80.6 | 9 | 14 | 0 |
