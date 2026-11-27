@@ -28,7 +28,7 @@ ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from agent import llm  # noqa: E402
+from agent import llm
 
 OUT = Path(__file__).resolve().parent / "runs"
 QUESTIONS = [
@@ -155,6 +155,11 @@ def main() -> None:
     ap.add_argument(
         "--model", help="extraction model (default: the verifier model in agent/llm.py)"
     )
+    ap.add_argument(
+        "--offline",
+        action="store_true",
+        help="only regrade cached extractions; exit instead of making any API call",
+    )
     args = ap.parse_args()
 
     if args.source == "baseline":
@@ -183,6 +188,8 @@ def main() -> None:
     ap_model = args.model or llm.VERIFIER_MODEL
     todo = [q for q in checks if is_stale(cache.get(q), items[q]["answer"])]
     spent = sum(c.get("_cost", 0) for c in cache.values())
+    if args.offline and todo:
+        sys.exit(f"--offline: {len(todo)} answers need a paid extraction: {' '.join(sorted(todo))}")
 
     def run_one(qid: str):
         it = items[qid]
@@ -206,7 +213,13 @@ def main() -> None:
     rows = []
     for r in reference:
         ext = cache[r["question_id"]].get(str(r["check_id"]), {})
-        verdict, details = grade_check(r["operator"], ext.get("quantities") or [])
+        it = items[r["question_id"]]
+        verdict, details = grade_check(
+            r["operator"],
+            ext.get("quantities") or [],
+            text=it["answer"],
+            label=r["criteria"],
+        )
         rows.append(
             {
                 "question_id": r["question_id"],

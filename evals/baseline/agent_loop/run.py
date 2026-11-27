@@ -33,8 +33,8 @@ ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from agent import llm, loop, tools  # noqa: E402
-from agent.protocol import BLOCKED_DOMAINS, PROTOCOL_AS_OF, SEED, as_of_iso  # noqa: E402
+from agent import llm, loop, tools
+from agent.protocol import BLOCKED_DOMAINS, PROTOCOL_AS_OF, SEED, as_of_iso
 
 HERE = Path(__file__).resolve().parent
 RUNS = HERE / "runs"
@@ -57,6 +57,14 @@ def load_module(name: str, path: Path):
 common = load_module("baseline_common", ROOT / "evals" / "baseline" / "common.py")
 JUDGE_PASSES = common.JUDGE_PASSES
 jr = load_module("closed_book_run_judge", JUDGE_DIR / "run_judge.py")
+
+
+def set_judge_passes(n: int) -> None:
+    """Judge passes for this run (3 for confirmation, 1 for cheap screening); majority of n."""
+    global JUDGE_PASSES
+    if n < 1:
+        sys.exit("--judge-passes must be at least 1")
+    JUDGE_PASSES = common.JUDGE_PASSES = n
 
 
 def protocol_meta() -> dict:
@@ -316,7 +324,18 @@ def main() -> None:
     )
     ap.add_argument("--report-only", action="store_true")
     ap.add_argument("--run-dir", type=Path)
+    ap.add_argument(
+        "--judge-passes",
+        type=int,
+        help="judge passes (default 3; a resumed run keeps the count in its run_meta.json)",
+    )
     args = ap.parse_args()
+    saved_meta = (
+        json.loads((args.run_dir / "run_meta.json").read_text(encoding="utf-8"))
+        if args.run_dir and (args.run_dir / "run_meta.json").exists()
+        else {}
+    )
+    set_judge_passes(args.judge_passes or saved_meta.get("judge_passes") or 3)
 
     if args.report_only:
         rewrite_summary(args.run_dir)

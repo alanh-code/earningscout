@@ -37,12 +37,33 @@ class Grade(unittest.TestCase):
                 return dict(GRADE), 0.1, ["m"]
 
             with mock.patch.object(run, "judge_one", side_effect=fake):
-                cost, passes, models = run.grade(self.records(), 2, 0.0, 100.0, run_dir)
+                cost, passes, _models = run.grade(self.records(), 2, 0.0, 100.0, run_dir)
             self.assertNotIn(("vals-01", 0), calls)
             self.assertEqual(len(calls), run.JUDGE_PASSES * 2 - 1)
             self.assertAlmostEqual(cost, 0.5 + 0.1 * len(calls))
             self.assertTrue(all(len(p) == 2 for p in passes))
             self.assertTrue(run.pass_path(run_dir, 2, "vals-02").exists())
+
+    def test_single_pass_screening_judges_once(self):
+        try:
+            run.set_judge_passes(1)
+            self.assertEqual((run.JUDGE_PASSES, run.common.JUDGE_PASSES), (1, 1))
+            self.assertEqual(run.protocol_meta()["judge_passes"], 1)
+            with tempfile.TemporaryDirectory() as tmp:
+                calls = []
+
+                def fake(item, template, guide, pass_i):
+                    calls.append((item["id"], pass_i))
+                    return dict(GRADE), 0.1, ["m"]
+
+                with mock.patch.object(run, "judge_one", side_effect=fake):
+                    _, passes, _ = run.grade(self.records(), 2, 0.0, 100.0, Path(tmp))
+            self.assertEqual(sorted(calls), [("vals-01", 0), ("vals-02", 0)])
+            self.assertEqual(len(passes), 1)
+            with self.assertRaises(SystemExit):
+                run.set_judge_passes(0)
+        finally:
+            run.set_judge_passes(3)
 
     def test_peak_hours_stop_grading_and_keep_finished_passes(self):
         with tempfile.TemporaryDirectory() as tmp:

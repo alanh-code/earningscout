@@ -29,7 +29,7 @@ ROOT = HERE.parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from agent import llm  # noqa: E402
+from agent import llm
 
 RUNS = HERE / "runs"
 WORK = HERE / "taxonomy"
@@ -292,9 +292,11 @@ def cmd_report(runs: list[str]) -> None:
         "# Failure taxonomy: agent-loop baseline",
         "",
         f"Wrong answers after the verifier policy, exclusions removed, across runs {', '.join(runs)}: {n}.",
-        "Labels: two independent model passes "
-        f"(pass_a `{PASSES['pass_a']}`, pass_b `{PASSES['pass_b']}`) on an evidence digest of the answer, failed checks and the saved tool trace; "
-        "disagreements settled by hand against the evidence (`taxonomy/resolutions.csv`).",
+        (
+            "Labels: two independent model passes "
+            f"(pass_a `{PASSES['pass_a']}`, pass_b `{PASSES['pass_b']}`) on an evidence digest of the answer, failed checks and the saved tool trace; "
+            "disagreements settled by hand against the evidence (`taxonomy/resolutions.csv`)."
+        ),
         f"Pass agreement on primary cause: {agree}/{n} ({100 * agree / n:.0f}%).",
         "",
         "## Counts",

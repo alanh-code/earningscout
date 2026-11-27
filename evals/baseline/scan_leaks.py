@@ -14,7 +14,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 sys.path.insert(0, str(ROOT))
 
-from agent.protocol import BLOCKED_DOMAINS, is_blocked_url  # noqa: E402
+from agent.protocol import BLOCKED_DOMAINS, is_blocked_url
 
 GOLD_TEXT = re.compile(
     r"finance[-_]agent|finance_agent_benchmark|vals-ai/finance|github\.com/vals-ai|"

@@ -43,7 +43,7 @@ class Reference(unittest.TestCase):
                     }
                 )
             )
-            items, reference = rv.baseline_items(run)
+            _items, reference = rv.baseline_items(run)
         self.assertEqual([r["result"] for r in reference], ["met"])
 
 

@@ -29,8 +29,8 @@ ROOT = Path(__file__).resolve().parents[4]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from agent import llm  # noqa: E402
-from agent.protocol import SEED  # noqa: E402
+from agent import llm
+from agent.protocol import SEED
 
 VALS = ROOT / "data" / "vals" / "public.csv"
 CLOSED = ROOT / "evals" / "contamination" / "closed_book"

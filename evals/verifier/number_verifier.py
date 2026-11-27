@@ -20,7 +20,7 @@ from __future__ import annotations
 import json
 import math
 import re
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 
 ROUNDING_REL = 0.005  # coarser exact answer, e.g. $105B for $105.2B
 HEDGE_REL = 0.05  # "about $100B" for $105.2B
@@ -71,7 +71,16 @@ UPPER = re.compile(
     re.IGNORECASE,
 )
 NEG_WORD = re.compile(
-    r"\b(loss|losses|decline[ds]?|decrease[ds]?|down|miss(?:ed)?|negative|fell|drop(?:ped)?)\b",
+    r"\b(loss|losses|decline[ds]?|decrease[ds]?|down|miss(?:ed)?|negative|fell|drop(?:ped)?|shortfall)\b",
+    re.IGNORECASE,
+)
+# "down" is omitted here: it is too common in ordinary prose ("down to", "broken down").
+CONTEXT_LOSS = re.compile(
+    r"\b(loss|losses|decline[ds]?|decrease[ds]?|miss(?:ed)?|negative|fell|drop(?:ped)?|shortfall)\b",
+    re.IGNORECASE,
+)
+LOSS_PHRASE = re.compile(
+    r"(?:loss(?:es)?|decline|decrease|shortfall|drop)\s+of\s+(?:\*\*)?$",
     re.IGNORECASE,
 )
 
@@ -87,6 +96,9 @@ class Quantity:
     scaled: bool  # scale written or implied (B, million, ...)
     currency: str
     neg_word: bool = False  # unsigned figure described as a loss, decline, miss...
+    round_step: float = 0.0  # coarser precision a whole number with trailing zeros may carry
+    bps: bool = False  # written in basis points (stored as percentage points)
+    year_range: bool = False  # only calendar years ("2022 to 2024"): a period, not a quantity
 
 
 @dataclass
@@ -131,6 +143,8 @@ def parse(span: str | None, scale_hint: str | None = None) -> Quantity | None:
     # Typographic minus signs: hyphen variants always, an en dash only when it
     # leads a number (not between two numbers, where it joins a range).
     span = span.replace("\u2010", "-").replace("\u2011", "-")
+    # LaTeX escapes from math-formatted answers: "22.62\%", "\$1.2B", "14{,}060".
+    span = re.sub(r"\\([%$])", r"\1", span).replace("{,}", ",")
     span = re.sub(r"(?<![\d.])\u2013(?=\s?[$€£¥]?\d)", "-", span)
     # A worked expression ("(2,168 + 2,128) / 2 = 2,148") states its figure after the last "=".
     if "=" in span:
@@ -176,6 +190,9 @@ def parse(span: str | None, scale_hint: str | None = None) -> Quantity | None:
     step = max(n.step for n in nums)
     if hedged and kind != "range" and "." not in found[0]["num"]:
         step = max(step, _last_digit(found[0]["num"]) * first.scale)
+    # A whole number ending in three or more zeros ("85,945,000") may be rounded to that place.
+    last = _last_digit(found[0]["num"]) if "." not in found[0]["num"] else 1.0
+    round_step = last * first.scale if kind == "point" and last >= 1000 else 0.0
     return Quantity(
         min(values),
         max(values),
@@ -186,6 +203,14 @@ def parse(span: str | None, scale_hint: str | None = None) -> Quantity | None:
         any(n.scale_written for n in nums),
         first.currency or nums[-1].currency,
         kind == "point" and not first.signed and bool(NEG_WORD.search(span)),
+        round_step,
+        any((m["unit"] or "").lower().startswith("b") for m in found[: len(nums)]),
+        kind == "range"
+        and all(
+            "." not in m["num"] and "," not in m["num"] and 1900 <= float(m["num"]) <= 2100
+            and not (m["unit"] or m["scale"] or m["cur"])
+            for m in found[:2]
+        ),
     )
 
 
@@ -232,6 +257,7 @@ def _as_percent(q: Quantity) -> Quantity:
         q.scaled,
         q.currency,
         q.neg_word,
+        q.round_step * 100,
     )
 
 
@@ -253,7 +279,17 @@ def compare(gold: Quantity, ans: Quantity) -> tuple[bool, str]:
     if gold.currency and ans.currency and gold.currency != ans.currency:
         return False, f"currency {ans.currency} vs gold {gold.currency}"
     if {gold.unit, ans.unit} == {"", "%"} and not (gold.currency or ans.currency):
-        gold = _as_percent(gold)  # 0.824 and 82.4% are the same ratio
+        # 0.824 and 82.4% are the same ratio; a bare 8.5 next to a separate "unit %" means 8.5%.
+        if not ans.unit and gold.bps:  # a bare 140 next to a separate "unit bps" means 140 bps
+            ok, why = compare(gold, replace(ans, low=ans.low / 100, high=ans.high / 100, step=ans.step / 100, unit="%"))
+            if ok:
+                return ok, why
+        if not ans.unit:
+            as_points = replace(ans, unit="%")
+            ok, why = compare(gold, as_points)
+            if ok:
+                return ok, why
+        gold = _as_percent(gold)
         ans = _as_percent(ans)
     f = _align(gold, ans)
     lo, hi, step = ans.low * f, ans.high * f, ans.step * f
@@ -288,7 +324,10 @@ def compare(gold: Quantity, ans: Quantity) -> tuple[bool, str]:
             and _close(abs(lo), abs(g), step, gold.step, ans.hedged)
         ):
             return False, "sign differs"
-        ok = _close(lo, g, step, gold.step, ans.hedged)
+        ok = _close(lo, g, step, gold.step, ans.hedged) or (
+            ans.round_step > step
+            and _close(lo, g, ans.round_step * f, gold.step, ans.hedged)
+        )
         return (
             ok,
             "matches at gold precision" if ok else f"{_fmt(lo)} vs gold {_fmt(g)}",
@@ -311,7 +350,73 @@ def _fmt(x: float) -> str:
     return f"{x:,.6g}"
 
 
-def grade_check(operator: str, quantities: list[dict]) -> tuple[str, list[dict]]:
+def _gold_is_loss(gold: Quantity, label: str = "") -> bool:
+    """True when the gold figure is a signed loss, or the check label describes one."""
+    if gold.low < 0 or gold.neg_word:
+        return True
+    return bool(label) and bool(CONTEXT_LOSS.search(label)) and gold.kind == "point"
+
+
+def _loss_span_in_text(span: str, text: str) -> str | None:
+    """A parenthetical or 'loss of ...' wording in text that wraps this span."""
+    idx = 0
+    while True:
+        i = text.find(span, idx)
+        if i < 0:
+            return None
+        j = i
+        while j > 0 and text[j - 1] in " \t":
+            j -= 1
+        if j > 0 and text[j - 1] == "(":
+            k = i + len(span)
+            while k < len(text) and text[k] in " \t":
+                k += 1
+            if k < len(text) and text[k] == ")":
+                cand = text[j - 1 : k + 1]
+                parsed = parse(cand)
+                if parsed is not None and (parsed.low < 0 or parsed.neg_word):
+                    return cand
+        prefix = text[max(0, i - 48) : i]
+        m = LOSS_PHRASE.search(prefix)
+        if m:
+            cand = text[i - (len(prefix) - m.start()) : i + len(span)]
+            parsed = parse(cand)
+            if parsed is not None and (parsed.low < 0 or parsed.neg_word):
+                return cand
+        idx = i + 1
+
+
+def with_loss_context(span: str, text: str, gold: Quantity, label: str = "") -> str:
+    """Prefer a parenthetical or 'loss of' span when the gold (or check) is a loss."""
+    if not span or not _gold_is_loss(gold, label):
+        return span
+    ans = parse(span)
+    if ans is None or ans.low < 0 or ans.neg_word:
+        return span
+    return _loss_span_in_text(span, text) or span
+
+
+def surrounding_loss(span: str, text: str, gold: Quantity, label: str = "") -> bool:
+    """True when text around this span describes it as a loss, decline or shortfall."""
+    if not span or not text or not _gold_is_loss(gold, label):
+        return False
+    start = 0
+    while True:
+        i = text.find(span, start)
+        if i < 0:
+            return False
+        window = text[max(0, i - 80) : i + len(span) + 20]
+        if CONTEXT_LOSS.search(window):
+            return True
+        start = i + 1
+
+
+def grade_check(
+    operator: str,
+    quantities: list[dict],
+    text: str = "",
+    label: str = "",
+) -> tuple[str, list[dict]]:
     """Grade one rubric check from extracted spans. Returns (verdict, details).
 
     Each quantity carries the span(s) where the answer commits to its value;
@@ -324,10 +429,22 @@ def grade_check(operator: str, quantities: list[dict]) -> tuple[str, list[dict]]
     details, verdicts = [], []
     for q in quantities:
         gold = parse(q.get("gold"), q.get("gold_scale"))
-        if gold is None:
+        if gold is None or gold.year_range:  # a period such as "2022 to 2024" is left to the judge
             continue
+        hint = label or q.get("label") or ""
         spans = q.get("answers") or []
-        parsed = [(span, parse(span, q.get("answer_scale"))) for span in spans]
+        parsed: list[tuple[str, Quantity | None]] = []
+        for span in spans:
+            used = with_loss_context(span, text, gold, hint)
+            ans = parse(used, q.get("answer_scale"))
+            if (
+                ans is not None
+                and ans.low >= 0
+                and not ans.neg_word
+                and surrounding_loss(used, text, gold, hint)
+            ):
+                ans.neg_word = True
+            parsed.append((used, ans))
         results = [
             (span, *compare(gold, ans)) for span, ans in parsed if ans is not None
         ]
@@ -362,8 +479,11 @@ For each quantity return:
 - "answers": the shortest verbatim span(s) from the MODEL ANSWER where it commits to
   its own value for this same quantity (same entity, period and measure), including
   hedge words ("about", "~"), bound words ("or more", "at least"), range wording,
-  currency, scale, unit, and a sign word only if it makes the number negative
-  ("loss of", "missed by"). Use the value the answer presents as its answer (its
+  currency, scale, unit, and the sign: parentheses, a minus, or a sign word that
+  makes the number negative ("loss of", "decline of", "shortfall of", "missed by").
+  If the gold figure is a signed loss, or the check is about a loss, copy a signed
+  span (for example "($149.7)" or "loss of $149.7M"), not a bare positive amount
+  taken out of that wording. Use the value the answer presents as its answer (its
   headline or final figure), even if it was computed with different inputs (another
   exchange rate, another base). Do not use figures it gives only as alternatives
   under another method, as earlier or superseded versions, or as parts of a
@@ -463,16 +583,25 @@ def extract(
         .replace("{checks}", listing)
         .replace("{model_answer}", model_answer)
     )
-    out = llm.chat(
-        model or llm.VERIFIER_MODEL,
-        [{"role": "user", "content": prompt}],
-        max_tokens=16000,
-        thinking=False,
-        temperature=0,
-        tools=[RECORD_FUNCTION],
-        tool_choice={"type": "function", "function": {"name": RECORD_TOOL["name"]}},
-    )
-    calls = llm.message_of(out["response"]).get("tool_calls") or []
-    call = next(c for c in calls if c["function"]["name"] == RECORD_TOOL["name"])
-    data = json.loads(call["function"]["arguments"])
-    return {int(c["check_id"]): c for c in data["checks"]}, out["cost_usd"]
+    cost = 0.0
+    for attempt in range(3):  # malformed tool-call JSON is rare and not repeatable; ask again
+        out = llm.chat(
+            model or llm.VERIFIER_MODEL,
+            [{"role": "user", "content": prompt}],
+            max_tokens=16000,
+            thinking=False,
+            temperature=0,
+            tools=[RECORD_FUNCTION],
+            tool_choice={"type": "function", "function": {"name": RECORD_TOOL["name"]}},
+        )
+        cost += out["cost_usd"]
+        calls = llm.message_of(out["response"]).get("tool_calls") or []
+        call = next(c for c in calls if c["function"]["name"] == RECORD_TOOL["name"])
+        try:
+            data = json.loads(call["function"]["arguments"])
+        except json.JSONDecodeError:
+            if attempt == 2:
+                raise
+            continue
+        return {int(c["check_id"]): c for c in data["checks"]}, cost
+    raise RuntimeError("unreachable")

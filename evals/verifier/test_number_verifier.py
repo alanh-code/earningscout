@@ -1,8 +1,9 @@
 """Unit tests for the deterministic part of the number verifier."""
 
 import unittest
+from typing import ClassVar
 
-from number_verifier import compare, grade_check, parse
+from number_verifier import EXTRACT_PROMPT, compare, grade_check, parse
 
 
 def ok(gold, answer, gold_scale=None, answer_scale=None):
@@ -28,6 +29,25 @@ class Precision(unittest.TestCase):
         self.assertFalse(
             ok("$3.25 Billion", "about $3.3 billion")
         )  # tie: could be $3.30B
+
+    def test_whole_number_rounded_to_thousands(self):
+        self.assertTrue(ok("85,945,127 shares", "85,945,000 shares"))
+        self.assertTrue(ok("85,945,127 shares", "85,945,000"))
+        self.assertFalse(ok("85,945,127 shares", "85,946,000 shares"))
+        self.assertFalse(ok("85,945,127 shares", "84,945,000 shares"))
+        self.assertFalse(ok("1,250", "1,200"))  # fewer than three zeros: still exact
+        self.assertFalse(ok("100,000 jobs", "90,000 jobs"))  # rounding applies to the answer only
+
+    def test_bare_number_for_a_percent_gold(self):
+        self.assertTrue(ok("8.5%", "8.5"))  # unit given on a separate line
+        self.assertTrue(ok("82.4%", "0.824"))
+        self.assertFalse(ok("8.5%", "9.5"))
+        self.assertFalse(ok("8.5%", "0.95"))
+
+    def test_latex_escapes(self):
+        self.assertTrue(ok("22.6%", "22.62\\%"))
+        self.assertFalse(ok("22.6%", "22.72\\%"))
+        self.assertTrue(ok("$14,060M", "14{,}060", answer_scale="million"))
 
 
 class Units(unittest.TestCase):
@@ -59,6 +79,12 @@ class Units(unittest.TestCase):
         self.assertTrue(ok("140 basis points", "1.4pp"))
         self.assertTrue(ok("80bps", "0.8%"))  # shorthand for points; same magnitude
         self.assertFalse(ok("80bps", "80%"))
+
+    def test_bare_number_for_a_bps_gold(self):
+        # an itemized answer line "value 140; unit bps" is extracted as a bare 140
+        self.assertTrue(ok("140 basis points", "140"))
+        self.assertFalse(ok("140 basis points", "150"))
+        self.assertFalse(ok("1.4%", "140"))  # only a gold written in bps reads a bare number as bps
 
     def test_percent_vs_plain_number(self):
         self.assertFalse(ok("12.7%", "$12.7 million"))
@@ -145,6 +171,13 @@ class Checks(unittest.TestCase):
     def test_no_numbers(self):
         self.assertEqual(grade_check("correctness", [])[0], "not numeric")
 
+    def test_year_range_gold_is_a_period_not_a_quantity(self):
+        q = [{"gold": "2022 to 2024", "answers": ["28.77 basis points"]}]
+        self.assertEqual(grade_check("correctness", q)[0], "not numeric")
+        self.assertTrue(parse("2022 to 2024").year_range)
+        self.assertFalse(parse("$2,022 to $2,024 million").year_range)
+        self.assertFalse(parse("1,950 to 2,050").year_range)
+
     def test_worked_expression_compares_the_result(self):
         gold = parse("($2,168 + $2,128) / 2 = $2,148M")
         ans = parse("($2,128 + $2,168) / 2 = $2,148")
@@ -158,6 +191,68 @@ class Checks(unittest.TestCase):
         self.assertFalse(compare(parse("2%"), parse("\u20112.0%"))[0])
         rng = parse("10\u201312%")
         self.assertEqual(rng.kind, "range")
+
+
+class LossContext(unittest.TestCase):
+    """An unsigned extracted span still counts as a loss when the answer says so."""
+
+    VALS48_ANSWER = (
+        "| Metric ($M) | Q3-24 FY24 guide (low–high) | FY2024 actual | Variance vs. range |\n"
+        "| Adjusted EBITDA loss | ($155) – ($151) | ($149.7) | $1.3M better than best end |\n"
+        "- **Adjusted EBITDA:** loss of $149.7M versus guidance for a $155–151M loss "
+        "— about $3.3M better than the midpoint and $1.3M better than the favorable end."
+    )
+    QS: ClassVar[list[dict]] = [{"gold": "$(149.7) Million", "answers": ["$149.7M"]}]
+
+    def test_vals48_unsigned_extraction_with_loss_wording_is_met(self):
+        verdict, details = grade_check(
+            "correctness",
+            self.QS,
+            text=self.VALS48_ANSWER,
+            label="Adjusted EBITDA Loss: $(149.7) Million, above high end of range",
+        )
+        self.assertEqual(verdict, "met")
+        self.assertTrue(details[0]["ok"])
+        self.assertIn("loss of $149.7M", details[0]["answer"])
+
+    def test_vals48_contradiction_is_not_triggered(self):
+        self.assertEqual(
+            grade_check("contradiction", self.QS, text=self.VALS48_ANSWER)[0],
+            "not triggered",
+        )
+
+    def test_parenthetical_span_is_preferred(self):
+        qs = [{"gold": "$(149.7) Million", "answers": ["$149.7"]}]
+        text = "Adjusted EBITDA: ($149.7) million"
+        verdict, details = grade_check("correctness", qs, text=text)
+        self.assertEqual(verdict, "met")
+        self.assertEqual(details[0]["answer"], "($149.7)")
+
+    def test_surrounding_shortfall_word_negates_unsigned_span(self):
+        qs = [{"gold": "$(3.5) billion", "answers": ["$3.5B"]}]
+        text = "The shortfall was $3.5B versus the midpoint."
+        self.assertEqual(grade_check("correctness", qs, text=text)[0], "met")
+
+    def test_unsigned_span_without_loss_context_still_fails(self):
+        self.assertEqual(grade_check("correctness", self.QS)[0], "not met")
+        self.assertEqual(
+            grade_check("correctness", self.QS, text="Revenue was $149.7M this year")[
+                0
+            ],
+            "not met",
+        )
+
+    def test_does_not_flip_a_positive_gold(self):
+        qs = [{"gold": "10.7%", "answers": ["Loss widens ~11%"]}]
+        self.assertEqual(
+            grade_check("correctness", qs, text="Loss widens ~11% year over year")[0],
+            "met",
+        )
+
+    def test_prompt_asks_for_signed_loss_spans(self):
+        self.assertIn("($149.7)", EXTRACT_PROMPT)
+        self.assertIn("loss of", EXTRACT_PROMPT)
+        self.assertIn("shortfall of", EXTRACT_PROMPT)
 
 
 if __name__ == "__main__":
