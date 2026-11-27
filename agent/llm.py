@@ -88,7 +88,7 @@ class PeakHours(RuntimeError):
 
 
 # Set by runners from --allow-peak. When False, send() makes no call during peak hours.
-ALLOW_PEAK = False
+ALLOW_PEAK = os.environ.get("ALLOW_PEAK") == "1"  # runners also set it from --allow-peak
 
 
 class OutOfCredit(RuntimeError):

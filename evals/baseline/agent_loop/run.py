@@ -79,10 +79,13 @@ def protocol_meta() -> dict:
         "judge_passes": JUDGE_PASSES,
         "seed": SEED,
         "thinking": f"enabled, reasoning_effort {loop.REASONING_EFFORT} (temperature does not apply)",
+        "tool_cache": "Exa responses reused from a disk cache" if tools.CACHE_DIR else "off",
         "max_turns": loop.MAX_TURNS,
         "max_tokens_per_turn": loop.MAX_TOKENS,
         "tools": {
-            "web_search": f"Exa /search type={tools.SEARCH_TYPE}, {tools.SEARCH_RESULTS} results, highlights, endPublishedDate={as_of_iso()}",
+            "set_as_of": "the question's as-of date, set by the model before searching; capped at the protocol as-of date",
+            "web_search": f"Exa /search type={tools.SEARCH_TYPE}, {tools.SEARCH_RESULTS} results, highlights, endPublishedDate=the as-of date (at most {as_of_iso()})",
+            "sec_filings": "SEC EDGAR company_tickers.json and submissions API, filings filed on or before the as-of date",
             "web_fetch": f"Exa /contents text up to {tools.FETCH_MAX_CHARS} chars, host check before and after",
             "code_execution": f"E2B code interpreter, internet off, {tools.EXEC_TIMEOUT_S}s per call, {tools.SANDBOX_LIFETIME_S}s lifetime, killed after each question",
         },
@@ -323,6 +326,11 @@ def main() -> None:
         help="continue the run in --run-dir: skip saved answers and judge passes",
     )
     ap.add_argument("--report-only", action="store_true")
+    ap.add_argument(
+        "--tool-cache",
+        type=Path,
+        help="keep Exa search and fetch responses in this folder and reuse them on repeats",
+    )
     ap.add_argument("--run-dir", type=Path)
     ap.add_argument(
         "--judge-passes",
@@ -341,6 +349,7 @@ def main() -> None:
         rewrite_summary(args.run_dir)
         return
     llm.ALLOW_PEAK = args.allow_peak
+    tools.CACHE_DIR = args.tool_cache
     llm.resolve_model(llm.AGENT_MODEL)
     llm.resolve_model(llm.JUDGE_MODEL)
     llm.require_off_peak([llm.AGENT_MODEL, llm.JUDGE_MODEL], args.allow_peak)

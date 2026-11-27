@@ -9,7 +9,7 @@ from __future__ import annotations
 import json
 import os
 import unittest
-from datetime import UTC, datetime, timedelta
+from datetime import UTC, date, datetime, timedelta
 from unittest import mock
 
 from agent import llm, loop, protocol, tools
@@ -190,6 +190,22 @@ class Provider(unittest.TestCase):
         self.assertEqual(llm.response_text(legacy), "B")
 
 
+class AllowPeakEnv(unittest.TestCase):
+    def test_env_var_sets_the_default_for_subprocesses(self):
+        import importlib
+
+        try:
+            with mock.patch.dict(os.environ, {"ALLOW_PEAK": "1"}):
+                self.assertTrue(importlib.reload(llm).ALLOW_PEAK)
+            with mock.patch.dict(os.environ, {"ALLOW_PEAK": "0"}):
+                self.assertFalse(importlib.reload(llm).ALLOW_PEAK)
+            with mock.patch.dict(os.environ):
+                os.environ.pop("ALLOW_PEAK", None)
+                self.assertFalse(importlib.reload(llm).ALLOW_PEAK)
+        finally:
+            importlib.reload(llm)
+
+
 class ClosedEnvironment(unittest.TestCase):
     def request(self, **kw):
         return llm.build_request(
@@ -255,6 +271,115 @@ class FakeSession:
     def post(self, url, headers=None, json=None, timeout=None):
         self.calls.append((url, json))
         return FakeResponse(self.data)
+
+
+class FakeGetSession:
+    def __init__(self, routes):
+        self.routes, self.calls = routes, []
+
+    def get(self, url, headers=None, timeout=None):
+        self.calls.append((url, headers))
+        return FakeResponse(self.routes[url])
+
+
+SEC_ROUTES = {
+    tools.SEC_TICKERS_URL: {
+        "0": {"cik_str": 1321655, "ticker": "PLTR", "title": "Palantir Technologies Inc."},
+        "1": {"cik_str": 320193, "ticker": "AAPL", "title": "Apple Inc."},
+    },
+    tools.SEC_SUBMISSIONS_URL.format(cik=1321655): {
+        "filings": {
+            "recent": {
+                "form": ["8-K", "10-K", "10-Q", "4", "10-K/A"],
+                "filingDate": ["2025-05-05", "2025-02-18", "2024-11-05", "2024-11-01", "2024-03-01"],
+                "reportDate": ["2025-05-05", "2024-12-31", "2024-09-30", "", "2023-12-31"],
+                "accessionNumber": ["0001321655-25-000001", "0001321655-25-000002", "0001321655-24-000003", "x-4", "0001321655-24-000005"],
+                "primaryDocument": ["a.htm", "b.htm", "c.htm", "d.xml", "e.htm"],
+                "items": ["2.02,9.01", "", "", "", ""],
+            }
+        }
+    },
+}
+
+
+SEC_ROUTES[tools.SEC_ENTITY_SEARCH_URL.format(query="Redfin%20Corporation")] = {
+    "hits": {"hits": [{"_id": "1382821", "_source": {"entity": "Redfin Corp"}}]}
+}
+SEC_ROUTES[tools.SEC_ENTITY_SEARCH_URL.format(query="Nonexistent%20Widgets")] = {"hits": {"hits": []}}
+
+
+class SecFilings(unittest.TestCase):
+    def sec(self):
+        tools.Sec._cache.clear()
+        return tools.Sec(session=FakeGetSession(SEC_ROUTES), user_agent="test agent")
+
+    def test_resolves_ticker_and_name(self):
+        sec = self.sec()
+        self.assertEqual(sec.resolve("pltr")[0], 1321655)
+        self.assertEqual(sec.resolve("Palantir Technologies")[0], 1321655)
+        self.assertEqual(sec.resolve("Apple")[0], 320193)
+        self.assertEqual(sec.resolve("Redfin Corporation"), (1382821, "Redfin Corp"))  # former registrant
+        with self.assertRaises(tools.ToolError):
+            sec.resolve("Nonexistent Widgets")
+
+    def test_lists_forms_filed_by_the_as_of_date_newest_first(self):
+        sec = self.sec()
+        text, info = sec.filings("PLTR", date(2025, 3, 1))
+        rows = json.loads(text.split("\n", 1)[1])
+        self.assertEqual([r["form"] for r in rows], ["10-K", "10-Q", "10-K/A"])
+        self.assertEqual(
+            rows[0]["document"],
+            "https://www.sec.gov/Archives/edgar/data/1321655/000132165525000002/b.htm",
+        )
+        self.assertEqual(info["results"], 3)
+        only_8k, _ = sec.filings("PLTR", date(2025, 6, 1), ["8-K"])
+        self.assertIn("2.02", only_8k)
+        self.assertEqual(sec.session.calls[0][1]["User-Agent"], "test agent")
+
+    def test_needs_set_as_of_and_uses_its_date(self):
+        runner = tools.ToolRunner(
+            exa=tools.Exa(api_key="test", session=FakeSession({})),
+            sandbox=tools.CodeSandbox(factory=mock.Mock()),
+            sec=self.sec(),
+        )
+        self.assertIn("set_as_of first", runner.call("sec_filings", '{"company": "PLTR"}'))
+        runner.call("set_as_of", '{"date": "2024-12-01", "reason": "r"}')
+        out = runner.call("sec_filings", '{"company": "PLTR", "forms": "10-Q"}')
+        self.assertIn("2024-11-05", out)
+        self.assertNotIn("2025-02-18", out)
+        self.assertEqual(runner.used["sec_filings"], 1)
+
+    def test_prompt_puts_filings_first(self):
+        for prompt in (protocol.SYSTEM_MINIMAL, protocol.SYSTEM_WITH_DATE):
+            self.assertIn(protocol.SOURCE_RULES, prompt)
+
+
+class ToolCache(unittest.TestCase):
+    def test_repeat_request_is_served_from_disk_at_no_cost(self):
+        import tempfile
+
+        data = {"results": [{"url": "https://www.sec.gov/a.htm", "title": "10-K"}], "costDollars": {"total": 0.01}}
+        with tempfile.TemporaryDirectory() as d:
+            session = FakeSession(data)
+            exa = tools.Exa(api_key="test", session=session, cache_dir=d)
+            first = exa.search("Q4  Revenue", date(2025, 1, 31))
+            again = tools.Exa(api_key="test", session=session, cache_dir=d).search(
+                "q4 revenue", date(2025, 1, 31)
+            )
+            other_day = exa.search("q4 revenue", date(2024, 1, 31))
+        self.assertEqual(len(session.calls), 2)
+        self.assertEqual(first[0], again[0])
+        self.assertEqual((first[1], again[1]), (0.01, 0.0))
+        self.assertEqual((first[2]["exa_cache_hit"], again[2]["exa_cache_hit"]), (False, True))
+        self.assertFalse(other_day[2]["exa_cache_hit"])
+
+    def test_key_ignores_url_fragment_and_query_case(self):
+        a = tools.cache_key("/contents", {"urls": ["https://x.com/a#p2"]})
+        self.assertEqual(a, tools.cache_key("/contents", {"urls": ["https://x.com/a"]}))
+        self.assertNotEqual(a, tools.cache_key("/contents", {"urls": ["https://x.com/b"]}))
+
+    def test_no_cache_by_default(self):
+        self.assertIsNone(tools.Exa(api_key="test", session=FakeSession({})).cache_dir)
 
 
 class BlockedHostsAreRefused(unittest.TestCase):
@@ -378,6 +503,7 @@ class BlockedHostsAreRefused(unittest.TestCase):
             sandbox=tools.CodeSandbox(factory=mock.Mock()),
             budgets={"web_search": 0, "web_fetch": 0, "code_execution": 0},
         )
+        runner.as_of = protocol.protocol_as_of_date()
         self.assertIn("budget", runner.call("web_search", '{"query": "x"}'))
 
 
@@ -480,6 +606,333 @@ class Loop(unittest.TestCase):
         with self.assertRaises(RuntimeError):
             loop.run_agent("q", chat=boom, tools=runner)
         runner.close.assert_called_once()
+
+
+class LongPagePrompt(unittest.TestCase):
+    def test_prompts_mention_reading_on(self):
+        for prompt in (protocol.SYSTEM_MINIMAL, protocol.SYSTEM_WITH_DATE):
+            self.assertIn("offset", prompt)
+            self.assertIn("find", prompt)
+        self.assertIn(protocol.PROTOCOL_AS_OF, protocol.SYSTEM_WITH_DATE)
+
+
+class AnswerPrompt(unittest.TestCase):
+    def test_prompts_ask_for_two_decimal_ratios_and_the_largest_add_back(self):
+        for prompt in (protocol.SYSTEM_MINIMAL, protocol.SYSTEM_WITH_DATE):
+            self.assertIn(protocol.ANSWER_RULES, prompt)
+
+    def test_prompts_require_code_arithmetic_and_a_final_answer_block(self):
+        for prompt in (protocol.SYSTEM_MINIMAL, protocol.SYSTEM_WITH_DATE):
+            self.assertIn(protocol.OUTPUT_RULES, prompt)
+        self.assertIn("code_execution", protocol.OUTPUT_RULES)
+        self.assertIn("one line for each figure or verdict", protocol.OUTPUT_RULES)
+        self.assertTrue(protocol.OUTPUT_RULES.endswith("label <beat, miss, in line, yes, no, or n/a>"))
+
+    def test_rounding_rules_split_ratios_and_beat_or_miss(self):
+        self.assertIn("ratios and multiples to two decimal places", protocol.ANSWER_RULES)
+        self.assertIn("a beat or miss", protocol.ANSWER_RULES)
+        self.assertIn("give it to one decimal place", protocol.ANSWER_RULES)
+        self.assertIn("never show the same quantity at two different roundings", protocol.ANSWER_RULES)
+        self.assertIn("every year or period in the span", protocol.COVERAGE_RULES)
+        self.assertIn("instead of 'n/a'", protocol.COVERAGE_RULES)
+        self.assertIn("Lead with the figure the question asks for", protocol.ANSWER_RULES)
+        self.assertIn("number of decimals", protocol.ANSWER_RULES)
+
+    def test_coverage_and_definition_rules_are_in_every_prompt(self):
+        for prompt in (protocol.SYSTEM_MINIMAL, protocol.SYSTEM_WITH_DATE):
+            self.assertIn(protocol.COVERAGE_RULES, prompt)
+            self.assertIn(protocol.DEFINITION_RULES, prompt)
+        self.assertIn("both the low end and the high end", protocol.COVERAGE_RULES)
+        self.assertIn("Include only what the question asks for", protocol.COVERAGE_RULES)
+        self.assertIn("company's own guidance", protocol.DEFINITION_RULES)
+        self.assertIn("round only the final result", protocol.DEFINITION_RULES)
+        self.assertIn("headline figures as published", protocol.DEFINITION_RULES)
+        self.assertIn("issued after the as-of date", protocol.AS_OF_RULES)
+
+    def test_prompt_examples_do_not_quote_benchmark_answers(self):
+        """No number written in the system prompt may appear in a public gold answer."""
+        import csv
+        import re
+        from pathlib import Path
+
+        path = Path(__file__).resolve().parents[1] / "data" / "vals" / "public.csv"
+        with path.open(newline="", encoding="utf-8") as f:
+            gold = " ".join(r["Answer"] for r in csv.DictReader(f))
+        for prompt in (protocol.SYSTEM_MINIMAL, protocol.SYSTEM_WITH_DATE):
+            for num in re.findall(r"\d+\.\d+", prompt):
+                self.assertNotRegex(gold, rf"(?<![\d.]){re.escape(num)}(?!\d)", num)
+
+
+class FakeExa:
+    """Stand-in for Exa: counts paid fetches and serves fixed pages."""
+
+    def __init__(self, pages, blocked=("github.com",), final_urls=None, published=None):
+        self.pages = pages
+        self.published = published or {}
+        self.blocked = list(blocked)
+        self.final_urls = final_urls or {}
+        self.fetches = []
+
+    def fetch(self, url):
+        if tools.is_blocked_url(url, self.blocked):
+            raise tools.ToolError("refused: that host is blocked for this evaluation")
+        self.fetches.append(url)
+        final = self.final_urls.get(url, url)
+        return {
+            "head": f"Title: t\nURL: {final}\n",
+            "text": self.pages[url],
+            "url": final,
+            "published": self.published.get(url),
+        }, 0.001
+
+
+class LongPageFetchTest(unittest.TestCase):
+    URL = "https://www.sec.gov/filing.htm"
+
+    def runner(self, text, **kw):
+        exa = FakeExa({self.URL: text}, **kw)
+        return tools.ToolRunner(exa=exa, sandbox=mock.Mock()), exa
+
+    def fetch(self, runner, **args):
+        return runner.call("web_fetch", json.dumps({"url": self.URL, **args}))
+
+    def test_short_page_has_no_range_note(self):
+        runner, _ = self.runner("short text")
+        out = self.fetch(runner)
+        self.assertIn("short text", out)
+        self.assertNotIn("Characters", out)
+        self.assertEqual(runner.log[-1]["page_chars"], 10)
+
+    def test_long_page_reports_range_and_paginates_from_cache(self):
+        text = "a" * tools.FETCH_CHUNK_CHARS + "b" * 1000
+        runner, exa = self.runner(text)
+        first = self.fetch(runner)
+        self.assertIn(f"Characters 0-{tools.FETCH_CHUNK_CHARS} of {len(text)}", first)
+        self.assertIn(f"offset={tools.FETCH_CHUNK_CHARS}", first)
+        self.assertNotIn("b", first.split("\n\n", 1)[1])
+        second = self.fetch(runner, offset=tools.FETCH_CHUNK_CHARS)
+        self.assertTrue(second.endswith("b" * 1000))
+        self.assertNotIn("remain", second)
+        self.assertEqual(len(exa.fetches), 1)
+        self.assertEqual(runner.used["web_fetch"], 1)
+        self.assertEqual(runner.page_reads, 1)
+        self.assertEqual([e["cached"] for e in runner.log], [False, True])
+        self.assertEqual(runner.log[-1]["cost_usd"], 0.0)
+
+    def test_offset_past_end_and_negative_are_clamped(self):
+        runner, _ = self.runner("x" * 100)
+        self.fetch(runner)
+        self.assertEqual(
+            self.fetch(runner, offset=10_000).rstrip().split("\n")[-1],
+            "Characters 100-100 of 100.",
+        )
+        self.assertEqual(runner.log[-1]["start"], 100)
+        self.fetch(runner, offset=-5)
+        self.assertEqual(runner.log[-1]["start"], 0)
+
+    def test_bad_offset_is_an_error(self):
+        runner, exa = self.runner("x")
+        self.assertIn("offset must be an integer", self.fetch(runner, offset="abc"))
+        self.assertEqual(exa.fetches, [])
+
+    def test_find_returns_passages_with_offsets(self):
+        text = "filler " * 8000 + "Net revenue retention was 115%." + " filler" * 100
+        runner, exa = self.runner(text)
+        out = self.fetch(runner, find="net revenue retention")
+        self.assertIn("1 passages match", out)
+        self.assertIn("115%", out)
+        pos = text.index("Net revenue")
+        self.assertIn(f"[characters {pos - tools.FIND_CONTEXT_CHARS}-", out)
+        self.assertEqual(runner.log[-1]["matches"], 1)
+        self.assertEqual(len(exa.fetches), 1)
+        self.fetch(runner, find="retention")
+        self.assertEqual(len(exa.fetches), 1)
+
+    def test_find_falls_back_to_words_and_reports_no_match(self):
+        runner, _ = self.runner("The gross margin was 40%. Later, margin fell.")
+        out = self.fetch(runner, find="margin compression")
+        self.assertIn("passages match", out)
+        self.assertIn("No match", self.fetch(runner, find="zzz qq"))
+
+    def test_find_caps_passages(self):
+        runner, _ = self.runner(("hit " + "." * 2000) * 20)
+        out = self.fetch(runner, find="hit")
+        self.assertIn(f"showing the first {tools.FIND_MAX_MATCHES}", out)
+        self.assertEqual(out.count("[characters"), tools.FIND_MAX_MATCHES)
+
+    def test_page_read_cap_stops_loops(self):
+        runner, exa = self.runner("x" * 10)
+        self.fetch(runner)
+        for _ in range(tools.PAGE_READS):
+            self.fetch(runner, offset=1)
+        self.assertIn("re-read limit", self.fetch(runner, offset=1))
+        self.assertEqual(len(exa.fetches), 1)
+
+    def test_new_url_still_uses_fetch_budget(self):
+        exa = FakeExa({f"https://a.com/{i}": "x" for i in range(3)})
+        runner = tools.ToolRunner(
+            exa=exa,
+            sandbox=mock.Mock(),
+            budgets={"web_fetch": 2, "web_search": 1, "code_execution": 1},
+        )
+        for i in range(3):
+            out = runner.call("web_fetch", json.dumps({"url": f"https://a.com/{i}"}))
+        self.assertIn("budget of 2 calls is used up", out)
+        self.assertEqual(len(exa.fetches), 2)
+
+    def test_fragment_and_final_url_share_the_cache(self):
+        exa = FakeExa(
+            {self.URL: "x"}, final_urls={self.URL: "https://www.sec.gov/final.htm"}
+        )
+        runner = tools.ToolRunner(exa=exa, sandbox=mock.Mock())
+        runner.call("web_fetch", json.dumps({"url": self.URL}))
+        runner.call("web_fetch", json.dumps({"url": self.URL + "#part2"}))
+        runner.call("web_fetch", json.dumps({"url": "https://www.sec.gov/final.htm"}))
+        self.assertEqual(len(exa.fetches), 1)
+
+    def test_blocked_url_refused_before_cache_or_request(self):
+        runner, exa = self.runner("x")
+        runner.pages[tools.page_key("https://github.com/x")] = {
+            "head": "",
+            "text": "gold",
+            "url": "https://github.com/x",
+        }
+        out = runner.call(
+            "web_fetch", json.dumps({"url": "https://github.com/x", "find": "gold"})
+        )
+        self.assertIn("refused", out)
+        self.assertNotIn("gold", out.replace("https://github.com/x", ""))
+        self.assertTrue(runner.log[-1]["refused"])
+        self.assertEqual(exa.fetches, [])
+        self.assertEqual(runner.used["web_fetch"], 0)
+
+    def test_exa_fetch_requests_full_page_and_checks_final_url(self):
+        session = mock.Mock()
+        session.post.return_value = mock.Mock(
+            status_code=200,
+            json=lambda: {
+                "results": [{"url": "https://github.com/vals", "text": "gold"}],
+                "costDollars": {"total": 0.001},
+            },
+        )
+        exa = tools.Exa(api_key="k", session=session, blocked=["github.com"])
+        with self.assertRaisesRegex(tools.ToolError, "resolved to a blocked host"):
+            exa.fetch("https://example.com/redirect")
+        body = session.post.call_args.kwargs["json"]
+        self.assertEqual(body["text"]["maxCharacters"], tools.FETCH_MAX_CHARS)
+
+
+class AsOfDiscipline(unittest.TestCase):
+    """The as-of date is set first, caps searches, and flags later pages."""
+
+    CAP = protocol.protocol_as_of_date()
+
+    def search_session(self, results):
+        return FakeSession({"results": results, "costDollars": {"total": 0.004}})
+
+    def runner(self, session=None, exa=None):
+        return tools.ToolRunner(
+            exa=exa or tools.Exa(api_key="test", session=session or FakeSession({})),
+            sandbox=mock.Mock(),
+        )
+
+    def set_as_of(self, runner, day=None):
+        args = {"reason": "test"} | ({"date": day} if day else {})
+        return runner.call("set_as_of", json.dumps(args))
+
+    def test_prompt_asks_for_the_as_of_date_first(self):
+        for prompt in (protocol.SYSTEM_MINIMAL, protocol.SYSTEM_WITH_DATE):
+            self.assertIn("set_as_of", prompt)
+            self.assertIn("originally reported", prompt)
+        names = [t["function"]["name"] for t in tools.TOOL_SPECS]
+        self.assertEqual(names[0], "set_as_of")
+
+    def test_search_before_set_as_of_is_refused_without_a_request(self):
+        session = self.search_session([])
+        runner = self.runner(session)
+        out = runner.call("web_search", '{"query": "x"}')
+        self.assertIn("set_as_of first", out)
+        self.assertEqual(session.calls, [])
+        self.assertEqual(runner.used["web_search"], 0)
+
+    def test_set_as_of_caps_searches_and_drops_later_results(self):
+        session = self.search_session(
+            [
+                {"url": "https://a.com/old", "publishedDate": "2024-11-30T00:00:00Z"},
+                {"url": "https://a.com/new", "publishedDate": "2025-02-10T00:00:00Z"},
+                {"url": "https://a.com/undated"},
+            ]
+        )
+        runner = self.runner(session)
+        self.assertIn("2024-12-31", self.set_as_of(runner, "2024-12-31"))
+        text = runner.call("web_search", '{"query": "x"}')
+        body = session.calls[0][1]
+        self.assertEqual(body["endPublishedDate"], "2024-12-31T23:59:59.999Z")
+        self.assertIn("a.com/old", text)
+        self.assertIn("a.com/undated", text)
+        self.assertNotIn("a.com/new", text)
+        self.assertEqual(runner.log[-1]["dropped_after_as_of"], 1)
+
+    def test_set_as_of_defaults_to_and_never_passes_the_protocol_date(self):
+        runner = self.runner()
+        self.set_as_of(runner)
+        self.assertEqual(runner.as_of, self.CAP)
+        self.set_as_of(runner, "2030-01-01")
+        self.assertEqual(runner.as_of, self.CAP)
+
+    def test_bad_date_is_an_error_and_keeps_the_budget(self):
+        runner = self.runner()
+        self.assertIn("YYYY-MM-DD", self.set_as_of(runner, "December 2024"))
+        self.assertIsNone(runner.as_of)
+        self.assertEqual(runner.used["set_as_of"], 0)
+
+    def test_set_as_of_can_be_revised_within_its_budget(self):
+        runner = self.runner()
+        for day in ("2025-03-01", "2021-06-30", "2021-07-15"):
+            self.set_as_of(runner, day)
+        self.assertEqual(runner.as_of.isoformat(), "2021-07-15")
+        self.assertIn("budget", self.set_as_of(runner, "2021-08-01"))
+
+    def test_edgar_filing_year_from_the_accession_number(self):
+        url = "https://www.sec.gov/Archives/edgar/data/1617640/000161764025000016/z-20241231.htm"
+        self.assertEqual(tools.edgar_filing_year(url), 2025)
+        self.assertIsNone(tools.edgar_filing_year("https://www.sec.gov/cgi-bin/browse"))
+
+    def test_fetched_page_after_the_as_of_date_is_flagged(self):
+        later = "https://www.sec.gov/Archives/edgar/data/1617640/000161764025000016/z-20241231.htm"
+        earlier = "https://www.sec.gov/Archives/edgar/data/1617640/000161764024000012/z-20231231.htm"
+        dated = "https://news.example.com/raise"
+        exa = FakeExa(
+            {later: "FY2024", earlier: "FY2023", dated: "raised"},
+            published={dated: "2025-10-30T00:00:00Z"},
+        )
+        runner = self.runner(exa=exa)
+        self.set_as_of(runner, "2024-12-31")
+        out = runner.call("web_fetch", json.dumps({"url": later}))
+        self.assertTrue(out.startswith("Note: this page was filed in 2025"))
+        self.assertTrue(runner.log[-1]["after_as_of"])
+        self.assertNotIn(
+            "Note:", runner.call("web_fetch", json.dumps({"url": earlier}))
+        )
+        out = runner.call("web_fetch", json.dumps({"url": dated}))
+        self.assertIn("is dated 2025-10-30", out)
+        cached = runner.call("web_fetch", json.dumps({"url": later, "offset": 2}))
+        self.assertIn("Note:", cached)
+
+    def test_exa_fetch_keeps_the_published_date(self):
+        session = FakeSession(
+            {
+                "results": [
+                    {
+                        "url": "https://a.com/x",
+                        "text": "t",
+                        "publishedDate": "2025-01-02T00:00:00Z",
+                    }
+                ]
+            }
+        )
+        page, _ = tools.Exa(api_key="k", session=session).fetch("https://a.com/x")
+        self.assertEqual(tools.parse_day(page["published"]).isoformat(), "2025-01-02")
 
 
 @unittest.skipUnless(LIVE, "set EARNINGSCOUT_LIVE=1 for live Exa and E2B checks")
